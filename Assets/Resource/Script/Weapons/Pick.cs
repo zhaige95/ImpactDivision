@@ -55,15 +55,15 @@ public class Pick : WeaponState
             _iKManager.SetHoldTarget(_weaponAttribute.holdPoint);
             endTimer.Enter(endTime);
             pickTimer.Enter(pickTime);
-            if ((int) _weaponAttribute.magType == 1)
-            {
-                _weaponAttribute.magObj.GetComponent<ParentConstraint>().SetSource(0, new ConstraintSource()
-                    {
-                        sourceTransform = _weaponHandle.leftHand,
-                        weight = 1
-                    }
-                );
-            }
+            //if ((int) _weaponAttribute.magType == 1)
+            //{
+            //    _weaponAttribute.magObj.GetComponent<ParentConstraint>().SetSource(0, new ConstraintSource()
+            //        {
+            //            sourceTransform = _weaponHandle.leftHand,
+            //            weight = 1
+            //        }
+            //    );
+            //}
             _weaponHandle.locked = true;
 
         }

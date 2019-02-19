@@ -14,6 +14,7 @@ public class NV4_Reload : WeaponState
 
     public AudioSource _audioSource;
     public WeaponAttribute _weaponAttribute;
+    public Animator _ownAnimator;
 
     [Header("[Extra Properties]")]
     public Transform magIK;
@@ -34,7 +35,8 @@ public class NV4_Reload : WeaponState
 
         _audioSource = GetComponent<AudioSource>();
         _weaponAttribute = GetComponent<WeaponAttribute>();
-         
+        _ownAnimator = GetComponent<Animator>();
+
         timer = new Timer();
     }
 
@@ -59,6 +61,7 @@ public class NV4_Reload : WeaponState
         process = 1;
         
         _animator.animator.SetTrigger("reload");
+        _ownAnimator.SetTrigger("reload");
         _iKManager.SetAim(false);
         _iKManager.SetHoldTarget(magIK);
         _weaponHandle.locked = true;
@@ -68,7 +71,7 @@ public class NV4_Reload : WeaponState
     public override void OnUpdate()
     {
         var _anim = _animator.animator;
-        var constraint = _weaponAttribute.magObj.GetComponent<ParentConstraint>();
+        //var constraint = _weaponAttribute.magObj.GetComponent<ParentConstraint>();
 
         AnimatorStateInfo animatorInfo;
         animatorInfo = _anim.GetCurrentAnimatorStateInfo(animLayer);
@@ -77,45 +80,23 @@ public class NV4_Reload : WeaponState
         {
 
             _audioSource.PlayOneShot(sounds[0]);
-            constraint.constraintActive = true;
+            //constraint.constraintActive = true;
             process = 2;
 
         }
         
         if (animatorInfo.IsTag("reload"))
         {
+            // new coding ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
             if (process == 2)
-            {
-
-                if (animatorInfo.normalizedTime >= 0.1f)
-                {
-                    _iKManager.SetHold(false);
-                    process = 3;
-                }
-            }
-            if (process == 3)
             {
                 if (animatorInfo.normalizedTime >= 0.45f)
                 {
-                    constraint.constraintActive = false;
-                    _weaponAttribute.magObj.transform.localPosition = Vector3.zero;
-                    _weaponAttribute.magObj.transform.localEulerAngles = Vector3.zero;
                     _audioSource.PlayOneShot(sounds[1]);
-                    _iKManager.SetHold(true);
-                    process = 4;
+                    process = 3;
                 }
             }
-            if (process == 4)
-            {
-                if (animatorInfo.normalizedTime >= 0.6f)
-                {
-                    _iKManager.SetHold(false);
-
-                    _iKManager.SetHoldTarget(_weaponAttribute.holdPoint);
-                    process = 5;
-                }
-            }
-            if (process == 5)
+            else if (process == 3)
             {
                 if (animatorInfo.normalizedTime >= 0.9f)
                 {
@@ -132,24 +113,74 @@ public class NV4_Reload : WeaponState
                     process = 6;
                 }
             }
-            
+            // new coding ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+            //if (process == 2)
+            //{
+
+            //    if (animatorInfo.normalizedTime >= 0.1f)
+            //    {
+            //        _iKManager.SetHold(false);
+            //        process = 3;
+            //    }
+            //}
+            //if (process == 3)
+            //{
+            //    if (animatorInfo.normalizedTime >= 0.45f)
+            //    {
+            //        constraint.constraintActive = false;
+            //        _weaponAttribute.magObj.transform.localPosition = Vector3.zero;
+            //        _weaponAttribute.magObj.transform.localEulerAngles = Vector3.zero;
+            //        _audioSource.PlayOneShot(sounds[1]);
+            //        _iKManager.SetHold(true);
+            //        process = 4;
+            //    }
+            //}
+            //if (process == 4)
+            //{
+            //    if (animatorInfo.normalizedTime >= 0.6f)
+            //    {
+            //        _iKManager.SetHold(false);
+
+            //        _iKManager.SetHoldTarget(_weaponAttribute.holdPoint);
+            //        process = 5;
+            //    }
+            //}
+            //if (process == 5)
+            //{
+            //    if (animatorInfo.normalizedTime >= 0.9f)
+            //    {
+            //        if (_weaponAttribute.bore)
+            //        {
+            //            _weaponAttribute.runtimeMag = _weaponAttribute.mag;
+            //        }
+            //        else
+            //        {
+            //            _weaponAttribute.runtimeMag = _weaponAttribute.mag - 1;
+            //            _weaponAttribute.bore = true;
+            //        }
+            //        this._exitTick = true;
+            //        process = 6;
+            //    }
+            //}
+
         }
     }
     public override void Exit() {
         Debug.Log("exit reload");
-        _weaponAttribute.magObj.GetComponent<ParentConstraint>().constraintActive = false;
-        _weaponAttribute.magObj.transform.localPosition = Vector3.zero;
-        _weaponAttribute.magObj.transform.localEulerAngles = Vector3.zero;
+        //_weaponAttribute.magObj.GetComponent<ParentConstraint>().constraintActive = false;
+        //_weaponAttribute.magObj.transform.localPosition = Vector3.zero;
+        //_weaponAttribute.magObj.transform.localEulerAngles = Vector3.zero;
 
         _iKManager.SetHold(true);
         _iKManager.SetAim(true);
         _weaponAttribute.reload = false;
         _weaponHandle.locked = false;
 
-        if (process != 6)
-        {
+        //if (process != 6)
+        //{
             _iKManager.SetHoldTarget(_weaponAttribute.holdPoint);
-        }
+        //}
 
     }
 }
