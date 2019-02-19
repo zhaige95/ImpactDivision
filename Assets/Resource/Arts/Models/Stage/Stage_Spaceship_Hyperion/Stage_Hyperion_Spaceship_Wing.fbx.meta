@@ -1,0 +1,449 @@
+fileFormatVersion: 2
+guid: d6012a6543f280443801becfb2af0c8c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Base_View
+    100002: Cam_Collision01
+    100004: Cam_Collision1
+    100006: Cloud_Ring
+    100008: CloudSea
+    100010: CloudSea 1
+    100012: CloudSea_Fast
+    100014: Collision01
+    100016: Collision1
+    100018: fire
+    100020: fire 1
+    100022: fire 2
+    100024: fire 3
+    100026: floor
+    100028: Island_Jet01
+    100030: Island_Jet02
+    100032: Island_Jet03
+    100034: Island_Jet04
+    100036: light
+    100038: LightGroup
+    100040: LightShadowManager
+    100042: Locator1
+    100044: locator1
+    100046: locator2
+    100048: locator3
+    100050: locator4
+    100052: locator5
+    100054: master_wing
+    100056: Ring
+    100058: Ring 1
+    100060: Ring 2
+    100062: Ring 3
+    100064: skura_skybox03AM
+    100066: Sky
+    100068: Stage_Hyperion_C01
+    100070: Stage_Hyperion_C01_Hydraulic01
+    100072: Stage_Hyperion_C02
+    100074: Stage_Hyperion_C03
+    100076: Stage_Hyperion_C03_Floor01
+    100078: Stage_Hyperion_C04
+    100080: Stage_Hyperion_C04_Floor01
+    100082: Stage_Hyperion_C04_Floor02
+    100084: Stage_Hyperion_C05
+    100086: Stage_Hyperion_C06
+    100088: Stage_Hyperion_C06_Left
+    100090: Stage_Hyperion_C07
+    100092: Stage_Hyperion_C07_Wall01
+    100094: Stage_Hyperion_C08
+    100096: Stage_Hyperion_C09
+    100098: Stage_Hyperion_C10
+    100100: Stage_Hyperion_C11
+    100102: Stage_Hyperion_C12
+    100104: Stage_Hyperion_Light01
+    100106: Stage_Hyperion_Light02
+    100108: Stage_Hyperion_Spaceship_Collision
+    100110: //RootNode
+    100112: Stage_Hyperion_Spaceship_Wing_Collision
+    100114: wing_left
+    100116: wing_right
+    400000: Base_View
+    400002: Cam_Collision01
+    400004: Cam_Collision1
+    400006: Cloud_Ring
+    400008: CloudSea
+    400010: CloudSea 1
+    400012: CloudSea_Fast
+    400014: Collision01
+    400016: Collision1
+    400018: fire
+    400020: fire 1
+    400022: fire 2
+    400024: fire 3
+    400026: floor
+    400028: Island_Jet01
+    400030: Island_Jet02
+    400032: Island_Jet03
+    400034: Island_Jet04
+    400036: light
+    400038: LightGroup
+    400040: LightShadowManager
+    400042: Locator1
+    400044: locator1
+    400046: locator2
+    400048: locator3
+    400050: locator4
+    400052: locator5
+    400054: master_wing
+    400056: Ring
+    400058: Ring 1
+    400060: Ring 2
+    400062: Ring 3
+    400064: skura_skybox03AM
+    400066: Sky
+    400068: Stage_Hyperion_C01
+    400070: Stage_Hyperion_C01_Hydraulic01
+    400072: Stage_Hyperion_C02
+    400074: Stage_Hyperion_C03
+    400076: Stage_Hyperion_C03_Floor01
+    400078: Stage_Hyperion_C04
+    400080: Stage_Hyperion_C04_Floor01
+    400082: Stage_Hyperion_C04_Floor02
+    400084: Stage_Hyperion_C05
+    400086: Stage_Hyperion_C06
+    400088: Stage_Hyperion_C06_Left
+    400090: Stage_Hyperion_C07
+    400092: Stage_Hyperion_C07_Wall01
+    400094: Stage_Hyperion_C08
+    400096: Stage_Hyperion_C09
+    400098: Stage_Hyperion_C10
+    400100: Stage_Hyperion_C11
+    400102: Stage_Hyperion_C12
+    400104: Stage_Hyperion_Light01
+    400106: Stage_Hyperion_Light02
+    400108: Stage_Hyperion_Spaceship_Collision
+    400110: //RootNode
+    400112: Stage_Hyperion_Spaceship_Wing_Collision
+    400114: wing_left
+    400116: wing_right
+    2100000: Stage_Hyperion_Mat_C03
+    2100002: Stage_Hyperion_Mat_C04_Floor02
+    2100004: Stage_Hyperion_Mat_C01
+    2100006: Stage_Hyperion_Mat_C13
+    2100008: Stage_Hyperion_Mat_C06
+    2100010: Stage_Hyperion_Mat_Light01
+    2100012: lambert1
+    2100014: Stage_Hyperion_Mat_C09
+    2100016: Stage_Hyperion_Mat_C02
+    2100018: Stage_Hyperion_Mat_Wing03_Light
+    2100020: Stage_Hyperion_Mat_C11
+    2100022: Stage_Hyperion_Mat_C04
+    2100024: Stage_Hyperion_Mat_C07_Wall01
+    2100026: Stage_Hyperion_Mat_C10
+    2100028: Stage_Hyperion_Mat_C03_Floor01
+    2100030: Stage_Hyperion_Mat_C12
+    2100032: Stage_Hyperion_Mat_C05
+    2100034: Stage_Hyperion_Mat_Wing03
+    2100036: Stage_Hyperion_Mat_Wing01
+    2100038: pasted__Stage_Hyperion_Mat_Wing03
+    2100040: pasted__Stage_Hyperion_Mat_Wing01
+    2100042: Stage_Hyperion_Mat_C08
+    2100044: Stage_Hyperion_Mat_Wing02
+    2100046: Stage_Hyperion_Mat_C01_Hydraulic01
+    2100048: Stage_Hyperion_Mat_C04_Floor01
+    2100050: Stage_Hyperion_Mat_C07
+    2300000: Cam_Collision01
+    2300002: Cam_Collision1
+    2300004: Collision01
+    2300006: Collision1
+    2300008: floor
+    2300010: light
+    2300012: master_wing
+    2300014: Stage_Hyperion_C01
+    2300016: Stage_Hyperion_C01_Hydraulic01
+    2300018: Stage_Hyperion_C02
+    2300020: Stage_Hyperion_C03
+    2300022: Stage_Hyperion_C03_Floor01
+    2300024: Stage_Hyperion_C04
+    2300026: Stage_Hyperion_C04_Floor01
+    2300028: Stage_Hyperion_C04_Floor02
+    2300030: Stage_Hyperion_C05
+    2300032: Stage_Hyperion_C06
+    2300034: Stage_Hyperion_C06_Left
+    2300036: Stage_Hyperion_C07
+    2300038: Stage_Hyperion_C07_Wall01
+    2300040: Stage_Hyperion_C08
+    2300042: Stage_Hyperion_C09
+    2300044: Stage_Hyperion_C10
+    2300046: Stage_Hyperion_C11
+    2300048: Stage_Hyperion_C12
+    2300050: Stage_Hyperion_Light01
+    2300052: Stage_Hyperion_Light02
+    2300054: wing_left
+    2300056: wing_right
+    3300000: Cam_Collision01
+    3300002: Cam_Collision1
+    3300004: Collision01
+    3300006: Collision1
+    3300008: floor
+    3300010: light
+    3300012: master_wing
+    3300014: Stage_Hyperion_C01
+    3300016: Stage_Hyperion_C01_Hydraulic01
+    3300018: Stage_Hyperion_C02
+    3300020: Stage_Hyperion_C03
+    3300022: Stage_Hyperion_C03_Floor01
+    3300024: Stage_Hyperion_C04
+    3300026: Stage_Hyperion_C04_Floor01
+    3300028: Stage_Hyperion_C04_Floor02
+    3300030: Stage_Hyperion_C05
+    3300032: Stage_Hyperion_C06
+    3300034: Stage_Hyperion_C06_Left
+    3300036: Stage_Hyperion_C07
+    3300038: Stage_Hyperion_C07_Wall01
+    3300040: Stage_Hyperion_C08
+    3300042: Stage_Hyperion_C09
+    3300044: Stage_Hyperion_C10
+    3300046: Stage_Hyperion_C11
+    3300048: Stage_Hyperion_C12
+    3300050: Stage_Hyperion_Light01
+    3300052: Stage_Hyperion_Light02
+    3300054: wing_left
+    3300056: wing_right
+    4300000: Stage_Hyperion_C03
+    4300002: Stage_Hyperion_C04_Floor02
+    4300004: Stage_Hyperion_C01
+    4300006: Stage_Hyperion_C06_Left
+    4300008: Stage_Hyperion_Light02
+    4300010: Collision01
+    4300012: Cam_Collision01
+    4300014: Stage_Hyperion_Light01
+    4300016: Stage_Hyperion_C09
+    4300018: Stage_Hyperion_C02
+    4300020: light
+    4300022: Stage_Hyperion_C11
+    4300024: master_wing
+    4300026: Stage_Hyperion_C04
+    4300028: Stage_Hyperion_C07_Wall01
+    4300030: Stage_Hyperion_C10
+    4300032: Stage_Hyperion_C03_Floor01
+    4300034: Cam_Collision1
+    4300036: Collision1
+    4300038: Stage_Hyperion_C06
+    4300040: Stage_Hyperion_C12
+    4300042: Stage_Hyperion_C05
+    4300044: wing_left
+    4300046: wing_right
+    4300048: Stage_Hyperion_C08
+    4300050: floor
+    4300052: Stage_Hyperion_C01_Hydraulic01
+    4300054: Stage_Hyperion_C04_Floor01
+    4300056: Stage_Hyperion_C07
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C01
+    second: {fileID: 2100000, guid: e92756d9e53a67a43a7133f8e36ac6db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C01_Hydraulic01
+    second: {fileID: 2100000, guid: 9b354c26a3fd93b4b96ab58a1b23dd5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C02
+    second: {fileID: 2100000, guid: a935e1a5f18b15a49afc82897ae74b7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C03
+    second: {fileID: 2100000, guid: ff456180d1192504eb3a08013e9349c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C03_Floor01
+    second: {fileID: 2100000, guid: b6e9f0a264a58a442a8d1d2fa7816b6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C04
+    second: {fileID: 2100000, guid: 67ff5e40d8f4f324e807b62ab4026a5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C04_Floor01
+    second: {fileID: 2100000, guid: f3ae2e5d8c7a87c479a4688fb80d3a7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C04_Floor02
+    second: {fileID: 2100000, guid: 32271e12a5d42f14b92a812add1c794c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C05
+    second: {fileID: 2100000, guid: 94df84f688e0e734980e383281e0fd92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C06
+    second: {fileID: 2100000, guid: bbd7a044864c84b40a039996d7199823, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C07
+    second: {fileID: 2100000, guid: 8d8119edb411f0343b706f63bd532a56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C07_Wall01
+    second: {fileID: 2100000, guid: d9dfecfab5b83264bb89b68fef4198c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C08
+    second: {fileID: 2100000, guid: a7d840e1ba526844a97115b122a94b3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C09
+    second: {fileID: 2100000, guid: be60f282ffc1e514584c02522324278b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C10
+    second: {fileID: 2100000, guid: fc5ae1a96287280418b1809c4b64729d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C11
+    second: {fileID: 2100000, guid: 070d278d22c15524f93d1e10901b05bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C12
+    second: {fileID: 2100000, guid: 7c04e95d2ec1f5845a20608479a3b68a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_C13
+    second: {fileID: 2100000, guid: b6a723774673bd54385d44a1a777a93d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_Light01
+    second: {fileID: 2100000, guid: 3cda38947b80f1a48b0fb3d9bd608eb8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_Wing01
+    second: {fileID: 2100000, guid: aa9d6829d920b074daef31cbd2d7227f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_Wing02
+    second: {fileID: 2100000, guid: 3f59a172f16606a4fb127d19b2a7b59f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_Wing03
+    second: {fileID: 2100000, guid: d1f727252108a4a44a9402ab501f0046, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_Hyperion_Mat_Wing03_Light
+    second: {fileID: 2100000, guid: 6d56663b7b85310498d9c8634b53e4f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: ab6e306b0f4743a4eb189f755a108e60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Stage_Hyperion_Mat_Wing01
+    second: {fileID: 2100000, guid: cea26ffcb7e1e1d458b46b96c90a90dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Stage_Hyperion_Mat_Wing03
+    second: {fileID: 2100000, guid: 27e39f667f6e3cc42b96b509414a910c, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

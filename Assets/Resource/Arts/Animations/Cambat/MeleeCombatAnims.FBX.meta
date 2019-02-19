@@ -1,0 +1,2461 @@
+fileFormatVersion: 2
+guid: 0441102a63c37fd4db146863c5745bb7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: I
+    100002: Invector
+    100004: Invector Head
+    100006: Invector L Calf
+    100008: Invector L Clavicle
+    100010: Invector L Finger0
+    100012: Invector L Finger01
+    100014: Invector L Finger02
+    100016: Invector L Finger1
+    100018: Invector L Finger11
+    100020: Invector L Finger12
+    100022: Invector L Finger2
+    100024: Invector L Finger21
+    100026: Invector L Finger22
+    100028: Invector L Finger3
+    100030: Invector L Finger31
+    100032: Invector L Finger32
+    100034: Invector L Finger4
+    100036: Invector L Finger41
+    100038: Invector L Finger42
+    100040: Invector L Foot
+    100042: Invector L Forearm
+    100044: Invector L Hand
+    100046: Invector L Thigh
+    100048: Invector L Toe0
+    100050: Invector L UpperArm
+    100052: Invector Neck
+    100054: Invector Pelvis
+    100056: Invector R Calf
+    100058: Invector R Clavicle
+    100060: Invector R Finger0
+    100062: Invector R Finger01
+    100064: Invector R Finger02
+    100066: Invector R Finger1
+    100068: Invector R Finger11
+    100070: Invector R Finger12
+    100072: Invector R Finger2
+    100074: Invector R Finger21
+    100076: Invector R Finger22
+    100078: Invector R Finger3
+    100080: Invector R Finger31
+    100082: Invector R Finger32
+    100084: Invector R Finger4
+    100086: Invector R Finger41
+    100088: Invector R Finger42
+    100090: Invector R Foot
+    100092: Invector R Forearm
+    100094: Invector R Hand
+    100096: Invector R Thigh
+    100098: Invector R Toe0
+    100100: Invector R UpperArm
+    100102: Invector Spine
+    100104: Invector Spine1
+    100106: //RootNode
+    400000: I
+    400002: Invector
+    400004: Invector Head
+    400006: Invector L Calf
+    400008: Invector L Clavicle
+    400010: Invector L Finger0
+    400012: Invector L Finger01
+    400014: Invector L Finger02
+    400016: Invector L Finger1
+    400018: Invector L Finger11
+    400020: Invector L Finger12
+    400022: Invector L Finger2
+    400024: Invector L Finger21
+    400026: Invector L Finger22
+    400028: Invector L Finger3
+    400030: Invector L Finger31
+    400032: Invector L Finger32
+    400034: Invector L Finger4
+    400036: Invector L Finger41
+    400038: Invector L Finger42
+    400040: Invector L Foot
+    400042: Invector L Forearm
+    400044: Invector L Hand
+    400046: Invector L Thigh
+    400048: Invector L Toe0
+    400050: Invector L UpperArm
+    400052: Invector Neck
+    400054: Invector Pelvis
+    400056: Invector R Calf
+    400058: Invector R Clavicle
+    400060: Invector R Finger0
+    400062: Invector R Finger01
+    400064: Invector R Finger02
+    400066: Invector R Finger1
+    400068: Invector R Finger11
+    400070: Invector R Finger12
+    400072: Invector R Finger2
+    400074: Invector R Finger21
+    400076: Invector R Finger22
+    400078: Invector R Finger3
+    400080: Invector R Finger31
+    400082: Invector R Finger32
+    400084: Invector R Finger4
+    400086: Invector R Finger41
+    400088: Invector R Finger42
+    400090: Invector R Foot
+    400092: Invector R Forearm
+    400094: Invector R Hand
+    400096: Invector R Thigh
+    400098: Invector R Toe0
+    400100: Invector R UpperArm
+    400102: Invector Spine
+    400104: Invector Spine1
+    400106: //RootNode
+    4300000: I
+    7400000: PunchRight
+    7400002: PunchLeft
+    7400004: KickLeft
+    7400006: Draw Weapon LowRight
+    7400008: Draw Weapon HighRight
+    7400010: Draw Weapon LowLeft
+    7400012: Draw Weapon HighLeft
+    7400014: OpenChest
+    9500000: //RootNode
+    13700000: I
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: PunchRight
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: I
+        weight: 1
+      - path: Invector
+        weight: 1
+      - path: Invector/Invector Pelvis
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot/Invector L Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot/Invector R Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01/Invector L Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11/Invector L Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21/Invector L Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31/Invector L Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41/Invector L Finger42
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck/Invector
+          Head
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01/Invector R Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11/Invector R Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21/Invector R Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31/Invector R Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41/Invector R Finger42
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: PunchLeft
+      takeName: Take 001
+      firstFrame: 17
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: I
+        weight: 0
+      - path: Invector
+        weight: 1
+      - path: Invector/Invector Pelvis
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot/Invector L Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot/Invector R Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01/Invector L Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11/Invector L Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21/Invector L Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31/Invector L Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41/Invector L Finger42
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck/Invector
+          Head
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01/Invector R Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11/Invector R Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21/Invector R Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31/Invector R Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41/Invector R Finger42
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: KickLeft
+      takeName: Take 001
+      firstFrame: 34
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: I
+        weight: 0
+      - path: Invector
+        weight: 1
+      - path: Invector/Invector Pelvis
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot/Invector L Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot/Invector R Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01/Invector L Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11/Invector L Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21/Invector L Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31/Invector L Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41/Invector L Finger42
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck/Invector
+          Head
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01/Invector R Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11/Invector R Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21/Invector R Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31/Invector R Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41/Invector R Finger42
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Draw Weapon LowRight
+      takeName: Take 001
+      firstFrame: 75
+      lastFrame: 96
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: I
+        weight: 0
+      - path: Invector
+        weight: 1
+      - path: Invector/Invector Pelvis
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot/Invector L Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot/Invector R Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01/Invector L Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11/Invector L Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21/Invector L Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31/Invector L Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41/Invector L Finger42
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck/Invector
+          Head
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01/Invector R Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11/Invector R Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21/Invector R Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31/Invector R Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41/Invector R Finger42
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Draw Weapon HighRight
+      takeName: Take 001
+      firstFrame: 99
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: I
+        weight: 0
+      - path: Invector
+        weight: 1
+      - path: Invector/Invector Pelvis
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot/Invector L Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot/Invector R Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01/Invector L Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11/Invector L Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21/Invector L Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31/Invector L Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41/Invector L Finger42
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck/Invector
+          Head
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01/Invector R Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11/Invector R Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21/Invector R Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31/Invector R Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41/Invector R Finger42
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Draw Weapon HighLeft
+      takeName: Take 001
+      firstFrame: 123
+      lastFrame: 144
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: I
+        weight: 0
+      - path: Invector
+        weight: 1
+      - path: Invector/Invector Pelvis
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot/Invector L Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot/Invector R Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01/Invector L Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11/Invector L Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21/Invector L Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31/Invector L Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41/Invector L Finger42
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck/Invector
+          Head
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01/Invector R Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11/Invector R Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21/Invector R Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31/Invector R Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41/Invector R Finger42
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Draw Weapon LowLeft
+      takeName: Take 001
+      firstFrame: 147
+      lastFrame: 168
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: I
+        weight: 0
+      - path: Invector
+        weight: 1
+      - path: Invector/Invector Pelvis
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot/Invector L Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot/Invector R Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01/Invector L Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11/Invector L Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21/Invector L Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31/Invector L Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41/Invector L Finger42
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck/Invector
+          Head
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01/Invector R Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11/Invector R Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21/Invector R Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31/Invector R Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41/Invector R Finger42
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: OpenChest
+      takeName: Take 001
+      firstFrame: 170
+      lastFrame: 260
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: I
+        weight: 0
+      - path: Invector
+        weight: 1
+      - path: Invector/Invector Pelvis
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector L Thigh/Invector L Calf/Invector L
+          Foot/Invector L Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector R Thigh/Invector R Calf/Invector R
+          Foot/Invector R Toe0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger0/Invector
+          L Finger01/Invector L Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger1/Invector
+          L Finger11/Invector L Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger2/Invector
+          L Finger21/Invector L Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger3/Invector
+          L Finger31/Invector L Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector L Clavicle/Invector
+          L UpperArm/Invector L Forearm/Invector L Hand/Invector L Finger4/Invector
+          L Finger41/Invector L Finger42
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector Neck/Invector
+          Head
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger0/Invector
+          R Finger01/Invector R Finger02
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger1/Invector
+          R Finger11/Invector R Finger12
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger2/Invector
+          R Finger21/Invector R Finger22
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger3/Invector
+          R Finger31/Invector R Finger32
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41
+        weight: 1
+      - path: Invector/Invector Pelvis/Invector Spine/Invector Spine1/Invector R Clavicle/Invector
+          R UpperArm/Invector R Forearm/Invector R Hand/Invector R Finger4/Invector
+          R Finger41/Invector R Finger42
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Invector Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Thigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Thigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Calf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Calf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Clavicle
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Clavicle
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L UpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R UpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Forearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Forearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Toe0
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Toe0
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger0
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger01
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger02
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger11
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger12
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger2
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger21
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger22
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger3
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger31
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger32
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger4
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger41
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector L Finger42
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger0
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger01
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger02
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger11
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger12
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger2
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger21
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger22
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger3
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger31
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger32
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger4
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger41
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Invector R Finger42
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: MeleeCombatAnims(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.009143856, y: -0.19076464, z: -0.0018460925, w: 0.9815915}
+      scale: {x: 1, y: 1, z: 1}
+    - name: I
+      parentName: MeleeCombatAnims(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector
+      parentName: MeleeCombatAnims(Clone)
+      position: {x: 0.01535061, y: 0.9117929, z: -0.06208282}
+      rotation: {x: -0.39543113, y: 0.5862033, z: 0.5862033, w: 0.39543113}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector Pelvis
+      parentName: Invector
+      position: {x: 0.0023168763, y: 0.037626117, z: 0.124172464}
+      rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector L Thigh
+      parentName: Invector Pelvis
+      position: {x: 0.0000001525879, y: 0.00000019550319, z: 0.10877229}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: Invector L Calf
+      parentName: Invector L Thigh
+      position: {x: -0.4727843, y: 0.00000003814697, z: 0.000000009536743}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector L Foot
+      parentName: Invector L Calf
+      position: {x: -0.4303518, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.000001, y: 1.0000011, z: 1.0000013}
+    - name: Invector L Toe0
+      parentName: Invector L Foot
+      position: {x: -0.101022795, y: 0.1400582, z: -0.000000009536743}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: Invector R Thigh
+      parentName: Invector Pelvis
+      position: {x: -0.0000001525879, y: -0.0000001096725, z: -0.108772196}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: Invector R Calf
+      parentName: Invector R Thigh
+      position: {x: -0.4727842, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: Invector R Foot
+      parentName: Invector R Calf
+      position: {x: -0.43035188, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: Invector R Toe0
+      parentName: Invector R Foot
+      position: {x: -0.101022795, y: 0.1400582, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+    - name: Invector Spine
+      parentName: Invector Pelvis
+      position: {x: -0.055735167, y: -0.000032095908, z: 0.000023596289}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector Spine1
+      parentName: Invector Spine
+      position: {x: -0.16151649, y: -0.0002466488, z: 0.00004855156}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: Invector L Clavicle
+      parentName: Invector Spine1
+      position: {x: -0.31430718, y: -0.009639511, z: 0.06319038}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: -0.7071068, w: 0.000000030908623}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: Invector L UpperArm
+      parentName: Invector L Clavicle
+      position: {x: -0.1338323, y: -0.00000003814697, z: -0.0000001525879}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector L Forearm
+      parentName: Invector L UpperArm
+      position: {x: -0.2831396, y: 0.00000003814697, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector L Hand
+      parentName: Invector L Forearm
+      position: {x: -0.2991139, y: -0.00000003814697, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: Invector L Finger0
+      parentName: Invector L Hand
+      position: {x: -0.028787, y: 0.02101635, z: -0.017762149}
+      rotation: {x: 0, y: 0.3826835, z: 0, w: -0.9238795}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector L Finger01
+      parentName: Invector L Finger0
+      position: {x: -0.03200958, y: -0.000000019073491, z: -0.00000007629395}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector L Finger02
+      parentName: Invector L Finger01
+      position: {x: -0.03200962, y: 0.00000003814697, z: 0.00000007629395}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: Invector L Finger1
+      parentName: Invector L Hand
+      position: {x: -0.09117096, y: 0.01077557, z: -0.02280239}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector L Finger11
+      parentName: Invector L Finger1
+      position: {x: -0.03010273, y: 0, z: 0.00000003814697}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: Invector L Finger12
+      parentName: Invector L Finger11
+      position: {x: -0.030102689, y: -0.000000019073491, z: -0.00000003814697}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector L Finger2
+      parentName: Invector L Hand
+      position: {x: -0.09739365, y: 0.007432976, z: 0.00189537}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector L Finger21
+      parentName: Invector L Finger2
+      position: {x: -0.028718468, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector L Finger22
+      parentName: Invector L Finger21
+      position: {x: -0.026453398, y: 0.00000003814697, z: 0.00000003814697}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: Invector L Finger3
+      parentName: Invector L Hand
+      position: {x: -0.08843689, y: 0.00952961, z: 0.021415059}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector L Finger31
+      parentName: Invector L Finger3
+      position: {x: -0.02542466, y: 0, z: -0.00000003814697}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 0.9999998, z: 1}
+    - name: Invector L Finger32
+      parentName: Invector L Finger31
+      position: {x: -0.02542465, y: 0.00000003814697, z: 0.00000007629395}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: Invector L Finger4
+      parentName: Invector L Hand
+      position: {x: -0.07286285, y: 0.01568218, z: 0.03940834}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector L Finger41
+      parentName: Invector L Finger4
+      position: {x: -0.023645649, y: -0.0000001525879, z: 0.00000003814697}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: Invector L Finger42
+      parentName: Invector L Finger41
+      position: {x: -0.023645548, y: -0.00000003814697, z: -0.00000003814697}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: Invector Neck
+      parentName: Invector Spine1
+      position: {x: -0.3267219, y: -0.0007030487, z: 0.000031180378}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: Invector Head
+      parentName: Invector Neck
+      position: {x: -0.05174438, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: Invector R Clavicle
+      parentName: Invector Spine1
+      position: {x: -0.31430718, y: -0.009639167, z: -0.06319045}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: 0.7071068, w: -0.000000030908623}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: Invector R UpperArm
+      parentName: Invector R Clavicle
+      position: {x: -0.1338322, y: 0, z: -0.0000001525879}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: Invector R Forearm
+      parentName: Invector R UpperArm
+      position: {x: -0.2831396, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: Invector R Hand
+      parentName: Invector R Forearm
+      position: {x: -0.2991138, y: 0, z: 0.00000007629395}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: Invector R Finger0
+      parentName: Invector R Hand
+      position: {x: -0.028787, y: 0.02101639, z: 0.01776222}
+      rotation: {x: 0, y: 0.38268346, z: 0, w: 0.9238795}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: Invector R Finger01
+      parentName: Invector R Finger0
+      position: {x: -0.032009657, y: 0, z: -0.00000007629395}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector R Finger02
+      parentName: Invector R Finger01
+      position: {x: -0.03200962, y: 0.00000003814697, z: 0.00000007629395}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector R Finger1
+      parentName: Invector R Hand
+      position: {x: -0.09117103, y: 0.010775681, z: 0.02280243}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: Invector R Finger11
+      parentName: Invector R Finger1
+      position: {x: -0.03010271, y: 0, z: 0.00000003814697}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector R Finger12
+      parentName: Invector R Finger11
+      position: {x: -0.03010284, y: -0.000000019073491, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: Invector R Finger2
+      parentName: Invector R Hand
+      position: {x: -0.09739372, y: 0.0074330135, z: -0.001895294}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: Invector R Finger21
+      parentName: Invector R Finger2
+      position: {x: -0.02871845, y: -0.00000007629395, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector R Finger22
+      parentName: Invector R Finger21
+      position: {x: -0.026453549, y: -0.000000009536743, z: -0.00000003814697}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+    - name: Invector R Finger3
+      parentName: Invector R Hand
+      position: {x: -0.08843689, y: 0.009529572, z: -0.021415059}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999998, y: 0.9999999, z: 0.9999999}
+    - name: Invector R Finger31
+      parentName: Invector R Finger3
+      position: {x: -0.02542465, y: 0, z: -0.00000003814697}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 0.9999998, z: 0.9999999}
+    - name: Invector R Finger32
+      parentName: Invector R Finger31
+      position: {x: -0.02542465, y: 0.000000009536743, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector R Finger4
+      parentName: Invector R Hand
+      position: {x: -0.0728627, y: 0.0156823, z: -0.03940834}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: Invector R Finger41
+      parentName: Invector R Finger4
+      position: {x: -0.02364563, y: -0.00000007629395, z: 0.00000007629395}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Invector R Finger42
+      parentName: Invector R Finger41
+      position: {x: -0.02364578, y: 0.000000019073491, z: -0.00000007629395}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 1
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

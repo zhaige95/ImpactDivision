@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: 4c14b4a40c264be498491df2b3650359
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: NV4_Body1
+    100004: stencil_outline
+    100006: weapon_kb_m4_accessories_1_camo
+    100008: weapon_kb_m4_accessories_2_camo
+    100010: weapon_kb_m4_accessories_3_camo
+    100012: weapon_kb_m4_accessories_camo
+    100014: weapon_kb_m4_body_camo
+    100016: weapon_kb_m4_body_gunpaint_left_camo
+    100018: weapon_kb_m4_body_gunpaint_top_camo
+    100020: weapon_kb_m4_body_tint_2_camo
+    100022: weapon_kb_m4_body_tint_camo
+    100024: weapon_kb_m4_mag_camo
+    100026: weapon_kb_m4_sights_camo
+    100028: weapon_kb_m4_sights_trans
+    400000: //RootNode
+    400002: NV4_Body1
+    400004: stencil_outline
+    400006: weapon_kb_m4_accessories_1_camo
+    400008: weapon_kb_m4_accessories_2_camo
+    400010: weapon_kb_m4_accessories_3_camo
+    400012: weapon_kb_m4_accessories_camo
+    400014: weapon_kb_m4_body_camo
+    400016: weapon_kb_m4_body_gunpaint_left_camo
+    400018: weapon_kb_m4_body_gunpaint_top_camo
+    400020: weapon_kb_m4_body_tint_2_camo
+    400022: weapon_kb_m4_body_tint_camo
+    400024: weapon_kb_m4_mag_camo
+    400026: weapon_kb_m4_sights_camo
+    400028: weapon_kb_m4_sights_trans
+    2100000: NV4_Body
+    2100002: NV4_Sights
+    2100004: NV4_Accessories
+    2100006: lambert1
+    2100008: NV4_Mag
+    2300000: stencil_outline
+    2300002: weapon_kb_m4_accessories_1_camo
+    2300004: weapon_kb_m4_accessories_2_camo
+    2300006: weapon_kb_m4_accessories_3_camo
+    2300008: weapon_kb_m4_accessories_camo
+    2300010: weapon_kb_m4_body_camo
+    2300012: weapon_kb_m4_body_gunpaint_left_camo
+    2300014: weapon_kb_m4_body_gunpaint_top_camo
+    2300016: weapon_kb_m4_body_tint_2_camo
+    2300018: weapon_kb_m4_body_tint_camo
+    2300020: weapon_kb_m4_mag_camo
+    2300022: weapon_kb_m4_sights_camo
+    2300024: weapon_kb_m4_sights_trans
+    3300000: stencil_outline
+    3300002: weapon_kb_m4_accessories_1_camo
+    3300004: weapon_kb_m4_accessories_2_camo
+    3300006: weapon_kb_m4_accessories_3_camo
+    3300008: weapon_kb_m4_accessories_camo
+    3300010: weapon_kb_m4_body_camo
+    3300012: weapon_kb_m4_body_gunpaint_left_camo
+    3300014: weapon_kb_m4_body_gunpaint_top_camo
+    3300016: weapon_kb_m4_body_tint_2_camo
+    3300018: weapon_kb_m4_body_tint_camo
+    3300020: weapon_kb_m4_mag_camo
+    3300022: weapon_kb_m4_sights_camo
+    3300024: weapon_kb_m4_sights_trans
+    4300000: weapon_kb_m4_body_gunpaint_top_camo
+    4300002: weapon_kb_m4_body_gunpaint_left_camo
+    4300004: weapon_kb_m4_body_tint_2_camo
+    4300006: weapon_kb_m4_body_camo
+    4300008: weapon_kb_m4_body_tint_camo
+    4300010: weapon_kb_m4_sights_camo
+    4300012: weapon_kb_m4_sights_trans
+    4300014: weapon_kb_m4_accessories_3_camo
+    4300016: weapon_kb_m4_accessories_1_camo
+    4300018: weapon_kb_m4_accessories_2_camo
+    4300020: weapon_kb_m4_accessories_camo
+    4300022: stencil_outline
+    4300024: weapon_kb_m4_mag_camo
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NV4_Accessories
+    second: {fileID: 2100000, guid: d6e2acf537ee5fb4792cb3611ad8d4a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NV4_Body
+    second: {fileID: 2100000, guid: bdf13a960dfa7fb4ab98b2f01dc09fef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NV4_Mag
+    second: {fileID: 2100000, guid: 35aada7a164f4924e9486333e8fe14f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NV4_Sights
+    second: {fileID: 2100000, guid: 100b5c5b70df2154d8a34521cad0291a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: ff51d14f5b89e08439622cf579ce7660, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 0
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.765
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
