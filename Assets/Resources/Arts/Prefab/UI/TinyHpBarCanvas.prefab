@@ -435,8 +435,8 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1427082798028268}
-  m_LocalRotation: {x: 0.000000749014, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.546}
   m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_Children:
   - {fileID: 224118734431242516}
@@ -446,7 +446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.5, y: 3.599}
   m_SizeDelta: {x: 50, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224999535521062628
@@ -475,12 +475,12 @@ ParentConstraint:
   m_GameObject: {fileID: 1427082798028268}
   m_Enabled: 1
   m_Weight: 1
-  m_TranslationAtRest: {x: -1.537, y: 3.63, z: -0.578}
-  m_RotationAtRest: {x: 0.00008583064, y: 0, z: 0}
+  m_TranslationAtRest: {x: -1.5, y: 3.599, z: -0.546}
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: -0.32789445, y: -0.063234806, z: 0.027887821}
+  - {x: 0, y: 0, z: 0}
   m_RotationOffsets:
-  - {x: -79.0969, y: -90.65069, z: -177.55093}
+  - {x: 0, y: 0, z: 0}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1

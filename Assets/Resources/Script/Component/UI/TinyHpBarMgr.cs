@@ -17,7 +17,7 @@ public class TinyHpBarMgr : MonoBehaviour
         //nameText.text = attributes.playerName;
         constraint.SetSource(0, new ConstraintSource()
         {
-            sourceTransform = attributes.nodHead,
+            sourceTransform = attributes.tinyHpBarNode,
             weight = 1
         }
 );

@@ -18,7 +18,7 @@ public class C_Attributes : MonoBehaviour {
     public int camp = 2;
     public bool isDead = false;
     [Header("[Node]")]
-    public Transform nodHead;
+    public Transform tinyHpBarNode;
     private void Start()
     {
         entity = GetComponent<GameObjectEntity>().Entity;

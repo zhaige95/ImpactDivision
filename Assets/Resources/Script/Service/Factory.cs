@@ -21,8 +21,6 @@ public class Factory
         avatarObj.GetComponentInChildren<Camera>().enabled = isLocal;
         // 设置射击时的射线判定需要碰撞的Layer
         _camera.shootLayerMask = 1 << 16 | 1 << 17 | 1 << 18 | 1 << 20 | 0 << (camp + 14);
-        // 设置当前对局中的本地玩家相机
-        Battle.cameraTrans = _camera.cameraObj;
         // 添加武器
         var weaponHandle = avatarObj.GetComponent<C_WeaponHandle>();
         weaponHandle.mainWeapon = main;
@@ -37,6 +35,8 @@ public class Factory
             avatarObj.AddComponent<C_Input>();
             // 添加声音监听组件
             _camera.cameraObj.gameObject.AddComponent<AudioListener>();
+            // 设置当前对局中的本地玩家相机
+            Battle.cameraTrans = _camera.cameraObj;
         }
         else
         {
