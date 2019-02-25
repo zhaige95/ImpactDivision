@@ -40,6 +40,11 @@ public class Fire : WeaponState
     public override bool Listener() {
         if (_weaponAttribute.ready)
         {
+            if (!_weaponAttribute.bore)
+            {
+                _velocity.Dreload = true;
+                return false;
+            }
             if ((int)triggerType == 1)
             {
                 if (_velocity.DfirePressed)
@@ -126,11 +131,6 @@ public class Fire : WeaponState
             }
 
         }
-        else
-        {
-            _velocity.Dreload = true;
-        }
-
         timer.Enter(_weaponAttribute.interval);
     }
 

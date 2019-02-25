@@ -10,8 +10,6 @@ public class RagdollMgr : MonoBehaviour {
     public SphereCollider sphereCollider;
 
     public RagdollUtility ragdollUtility;
-
-    bool dead = false;
 	
     public void SetRagdollActive(bool active)
     {
@@ -28,8 +26,8 @@ public class RagdollMgr : MonoBehaviour {
         {
             boxColliders[i].isTrigger = !active;
         }
+
         sphereCollider.isTrigger = !active;
     }
-
 
 }

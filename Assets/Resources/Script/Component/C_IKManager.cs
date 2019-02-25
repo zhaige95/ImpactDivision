@@ -50,7 +50,7 @@ public class C_IKManager : MonoBehaviour {
     {
         bipedIK.enabled = !active;
         aimIK.enabled = !active;
-        ragdollMgr.SetRagdollActive(active);
+        //ragdollMgr.SetRagdollActive(active);
 }
     
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1848103274}
-  m_IndirectSpecularColor: {r: 0.4463774, g: 0.49618924, b: 0.57469785, a: 1}
+  m_IndirectSpecularColor: {r: 0.44637764, g: 0.4961899, b: 0.5746987, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -748,9 +748,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 144508795273003472, guid: cfd392813f2f502468359043d7747bea,
+        type: 2}
+      propertyPath: m_LowTwistLimit.limit
+      value: -8.545161
+      objectReference: {fileID: 0}
+    - target: {fileID: 144508795273003472, guid: cfd392813f2f502468359043d7747bea,
+        type: 2}
+      propertyPath: m_HighTwistLimit.limit
+      value: 56.636086
+      objectReference: {fileID: 0}
+    - target: {fileID: 144382099937017102, guid: cfd392813f2f502468359043d7747bea,
+        type: 2}
+      propertyPath: m_LowTwistLimit.limit
+      value: -7.5986466
+      objectReference: {fileID: 0}
+    - target: {fileID: 144382099937017102, guid: cfd392813f2f502468359043d7747bea,
+        type: 2}
+      propertyPath: m_HighTwistLimit.limit
+      value: 77.820076
+      objectReference: {fileID: 0}
     - target: {fileID: 1202918126331540, guid: cfd392813f2f502468359043d7747bea, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfd392813f2f502468359043d7747bea, type: 2}
@@ -1355,10 +1375,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocal: 0
-  camp: 1
+  camp: 2
   avatar: {fileID: 1202918126331540, guid: cfd392813f2f502468359043d7747bea, type: 2}
   mainWeapon: {fileID: 0}
-  secondWeapon: {fileID: 0}
+  secondWeapon: {fileID: 11400000, guid: bdb2087dd9fe9334c88aa1f8fb3ae22d, type: 2}
 --- !u!23 &512679023
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3597,7 +3617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocal: 0
-  camp: 2
+  camp: 1
   avatar: {fileID: 1202918126331540, guid: cfd392813f2f502468359043d7747bea, type: 2}
   mainWeapon: {fileID: 11400000, guid: 31899dfbb81be7b45bf35c7c50aa2d49, type: 2}
   secondWeapon: {fileID: 0}
@@ -4827,7 +4847,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2039183317}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
