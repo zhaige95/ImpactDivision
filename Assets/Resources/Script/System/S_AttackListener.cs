@@ -10,7 +10,8 @@ public class S_AttackListener : ComponentSystem {
         public C_Attributes _Attributes;
         public C_Animator _Animator;
         public AudioSource _Audio;
-	}
+        //public C_IKManager IKManager;
+    }
 
 	protected override void OnUpdate()
 	{
@@ -22,9 +23,9 @@ public class S_AttackListener : ComponentSystem {
             var _velocity = e._Velocity;
             if (e._AttackListener.isActive)
             {
-                foreach (Attack data in _attackList)
+                foreach (Attack attack in _attackList)
                 {
-                    Attribute.Add(ref _attribute, "HP", data.demage, "-");
+                    Attribute.Add(ref _attribute, "HP", attack.demage, "-");
 
                     e._Animator.animator.SetTrigger("hit");
 
@@ -34,7 +35,7 @@ public class S_AttackListener : ComponentSystem {
                     }
                     else
                     {
-                        var source = data.source;
+                        var source = attack.source;
                         var sourceAudio = source.GetComponent<AudioSource>();
                         var sourceIsLocalPlayer = source.GetComponent<C_Velocity>().isLocalPlayer;
 
@@ -49,7 +50,15 @@ public class S_AttackListener : ComponentSystem {
                             }
                         }
                     }
-                    
+
+                    if (_attribute.HP <= 0)
+                    {
+                        //e.IKManager.SetDead(true);
+                        //attack.hitRigidbody.AddExplosionForce(10f, attack.hitPosition, 10f);
+                        //Debug.Log("add force");
+                        break;
+                    }
+
                 }
                 _attackList.Clear();
             }

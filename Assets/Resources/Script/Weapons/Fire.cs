@@ -82,19 +82,21 @@ public class Fire : WeaponState
             // 后坐力
             if (_velocity.aiming)
             {
+                var hitPos = _camera.GetAimPoint();
                 Effect.AddBullet(
                     bullet, new Attack()
                     {
                         source = _velocity.gameObject,
                         sourceDriection = _weaponHandle.shootPoint.position,
                         demage = _weaponAttribute.demage,
+                        hitPosition = hitPos,
                     },
                     _weaponHandle.shootPoint.position,
-                    _camera.GetAimPoint(),
+                    hitPos,
                     _attributes.camp
                  );
                 _camera.forceX = _weaponAttribute.recoilX * 0.1f;
-                _camera.forceY = Random.Range(-_weaponAttribute.recoilY * 0.1f, _weaponAttribute.recoilY * 0.1f);
+                _camera.forceY = Random.Range(_weaponAttribute.recoilY * -0.1f, _weaponAttribute.recoilY * 0.1f);
 
             }
             else

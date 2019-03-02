@@ -68,16 +68,22 @@ public class C_WeaponHandle : MonoBehaviour
 
     public void Reset()
     {
-        var att = weaponAttributes[currentWeapon];
-        var stateName = att.runningState;
-        att.states[stateName].Exit();
-        att.states[stateName]._active = false;
-        att.states[stateName]._enterTick = false;
-        att.states[stateName]._exitTick = false;
+        if (weaponAttributes.ContainsKey(currentWeapon))
+        {
+            var att = weaponAttributes[currentWeapon];
+            var stateName = att.runningState;
+            att.states[stateName].Exit();
+            att.states[stateName]._active = false;
+            att.states[stateName]._enterTick = false;
+            att.states[stateName]._exitTick = false;
+        }
         foreach (var weapon in weaponAttributes.Values)
         {
             weapon.runtimeMag = weapon.mag;
         }
+
+        locked = false;
+
     }
 
 }

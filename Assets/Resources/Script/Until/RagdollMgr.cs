@@ -18,16 +18,16 @@ public class RagdollMgr : MonoBehaviour {
             rigidbodys[i].useGravity = active;
             rigidbodys[i].isKinematic = !active;
         }
-        for (int i = 0; i < capsuleColliders.Length; i++)
-        {
-            capsuleColliders[i].isTrigger = !active;
-        }
-        for (int i = 0; i < boxColliders.Length; i++)
-        {
-            boxColliders[i].isTrigger = !active;
-        }
+        //for (int i = 0; i < capsuleColliders.Length; i++)
+        //{
+        //    capsuleColliders[i].isTrigger = !active;
+        //}
+        //for (int i = 0; i < boxColliders.Length; i++)
+        //{
+        //    boxColliders[i].isTrigger = !active;
+        //}
 
-        sphereCollider.isTrigger = !active;
+        //sphereCollider.isTrigger = !active;
     }
-
+    
 }
