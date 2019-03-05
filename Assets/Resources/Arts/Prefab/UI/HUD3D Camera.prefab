@@ -37,7 +37,6 @@ GameObject:
   - component: {fileID: 222250120184077104}
   - component: {fileID: 114805628779104922}
   - component: {fileID: 114273650503840304}
-  - component: {fileID: 114989180768415066}
   m_Layer: 5
   m_Name: Ammo
   m_TagString: Untagged
@@ -207,7 +206,6 @@ GameObject:
   - component: {fileID: 222150348100934190}
   - component: {fileID: 114237965708678992}
   - component: {fileID: 114711632106572492}
-  - component: {fileID: 114031414877905298}
   m_Layer: 5
   m_Name: Mag
   m_TagString: Untagged
@@ -446,7 +444,6 @@ GameObject:
   - component: {fileID: 222054947295540358}
   - component: {fileID: 114604903787781022}
   - component: {fileID: 114730214913404932}
-  - component: {fileID: 114600161920268636}
   m_Layer: 5
   m_Name: Hp Bar
   m_TagString: Untagged
@@ -490,8 +487,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1789929451140224}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9550815, y: 1.5020962, z: -4.7855825}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -18.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224433947435408196}
@@ -564,21 +561,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &114031414877905298
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1515567197450716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c74173a1eb398dd40b65a5a0d62f713e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dataType: 1
-  stringData: {fileID: 11400000, guid: e50029934c15bb3409035dd0b498df46, type: 2}
-  floatData: {fileID: 0}
-  text: {fileID: 0}
 --- !u!114 &114095617398068404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -872,21 +854,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &114600161920268636
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1941446216951166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e133c7438db4c844688461e691862a94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dataType: 2
-  stringData: {fileID: 0}
-  floatData: {fileID: 11400000, guid: f50be9f3b3dfa2b40b5d786c464411e9, type: 2}
-  image: {fileID: 0}
 --- !u!114 &114603833535302386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1261,21 +1228,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &114989180768415066
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1087118801408336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c74173a1eb398dd40b65a5a0d62f713e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dataType: 1
-  stringData: {fileID: 11400000, guid: 1beccc6abaac01c4ca205d2c6d5e9744, type: 2}
-  floatData: {fileID: 0}
-  text: {fileID: 0}
 --- !u!222 &222029058399794344
 CanvasRenderer:
   m_ObjectHideFlags: 1

@@ -1,17 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Animations;
+using UiEvent;
 
 public class Pick : WeaponState
 {
+    [Header("[Components]")]
+    public AudioSource _audio;
+    public C_UiEventMgr _uiMgr;
+    public C_Velocity _velocity;
+    public C_Animator _animator;
+    public C_IKManager _iKManager;
+    public C_WeaponHandle _weaponHandle;
+    public WeaponAttribute _weaponAttribute;
     [Header("[Extra Properties]")]
     public bool _isPicked = false;
-    public C_Animator _animator;
-    public C_Velocity _velocity;
-    public C_WeaponHandle _weaponHandle;
-    public C_IKManager _iKManager;
-    public AudioSource _audio;
-    public WeaponAttribute _weaponAttribute;
     public AudioClip[] sounds;
     public float pickTime;
     public float endTime;
@@ -29,6 +32,8 @@ public class Pick : WeaponState
         _iKManager = obj.GetComponent<C_IKManager>();
         _audio = obj.GetComponent<AudioSource>();
         _weaponAttribute = GetComponent<WeaponAttribute>();
+        _uiMgr = obj.GetComponent<C_UiEventMgr>();
+
         pickTimer = new Timer();
         endTimer = new Timer();
     }
@@ -116,6 +121,13 @@ public class Pick : WeaponState
     }
     public override void Exit() {
         _isPicked = _weaponAttribute.active;
+
+        var ammoMsg = new UiEvent.UiMsgs.Ammo()
+        {
+            ammo = _weaponAttribute.runtimeMag + (_weaponAttribute.bore ? 1f : 0f),
+            mag = _weaponAttribute.mag
+        };
+        _uiMgr.SendEvent(ammoMsg);
     }
 }
  

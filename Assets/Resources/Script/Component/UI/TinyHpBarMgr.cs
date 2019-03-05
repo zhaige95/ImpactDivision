@@ -16,11 +16,11 @@ public class TinyHpBarMgr : MonoBehaviour
         hpBar.fillAmount = attributes.HPMax / attributes.HP;
         //nameText.text = attributes.playerName;
         constraint.SetSource(0, new ConstraintSource()
-        {
-            sourceTransform = attributes.tinyHpBarNode,
-            weight = 1
-        }
-);
+            {
+                sourceTransform = attributes.tinyHpBarNode,
+                weight = 1
+            }
+        );
     }
 
 }

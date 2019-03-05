@@ -6,7 +6,7 @@ using UnityEngine.Animations;
 
 public class Factory
 {
-    public static void CreateAvatar(GameObject avatar, int camp, bool isLocal, Vector3 position, Quaternion rotation, ConfigWeapon main, ConfigWeapon second)
+    public static GameObject CreateAvatar(GameObject avatar, int camp, bool isLocal, Vector3 position, Quaternion rotation, ConfigWeapon main, ConfigWeapon second)
     {
         var avatarObj = GameObject.Instantiate(avatar);
         //Object.Destroy(avatarObj.GetComponent<C_UIData>(), 0);
@@ -30,20 +30,20 @@ public class Factory
         if (isLocal)
         {
             // 添加主UI显示的数据关联组件
-            avatarObj.AddComponent<C_UIData>();
+            //avatarObj.AddComponent<C_UIData>();
             // 输入检测组件
             avatarObj.AddComponent<C_Input>();
             // 添加声音监听组件
             _camera.cameraObj.gameObject.AddComponent<AudioListener>();
             // 设置当前对局中的本地玩家相机
-            Battle.cameraTrans = _camera.cameraObj;
+            Battle.localPlayerCameraTrans = _camera.cameraObj;
         }
         else
         {
             // 添加头顶血条
-            var tinyHpBar = GameObject.Instantiate(Resources.Load("Arts/Prefab/UI/TinyHpBarCanvas")) as GameObject;
-            tinyHpBar.GetComponent<TinyHpBarMgr>().Init(attributes);
-            tinyHpBar.GetComponent<GameObjectEntity>().enabled = true;
+            //var tinyHpBar = GameObject.Instantiate(Resources.Load("Arts/Prefab/UI/TinyHpBarCanvas")) as GameObject;
+            //tinyHpBar.GetComponent<TinyHpBarMgr>().Init(attributes);
+            //tinyHpBar.GetComponent<GameObjectEntity>().enabled = true;
         }
 
         Aspect.SetCamp(avatarObj, camp);
@@ -52,6 +52,7 @@ public class Factory
         avatarObj.transform.rotation = rotation;
         avatarObj.GetComponent<GameObjectEntity>().enabled = true;
 
+        return avatarObj;
     }
 
 

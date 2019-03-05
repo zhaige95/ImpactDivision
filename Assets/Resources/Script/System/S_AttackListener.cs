@@ -2,6 +2,7 @@
 using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UiEvent;
 
 public class S_AttackListener : ComponentSystem {
 	struct Group{
@@ -10,7 +11,7 @@ public class S_AttackListener : ComponentSystem {
         public C_Attributes _Attributes;
         public C_Animator _Animator;
         public AudioSource _Audio;
-        //public C_IKManager IKManager;
+        public C_UiEventMgr _uiMgr;
     }
 
 	protected override void OnUpdate()
@@ -27,6 +28,12 @@ public class S_AttackListener : ComponentSystem {
                 {
                     Attribute.Add(ref _attribute, "HP", attack.demage, "-");
 
+                    var uiMsg = new UiEvent.UiMsgs.Hp()
+                    {
+                        hp = _attribute.HP,
+                        hpMax = _attribute.HPMax
+                    };
+                    e._uiMgr.SendEvent(uiMsg);
                     e._Animator.animator.SetTrigger("hit");
 
                     if (_velocity.isLocalPlayer)
@@ -50,15 +57,7 @@ public class S_AttackListener : ComponentSystem {
                             }
                         }
                     }
-
-                    if (_attribute.HP <= 0)
-                    {
-                        //e.IKManager.SetDead(true);
-                        //attack.hitRigidbody.AddExplosionForce(10f, attack.hitPosition, 10f);
-                        //Debug.Log("add force");
-                        break;
-                    }
-
+                    
                 }
                 _attackList.Clear();
             }

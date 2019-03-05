@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Animations;
+using UiEvent;
 
 public class NV4_Reload : WeaponState
 {
@@ -9,6 +10,7 @@ public class NV4_Reload : WeaponState
     public C_Velocity _velocity;
     public C_IKManager _iKManager;
     public C_WeaponHandle _weaponHandle;
+    public C_UiEventMgr _uiMgr;
 
     public CS_StateMgr _stateMgr;
 
@@ -27,6 +29,7 @@ public class NV4_Reload : WeaponState
     public override void Init(GameObject obj)
     {
         _animator = obj.GetComponent<C_Animator>();
+        _uiMgr = obj.GetComponent<C_UiEventMgr>();
         _velocity = obj.GetComponent<C_Velocity>();
         _iKManager = obj.GetComponent<C_IKManager>();
         _weaponHandle = obj.GetComponent<C_WeaponHandle>();
@@ -104,6 +107,14 @@ public class NV4_Reload : WeaponState
                         _weaponAttribute.runtimeMag = _weaponAttribute.mag - 1;
                         _weaponAttribute.bore = true;
                     }
+
+                    var ammoMsg = new UiEvent.UiMsgs.Ammo()
+                    {
+                        ammo = _weaponAttribute.runtimeMag + (_weaponAttribute.bore ? 1f : 0f),
+                        mag = _weaponAttribute.mag
+                    };
+                    _uiMgr.SendEvent(ammoMsg);
+
                     this._exitTick = true;
                     process = 6;
                 }

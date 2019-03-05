@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 136979304510384284}
   m_Layer: 16
   m_Name: Bip001 L UpperArm
-  m_TagString: Avatar
+  m_TagString: hit_Limbs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -540,6 +540,7 @@ GameObject:
   - component: {fileID: 114890933542227030}
   - component: {fileID: 114107226775275722}
   - component: {fileID: 114653119603171552}
+  - component: {fileID: 114466272625394202}
   m_Layer: 13
   m_Name: TestController
   m_TagString: Avatar
@@ -1006,7 +1007,7 @@ GameObject:
   - component: {fileID: 136684028136780120}
   m_Layer: 16
   m_Name: Bip001 R UpperArm
-  m_TagString: Avatar
+  m_TagString: hit_Limbs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1019,7 +1020,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4579135013018862}
-  - component: {fileID: 114140969766058168}
+  - component: {fileID: 114612244031257878}
   - component: {fileID: 54076030704140356}
   - component: {fileID: 144927939556325698}
   - component: {fileID: 65037210786100854}
@@ -1325,7 +1326,7 @@ GameObject:
   - component: {fileID: 136372427444643862}
   m_Layer: 16
   m_Name: Bip001 R Forearm
-  m_TagString: Avatar
+  m_TagString: hit_Limbs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1777,7 +1778,7 @@ GameObject:
   - component: {fileID: 136330552278418136}
   m_Layer: 16
   m_Name: Bip001 L Forearm
-  m_TagString: Avatar
+  m_TagString: hit_Limbs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4457,7 +4458,7 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
 --- !u!114 &114035120906671736
@@ -4483,7 +4484,7 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
 --- !u!114 &114050101845016498
@@ -4923,18 +4924,6 @@ MonoBehaviour:
   force: 5
   process: 1
   sounds: []
---- !u!114 &114140969766058168
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1549145173581504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cef24313ed19f94ea777617f300ee06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 0.14
 --- !u!114 &114170611279353884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4958,7 +4947,7 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
 --- !u!114 &114180788146672100
@@ -4984,7 +4973,7 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
 --- !u!114 &114180981600476940
@@ -5068,7 +5057,7 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
 --- !u!114 &114402915940083968
@@ -5124,7 +5113,7 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
 --- !u!114 &114446922760761614
@@ -5150,9 +5139,20 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
+--- !u!114 &114466272625394202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1202918126331540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e5eb4377a53223408e30c23e4083c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114470578987393844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5255,7 +5255,7 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
 --- !u!114 &114529765652864144
@@ -5292,7 +5292,7 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
 --- !u!114 &114548639222391160
@@ -5384,9 +5384,21 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
+--- !u!114 &114612244031257878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549145173581504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cef24313ed19f94ea777617f300ee06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0.15
 --- !u!114 &114613692276323112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5452,7 +5464,7 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
 --- !u!114 &114653119603171552
@@ -5645,7 +5657,7 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
 --- !u!114 &114761686747328708
@@ -5692,7 +5704,7 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
 --- !u!114 &114849197022525046
@@ -5742,7 +5754,7 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
 --- !u!114 &114890933542227030
@@ -5794,7 +5806,7 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
 --- !u!114 &114902312755758310
@@ -5896,7 +5908,7 @@ MonoBehaviour:
   - {fileID: 114861609979398830}
   - {fileID: 114290298301109568}
   - {fileID: 114072040188647606}
-  - {fileID: 114140969766058168}
+  - {fileID: 114612244031257878}
   debug: 1
   threshold: 0.01
 --- !u!114 &114999651237443778

@@ -108,8 +108,7 @@ namespace UnityChan
 					currTipPos = colliders [i].transform.position + (normal * (radius + colliders [i].radius));
 					currTipPos = ((currTipPos - trs.position).normalized * springLength) + trs.position;
 				}
-
-
+                
 			}
 
 			prevTipPos = temp;

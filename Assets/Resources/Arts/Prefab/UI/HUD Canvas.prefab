@@ -194,7 +194,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224364123107836944}
-  - component: {fileID: 114960424046931334}
   m_Layer: 5
   m_Name: Cross Draw
   m_TagString: Untagged
@@ -490,8 +489,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7784\u51C6\uFF1A\u9F20\u6807\u53F3\u952E\n\u5176\u4ED6: \u53C2\u8003CF\n\u4E3B\u6B66\u5668\uFF1A\u6570\u5B57\u952E
-    1\n\u526F\u6B66\u5668\uFF1A\u6570\u5B57\u952E2\n\u5F39\u9053\u6709\u8170\u5C04\uFF0C\u7784\u51C6\u5C04\u51FB\uFF0C\u8E72\u4E0B\u65F6\u8170\u5C04\u6269\u6563\u5C0F"
+  m_Text: "\u7784\u51C6\uFF1A\u9F20\u6807\u53F3\u952E\n\u5207\u6362\u6B66\u5668\uFF1AQ\n\u5176\u4ED6:
+    \u53C2\u8003CF\n\u7A7A\u4E2D\u518D\u6B21\u6309\u4E0B\u7A7A\u683C\u53EF\u4EE5\u4E8C\u6BB5\u8DF3"
 --- !u!114 &114467752451379900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -759,22 +758,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.21568628}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
---- !u!114 &114960424046931334
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1619530840953238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 879c23c765f5d204e9caaf97d66fc8b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crossIdle: {fileID: 1979385024733948}
-  crossRun: {fileID: 1374832051374398}
-  crossAim: {fileID: 1678550539585748}
-  crossType: {fileID: 11400000, guid: 401271d81e2a1ab418c4e0daf505badf, type: 2}
-  lastType: 0
 --- !u!114 &114994221471410474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1163,7 +1146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 295.14844, y: -108.350006}
+  m_AnchoredPosition: {x: 295.14844, y: -108.3501}
   m_SizeDelta: {x: 590.30005, y: 216.70001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224926619179227172

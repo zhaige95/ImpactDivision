@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.Animations;
 using Data;
+using UiEvent;
 
 public class Fire : WeaponState
 {
@@ -9,6 +10,7 @@ public class Fire : WeaponState
     public C_Camera _camera;
     public C_Velocity _velocity;
     public C_IKManager _iKManager;
+    public C_UiEventMgr _uiMgr;
     public C_Attributes _attributes;
     public C_WeaponHandle _weaponHandle;
     public WeaponAttribute _weaponAttribute;
@@ -24,6 +26,7 @@ public class Fire : WeaponState
 
     public override void Init(GameObject obj)
     {
+        _uiMgr = obj.GetComponent<C_UiEventMgr>();
         _camera = obj.GetComponent<C_Camera>();
         _velocity = obj.GetComponent<C_Velocity>();
         _iKManager = obj.GetComponent<C_IKManager>();
@@ -134,6 +137,12 @@ public class Fire : WeaponState
 
         }
         timer.Enter(_weaponAttribute.interval);
+        var ammoMsg = new UiEvent.UiMsgs.Ammo()
+        {
+            ammo = _weaponAttribute.runtimeMag,
+            mag = _weaponAttribute.mag
+        };
+        _uiMgr.SendEvent(ammoMsg);
     }
 
     public override void OnUpdate()
