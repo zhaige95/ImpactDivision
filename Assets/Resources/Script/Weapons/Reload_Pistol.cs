@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Animations;
+using UiEvent;
 
 public class Reload_Pistol : WeaponState
 {
@@ -10,6 +11,7 @@ public class Reload_Pistol : WeaponState
     public C_IKManager _iKManager;
     public CS_StateMgr _stateMgr;
     public C_WeaponHandle _weaponHandle;
+    public C_UiEventMgr _uiMgr;
 
     public AudioSource _audioSource;
     public WeaponAttribute _weaponAttribute;
@@ -26,6 +28,7 @@ public class Reload_Pistol : WeaponState
         _iKManager = obj.GetComponent<C_IKManager>();
         _stateMgr = obj.GetComponent<CS_StateMgr>();
         _weaponHandle = obj.GetComponent<C_WeaponHandle>();
+        _uiMgr = obj.GetComponent<C_UiEventMgr>();
 
         _audioSource = GetComponent<AudioSource>();
         _weaponAttribute = GetComponent<WeaponAttribute>();
@@ -80,6 +83,14 @@ public class Reload_Pistol : WeaponState
                     _weaponAttribute.runtimeMag = _weaponAttribute.mag - 1;
                     _weaponAttribute.bore = true;
                 }
+
+                var ammoMsg = new UiEvent.UiMsgs.Ammo()
+                {
+                    ammo = _weaponAttribute.runtimeMag + (_weaponAttribute.bore ? 1f : 0f),
+                    mag = _weaponAttribute.mag
+                };
+                _uiMgr.SendEvent(ammoMsg);
+
                 this._exitTick = true;
             }
         }

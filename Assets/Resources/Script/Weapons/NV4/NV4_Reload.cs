@@ -33,12 +33,11 @@ public class NV4_Reload : WeaponState
         _velocity = obj.GetComponent<C_Velocity>();
         _iKManager = obj.GetComponent<C_IKManager>();
         _weaponHandle = obj.GetComponent<C_WeaponHandle>();
-
         _stateMgr = obj.GetComponent<CS_StateMgr>();
 
+        _ownAnimator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
         _weaponAttribute = GetComponent<WeaponAttribute>();
-        _ownAnimator = GetComponent<Animator>();
 
         timer = new Timer();
     }

@@ -28,12 +28,13 @@ public class S_AttackListener : ComponentSystem {
                 {
                     Attribute.Add(ref _attribute, "HP", attack.demage, "-");
 
-                    var uiMsg = new UiEvent.UiMsgs.Hp()
+                    var hpMsg = new UiEvent.UiMsgs.Hp()
                     {
                         hp = _attribute.HP,
                         hpMax = _attribute.HPMax
                     };
-                    e._uiMgr.SendEvent(uiMsg);
+                    e._uiMgr.SendEvent(hpMsg);
+                
                     e._Animator.animator.SetTrigger("hit");
 
                     if (_velocity.isLocalPlayer)
@@ -46,8 +47,12 @@ public class S_AttackListener : ComponentSystem {
                         var sourceAudio = source.GetComponent<AudioSource>();
                         var sourceIsLocalPlayer = source.GetComponent<C_Velocity>().isLocalPlayer;
 
+                        
                         if (sourceIsLocalPlayer)
                         {
+                            var hitMsg = new UiEvent.UiMsgs.Hit();
+                            source.GetComponent<C_UiEventMgr>().SendEvent(hitMsg);
+
                             Sound.PlayOneShot(sourceAudio, _attackListener.hitFeedBackSounds);
 
                             if (_attribute.HP <= 0)

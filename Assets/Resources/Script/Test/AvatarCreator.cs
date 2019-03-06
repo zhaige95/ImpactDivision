@@ -11,8 +11,8 @@ public class AvatarCreator : MonoBehaviour {
     public ConfigWeapon secondWeapon;
 
 
-    void Awake() {
-        Factory.CreateAvatar(avatar, camp, isLocal, transform.position, transform.rotation, mainWeapon, secondWeapon);
+    public GameObject Create() {
+        return Factory.CreateAvatar(avatar, camp, isLocal, transform.position, transform.rotation, mainWeapon, secondWeapon);
 	}
 	
 }

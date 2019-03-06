@@ -38,13 +38,6 @@ public class Factory
             // 设置当前对局中的本地玩家相机
             Battle.localPlayerCameraTrans = _camera.cameraObj;
         }
-        else
-        {
-            // 添加头顶血条
-            //var tinyHpBar = GameObject.Instantiate(Resources.Load("Arts/Prefab/UI/TinyHpBarCanvas")) as GameObject;
-            //tinyHpBar.GetComponent<TinyHpBarMgr>().Init(attributes);
-            //tinyHpBar.GetComponent<GameObjectEntity>().enabled = true;
-        }
 
         Aspect.SetCamp(avatarObj, camp);
 

@@ -13,10 +13,7 @@ public class S_TinyHpBarMgr : ComponentSystem {
 	{
 		foreach (var e in GetEntities<Group>())
 		{
-            //var att = e.barMgr._attributes;
-            //e.barMgr.hpBar.fillAmount = att.HP / att.HPMax;
-            //e.transform.rotation = Battle.localPlayerCameraTrans.rotation;
-
+            e.transform.rotation = Battle.localPlayerCameraTrans.rotation;
         }
     }
 	

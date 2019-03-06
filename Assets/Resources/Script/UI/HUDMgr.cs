@@ -14,7 +14,6 @@ public class HUDMgr : MonoBehaviour
     {
         eventMgr.BindEvent(typeof(UiMsgs.Hp), RefreshHp);
         eventMgr.BindEvent(typeof(UiMsgs.Ammo), RefreshAmmo);
-        Debug.Log("bind event");
     }
 
     public void RefreshHp(UiMsg msg)

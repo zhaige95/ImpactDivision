@@ -2,25 +2,31 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.Animations;
+using UiEvent;
+using UiMsgs = UiEvent.UiMsgs;
 
 public class TinyHpBarMgr : MonoBehaviour
 {
-    public C_Attributes _attributes;
     public Image hpBar;
     public Text nameText;
     public ParentConstraint constraint;
 
-    public void Init(C_Attributes attributes)
+    public void Init(C_Attributes attributes, C_UiEventMgr eventMgr)
     {
-        _attributes = attributes;
-        hpBar.fillAmount = attributes.HPMax / attributes.HP;
-        //nameText.text = attributes.playerName;
         constraint.SetSource(0, new ConstraintSource()
             {
                 sourceTransform = attributes.tinyHpBarNode,
                 weight = 1
             }
         );
+        
+        eventMgr.BindEvent(typeof(UiMsgs.Hp), RefreshHp);
+    }
+
+    public void RefreshHp(UiMsg msg)
+    {
+        var hpMsg = msg as UiMsgs.Hp;
+        hpBar.fillAmount = hpMsg.hp / hpMsg.hpMax;
     }
 
 }

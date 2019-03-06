@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224277677579227134}
   - component: {fileID: 222696579316175826}
   - component: {fileID: 114898818248071494}
-  m_Layer: 13
+  m_Layer: 5
   m_Name: Player Name Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 224118734431242516}
   - component: {fileID: 222332254839475752}
   - component: {fileID: 114383194118538494}
-  m_Layer: 13
+  m_Layer: 5
   m_Name: Hp Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,10 +56,10 @@ GameObject:
   - component: {fileID: 223480364175896414}
   - component: {fileID: 114741994733831644}
   - component: {fileID: 114209646823028456}
-  - component: {fileID: 114322474351916720}
+  - component: {fileID: 114366351477255326}
   - component: {fileID: 7973541675035773222}
   - component: {fileID: 114094789947159476}
-  m_Layer: 13
+  m_Layer: 5
   m_Name: TinyHpBarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 222690354443304382}
   - component: {fileID: 114956951354594038}
   - component: {fileID: 114958912553248308}
-  m_Layer: 13
+  m_Layer: 5
   m_Name: Player Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 224159766645677248}
   - component: {fileID: 222517322625823590}
   - component: {fileID: 114625788736094450}
-  m_Layer: 13
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b53888474a50541aa563e5b0f3b984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attributes: {fileID: 0}
   hpBar: {fileID: 114625788736094450}
   nameText: {fileID: 114956951354594038}
   constraint: {fileID: 7973541675035773222}
@@ -132,7 +131,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114322474351916720
+--- !u!114 &114366351477255326
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

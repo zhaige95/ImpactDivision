@@ -18,6 +18,6 @@ namespace UiEvent
             public float ammo;
             public float mag;
         }
-
+        public class Hit : UiMsg { }
     }
 }
