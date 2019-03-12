@@ -19,6 +19,7 @@ public class C_Attributes : MonoBehaviour {
     public bool isDead = false;
     [Header("[Node]")]
     public Transform tinyHpBarNode;
+    public Transform friendMark;
     //private void Start()
     //{
     //    entity = GetComponent<GameObjectEntity>().Entity;

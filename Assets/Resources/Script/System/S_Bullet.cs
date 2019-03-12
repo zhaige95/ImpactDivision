@@ -36,7 +36,7 @@ public class S_Bullet : ComponentSystem {
                             attack.demage = _bullet.attack.demage * AvatarTagsData.demageRate[hitTag];
                             
                             // Set hit rigibody
-                            attack.hitRigidbody = hitInfo.rigidbody;
+                            //attack.hitRigidbody = hitInfo.rigidbody;
 
                             // Add blood effect
                             Effect.AddEffect(_attackListener.hitEffect, hitInfo);

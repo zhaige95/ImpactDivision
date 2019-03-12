@@ -6,8 +6,10 @@ using UiMsgs = UiEvent.UiMsgs;
 public class PlaneHUDMgr : MonoBehaviour
 {
     public Animator animator;
+    public Transform tinyHpBarGroup;
     public void Init(C_UiEventMgr eventMgr)
     {
+
         eventMgr.BindEvent(typeof(UiMsgs.Hit), Hit);
     }
 

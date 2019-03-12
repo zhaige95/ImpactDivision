@@ -1461,13 +1461,14 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  _isPicked: 0
-  _animator: {fileID: 0}
-  _velocity: {fileID: 0}
-  _weaponHandle: {fileID: 0}
-  _iKManager: {fileID: 0}
   _audio: {fileID: 0}
+  _uiMgr: {fileID: 0}
+  _velocity: {fileID: 0}
+  _animator: {fileID: 0}
+  _iKManager: {fileID: 0}
+  _weaponHandle: {fileID: 0}
   _weaponAttribute: {fileID: 0}
+  _isPicked: 0
   sounds:
   - {fileID: 8300000, guid: f22f751eb06ea7a45bf4bef7d6fb3415, type: 3}
   - {fileID: 8300000, guid: 104871523c983084f85f150c58e1553f, type: 3}
@@ -1500,6 +1501,7 @@ MonoBehaviour:
   _velocity: {fileID: 0}
   _iKManager: {fileID: 0}
   _weaponHandle: {fileID: 0}
+  _uiMgr: {fileID: 0}
   _stateMgr: {fileID: 0}
   _audioSource: {fileID: 0}
   _weaponAttribute: {fileID: 0}
@@ -1579,7 +1581,7 @@ MonoBehaviour:
   runtimeMag: 30
   bore: 0
   fireSpeed: 1000
-  demage: 1
+  demage: 22
   reloadTime: 1.3
   interval: 0
   spread: 10
@@ -1616,6 +1618,7 @@ MonoBehaviour:
   _camera: {fileID: 0}
   _velocity: {fileID: 0}
   _iKManager: {fileID: 0}
+  _uiMgr: {fileID: 0}
   _attributes: {fileID: 0}
   _weaponHandle: {fileID: 0}
   _weaponAttribute: {fileID: 0}

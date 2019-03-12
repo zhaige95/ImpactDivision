@@ -12,8 +12,36 @@ MonoBehaviour:
   m_Name: Main Camera Profile
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 114304521129920058}
---- !u!114 &114304521129920058
+  - {fileID: 114842559663001182}
+  - {fileID: 114743172836585560}
+--- !u!114 &114743172836585560
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    overrideState: 1
+    value: 1
+  focusDistance:
+    overrideState: 1
+    value: 0.1
+  aperture:
+    overrideState: 1
+    value: 0.1
+  focalLength:
+    overrideState: 1
+    value: 62
+  kernelSize:
+    overrideState: 1
+    value: 2
+--- !u!114 &114842559663001182
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30,25 +58,25 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 17.03
+    value: 0
   threshold:
     overrideState: 1
-    value: 0.84
+    value: 1
   softKnee:
     overrideState: 1
-    value: 0.614
+    value: 0.5
   clamp:
     overrideState: 1
     value: 65472
   diffusion:
     overrideState: 1
-    value: 7.31
+    value: 7
   anamorphicRatio:
     overrideState: 1
-    value: 0.6
+    value: 0
   color:
     overrideState: 1
-    value: {r: 0.45490196, g: 0.45490196, b: 0.45490196, a: 1}
+    value: {r: 1, g: 1, b: 1, a: 1}
   fastMode:
     overrideState: 0
     value: 0

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class C_Velocity : MonoBehaviour {
     public bool isActive = true;
-	public bool Dfwd = false;
-	public bool Dbwd = false;
-	public bool Dright = false;
-	public bool Dleft = false;
-	public bool Djump = false;
-	public float Dmouse_x = 0;
-	public float Dmouse_y = 0;
-	public bool Dflash = false;
+    public bool Dfwd = false;
+    public bool Dbwd = false;
+    public bool Dright = false;
+    public bool Dleft = false;
+    public bool Djump = false;
+    public float Dmouse_x = 0;
+    public float Dmouse_y = 0;
+    public bool Dflash = false;
     public bool DfirePressed = false;
     public bool DfireHold = false;
     public bool Dreload = false;

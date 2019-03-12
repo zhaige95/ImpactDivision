@@ -13,7 +13,8 @@ public class S_TinyHpBarMgr : ComponentSystem {
 	{
 		foreach (var e in GetEntities<Group>())
 		{
-            e.transform.rotation = Battle.localPlayerCameraTrans.rotation;
+            //e.transform.rotation = Battle.localPlayerCameraTrans.rotation;
+            e.transform.position = Battle.localPlayerCamera.WorldToScreenPoint(e.barMgr.tinyHpBarNode.position);
         }
     }
 	

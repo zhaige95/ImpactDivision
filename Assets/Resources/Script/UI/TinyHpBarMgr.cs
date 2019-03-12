@@ -9,17 +9,15 @@ public class TinyHpBarMgr : MonoBehaviour
 {
     public Image hpBar;
     public Text nameText;
-    public ParentConstraint constraint;
+    public Transform tinyHpBarNode;
+    public Color friendColor;
+    public Color enemyColor;
 
     public void Init(C_Attributes attributes, C_UiEventMgr eventMgr)
     {
-        constraint.SetSource(0, new ConstraintSource()
-            {
-                sourceTransform = attributes.tinyHpBarNode,
-                weight = 1
-            }
-        );
+        nameText.color = (attributes.camp == Battle.localPlayerCamp) ? friendColor : enemyColor;
         
+        tinyHpBarNode = attributes.tinyHpBarNode;
         eventMgr.BindEvent(typeof(UiMsgs.Hp), RefreshHp);
     }
 

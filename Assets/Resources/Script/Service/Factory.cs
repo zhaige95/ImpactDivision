@@ -37,6 +37,8 @@ public class Factory
             _camera.cameraObj.gameObject.AddComponent<AudioListener>();
             // 设置当前对局中的本地玩家相机
             Battle.localPlayerCameraTrans = _camera.cameraObj;
+            Battle.localPlayerCamera = _camera.mainCamera;
+            Battle.localPlayerCamp = camp;
         }
 
         Aspect.SetCamp(avatarObj, camp);

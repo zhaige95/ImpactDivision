@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 
-[Serializable]
 public class C_Input : MonoBehaviour{
 
     public bool isActive = true;
