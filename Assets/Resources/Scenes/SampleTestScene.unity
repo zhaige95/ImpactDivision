@@ -720,7 +720,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1660643966}
     m_Modifications:
     - target: {fileID: 4457786583566796, guid: 71ccbd6153547ce4e9de4260a32e5152, type: 2}
       propertyPath: m_LocalPosition.x
@@ -752,7 +752,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4457786583566796, guid: 71ccbd6153547ce4e9de4260a32e5152, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1465372504531342, guid: 71ccbd6153547ce4e9de4260a32e5152, type: 2}
       propertyPath: m_IsActive
@@ -1621,7 +1621,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &606451872
 GameObject:
@@ -2504,6 +2504,36 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224608915004508138, guid: 25bcf9fa1828a6940be449b121aa1b9a,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 224608915004508138, guid: 25bcf9fa1828a6940be449b121aa1b9a,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 114788659416519216, guid: 25bcf9fa1828a6940be449b121aa1b9a,
+        type: 2}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: b1d7fee26e54cc3498f6267f072a45b9, type: 3}
+    - target: {fileID: 114994941790680198, guid: 25bcf9fa1828a6940be449b121aa1b9a,
+        type: 2}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: b1d7fee26e54cc3498f6267f072a45b9, type: 3}
+    - target: {fileID: 114386998705667538, guid: 25bcf9fa1828a6940be449b121aa1b9a,
+        type: 2}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: b1d7fee26e54cc3498f6267f072a45b9, type: 3}
+    - target: {fileID: 114051665238166406, guid: 25bcf9fa1828a6940be449b121aa1b9a,
+        type: 2}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: b1d7fee26e54cc3498f6267f072a45b9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25bcf9fa1828a6940be449b121aa1b9a, type: 2}
   m_IsPrefabAsset: 0
@@ -2713,7 +2743,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1025260689
 GameObject:
@@ -3141,7 +3171,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3493,6 +3523,11 @@ Transform:
   m_Father: {fileID: 1660643966}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 76.093, z: 0}
+--- !u!4 &1344365793 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4457786583566796, guid: 71ccbd6153547ce4e9de4260a32e5152,
+    type: 2}
+  m_PrefabInternal: {fileID: 249196717}
 --- !u!1 &1355290149
 GameObject:
   m_ObjectHideFlags: 0
@@ -4094,8 +4129,9 @@ Transform:
   - {fileID: 1788579547}
   - {fileID: 854631886}
   - {fileID: 512679025}
+  - {fileID: 1344365793}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1720789394
 GameObject:
@@ -4304,7 +4340,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4079884300590522, guid: cfd392813f2f502468359043d7747bea, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1852353679647694, guid: cfd392813f2f502468359043d7747bea, type: 2}
       propertyPath: m_Icon
@@ -4554,7 +4590,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1290241
+    m_Bits: 3387393
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}

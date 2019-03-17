@@ -1033,7 +1033,7 @@ ModelImporter:
     - name: Bip001 L Finger0
       parentName: Bip001 L Hand
       position: {x: -0.02825218, y: 0.014645233, z: -0.027448196}
-      rotation: {x: 0.6029676, y: -0.3434379, z: 0.15511426, w: 0.7031501}
+      rotation: {x: 0.21398172, y: -0.39923263, z: 0.09329809, w: 0.8866344}
       scale: {x: 0.99999917, y: 1.0000011, z: 1.0000025}
     - name: Bip001 L Finger01
       parentName: Bip001 L Finger0
@@ -1093,7 +1093,7 @@ ModelImporter:
     - name: Bip001 L Finger3
       parentName: Bip001 L Hand
       position: {x: -0.08335396, y: 0.0036241913, z: 0.0134859085}
-      rotation: {x: 0.004501937, y: 0.039930582, z: 0.024705553, w: 0.9988868}
+      rotation: {x: 0.0045019374, y: 0.039930582, z: 0.024705555, w: 0.9988868}
       scale: {x: 1.0000002, y: 1.0000011, z: 1.0000021}
     - name: Bip001 L Finger31
       parentName: Bip001 L Finger3
@@ -1179,7 +1179,7 @@ ModelImporter:
     - name: Bone007
       parentName: Bone006
       position: {x: -0.060448088, y: 0.00000025, z: 0}
-      rotation: {x: -0.0067393067, y: 0.13007891, z: 0.021111447, w: 0.99125594}
+      rotation: {x: -0.006739307, y: 0.13007891, z: 0.02111145, w: 0.99125594}
       scale: {x: 1.0000013, y: 1.0000006, z: 0.9999999}
     - name: Bone008
       parentName: Bone007
@@ -1259,7 +1259,7 @@ ModelImporter:
     - name: Bip001 R Finger0
       parentName: Bip001 R Hand
       position: {x: -0.028252257, y: 0.014645233, z: 0.027448215}
-      rotation: {x: -0.6029672, y: 0.34343925, z: 0.15511584, w: 0.7031495}
+      rotation: {x: -0.58892506, y: 0.3669974, z: 0.18277994, w: 0.69647086}
       scale: {x: 1.0000005, y: 1.0000005, z: 1.0000007}
     - name: Bip001 R Finger01
       parentName: Bip001 R Finger0
@@ -1499,7 +1499,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
