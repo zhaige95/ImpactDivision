@@ -7,10 +7,14 @@ using UnityEngine.UI;
 public class MatchMgr : MonoBehaviour {
     public Image frontRing;
     public GameObject backBtn;
+    public Text processRate;
     private AsyncOperation async = null;
+    private float progressValue;
+    private float lastTime;
     // Use this for initialization
-    void Start () {
+    private void OnEnable () {
         StartCoroutine(Load());
+        lastTime = Time.time;
     }
 
     IEnumerator Load()
@@ -18,25 +22,32 @@ public class MatchMgr : MonoBehaviour {
         async = SceneManager.LoadSceneAsync("SampleTestScene");
         async.allowSceneActivation = false;
 
-        while (!async.isDone && async.progress < 0.8f)
+        while (!async.isDone)
         {
-            yield return async;
+            if (async.progress < 0.9f)
+                progressValue = async.progress;
+            else
+                progressValue = 1.0f;
+
+            frontRing.fillAmount = progressValue;
+            processRate.text = (int)(progressValue * 100) + " %";
+
+            yield return null;
         }
     }
     
 	// Update is called once per frame
 	void Update () {
-
-        frontRing.fillAmount = async.progress;
+        
         if (async.progress >= 0.9)
         {
-            if (Input.anyKeyDown)
-                async.allowSceneActivation = true;
+            if (Time.time - lastTime >= 3f)
+            {
+                Debug.Log(Time.time - lastTime);
+                //async.allowSceneActivation = true;
+            }
         }
-
-
+        
     }
-
-
-
+    
 }
