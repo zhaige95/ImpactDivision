@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4022105809440286}
   - component: {fileID: 33768414200407860}
   - component: {fileID: 23559252215134822}
-  m_Layer: 12
+  m_Layer: 21
   m_Name: holdPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4111614868666754}
   - component: {fileID: 198482947586843046}
   - component: {fileID: 199901095051984450}
-  m_Layer: 12
+  m_Layer: 21
   m_Name: flarespikes_wide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4700809674931394}
   - component: {fileID: 199403877708541196}
   - component: {fileID: 198277985135669556}
-  m_Layer: 12
+  m_Layer: 21
   m_Name: Bullet_SilverFlare_Small_MuzzleFlare
   m_TagString: FX
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4318659974729810}
   - component: {fileID: 198522012037137032}
   - component: {fileID: 199290737399396808}
-  m_Layer: 12
+  m_Layer: 21
   m_Name: muzzleflare_Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4198249403142180}
   - component: {fileID: 7973541675918566740}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4442551596262034}
   - component: {fileID: 198634494828986916}
   - component: {fileID: 199167716205895978}
-  m_Layer: 12
+  m_Layer: 21
   m_Name: glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4332695148370640}
-  m_Layer: 12
+  m_Layer: 21
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 114714607737536574}
   - component: {fileID: 114725706586063820}
   - component: {fileID: 114899555629545950}
-  m_Layer: 12
+  m_Layer: 21
   m_Name: RailGunTest 1
   m_TagString: Pistol
   m_Icon: {fileID: 0}
@@ -460,13 +460,14 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  _isPicked: 0
-  _animator: {fileID: 0}
-  _velocity: {fileID: 0}
-  _weaponHandle: {fileID: 0}
-  _iKManager: {fileID: 0}
   _audio: {fileID: 0}
+  _uiMgr: {fileID: 0}
+  _velocity: {fileID: 0}
+  _animator: {fileID: 0}
+  _iKManager: {fileID: 0}
+  _weaponHandle: {fileID: 0}
   _weaponAttribute: {fileID: 0}
+  _isPicked: 0
   sounds:
   - {fileID: 8300000, guid: f22f751eb06ea7a45bf4bef7d6fb3415, type: 3}
   - {fileID: 8300000, guid: 104871523c983084f85f150c58e1553f, type: 3}
@@ -496,7 +497,7 @@ MonoBehaviour:
   defaultState: pick
   runningState: pick
   mag: 12
-  runtimeMag: 0
+  runtimeMag: 12
   bore: 0
   fireSpeed: 900
   demage: 32
@@ -506,6 +507,7 @@ MonoBehaviour:
   recoilX: 1
   recoilY: 1
   reload: 0
+  ready: 0
   holdOffset:
     _position: {x: -0.0915, y: 0.0348, z: 0.0096}
     _rotation: {x: -104.924, y: -75.43701, z: 80.45899}
@@ -558,7 +560,7 @@ MonoBehaviour:
   _weaponHandle: {fileID: 0}
   _camera: {fileID: 0}
   _weaponAttribute: {fileID: 0}
-  FOV: 35
+  FOV: 30
 --- !u!114 &114899555629545950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -581,6 +583,8 @@ MonoBehaviour:
   _velocity: {fileID: 0}
   _iKManager: {fileID: 0}
   _stateMgr: {fileID: 0}
+  _weaponHandle: {fileID: 0}
+  _uiMgr: {fileID: 0}
   _audioSource: {fileID: 0}
   _weaponAttribute: {fileID: 0}
   sound: {fileID: 8300000, guid: 8bc4bb67fd038634a9e68ea7a98bec08, type: 3}
@@ -607,6 +611,7 @@ MonoBehaviour:
   _camera: {fileID: 0}
   _velocity: {fileID: 0}
   _iKManager: {fileID: 0}
+  _uiMgr: {fileID: 0}
   _attributes: {fileID: 0}
   _weaponHandle: {fileID: 0}
   _weaponAttribute: {fileID: 0}

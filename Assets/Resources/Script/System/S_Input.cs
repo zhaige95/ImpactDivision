@@ -35,7 +35,8 @@ public class S_Input : ComponentSystem {
                 _velocity.DpickPistol = Input.GetKeyDown(_input.pickPistol);
                 _velocity.Dcombat = Input.GetKeyDown(_input.combat);
                 _velocity.Dcrouch = Input.GetKeyDown(_input.crouch);
-                
+                _velocity.DcutCameraSide = Input.GetKeyDown(_input.cutCameraSide);
+
                 if (Input.GetKeyDown(_input.run))
                 {
                     _velocity.Drun = !_velocity.Drun;

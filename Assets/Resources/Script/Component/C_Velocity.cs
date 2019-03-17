@@ -22,6 +22,7 @@ public class C_Velocity : MonoBehaviour {
     public bool DpickPistol = false;
     public bool Dcombat = false;
     public bool Drun = false;
+    public bool DcutCameraSide = false;
 
     [Header("-------------------------------------------")]
     public bool isLocalPlayer = false;
@@ -71,5 +72,6 @@ public class C_Velocity : MonoBehaviour {
 
         aiming = false;
         //armed = false;
+        DcutCameraSide = false;
     }
 }

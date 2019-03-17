@@ -21,6 +21,7 @@ public class C_Input : MonoBehaviour{
     public string pickPistol = "2";
     public string combat = "e";
     public string run = "left shift";
+    public string cutCameraSide = "tab";
 }
 
 

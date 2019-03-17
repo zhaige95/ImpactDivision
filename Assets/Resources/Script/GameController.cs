@@ -25,25 +25,25 @@ public class GameController : MonoBehaviour {
         var uiEventMgr = avatarObj.GetComponent<C_UiEventMgr>();
         hudMgr.Init(uiEventMgr);
         planeHUDMgr.Init(uiEventMgr);
-        foreach (var item in creators)
-        {
-            var avatar = item.Create();
-            var _attr = avatar.GetComponent<C_Attributes>();
-            var _uiMgr = avatar.GetComponent<C_UiEventMgr>();
+        //foreach (var item in creators)
+        //{
+        //    var avatar = item.Create();
+        //    var _attr = avatar.GetComponent<C_Attributes>();
+        //    var _uiMgr = avatar.GetComponent<C_UiEventMgr>();
 
-            if (_attr.camp != Battle.localPlayerCamp)
-            {
-                _attr.friendMark.localScale = Vector3.zero;
-            }
+        //    if (_attr.camp != Battle.localPlayerCamp)
+        //    {
+        //        _attr.friendMark.localScale = Vector3.zero;
+        //    }
             
-            // 添加头顶血条
-            //var tinyHpBar = GameObject.Instantiate(Resources.Load("Arts/Prefab/UI/TinyHpBarItem")) as GameObject;
-            //tinyHpBar.GetComponent<TinyHpBarMgr>().Init(_attr, _uiMgr);
-            //tinyHpBar.transform.parent = planeHUDMgr.tinyHpBarGroup;
-            //tinyHpBar.GetComponent<GameObjectEntity>().enabled = true;
+        //    // 添加头顶血条
+        //    //var tinyHpBar = GameObject.Instantiate(Resources.Load("Arts/Prefab/UI/TinyHpBarItem")) as GameObject;
+        //    //tinyHpBar.GetComponent<TinyHpBarMgr>().Init(_attr, _uiMgr);
+        //    //tinyHpBar.transform.parent = planeHUDMgr.tinyHpBarGroup;
+        //    //tinyHpBar.GetComponent<GameObjectEntity>().enabled = true;
 
-            avatars.Add(avatar);
-        }
+        //    avatars.Add(avatar);
+        //}
 
     }
     

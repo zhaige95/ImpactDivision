@@ -80,7 +80,16 @@ public class S_Camera : ComponentSystem {
             }
 
             PhysicalProcess(e);
-            
+
+            if (_velocity.DcutCameraSide)
+            {
+                _camera.sideOffset *= -1f; 
+                _camera.targetSideOffset1 = new Vector3(_camera.camera_x.localPosition.x * -1f, _camera.camera_x.localPosition.y, _camera.camera_x.localPosition.z);
+                _camera.targetSideOffset2 = new Vector3(_camera.cameraHandle.localPosition.x * -1f, _camera.cameraHandle.localPosition.y, _camera.cameraHandle.localPosition.z);
+            }
+
+            _camera.camera_x.localPosition = Vector3.Lerp(_camera.camera_x.localPosition, _camera.targetSideOffset1, 0.2f);
+            _camera.cameraHandle.localPosition = Vector3.Lerp(_camera.cameraHandle.localPosition, _camera.targetSideOffset2, 0.2f);
         }
     }
 

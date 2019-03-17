@@ -139,7 +139,7 @@ public class Fire : WeaponState
         timer.Enter(_weaponAttribute.interval);
         var ammoMsg = new UiEvent.UiMsgs.Ammo()
         {
-            ammo = _weaponAttribute.runtimeMag,
+            ammo = _weaponAttribute.runtimeMag + (_weaponAttribute.bore ? 1 : 0),
             mag = _weaponAttribute.mag
         };
         _uiMgr.SendEvent(ammoMsg);

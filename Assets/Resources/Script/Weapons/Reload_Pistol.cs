@@ -86,7 +86,7 @@ public class Reload_Pistol : WeaponState
 
                 var ammoMsg = new UiEvent.UiMsgs.Ammo()
                 {
-                    ammo = _weaponAttribute.runtimeMag + (_weaponAttribute.bore ? 1f : 0f),
+                    ammo = _weaponAttribute.runtimeMag + (_weaponAttribute.bore ? 1 : 0),
                     mag = _weaponAttribute.mag
                 };
                 _uiMgr.SendEvent(ammoMsg);

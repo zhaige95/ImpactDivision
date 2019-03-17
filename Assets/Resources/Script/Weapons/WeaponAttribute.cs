@@ -13,8 +13,8 @@ public class WeaponAttribute : MonoBehaviour
     public MagType magType;
     public string defaultState;
     public string runningState = "";
-    public float mag;
-    public float runtimeMag;
+    public int mag;
+    public int runtimeMag;
     public bool bore = false; // 枪膛，上膛的子弹
     public float fireSpeed = 600f;
     public float demage = 32f;

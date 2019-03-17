@@ -26,6 +26,10 @@ public class C_Camera : MonoBehaviour {
     public float forceY = 0;
     public float backForce = 3;
     RaycastHit hitInfo;
+    public float sideOffset = 0.25f;
+    public bool sideSwitch = false;
+    public Vector3 targetSideOffset1;
+    public Vector3 targetSideOffset2;
 
     public struct ClipPlanePoints
     {
@@ -38,6 +42,8 @@ public class C_Camera : MonoBehaviour {
     private void Start()
     {
         Carryer.parent = null;
+        targetSideOffset1 = camera_x.localPosition;
+        targetSideOffset2 = cameraHandle.localPosition;
 
         //var cameraController = GameObject.Instantiate(this.Carryer);
         //mainCamera = cameraController.GetComponentInChildren<Camera>();
