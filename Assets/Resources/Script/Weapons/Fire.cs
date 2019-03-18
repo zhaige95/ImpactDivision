@@ -103,7 +103,7 @@ public class Fire : WeaponState
                     {
                         source = _velocity.gameObject,
                         sourceDriection = _weaponHandle.shootPoint.position,
-                        demage = _weaponAttribute.demage,
+                        demage = _weaponAttribute.damage,
                         sourcePosition = OcclusionPoint.position,
                     },
                     OcclusionPoint.position,
@@ -127,7 +127,7 @@ public class Fire : WeaponState
                         {
                             source = _velocity.gameObject,
                             sourceDriection = _weaponHandle.shootPoint.position,
-                            demage = _weaponAttribute.demage,
+                            demage = _weaponAttribute.damage,
                             sourcePosition = _weaponHandle.shootPoint.position,
                         },
                         _weaponHandle.shootPoint.position,
@@ -145,7 +145,7 @@ public class Fire : WeaponState
                         {
                             source = _velocity.gameObject,
                             sourceDriection = _weaponHandle.shootPoint.position,
-                            demage = _weaponAttribute.demage,
+                            demage = _weaponAttribute.damage,
                             sourcePosition = _weaponHandle.shootPoint.position,
                         },
                         _weaponHandle.shootPoint.position,

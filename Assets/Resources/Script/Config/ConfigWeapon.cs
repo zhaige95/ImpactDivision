@@ -11,10 +11,13 @@ public class ConfigWeapon : ScriptableObject {
 	public int id;
     public string wname;
     public Data.WeaponType type;
-    public Texture2D cutPic;
+    public Texture2D cutPicInEquip;
+    public Texture2D cutPicInBattle;
     public int mag;
     public float damage;
     public float fireSpeed;
-    public float spread;
-	public GameObject model;
+    public float spread = 20;
+    public float recoilX = 3f;
+    public float recoilY = 1f;
+    public GameObject model;
 }

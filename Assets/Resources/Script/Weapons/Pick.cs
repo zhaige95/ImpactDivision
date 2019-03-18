@@ -70,7 +70,11 @@ public class Pick : WeaponState
             //    );
             //}
             _weaponHandle.locked = true;
-
+            var cutMsg = new UiEvent.UiMsgs.WeaponCut()
+            {
+                texture = _weaponAttribute.cutPicInBattle
+            };
+            _uiMgr.SendEvent(cutMsg);
         }
         else
         {

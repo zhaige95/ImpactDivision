@@ -58,7 +58,7 @@ public class C_WeaponHandle : MonoBehaviour
         
         weaponAtt.constraint.weight = 1;
         weaponAtt.interval = 60f / weaponAtt.fireSpeed;
-        weaponAtt.Init(this.gameObject);
+        weaponAtt.Init(this.gameObject, config);
 
         weaponAtt.active = isActive;
 

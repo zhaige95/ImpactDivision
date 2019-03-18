@@ -17,7 +17,7 @@ public class WeaponAttribute : MonoBehaviour
     public int runtimeMag;
     public bool bore = false; // 枪膛，上膛的子弹
     public float fireSpeed = 600f;
-    public float demage = 32f;
+    public float damage = 32f;
     public float reloadTime = 1.3f;
     public float interval = 0f;
     public float spread = 0.5f;
@@ -26,7 +26,7 @@ public class WeaponAttribute : MonoBehaviour
     public bool reload = false;
     public bool ready = false;
     public TransformMark holdOffset;
-    public Texture2D cutTexture;
+    public Texture2D cutPicInBattle;
     public Transform holdPoint;
     public Transform shootPoint;
     public GameObject magObj;
@@ -37,7 +37,6 @@ public class WeaponAttribute : MonoBehaviour
 
     private void Awake()
     {
-        interval = 60f / fireSpeed;
     }
 
     public void RegState(string name, WeaponState state)
@@ -58,12 +57,27 @@ public class WeaponAttribute : MonoBehaviour
         this.statesLayer.Add(name, (int)state.layer);
     }
 
-    public void Init(GameObject obj)
+    public void Init(GameObject obj, ConfigWeapon config)
     {
+        // 安装属性
+        wname = config.wname;
+        type = config.type;
+        mag = config.mag;
+        damage = config.damage;
+        fireSpeed = config.fireSpeed;
+        spread = config.spread;
+        recoilX = config.recoilX;
+        recoilY = config.recoilY;
+        cutPicInBattle = config.cutPicInBattle;
+
+        interval = 60f / fireSpeed;
+
+        // 初始化武器状态组件，传递武器物体的组件等
         foreach (var state in states.Values)
         {
             state.Init(obj);
         }
+        
     }
 
     public float GetRuntimeMag()

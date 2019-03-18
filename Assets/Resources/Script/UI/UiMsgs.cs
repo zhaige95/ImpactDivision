@@ -1,12 +1,15 @@
-﻿using UnityEngine;
+﻿using UnityEngine.UI;
 using System.Collections;
 
 namespace UiEvent
 {
+
     public class UiMsg { }
 
     namespace UiMsgs
     {
+        using UnityEngine;
+        using UnityEngine.UI;
         public class Hp : UiMsg
         {
             public float hp;
@@ -19,5 +22,8 @@ namespace UiEvent
             public float mag;
         }
         public class Hit : UiMsg { }
+        public class WeaponCut : UiMsg {
+            public Texture2D texture;
+        }
     }
 }

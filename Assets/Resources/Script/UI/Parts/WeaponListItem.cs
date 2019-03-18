@@ -19,7 +19,7 @@ public class WeaponListItem : MonoBehaviour {
     {
         this.config = config;
         this.type = type;
-        this.cutPic.texture = config.cutPic;
+        this.cutPic.texture = config.cutPicInEquip;
         this.wName.text = config.wname;
         this.damage.text = config.damage.ToString();
         this.fireSpeed.text = config.fireSpeed.ToString();

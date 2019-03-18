@@ -9,11 +9,13 @@ public class HUDMgr : MonoBehaviour
     public Image hpImage;
     public Text ammo;
     public Text mag;
+    public RawImage weaponCut;
 
     public void Init(C_UiEventMgr eventMgr)
     {
         eventMgr.BindEvent(typeof(UiMsgs.Hp), RefreshHp);
         eventMgr.BindEvent(typeof(UiMsgs.Ammo), RefreshAmmo);
+        eventMgr.BindEvent(typeof(UiMsgs.WeaponCut), SetWeaponCut);
     }
 
     public void RefreshHp(UiMsg msg)
@@ -27,5 +29,11 @@ public class HUDMgr : MonoBehaviour
         var ammoMsg = msg as UiMsgs.Ammo;
         ammo.text = ammoMsg.ammo.ToString();
         mag.text = ammoMsg.mag.ToString();
+    }
+
+    public void SetWeaponCut(UiMsg msg)
+    {
+        var cutMsg = msg as UiMsgs.WeaponCut;
+        weaponCut.texture = cutMsg.texture;
     }
 }

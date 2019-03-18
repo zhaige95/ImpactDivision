@@ -9,7 +9,7 @@ public class WeaponSelectItem : MonoBehaviour {
 
     public void UpdateData(ConfigWeapon config)
     {
-        this.image.texture = config.cutPic;
+        this.image.texture = config.cutPicInEquip;
         this.wName.text = config.wname;
     }
 
