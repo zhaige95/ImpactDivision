@@ -16,11 +16,13 @@ public class GameController : MonoBehaviour {
 
     public HUDMgr hudMgr;
     public PlaneHUDMgr planeHUDMgr;
+
+    public int frameRate = 60;
     
     void Awake()
     {
-        //Application.targetFrameRate = 60;
-        
+        Application.targetFrameRate = frameRate;
+
         var avatarObj = Factory.CreateAvatar(avatar, camp, isLocal, transform.position, transform.rotation, mainWeapon, secondWeapon);
         var uiEventMgr = avatarObj.GetComponent<C_UiEventMgr>();
         hudMgr.Init(uiEventMgr);

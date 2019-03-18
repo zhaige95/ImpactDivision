@@ -20,7 +20,7 @@ public class S_Camera : ComponentSystem {
             var _velocity = e._Velocity;
             if (_velocity.isLocalPlayer)
             {
-                _camera.mainCamera.fieldOfView = Mathf.Lerp(_camera.mainCamera.fieldOfView, _camera.FOVtarget, 0.3f);
+                _camera.mainCamera.fieldOfView = Mathf.Lerp(_camera.mainCamera.fieldOfView, _camera.FOVtarget, 10f * Time.deltaTime);
             }
             
             if (_camera.m_cursorIsLocked)
@@ -62,18 +62,19 @@ public class S_Camera : ComponentSystem {
 
             if (_camera.forceX != 0)
             {
-                _camera.camera_x.Rotate(-_camera.forceX, 0, 0);
-                _camera.forceX = Mathf.Lerp(_camera.forceX, 0, _camera.backForce * Time.deltaTime);
-                if (Mathf.Abs(_camera.forceX) < 0.001f)
+                _camera.camera_x.Rotate(-Time.deltaTime * _camera.forceX, 0, 0);
+                _camera.forceX -= Time.deltaTime * 100f;
+
+                if (_camera.forceX < 0.001f)
                 {
                     _camera.forceX = 0f;
                 }
             }
             if (_camera.forceY != 0)
             {
-                _camera.camera_y.Rotate(0, _camera.forceY, 0);
-                _camera.forceY = Mathf.Lerp(_camera.forceY, 0, _camera.backForce * Time.deltaTime);
-                if (Mathf.Abs(_camera.forceY) < 0.001f)
+                _camera.camera_y.Rotate(0, Time.deltaTime * _camera.forceY, 0);
+                _camera.forceY -= Time.deltaTime * 100f;
+                if (_camera.forceY < 0.001f)
                 {
                     _camera.forceY = 0f;
                 }
@@ -84,12 +85,12 @@ public class S_Camera : ComponentSystem {
             if (_velocity.DcutCameraSide)
             {
                 _camera.sideOffset *= -1f; 
-                _camera.targetSideOffset1 = new Vector3(_camera.camera_x.localPosition.x * -1f, _camera.camera_x.localPosition.y, _camera.camera_x.localPosition.z);
-                _camera.targetSideOffset2 = new Vector3(_camera.cameraHandle.localPosition.x * -1f, _camera.cameraHandle.localPosition.y, _camera.cameraHandle.localPosition.z);
+                _camera.targetSideOffset1 = new Vector3(_camera.targetSideOffset1.x * -1f, _camera.targetSideOffset1.y, _camera.targetSideOffset1.z);
+                _camera.targetSideOffset2 = new Vector3(_camera.targetSideOffset2.x * -1f, _camera.targetSideOffset2.y, _camera.targetSideOffset2.z);
             }
 
-            _camera.camera_x.localPosition = Vector3.Lerp(_camera.camera_x.localPosition, _camera.targetSideOffset1, 0.2f);
-            _camera.cameraHandle.localPosition = Vector3.Lerp(_camera.cameraHandle.localPosition, _camera.targetSideOffset2, 0.2f);
+            _camera.camera_x.localPosition = Vector3.Lerp(_camera.camera_x.localPosition, _camera.targetSideOffset1, 10f * Time.deltaTime);
+            _camera.cameraHandle.localPosition = Vector3.Lerp(_camera.cameraHandle.localPosition, _camera.targetSideOffset2, 10f * Time.deltaTime);
         }
     }
 

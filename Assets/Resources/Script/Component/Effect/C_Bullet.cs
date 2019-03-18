@@ -7,6 +7,7 @@ public class C_Bullet : MonoBehaviour
     public string effectTag = "bulletBlue";
     public float speed = 150f;
     public bool isActive = false;
+    public bool visible = true;
 
     public GameObject impactEffect;
     public LayerMask layerMask;
@@ -24,5 +25,10 @@ public class C_Bullet : MonoBehaviour
         this.isActive = true;
     }
 
+    public void SetVisible(bool isVisible)
+    {
+        transform.localScale = isVisible ? Vector3.one : Vector3.zero;
+        visible = isVisible;
+    }
 
 }

@@ -23,7 +23,12 @@ public class Fire : WeaponState
     public AudioClip sound;
     public GameObject bullet;
     public GameObject muzzleFlash;
+    public Transform OcclusionPoint;
+    public float OcclusionSensorDistance;
+    public ConfigLayer occlusionLayer;
 
+    private RaycastHit hitInfo;
+    
     public override void Init(GameObject obj)
     {
         _uiMgr = obj.GetComponent<C_UiEventMgr>();
@@ -76,54 +81,82 @@ public class Fire : WeaponState
 
         if (_weaponAttribute.bore)
         {
-           
+
             Sound.PlayOneShot(_audio, sound);
             _iKManager.aimIK.solver.axis = fireAxis;
-            muzzleFlash.SetActive(false);
-            muzzleFlash.SetActive(true);
-
+            
             // 后坐力
             if (_velocity.aiming)
             {
-                var hitPos = _camera.GetAimPoint();
-                Effect.AddBullet(
-                    bullet, new Attack()
-                    {
-                        source = _velocity.gameObject,
-                        sourceDriection = _weaponHandle.shootPoint.position,
-                        demage = _weaponAttribute.demage,
-                        hitPosition = hitPos,
-                    },
-                    _weaponHandle.shootPoint.position,
-                    hitPos,
-                    _attributes.camp
-                 );
-                _camera.forceX = _weaponAttribute.recoilX * 0.1f;
-                _camera.forceY = Random.Range(_weaponAttribute.recoilY * -0.1f, _weaponAttribute.recoilY * 0.1f);
-
+                _camera.forceX = _weaponAttribute.recoilX;
+                _camera.forceY = Random.Range(-_weaponAttribute.recoilY, _weaponAttribute.recoilY);
             }
             else
             {
-                _camera.forceX = _weaponAttribute.recoilX * 0.05f;
+                _camera.forceX = _weaponAttribute.recoilX * 0.5f;
+            }
 
-                //float range = _weaponAttribute.spread + (_velocity.crouch ? -_weaponHandle.spreadDec : _weaponHandle.spreadAdd);
-
-                float range = _weaponAttribute.spread;
-                Vector2 offset = new Vector2(Random.Range(-range, range), Random.Range(-range, range));
-
+            if (Physics.Raycast(OcclusionPoint.position, OcclusionPoint.forward, out hitInfo, OcclusionSensorDistance, occlusionLayer.layerMask))
+            {
                 Effect.AddBullet(
                     bullet, new Attack()
                     {
                         source = _velocity.gameObject,
                         sourceDriection = _weaponHandle.shootPoint.position,
                         demage = _weaponAttribute.demage,
+                        sourcePosition = OcclusionPoint.position,
                     },
-                    _weaponHandle.shootPoint.position,
-                    _camera.GetAimPoint(offset),
-                    _attributes.camp
-                 );
-
+                    OcclusionPoint.position,
+                    hitInfo.point,
+                    _attributes.camp,
+                    false
+                );
             }
+            else
+            {
+                // 激活枪口火光
+                muzzleFlash.SetActive(false);
+                muzzleFlash.SetActive(true);
+
+                // 后坐力
+                if (_velocity.aiming)
+                {
+                    var hitPos = _camera.GetAimPoint();
+                    Effect.AddBullet(
+                        bullet, new Attack()
+                        {
+                            source = _velocity.gameObject,
+                            sourceDriection = _weaponHandle.shootPoint.position,
+                            demage = _weaponAttribute.demage,
+                            sourcePosition = _weaponHandle.shootPoint.position,
+                        },
+                        _weaponHandle.shootPoint.position,
+                        hitPos,
+                        _attributes.camp
+                     );
+                }
+                else
+                {
+                    float range = _weaponAttribute.spread;
+                    Vector2 offset = new Vector2(Random.Range(-range, range), Random.Range(-range, range));
+
+                    Effect.AddBullet(
+                        bullet, new Attack()
+                        {
+                            source = _velocity.gameObject,
+                            sourceDriection = _weaponHandle.shootPoint.position,
+                            demage = _weaponAttribute.demage,
+                            sourcePosition = _weaponHandle.shootPoint.position,
+                        },
+                        _weaponHandle.shootPoint.position,
+                        _camera.GetAimPoint(offset),
+                        _attributes.camp
+                     );
+
+                }
+            }
+
+
 
             if (_weaponAttribute.runtimeMag > 0)
             {

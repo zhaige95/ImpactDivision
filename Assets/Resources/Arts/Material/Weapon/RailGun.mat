@@ -147,7 +147,7 @@ Material:
     - _1st2nd_Shades_Feather: 0.0001
     - _Add_Antipodean_RimLight: 1
     - _Ap_RimLight_FeatherOff: 0
-    - _Ap_RimLight_Power: 0.1
+    - _Ap_RimLight_Power: 0
     - _BaseColor_Step: 0.563
     - _BaseShade_Feather: 0.0001
     - _BumpScale: 1
@@ -203,7 +203,7 @@ Material:
     - _RimLight: 1
     - _RimLight_FeatherOff: 0
     - _RimLight_InsideMask: 0.0001
-    - _RimLight_Power: 0.206
+    - _RimLight_Power: 0.137
     - _Rotate_MatCapUV: 0
     - _Rotate_NormalMapForMatCapUV: 0
     - _Set_SystemShadowsToBase: 1
@@ -218,7 +218,7 @@ Material:
     - _TessPhongStrength: 0.5
     - _TweakHighColorOnShadow: 0
     - _TweakMatCapOnShadow: 0
-    - _Tweak_HighColorMaskLevel: 0
+    - _Tweak_HighColorMaskLevel: -1
     - _Tweak_LightDirection_MaskLevel: 0
     - _Tweak_MatCapUV: 0
     - _Tweak_MatcapMaskLevel: 0
@@ -230,8 +230,8 @@ Material:
     - _Use_BaseAs1st: 1
     - _ZWrite: 1
     m_Colors:
-    - _1st_ShadeColor: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
-    - _2nd_ShadeColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+    - _1st_ShadeColor: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
+    - _2nd_ShadeColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

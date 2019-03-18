@@ -28,6 +28,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1108539266234532
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4763446472624730}
+  m_Layer: 21
+  m_Name: Occlusion Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1224198789172872
 GameObject:
   m_ObjectHideFlags: 1
@@ -216,6 +231,7 @@ Transform:
   m_Children:
   - {fileID: 4198249403142180}
   - {fileID: 4022105809440286}
+  - {fileID: 4763446472624730}
   m_Father: {fileID: 4422222713012918}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -263,6 +279,19 @@ Transform:
   m_Father: {fileID: 4422222713012918}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -183.463, z: 2.256}
+--- !u!4 &4763446472624730
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1108539266234532}
+  m_LocalRotation: {x: -0, y: -0.70710707, z: -0, w: 0.70710653}
+  m_LocalPosition: {x: 0.297, y: -0.037, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4332695148370640}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!23 &23181232465375098
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -503,8 +532,8 @@ MonoBehaviour:
   demage: 32
   reloadTime: 1
   interval: 0
-  spread: 5
-  recoilX: 1
+  spread: 15
+  recoilX: 4
   recoilY: 1
   reload: 0
   ready: 0
@@ -621,6 +650,9 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: 03e0bd962b56a104e9dd60c06204923c, type: 3}
   bullet: {fileID: 1239038810545592, guid: a5b0a5b5457cc9340ba6c3fa983eebe9, type: 2}
   muzzleFlash: {fileID: 1335894919920174}
+  OcclusionPoint: {fileID: 4763446472624730}
+  OcclusionSensorDistance: 0.8
+  occlusionLayer: {fileID: 11400000, guid: 29b833a17bee51642a7c8085006ca7f4, type: 2}
 --- !u!198 &198277985135669556
 ParticleSystem:
   m_ObjectHideFlags: 1

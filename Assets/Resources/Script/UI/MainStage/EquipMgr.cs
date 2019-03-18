@@ -27,6 +27,13 @@ public class EquipMgr : MonoBehaviour {
                 itemData.Init(mainWeaponList[i], 1);
                 itemData.OnClickCall = OnWeaponItemClick;
             }
+            for (int i = 0; i < secondWeaponList.Count; i++)
+            {
+                var wItem = GameObject.Instantiate(weaponItemPrefab, secondContent);
+                var itemData = wItem.GetComponent<WeaponListItem>();
+                itemData.Init(mainWeaponList[i], 2);
+                itemData.OnClickCall = OnWeaponItemClick;
+            }
             this.initialized = true;
         }
 	}

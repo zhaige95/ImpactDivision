@@ -6,7 +6,7 @@ public class Effect
 {
     public static Dictionary<string, List<GameObject>> _effectPool = new Dictionary<string, List<GameObject>>();
 
-    public static bool AddBullet(GameObject obj, Attack attack, Vector3 start, Vector3 target, int camp)
+    public static bool AddBullet(GameObject obj, Attack attack, Vector3 start, Vector3 target, int camp, bool visible = true)
     {
         var bulletData = obj.GetComponent<C_Bullet>();
         List<GameObject> pool = GetPool(bulletData.effectTag);
@@ -17,7 +17,8 @@ public class Effect
             {
                 item.transform.position = start;
                 item.transform.LookAt(target);
-                ActiveBullet(item, attack);
+                ActiveBullet(item, attack, visible);
+
                 return true;
             }
         }
@@ -26,10 +27,13 @@ public class Effect
         var bullet = GameObject.Instantiate(obj, start, Quaternion.Euler(Vector3.zero));
         // 放入对象池
         pool.Add(bullet);
-
+        
         bullet.transform.LookAt(target);
         bullet.layer = 14 + camp;
         bulletData = bullet.GetComponent<C_Bullet>();
+
+        bulletData.visible = true;
+
         // 设置attack
         bulletData.attack = attack;
         // 设置layer mask
@@ -40,20 +44,21 @@ public class Effect
             case 3: bulletData.layerMask = 1 << 16 | 1 << 15 | 1 << 20; break;
         }
         // 激活子弹
-        ActiveBullet(bulletData, attack);
+        ActiveBullet(bulletData, attack, visible);
         // 激活Entity组件
         //bullet.GetComponent<GameObjectEntity>().enabled = true;
         return true;
     }
 
-    public static void ActiveBullet(GameObject obj, Attack attack)
+    public static void ActiveBullet(GameObject obj, Attack attack, bool visible)
     {
-        obj.transform.localScale = Vector3.one;
-        obj.GetComponent<C_Bullet>().SetActive(attack);
+        var bulletData = obj.GetComponent<C_Bullet>();
+        ActiveBullet(bulletData, attack, visible);
     }
-    public static void ActiveBullet(C_Bullet bullet, Attack attack)
+    public static void ActiveBullet(C_Bullet bullet, Attack attack, bool visible)
     {
         bullet.SetActive(attack);
+        bullet.SetVisible(visible);
     }
 
     public static bool AddEffect(GameObject obj, Vector3 position, Quaternion rotation)

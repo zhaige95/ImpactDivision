@@ -52,9 +52,7 @@ public class S_WeaponHandle : ComponentSystem {
 
                     _handle.currentWeapon = targetWeapon;
                 }
-
-
-
+                
                 // weapon state process
                 foreach (var weaponAtt in _handle.weaponAttributes.Values)
                 {
@@ -67,32 +65,32 @@ public class S_WeaponHandle : ComponentSystem {
                         foreach (int layerIndex in weaponAtt.layerState.Keys)
                         {
                             var nameList = weaponAtt.layerState[layerIndex];
-                            if (layerIndex == currentStateLayer)
-                            {
-                                if (!currentState._unique)
-                                {
-                                    ListenerPeocess(nameList, weaponAtt);
-                                }
-                                else if (!currentState._active)
-                                {
-                                    ListenerPeocess(nameList, weaponAtt);
-                                }
-                            }
-                            else
-                            {
-                                ListenerPeocess(nameList, weaponAtt);
-                            }
 
                             foreach (string name in nameList)
                             {
                                 StateProcess(weaponAtt.states[name]);
                             }
 
+                            if (layerIndex == currentStateLayer)
+                            {
+                                if (!currentState._unique)
+                                {
+                                    ListenerProcess(nameList, weaponAtt);
+                                }
+                                else if (!currentState._active)
+                                {
+                                    ListenerProcess(nameList, weaponAtt);
+                                }
+                            }
+                            else
+                            {
+                                ListenerProcess(nameList, weaponAtt);
+                            }
                         }
                     }
                     else
                     {
-                        ListenerPeocess(weaponAtt.defaultState, weaponAtt);
+                        ListenerProcess(weaponAtt.defaultState, weaponAtt);
                         StateProcess(weaponAtt.states[weaponAtt.defaultState]);
                     }
 
@@ -122,40 +120,45 @@ public class S_WeaponHandle : ComponentSystem {
 
 
 
-    void ListenerPeocess(List<string> nameList, WeaponAttribute attribute)
+    void ListenerProcess(List<string> nameList, WeaponAttribute attribute)
     {
         foreach (string name in nameList)
         {
-            var state = attribute.states[name];
-
-            if (!state._active)
+            if (ListenerProcess(name, attribute))
             {
-                if (state.Listener())
-                {
-                    if (attribute.statesLayer[name] == attribute.statesLayer[attribute.runningState])
-                    {
-                        // exit last state
-                        var lastState = attribute.states[attribute.runningState];
-                        if (lastState._active)
-                        {
-                            lastState.Exit();
-                            lastState._active = false;
-                            lastState._exitTick = false;
-                            lastState._enterTick = false;
-                        }
-                    }
-                    
-                    attribute.runningState = state._name;
-                    state._active = true;
-                    state.Enter();
-                    break;
-                }
+                break;
             }
         }
     }
-    void ListenerPeocess(string name, WeaponAttribute attribute)
+    bool ListenerProcess(string name, WeaponAttribute attribute)
     {
-        ListenerPeocess(new List<string>() { name }, attribute);
+        var state = attribute.states[name];
+
+        if (!state._active)
+        {
+            if (state.Listener())
+            {
+                if (attribute.statesLayer[name] == attribute.statesLayer[attribute.runningState])
+                {
+                    // exit last state
+                    var lastState = attribute.states[attribute.runningState];
+                    if (lastState._active)
+                    {
+                        lastState.Exit();
+                        lastState._active = false;
+                        lastState._exitTick = false;
+                        lastState._enterTick = false;
+                    }
+                }
+
+                attribute.runningState = state._name;
+                state._active = true;
+                state.Enter();
+                return true;
+            }
+        }
+
+        return false;
     }
 
 }

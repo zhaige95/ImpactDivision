@@ -7,6 +7,5 @@ public class Attack
     public GameObject source;
     public Vector3 sourceDriection;
     public float demage = 0;
-    public Vector3 hitPosition;
-    public Rigidbody hitRigidbody;
+    public Vector3 sourcePosition;
 }

@@ -16,7 +16,12 @@ public class Timer {
     public void Update(){
         if (this.isRunning)
         {
-            if (Time.time - this.rate >= this.time)
+            //if (Time.time - this.rate >= this.time)
+            //{
+            //    Stop();
+            //}
+            this.rate += Time.deltaTime;
+            if (this.rate >= this.time)
             {
                 Stop();
             }
@@ -25,15 +30,18 @@ public class Timer {
 
     public void Enter(float t){
         this.time = t;
-        this.rate = Time.time;
+        //this.rate = Time.time;
+        this.rate = 0;
         this.isRunning = true;
     }
     public void Enter(){
-        if (this.time == 0)
+        if (this.time <= 0)
         {
             Debug.LogWarning("timer is 0!");
+            return;
         }
-        this.rate = Time.time;
+        //this.rate = Time.time;
+        this.rate = 0;
         this.isRunning = true;
     }
 
@@ -43,6 +51,6 @@ public class Timer {
     }
     void Stop(){
         this.isRunning = false;
-        this.rate = 0;
+        this.rate -= this.time;
     }
 }

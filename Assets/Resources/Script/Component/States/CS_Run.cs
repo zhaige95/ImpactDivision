@@ -59,8 +59,7 @@ public class CS_Run : AvatarState {
             if (_velocity.armed)
             {
                 var currentSpeed = _velocity.currentSpeed;
-
-                //Aspect.RotateToCameraY(_camera.Carryer, transform, 0.5f);
+                
                 _characterController.Move(transform.forward * currentSpeed * _attributes.rate * Time.deltaTime );
 
             }
@@ -77,11 +76,6 @@ public class CS_Run : AvatarState {
         {
             this._exitTick = true;
         }
-
-        //if (_velocity.Dleft || _velocity.Dright || _velocity.Dbwd || !_velocity.Drun)
-        //{
-        //    this._exitTick = true;
-        //}
         
     }
 
@@ -177,7 +171,7 @@ public class CS_Run : AvatarState {
         }
         if (directionIndex != 0)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(targetAngles), Time.deltaTime * 10);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(targetAngles), 10f * Time.deltaTime);
         }
     }
 
