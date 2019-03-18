@@ -50,7 +50,9 @@ public class S_AttackListener : ComponentSystem {
                         
                         if (sourceIsLocalPlayer)
                         {
-                            var hitMsg = new UiEvent.UiMsgs.Hit();
+                            var hitMsg = new UiEvent.UiMsgs.Hit() {
+                                HeadShot = attack.headShot
+                            };
                             source.GetComponent<C_UiEventMgr>().SendEvent(hitMsg);
 
                             Sound.PlayOneShot(sourceAudio, _attackListener.hitFeedBackSounds);

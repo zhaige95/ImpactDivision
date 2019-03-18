@@ -26,4 +26,10 @@ public static class AvatarTagsData
             0.7f
         },
     };
+
+    public static bool IsHead(string tag)
+    {
+        return tag.Equals("hit_Head");
+    }
+
 }

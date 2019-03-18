@@ -6,16 +6,18 @@ using UiMsgs = UiEvent.UiMsgs;
 public class PlaneHUDMgr : MonoBehaviour
 {
     public Animator animator;
-    public Transform tinyHpBarGroup;
+    public Color normalShotColor;
+    public Color headShotColor;
+
     public void Init(C_UiEventMgr eventMgr)
     {
-
         eventMgr.BindEvent(typeof(UiMsgs.Hit), Hit);
     }
 
     public void Hit(UiMsg msg)
     {
-        animator.SetTrigger("hit");
+        var hitMsg = msg as UiMsgs.Hit;
+        animator.SetTrigger(hitMsg.HeadShot ? "hitHead" : "hit");
     }
 
 }

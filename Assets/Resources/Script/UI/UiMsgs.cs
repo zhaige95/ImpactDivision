@@ -21,7 +21,9 @@ namespace UiEvent
             public float ammo;
             public float mag;
         }
-        public class Hit : UiMsg { }
+        public class Hit : UiMsg {
+            public bool HeadShot = false;
+        }
         public class WeaponCut : UiMsg {
             public Texture2D texture;
         }

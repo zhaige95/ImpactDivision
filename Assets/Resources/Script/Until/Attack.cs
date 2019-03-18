@@ -8,4 +8,5 @@ public class Attack
     public Vector3 sourceDriection;
     public float demage = 0;
     public Vector3 sourcePosition;
+    public bool headShot = false;
 }

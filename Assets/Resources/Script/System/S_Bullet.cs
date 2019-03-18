@@ -31,12 +31,13 @@ public class S_Bullet : ComponentSystem {
                         // Add impact effect
                         if (Aspect.IsAvatarTags(hitTag))
                         {
+                            Debug.Log(hitTag);
                             var attack = _bullet.attack;
                             // Modify demage by different body part
                             attack.demage = _bullet.attack.demage * AvatarTagsData.demageRate[hitTag];
-                            
-                            // Set hit rigibody
-                            //attack.hitRigidbody = hitInfo.rigidbody;
+
+                            // Set if head shot
+                            attack.headShot = AvatarTagsData.IsHead(hitTag);
 
                             // Add blood effect
                             Effect.AddEffect(_attackListener.hitEffect, hitInfo);
