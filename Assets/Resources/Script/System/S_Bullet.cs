@@ -31,7 +31,7 @@ public class S_Bullet : ComponentSystem {
                         // Add impact effect
                         if (Aspect.IsAvatarTags(hitTag))
                         {
-                            Debug.Log(hitTag);
+
                             var attack = _bullet.attack;
                             // Modify demage by different body part
                             attack.demage = _bullet.attack.demage * AvatarTagsData.demageRate[hitTag];

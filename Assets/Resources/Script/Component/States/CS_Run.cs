@@ -171,7 +171,7 @@ public class CS_Run : AvatarState {
         }
         if (directionIndex != 0)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(targetAngles), 10f * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(targetAngles), 20f * Time.deltaTime);
         }
     }
 

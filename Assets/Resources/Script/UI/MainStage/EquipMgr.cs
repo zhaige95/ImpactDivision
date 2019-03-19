@@ -7,7 +7,7 @@ public class EquipMgr : MonoBehaviour {
 
     public WeaponSelectItem mainSelect;
     public WeaponSelectItem secondSelect;
-
+    public StringData configPath;
     [Header("-----------------------------------")]
     public bool initialized = false;
     public List<GameObject> weaponList;
@@ -34,6 +34,10 @@ public class EquipMgr : MonoBehaviour {
                 itemData.Init(mainWeaponList[i], 2);
                 itemData.OnClickCall = OnWeaponItemClick;
             }
+
+            mainSelect.UpdateData(Resources.Load(configPath.value + Battle.playerBattleSave.mainWeaponId) as ConfigWeapon);
+            secondSelect.UpdateData(Resources.Load(configPath.value + Battle.playerBattleSave.secondWeaponId) as ConfigWeapon);
+
             this.initialized = true;
         }
 	}
@@ -59,10 +63,16 @@ public class EquipMgr : MonoBehaviour {
         if (type == 1)
         {
             mainSelect.UpdateData(config);
+            Battle.playerBattleSave.mainWeaponId = config.id;
+            Battle.SavePlayerBattleData();
+            Debug.Log(config.id);
         }
         else if (type == 2)
         {
             secondSelect.UpdateData(config);
+            Battle.playerBattleSave.secondWeaponId = config.id;
+            Battle.SavePlayerBattleData();
+            Debug.Log(config.id);
         }
 
 
