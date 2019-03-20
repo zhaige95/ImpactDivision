@@ -14,6 +14,7 @@ public class Battle : MonoBehaviour
     //public Dictionary<string, C_Attributes> campPool2;
 
     // save
+    public static bool login = false;
     public static PlayerBasic playerBasicSave;
     public static PlayerBattle playerBattleSave;
     public static SystemSetting systemSettingSave;

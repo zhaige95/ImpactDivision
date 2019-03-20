@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EquipMgr : MonoBehaviour {
+public class EquipMgr : WindowBasic
+{
 
     public WeaponSelectItem mainSelect;
     public WeaponSelectItem secondSelect;
@@ -65,14 +66,12 @@ public class EquipMgr : MonoBehaviour {
             mainSelect.UpdateData(config);
             Battle.playerBattleSave.mainWeaponId = config.id;
             Battle.SavePlayerBattleData();
-            Debug.Log(config.id);
         }
         else if (type == 2)
         {
             secondSelect.UpdateData(config);
             Battle.playerBattleSave.secondWeaponId = config.id;
             Battle.SavePlayerBattleData();
-            Debug.Log(config.id);
         }
 
 

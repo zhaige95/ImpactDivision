@@ -18,7 +18,7 @@ public class GameStartCheck : MonoBehaviour {
         {
             Battle.playerBasicSave = new PlayerBasic();
             Battle.playerBattleSave = new PlayerBattle();
-            SceneManager.LoadScene("LoginStage");
+            Battle.login = false;
         }
         else
         {
@@ -26,10 +26,14 @@ public class GameStartCheck : MonoBehaviour {
             Battle.playerBasicSave = JsonConvert.DeserializeObject<PlayerBasic>(str);
             str = File.ReadAllText(path + "/PlayerBattle.cfg");
             Battle.playerBattleSave = JsonConvert.DeserializeObject<PlayerBattle>(str);
+            str = File.ReadAllText(path + "/SystemSetting.cfg");
+            Battle.systemSettingSave = JsonConvert.DeserializeObject<SystemSetting>(str);
 
-            SceneManager.LoadScene("MainStage");
+            Battle.login = true;
+            //SceneManager.LoadScene("MainStage");
         }
 
+        SceneManager.LoadScene("LoginStage");
         //var str = File.ReadAllText(Application.dataPath + "/Resources/Config/json/PlayerBasic.json");
         //PlayerBasic playerBasic = JsonConvert.DeserializeObject<PlayerBasic>(str);
         //Debug.Log(playerBasic.playerName);

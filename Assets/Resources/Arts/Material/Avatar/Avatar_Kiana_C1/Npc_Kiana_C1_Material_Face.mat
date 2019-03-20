@@ -113,11 +113,11 @@ Material:
     - _Set_1st_ShadePosition:
         m_Texture: {fileID: 2800000, guid: 24b9b91af9a85264f8819624dab17091, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0, y: 0.04}
     - _Set_2nd_ShadePosition:
         m_Texture: {fileID: 2800000, guid: 24b9b91af9a85264f8819624dab17091, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0, y: 0.04}
     - _Set_HighColorMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -200,7 +200,7 @@ Material:
     - _Rotate_MatCapUV: 0
     - _Rotate_NormalMapForMatCapUV: 0
     - _Set_SystemShadowsToBase: 1
-    - _ShadeColor_Step: 0.347
+    - _ShadeColor_Step: 0.249
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -222,8 +222,8 @@ Material:
     - _Use_BaseAs1st: 0
     - _ZWrite: 1
     m_Colors:
-    - _1st_ShadeColor: {r: 1, g: 0.8349056, b: 0.8349056, a: 1}
-    - _2nd_ShadeColor: {r: 1, g: 0.7783019, b: 0.7783019, a: 1}
+    - _1st_ShadeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _2nd_ShadeColor: {r: 1, g: 0.8443396, b: 0.8443396, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 0.7877358, b: 0.7877358, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MatchMgr : MonoBehaviour {
+public class MatchMgr : WindowBasic
+{
     public Image frontRing;
     public GameObject backBtn;
     public Text processRate;

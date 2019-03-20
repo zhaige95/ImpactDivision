@@ -8,7 +8,7 @@ public class SystemSetting {
     public float masterVolume = 80;
     public float soundVolume = 100;
     public float musicVolume = 100;
-    public float characterVolume = 100;
+    public float talkVolume = 100;
 
     // video setting
     public int screen = 1;

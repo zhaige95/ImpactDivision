@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MainMgr : MonoBehaviour {
+public class MainMgr : WindowBasic
+{
     public Text playerNameText;
     public Text playerLevelText;
     public Slider expSlider;

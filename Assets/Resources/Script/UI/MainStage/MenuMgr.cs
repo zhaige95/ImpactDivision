@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuMgr : MonoBehaviour {
+public class MenuMgr : WindowBasic
+{
 
     public List<GameObject> menus;
-
+    public List<WindowBasic> windows;
 	// Use this for initialization
 	void Start () {
-		
+        foreach (var item in windows)
+        {
+            item.Init();
+        }
 	}
 	
 	// Update is called once per frame
@@ -26,4 +30,6 @@ public class MenuMgr : MonoBehaviour {
                 menus[i].SetActive(false);
         }
     }
+
+
 }

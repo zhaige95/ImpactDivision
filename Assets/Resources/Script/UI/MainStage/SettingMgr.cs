@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class SettingMgr : MonoBehaviour {
+public class SettingMgr : WindowBasic
+{
+    public Button applyBtn;
     public List<GameObject> settingList;
+    public GameObject confirmWindow;
+    public SoundMgr soundMgr;
     // Use this for initialization
-    void Start () {
-		
-	}
+    public override void Init () {
+        soundMgr.OnChanged = ActableApplyBtn;
+
+        soundMgr.Init();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,4 +32,34 @@ public class SettingMgr : MonoBehaviour {
         }
     }
 
+    public void ActableApplyBtn()
+    {
+        applyBtn.interactable = true;
+    }
+
+    public void ApplyChanges()
+    {
+        soundMgr.ApplyChanges();
+
+        Battle.SaveSystemSettingData();
+        applyBtn.interactable = false;
+    }
+
+    public void Back()
+    {
+        if (applyBtn.interactable)
+        {
+            confirmWindow.SetActive(true);
+        }
+        else
+        {
+            this.GetComponentInParent<MenuMgr>().OpenMenu(0);
+        }
+    }
+
+    public void ResetSetting()
+    {
+        soundMgr.InitSetting();
+        applyBtn.interactable = false;
+    }
 }
