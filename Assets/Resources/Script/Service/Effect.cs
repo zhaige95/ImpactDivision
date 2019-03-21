@@ -151,4 +151,17 @@ public class Effect
 
     }
 
+    public static void Clear()
+    {
+        foreach (List<GameObject> list in _effectPool.Values)
+        {
+            foreach (var item in list)
+            {
+                Object.Destroy(item);
+            }
+        }
+        _effectPool.Clear();
+    }
+
+
 }

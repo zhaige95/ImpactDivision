@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4449656, g: 0.4945445, b: 0.5736785, a: 1}
+  m_IndirectSpecularColor: {r: 0.4394816, g: 0.48783803, b: 0.56807256, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -254,7 +254,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.99999934}
+  m_AnchorMax: {x: 1, y: 0.99999833}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3081,7 +3081,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0.9999999, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3265,13 +3265,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 518406066}
-  m_LocalRotation: {x: 0.3364153, y: -0.60332984, z: 0.3109216, w: 0.65279835}
+  m_LocalRotation: {x: 0.49424323, y: -0.38368464, z: 0.30978644, w: 0.7159205}
   m_LocalPosition: {x: 142.96045, y: -29.49057, z: 191.72707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1304268317}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 54.528004, y: -85.490005, z: 0}
+  m_LocalEulerAnglesHint: {x: 70.979004, y: -48.251003, z: 11.378}
 --- !u!1001 &522751622
 Prefab:
   m_ObjectHideFlags: 0
@@ -3678,7 +3678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0014868304, y: 0.0007176471}
+  m_AnchoredPosition: {x: 0.0014868304, y: 0.001305007}
   m_SizeDelta: {x: 0, y: 133}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &569941647
@@ -13283,6 +13283,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114423253889928686, guid: 2884e75475656e247ae180b126004630,
+        type: 2}
+      propertyPath: duration
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2884e75475656e247ae180b126004630, type: 2}
   m_IsPrefabAsset: 0
@@ -14707,7 +14712,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 21768200}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999934
+  m_Size: 0.99999833
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

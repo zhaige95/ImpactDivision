@@ -7,13 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Npc_Kiana_C1_Material_Body
-  m_Shader: {fileID: 4800000, guid: 1f248db3b28fc5f44aabd7aca618bd1e, type: 3}
+  m_Shader: {fileID: 4800000, guid: 9baf30ce95c751649b14d96da3a4b4d5, type: 3}
   m_ShaderKeywords: _INVERSE_CLIPPING_ON _INVERSE_Z_AXIS_BLD_ON _ISRIM_NORMAL_ON _IS_BLENDADDTOHICOLOR_ON
     _IS_BLENDADDTOMATCAP_ON _IS_FILTER_HICUTPOINTLIGHTCOLOR_ON _IS_LIGHTCOLOR_1ST_SHADE_ON
     _IS_LIGHTCOLOR_2ND_SHADE_ON _IS_LIGHTCOLOR_AP_RIMLIGHT_ON _IS_LIGHTCOLOR_BASE_ON
-    _IS_LIGHTCOLOR_HIGHCOLOR_ON _IS_LIGHTCOLOR_MATCAP_ON _IS_LIGHTCOLOR_RIMLIGHT_ON
-    _IS_SPECULARTOHIGHCOLOR_ON _IS_USETWEAKHIGHCOLORONSHADOW_ON _OUTLINE_NML _RIMLIGHT_ON
-    _SET_SYSTEMSHADOWSTOBASE_ON
+    _IS_LIGHTCOLOR_HIGHCOLOR_ON _IS_LIGHTCOLOR_MATCAP_ON _IS_SPECULARTOHIGHCOLOR_ON
+    _IS_USETWEAKHIGHCOLORONSHADOW_ON _OUTLINE_NML _SET_SYSTEMSHADOWSTOBASE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -171,7 +170,7 @@ Material:
     - _Is_LightColor_Base: 1
     - _Is_LightColor_HighColor: 1
     - _Is_LightColor_MatCap: 1
-    - _Is_LightColor_RimLight: 1
+    - _Is_LightColor_RimLight: 0
     - _Is_NormalMapForMatCap: 0
     - _Is_NormalMapToBase: 0
     - _Is_NormalMapToHighColor: 0
@@ -192,16 +191,16 @@ Material:
     - _Offset_Y_Axis_BLD: 0.09
     - _Offset_Z: 0
     - _Outline: 0.002
-    - _Outline_Width: 1
+    - _Outline_Width: 2
     - _Parallax: 0.02
-    - _RimLight: 1
+    - _RimLight: 0
     - _RimLight_FeatherOff: 0
     - _RimLight_InsideMask: 0.136
     - _RimLight_Power: 0.092
     - _Rotate_MatCapUV: 0
     - _Rotate_NormalMapForMatCapUV: 0
     - _Set_SystemShadowsToBase: 1
-    - _ShadeColor_Step: 0
+    - _ShadeColor_Step: 0.225
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -223,8 +222,8 @@ Material:
     - _Use_BaseAs1st: 0
     - _ZWrite: 1
     m_Colors:
-    - _1st_ShadeColor: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
-    - _2nd_ShadeColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
+    - _1st_ShadeColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
+    - _2nd_ShadeColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

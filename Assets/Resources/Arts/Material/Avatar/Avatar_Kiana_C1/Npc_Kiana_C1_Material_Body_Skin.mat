@@ -199,7 +199,7 @@ Material:
     - _Rotate_MatCapUV: 0
     - _Rotate_NormalMapForMatCapUV: 0
     - _Set_SystemShadowsToBase: 1
-    - _ShadeColor_Step: 1
+    - _ShadeColor_Step: 0.606
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -222,8 +222,8 @@ Material:
     - _Use_BaseAs1st: 0
     - _ZWrite: 1
     m_Colors:
-    - _1st_ShadeColor: {r: 0.9528302, g: 0.7146226, b: 0.7146226, a: 1}
-    - _2nd_ShadeColor: {r: 1, g: 0.73333335, b: 0.73333335, a: 1}
+    - _1st_ShadeColor: {r: 1, g: 0.8632076, b: 0.8632076, a: 1}
+    - _2nd_ShadeColor: {r: 1, g: 0.84313726, b: 0.84313726, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 0.995283, b: 0.995283, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour {
 
     public List<AvatarCreator> creators;
     public List<GameObject> avatars = new List<GameObject>();
+    public GameObject localPlayer;
 
     public HUDMgr hudMgr;
     public PlaneHUDMgr planeHUDMgr;
@@ -23,10 +24,11 @@ public class GameController : MonoBehaviour {
     {
         Application.targetFrameRate = frameRate;
 
-        var avatarObj = Factory.CreateAvatar(avatar, camp, isLocal, transform.position, transform.rotation, mainWeapon, secondWeapon);
-        var uiEventMgr = avatarObj.GetComponent<C_UiEventMgr>();
+        localPlayer = Factory.CreateAvatar(avatar, camp, isLocal, transform.position, transform.rotation, mainWeapon, secondWeapon);
+        var uiEventMgr = localPlayer.GetComponent<C_UiEventMgr>();
         hudMgr.Init(uiEventMgr);
         planeHUDMgr.Init(uiEventMgr);
+
         foreach (var item in creators)
         {
             var avatar = item.Create();
@@ -47,6 +49,17 @@ public class GameController : MonoBehaviour {
             avatars.Add(avatar);
         }
 
+    }
+
+    public void Exit()
+    {
+        foreach (var item in avatars)
+        {
+            Object.Destroy(item);
+        }
+        avatars.Clear();
+        Object.Destroy(localPlayer);
+        Effect.Clear();
     }
 
 }
