@@ -1,0 +1,319 @@
+fileFormatVersion: 2
+guid: ee50565d51857f64ca6abfbbde3dc127
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Cam_Collision01
+    100002: Cam_Collision02
+    100004: Cam_Collision03
+    100006: Cam_Collision05
+    100008: Cloud_Ring
+    100010: CloudSea
+    100012: Collision01
+    100014: Collision02
+    100016: Collision03
+    100018: Collision04
+    100020: Collision05
+    100022: Light01
+    100024: Light02
+    100026: Light02 1
+    100028: Light02 2
+    100030: LightGroup
+    100032: LightProbManager
+    100034: Locator01
+    100036: Locator02
+    100038: Locator03
+    100040: Locator04
+    100042: Locator05
+    100044: Poly01 2
+    100046: Poly01 2 1
+    100048: Poly01 3
+    100050: Poly01 4
+    100052: Poly02 2
+    100054: Poly02 2 1
+    100056: Poly02 3
+    100058: Poly02 4
+    100060: Poly03
+    100062: Poly03 1
+    100064: S01_Outside_C01
+    100066: S01_Outside_C01_Light
+    100068: S01_Outside_C02
+    100070: S01_Outside_C02 (1)
+    100072: S01_Outside_C02_Light
+    100074: S01_Outside_C02_Ref
+    100076: S01_Outside_C02_Ref (1)
+    100078: S01_Outside_C03
+    100080: S01_Outside_C03 (1)
+    100082: S01_Outside_C04
+    100084: S01_Outside_C04_Light
+    100086: S01_Outside_C05
+    100088: S01_Outside_Old
+    100090: Sky
+    100092: SpaceShip_MoonThrone_C02
+    100094: SpaceShip_Old
+    100096: Sparkle
+    100098: Sparkle 1
+    100100: Sparkle2
+    100102: Sparkle2 1
+    100104: sparkleLocal0
+    100106: sparkleLocal0 1
+    100108: sparkleLocal0 2
+    100110: sparkleLocal0 3
+    100112: sparkleLocal1
+    100114: sparkleLocal1 1
+    100116: sparkleLocal1 2
+    100118: sparkleLocal1 3
+    100120: sparkleLocal2
+    100122: sparkleLocal2 1
+    100124: sparkleLocal2 2
+    100126: sparkleLocal2 3
+    100128: sparkleLocal3
+    100130: sparkleLocal3 1
+    100132: sparkleLocal3 2
+    100134: sparkleLocal3 3
+    100136: Stage_SpaceShip_MoonThrone_01
+    100138: Stage_SpaceShip_MoonThrone_02
+    100140: Stage_SpaceShip_MoonThrone_04
+    100142: Stage_SpaceShip_MoonThrone_Bottom
+    100144: Stage_SpaceShip_MoonThrone_C05
+    100146: Stage_SpaceShip_MoonThrone_C05 (1)
+    100148: Stage_SpaceShip_MoonThrone_Collision
+    100150: Stage_SpaceShip_MoonThrone_Light
+    100152: //RootNode
+    100154: Sun
+    400000: Cam_Collision01
+    400002: Cam_Collision02
+    400004: Cam_Collision03
+    400006: Cam_Collision05
+    400008: Cloud_Ring
+    400010: CloudSea
+    400012: Collision01
+    400014: Collision02
+    400016: Collision03
+    400018: Collision04
+    400020: Collision05
+    400022: Light01
+    400024: Light02
+    400026: Light02 1
+    400028: Light02 2
+    400030: LightGroup
+    400032: LightProbManager
+    400034: Locator01
+    400036: Locator02
+    400038: Locator03
+    400040: Locator04
+    400042: Locator05
+    400044: Poly01 2
+    400046: Poly01 2 1
+    400048: Poly01 3
+    400050: Poly01 4
+    400052: Poly02 2
+    400054: Poly02 2 1
+    400056: Poly02 3
+    400058: Poly02 4
+    400060: Poly03
+    400062: Poly03 1
+    400064: S01_Outside_C01
+    400066: S01_Outside_C01_Light
+    400068: S01_Outside_C02
+    400070: S01_Outside_C02 (1)
+    400072: S01_Outside_C02_Light
+    400074: S01_Outside_C02_Ref
+    400076: S01_Outside_C02_Ref (1)
+    400078: S01_Outside_C03
+    400080: S01_Outside_C03 (1)
+    400082: S01_Outside_C04
+    400084: S01_Outside_C04_Light
+    400086: S01_Outside_C05
+    400088: S01_Outside_Old
+    400090: Sky
+    400092: SpaceShip_MoonThrone_C02
+    400094: SpaceShip_Old
+    400096: Sparkle
+    400098: Sparkle 1
+    400100: Sparkle2
+    400102: Sparkle2 1
+    400104: sparkleLocal0
+    400106: sparkleLocal0 1
+    400108: sparkleLocal0 2
+    400110: sparkleLocal0 3
+    400112: sparkleLocal1
+    400114: sparkleLocal1 1
+    400116: sparkleLocal1 2
+    400118: sparkleLocal1 3
+    400120: sparkleLocal2
+    400122: sparkleLocal2 1
+    400124: sparkleLocal2 2
+    400126: sparkleLocal2 3
+    400128: sparkleLocal3
+    400130: sparkleLocal3 1
+    400132: sparkleLocal3 2
+    400134: sparkleLocal3 3
+    400136: Stage_SpaceShip_MoonThrone_01
+    400138: Stage_SpaceShip_MoonThrone_02
+    400140: Stage_SpaceShip_MoonThrone_04
+    400142: Stage_SpaceShip_MoonThrone_Bottom
+    400144: Stage_SpaceShip_MoonThrone_C05
+    400146: Stage_SpaceShip_MoonThrone_C05 (1)
+    400148: Stage_SpaceShip_MoonThrone_Collision
+    400150: Stage_SpaceShip_MoonThrone_Light
+    400152: //RootNode
+    400154: Sun
+    2100000: No Name
+    2100002: Stage_SpaceShip_MoonThrone_Mat_C05
+    2100004: Stage_SpaceShip_MoonThrone_Mat_Bottom
+    2100006: Stage_SpaceShip_MoonThrone_Mat_02
+    2100008: Stage_MoonThrone_S01_C02_Outside_Env
+    2100010: Stage_SpaceShip_MoonThrone_Mat_C02
+    2100012: Default-Material
+    2100014: Stage_SpaceShip_MoonThrone_Mat_04
+    2100016: Stage_SpaceShip_MoonThrone_Mat_Old
+    2100018: Stage_SpaceShip_MoonThrone_Mat_01
+    2300000: Cam_Collision01
+    2300002: Cam_Collision02
+    2300004: Cam_Collision03
+    2300006: Cam_Collision05
+    2300008: Collision01
+    2300010: Collision02
+    2300012: Collision03
+    2300014: Collision04
+    2300016: Collision05
+    2300018: S01_Outside_C01
+    2300020: S01_Outside_C02
+    2300022: S01_Outside_C02 (1)
+    2300024: S01_Outside_C02_Ref
+    2300026: S01_Outside_C02_Ref (1)
+    2300028: S01_Outside_Old
+    2300030: SpaceShip_MoonThrone_C02
+    2300032: Stage_SpaceShip_MoonThrone_01
+    2300034: Stage_SpaceShip_MoonThrone_02
+    2300036: Stage_SpaceShip_MoonThrone_04
+    2300038: Stage_SpaceShip_MoonThrone_Bottom
+    2300040: Stage_SpaceShip_MoonThrone_C05
+    2300042: Stage_SpaceShip_MoonThrone_C05 (1)
+    2300044: Stage_SpaceShip_MoonThrone_Light
+    3300000: Cam_Collision01
+    3300002: Cam_Collision02
+    3300004: Cam_Collision03
+    3300006: Cam_Collision05
+    3300008: Collision01
+    3300010: Collision02
+    3300012: Collision03
+    3300014: Collision04
+    3300016: Collision05
+    3300018: S01_Outside_C01
+    3300020: S01_Outside_C02
+    3300022: S01_Outside_C02 (1)
+    3300024: S01_Outside_C02_Ref
+    3300026: S01_Outside_C02_Ref (1)
+    3300028: S01_Outside_Old
+    3300030: SpaceShip_MoonThrone_C02
+    3300032: Stage_SpaceShip_MoonThrone_01
+    3300034: Stage_SpaceShip_MoonThrone_02
+    3300036: Stage_SpaceShip_MoonThrone_04
+    3300038: Stage_SpaceShip_MoonThrone_Bottom
+    3300040: Stage_SpaceShip_MoonThrone_C05
+    3300042: Stage_SpaceShip_MoonThrone_C05 (1)
+    3300044: Stage_SpaceShip_MoonThrone_Light
+    4300000: S01_Outside_C02_Ref
+    4300002: Stage_SpaceShip_MoonThrone_C05
+    4300004: S01_Outside_C02 (1)
+    4300006: Stage_SpaceShip_MoonThrone_Bottom
+    4300008: Stage_SpaceShip_MoonThrone_02
+    4300010: S01_Outside_C01
+    4300012: SpaceShip_MoonThrone_C02
+    4300014: Collision04
+    4300016: Collision02
+    4300018: Cam_Collision02
+    4300020: Collision01
+    4300022: Cam_Collision01
+    4300024: Collision05
+    4300026: Cam_Collision05
+    4300028: Collision03
+    4300030: Cam_Collision03
+    4300032: Stage_SpaceShip_MoonThrone_04
+    4300034: S01_Outside_Old
+    4300036: Stage_SpaceShip_MoonThrone_01
+    4300038: Stage_SpaceShip_MoonThrone_Light
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
