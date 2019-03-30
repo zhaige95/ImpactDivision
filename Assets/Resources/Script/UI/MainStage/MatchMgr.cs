@@ -8,49 +8,63 @@ public class MatchMgr : Photon.PunBehaviour
 {
     public Image frontRing;
     public GameObject backBtn;
-    public Text processRate;
+    public Text ringText;
     private AsyncOperation async = null;
     private float progressValue;
 
     [Header("Photon Event")]
     public OnJoinedRoom onJoinedRoom;
+    public OnPlayStart onPlayStart;
+    //public OnPlayerConnected onPlayerConnected;
 
-    // Use this for initialization
-    private void OnEnable () {
-
+    // Update is called once per frame
+    void Update () {
+        
     }
 
-    IEnumerator Load()
+    public void StartMatch()
     {
-        async = PhotonNetwork.LoadLevelAsync("Battle001");
-        async.allowSceneActivation = false;
+        PhotonNetwork.JoinRandomRoom();
+    }
 
-        while (!async.isDone)
+    public void CancleMatch()
+    {
+        if (Battle.inRoom)
         {
-            if (async.progress < 0.9f)
-                progressValue = async.progress;
-            else
-                progressValue = 1.0f;
-
-            frontRing.fillAmount = progressValue;
-            processRate.text = (int)(progressValue * 100) + "%";
-
-            yield return null;
+            PhotonNetwork.LeaveRoom();
         }
-
-        yield return new WaitForSeconds(2);
     }
     
-	// Update is called once per frame
-	void Update () {
-        
+    // photon event -------------------------------
+
+    public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
+    {
+        ringText.text = PhotonNetwork.playerList.Length + "";
+
+        if (!Battle.started && PhotonNetwork.playerList.Length >= 3)
+        {
+            if (PhotonNetwork.isMasterClient)
+            {
+                async = PhotonNetwork.LoadLevelAsync("Battle001");
+                async.allowSceneActivation = true;
+                onPlayStart.Invoke();
+            }
+        }
+    }
+
+    public override void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
+    {
+        ringText.text = PhotonNetwork.playerList.Length + "";
     }
 
     public override void OnJoinedRoom()
     {
         onJoinedRoom.Invoke();
-
+        ringText.text = PhotonNetwork.playerList.Length + "";
     }
     
+    
 
+
+    
 }

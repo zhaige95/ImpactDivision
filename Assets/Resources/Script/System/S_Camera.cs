@@ -10,7 +10,7 @@ public class S_Camera : ComponentSystem {
     }
 
     public RaycastHit hit;
-    bool cursorIsLocked = false;
+    bool cursorIsLocked = true;
     
     protected override void OnUpdate()
     {
@@ -18,10 +18,6 @@ public class S_Camera : ComponentSystem {
         {
             var _camera = e._Camera;
             var _velocity = e._Velocity;
-            if (_velocity.isLocalPlayer)
-            {
-                _camera.mainCamera.fieldOfView = Mathf.Lerp(_camera.mainCamera.fieldOfView, _camera.FOVtarget, 10f * Time.deltaTime);
-            }
             
             if (_camera.m_cursorIsLocked)
             {
@@ -58,7 +54,6 @@ public class S_Camera : ComponentSystem {
                 _camera.camera_y.localEulerAngles = new Vector3(0, y, 0);
             }
             
-            _camera.m_cursorIsLocked = this.InternalLockUpdate();
 
             if (_camera.forceX != 0)
             {
@@ -80,7 +75,30 @@ public class S_Camera : ComponentSystem {
                 }
             }
 
-            PhysicalProcess(e);
+            // local player logic
+            if (_velocity.isLocalPlayer)
+            {
+                _camera.mainCamera.fieldOfView = Mathf.Lerp(_camera.mainCamera.fieldOfView, _camera.FOVtarget, 10f * Time.deltaTime);
+                PhysicalProcess(e);
+                //_camera.m_cursorIsLocked = this.InternalLockUpdate();
+
+                if (Input.GetKeyUp(KeyCode.Escape))
+                {
+                    _camera.m_cursorIsLocked = !_camera.m_cursorIsLocked;
+                }
+
+                if (_camera.m_cursorIsLocked)
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                }
+                else if (!_camera.m_cursorIsLocked)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                }
+
+            }
 
             if (_velocity.DcutCameraSide)
             {
@@ -97,21 +115,21 @@ public class S_Camera : ComponentSystem {
     private bool InternalLockUpdate()
     {   
         
-        if(Input.GetKeyUp(KeyCode.Escape))
-        {
-            cursorIsLocked = !cursorIsLocked;
-        }
+        //if(Input.GetKeyUp(KeyCode.Escape))
+        //{
+        //    cursorIsLocked = !cursorIsLocked;
+        //}
 
-        if (cursorIsLocked)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-        else if (!cursorIsLocked)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        //if (cursorIsLocked)
+        //{
+        //    Cursor.lockState = CursorLockMode.Locked;
+        //    Cursor.visible = false;
+        //}
+        //else if (!cursorIsLocked)
+        //{
+        //    Cursor.lockState = CursorLockMode.None;
+        //    Cursor.visible = true;
+        //}
 
         return cursorIsLocked;
     }

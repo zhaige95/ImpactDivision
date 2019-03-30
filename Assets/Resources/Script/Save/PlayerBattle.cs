@@ -6,7 +6,7 @@ public class PlayerBattle {
     public int kill = 0;
     public int die = 0;
     public int headshotKill = 0;
-    public int maxContinuousKill = 0;
+    public int maxMultiKill = 0;
     public int maxOneBattleKill = 0;
     public float playTime = 0;
 

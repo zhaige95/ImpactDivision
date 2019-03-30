@@ -26,9 +26,4 @@ public class MainMgr : WindowBasic
 		
 	}
 
-    public void Match()
-    {
-        //SceneManager.LoadScene("SampleTestScene");
-    }
-
 }

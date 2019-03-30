@@ -10,6 +10,8 @@ public class Battle : MonoBehaviour
     public static Transform localPlayerCameraTrans;
     public static Camera localPlayerCamera;
     public static int localPlayerCamp;
+    public static bool started = false;
+    public static bool inRoom = false;
     //public Dictionary<string, C_Attributes> campPool1;
     //public Dictionary<string, C_Attributes> campPool2;
 

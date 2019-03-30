@@ -45,6 +45,8 @@ public class C_Camera : MonoBehaviour {
         targetSideOffset1 = camera_x.localPosition;
         targetSideOffset2 = cameraHandle.localPosition;
 
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         //var cameraController = GameObject.Instantiate(this.Carryer);
         //mainCamera = cameraController.GetComponentInChildren<Camera>();
         //camera_y = cameraController.transform;

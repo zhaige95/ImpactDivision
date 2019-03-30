@@ -65,11 +65,6 @@ public class PhotonEngine : Photon.PunBehaviour {
         PhotonNetwork.ConnectUsingSettings("v0.1");
     }
 
-    public void StartMatch()
-    {
-        PhotonNetwork.JoinRandomRoom();
-    }
-
     public void JoinLobby()
     {
         onStartJoinLobby.Invoke();
@@ -79,8 +74,6 @@ public class PhotonEngine : Photon.PunBehaviour {
     // Primatry Connection Operation-----------------------------------------------------------------
     public override void OnConnectedToMaster()
     {
-        //Debug.Log("connect to master");
-        //PhotonNetwork.JoinLobby();
         onConnToMaster.Invoke();
     }
 
@@ -142,28 +135,21 @@ public class PhotonEngine : Photon.PunBehaviour {
 
     public override void OnJoinedRoom()
     {
+        Battle.inRoom = true;
         PhotonNetwork.automaticallySyncScene = true;
         Debug.Log("joined");
     }
 
     public override void OnLeftRoom()
     {
+        Battle.inRoom = false;
         PhotonNetwork.automaticallySyncScene = false;
-
+        Debug.Log("left room");
     }
 
     public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {
-        //Debug.Log("player enter");
-        //Debug.Log(PhotonNetwork.playerList.Length);
 
-        //if (!Started && PhotonNetwork.playerList.Length >= 2)
-        //{
-        //    if (PhotonNetwork.isMasterClient)
-        //    {
-        //        PhotonNetwork.LoadLevel("TestBattle");
-        //    }
-        //}
     }
 
     public override void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
@@ -205,3 +191,7 @@ public class OnLeftLobby : UnityEvent { }
 public class OnJoinedRoom : UnityEvent { }
 [Serializable]
 public class OnLeftRoom : UnityEvent { }
+[Serializable]
+public class OnPlayerConnected : UnityEvent { }
+[Serializable]
+public class OnPlayStart : UnityEvent { }

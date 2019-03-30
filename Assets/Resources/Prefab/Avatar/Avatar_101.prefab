@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 114528926027309116}
   - component: {fileID: 114750585671936190}
   m_Layer: 13
-  m_Name: Avatar_001
+  m_Name: Avatar_101
   m_TagString: Avatar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5256,7 +5256,7 @@ MonoBehaviour:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
+    InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 10
     InterpolateMoveTowardsAcceleration: 2
