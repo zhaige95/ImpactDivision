@@ -42,6 +42,7 @@ public class CS_Run : AvatarState {
 
     public override void Enter()
     {
+        base.Enter();
         if (_velocity.armed)
         {
             _velocity.currentSpeed = speed;
@@ -55,17 +56,18 @@ public class CS_Run : AvatarState {
         if (!_attributes.isDead)
         {
             var _anim = _animator.animator;
-
-            if (_velocity.armed)
+            if (_velocity.isLocalPlayer)
             {
-                var currentSpeed = _velocity.currentSpeed;
-                
-                _characterController.Move(transform.forward * currentSpeed * _attributes.rate * Time.deltaTime );
+                if (_velocity.armed)
+                {
 
+                    var currentSpeed = _velocity.currentSpeed;
+                    _characterController.Move(transform.forward * currentSpeed * _attributes.rate * Time.deltaTime);
+
+                    SetFreeDirection();
+                    _characterController.SimpleMove(Vector3.zero);
+                }
             }
-            SetFreeDirection();
-            _characterController.SimpleMove(Vector3.zero);
-
         }
         else
         {
@@ -79,7 +81,9 @@ public class CS_Run : AvatarState {
         
     }
 
-    public override void Exit() {
+    public override void Exit()
+    {
+        base.Exit();
         //_velocity.Drun = false;
         _animator.animator.SetBool("run", false);
     }

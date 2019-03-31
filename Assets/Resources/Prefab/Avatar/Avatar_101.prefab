@@ -4532,7 +4532,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6ff23937c4df40a449620634af95b61b, type: 3}
   m_Controller: {fileID: 9100000, guid: eb046380a940e0e45b4d45826aea9c7e, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -4980,6 +4980,8 @@ MonoBehaviour:
   ownershipTransfer: 0
   ObservedComponents:
   - {fileID: 114750585671936190}
+  - {fileID: 114576564685032682}
+  - {fileID: 114941734476039396}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
@@ -5097,6 +5099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultState: idle
+  lastState: 
   runningState: idle
 --- !u!114 &114639515348826420
 MonoBehaviour:

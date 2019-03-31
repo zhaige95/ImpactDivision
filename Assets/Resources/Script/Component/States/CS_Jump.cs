@@ -45,6 +45,7 @@ public class CS_Jump : AvatarState {
 
     public override void Enter()
     {
+        base.Enter();
         if (_velocity.crouch)
         {
             _velocity.crouch = false;
@@ -72,12 +73,15 @@ public class CS_Jump : AvatarState {
 
             if (_velocity.armed)
             {
-                Aspect.RotateToCameraY(_camera.Carryer, transform, 0.5f);
-                _characterController.Move(
-                   transform.forward * currentSpeed * _attributes.rate * _velocity.fwd * Time.deltaTime +
-                   transform.right * currentSpeed * _attributes.rate * _velocity.right * Time.deltaTime +
-                   transform.up * force * _attributes.rate * Time.deltaTime
-               );
+                if (_velocity.isLocalPlayer)
+                {
+                    Aspect.RotateToCameraY(_camera.Carryer, transform, 0.5f);
+                    _characterController.Move(
+                       transform.forward * currentSpeed * _attributes.rate * _velocity.fwd * Time.deltaTime +
+                       transform.right * currentSpeed * _attributes.rate * _velocity.right * Time.deltaTime +
+                       transform.up * force * _attributes.rate * Time.deltaTime
+                   );
+                }
             }
 
             force -= (gravity * Time.deltaTime);
@@ -109,6 +113,7 @@ public class CS_Jump : AvatarState {
 
     public override void Exit() {
 
+        base.Exit();
         _animator.animator.SetBool("jump", false);
         _velocity.jumping = false;
     }

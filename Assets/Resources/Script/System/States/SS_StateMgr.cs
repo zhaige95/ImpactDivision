@@ -6,6 +6,7 @@ public class SS_StateMgr : ComponentSystem {
 	struct Group{
         public CS_StateMgr stateMgr;
         public C_Attributes _Attributes;
+        public C_Velocity _Velocity;
 	}
 
 	protected override void OnUpdate()
@@ -15,16 +16,18 @@ public class SS_StateMgr : ComponentSystem {
             if (!e._Attributes.isDead)
             {
                 var _stateMgr = e.stateMgr;
-
+                var _velocity = e._Velocity;
                 var currentState = _stateMgr.avatarStates[_stateMgr.runningState];
-
-                if (!currentState._unique)
+                if (_velocity.isLocalPlayer)
                 {
-                    ListenerPeocess(_stateMgr);
-                }
-                else if (!currentState._active)
-                {
-                    ListenerPeocess(_stateMgr);
+                    if (!currentState._unique)
+                    {
+                        ListenerPeocess(_stateMgr);
+                    }
+                    else if (!currentState._active)
+                    {
+                        ListenerPeocess(_stateMgr);
+                    }
                 }
 
                 foreach (AvatarState state in _stateMgr.avatarStates.Values)
@@ -32,12 +35,10 @@ public class SS_StateMgr : ComponentSystem {
                     if (state._active)
                     {
                         state.OnUpdate();
-                        if (state._exitTick)
+
+                        if (state._exitTick && _velocity.isLocalPlayer)
                         {
                             state.Exit();
-                            state._active = false;
-                            state._exitTick = false;
-                            state._enterTick = false;
                         }
                     }
                 }
@@ -59,12 +60,8 @@ public class SS_StateMgr : ComponentSystem {
                     // exit last state
                     var lastState = _stateMgr.avatarStates[_stateMgr.runningState];
                     lastState.Exit();
-                    lastState._active = false;
-                    lastState._exitTick = false;
-                    lastState._enterTick = false;
 
                     _stateMgr.runningState = state._name;
-                    state._active = true;
                     state.Enter();
                     break;
                 }

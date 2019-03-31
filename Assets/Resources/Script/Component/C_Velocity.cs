@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class C_Velocity : MonoBehaviour {
+public class C_Velocity : MonoBehaviour, IPunObservable {
     public bool isActive = true;
     public bool Dfwd = false;
     public bool Dbwd = false;
@@ -40,6 +40,20 @@ public class C_Velocity : MonoBehaviour {
     public bool armed = false;
 
     public float currentSpeed = 0;
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            stream.SendNext(this.fwd);
+            stream.SendNext(this.right);
+        }
+        else if (stream.isReading)
+        {
+            this.fwd = (float)stream.ReceiveNext();
+            this.right = (float)stream.ReceiveNext();
+        }
+    }
 
     public void Reset()
     {

@@ -32,4 +32,9 @@ namespace Data
         layer3 = 3
     }
 
+    public enum StateChangeCode
+    {
+        Enter = 1,
+        Exit = 2
+    }
 }

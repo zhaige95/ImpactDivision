@@ -129,7 +129,7 @@ public class PhotonEngine : Photon.PunBehaviour {
         // 随机取一种对战模式设定
         
         // 设置房间信息
-        PhotonNetwork.CreateRoom(DateTime.Now.GetHashCode()+"", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
+        PhotonNetwork.CreateRoom(DateTime.Now.GetHashCode() + "", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
         Debug.Log("join random filed");
     }
 
@@ -156,16 +156,7 @@ public class PhotonEngine : Photon.PunBehaviour {
     {
 
     }
-
-
-    //private void OnLevelWasLoaded(int level)
-    //{
-    //    if (level == 1)
-    //    {
-    //        Started = true;
-    //        OnGameStart.Invoke();
-    //    }
-    //}
+    
 }
 [Serializable]
 public class OnVersionOld : UnityEvent { }

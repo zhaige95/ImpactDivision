@@ -40,6 +40,7 @@ public class CS_Crouch : AvatarState {
 
     public override void Enter()
     {
+        base.Enter();
         _velocity.currentSpeed = speed;
         _animator.AddEvent("crouch", 1f);
         _velocity.crouch = true;
@@ -67,6 +68,7 @@ public class CS_Crouch : AvatarState {
 
     public override void Exit()
     {
+        base.Exit();
         _velocity.crouch = false;
         _animator.AddEvent("Dfwd", 0);
         _animator.AddEvent("Dright", 0);

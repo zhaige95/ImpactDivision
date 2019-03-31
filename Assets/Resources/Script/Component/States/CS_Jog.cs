@@ -49,6 +49,7 @@ public class CS_Jog : AvatarState {
     }
 
     public override void Enter() {
+        base.Enter();
         if (_velocity.armed)
         {
             _velocity.currentSpeed = _velocity.aiming ? walkSpeed : jogSpeed;
@@ -69,13 +70,15 @@ public class CS_Jog : AvatarState {
                 _animator.AddEvent("Dright", _velocity.right);
 
                 _animator.AddEvent("aim", _velocity.aiming? 1f : 0f);
-                _velocity.currentSpeed = _velocity.aiming ? walkSpeed : jogSpeed;
                 
-                var currentSpeed = _velocity.currentSpeed;
-
-                Aspect.RotateToCameraY(_camera.Carryer, transform, 0.5f);
-                _characterController.Move(transform.forward * currentSpeed * _attributes.rate * _velocity.fwd * Time.deltaTime +
-                                    transform.right * currentSpeed * _attributes.rate * _velocity.right * Time.deltaTime);
+                if (_velocity.isLocalPlayer)
+                {
+                    _velocity.currentSpeed = _velocity.aiming ? walkSpeed : jogSpeed;
+                    var currentSpeed = _velocity.currentSpeed;
+                    Aspect.RotateToCameraY(_camera.Carryer, transform, 0.5f);
+                    _characterController.Move(transform.forward * currentSpeed * _attributes.rate * _velocity.fwd * Time.deltaTime +
+                                        transform.right * currentSpeed * _attributes.rate * _velocity.right * Time.deltaTime);
+                }
                 
             }
             else
@@ -102,7 +105,9 @@ public class CS_Jog : AvatarState {
         }
     }
 
-    public override void Exit() {
+    public override void Exit()
+    {
+        base.Exit();
         _animator.animator.SetBool("idle", _velocity.idle);
         _animator.AddEvent("Dfwd", 0);
         _animator.AddEvent("Dright", 0);

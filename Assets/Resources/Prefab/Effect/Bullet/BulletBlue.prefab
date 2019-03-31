@@ -56,6 +56,7 @@ MonoBehaviour:
   effectTag: BulletBlue
   speed: 150
   isActive: 1
+  visible: 1
   impactEffect: {fileID: 1544474115454700, guid: 55eeb5fd97b685b48a48ec749ddfa3df,
     type: 2}
   layerMask:
@@ -109,7 +110,7 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 1.2}
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 2
@@ -119,7 +120,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.14024353
+        value: 0.026666641
         inSlope: 0
         outSlope: 0
         tangentMode: 0

@@ -41,7 +41,10 @@ public class C_Camera : MonoBehaviour {
 
     private void Start()
     {
-        Carryer.parent = null;
+        if (GetComponent<C_Velocity>().isLocalPlayer)
+        {
+            Carryer.parent = null;
+        }
         targetSideOffset1 = camera_x.localPosition;
         targetSideOffset2 = cameraHandle.localPosition;
 

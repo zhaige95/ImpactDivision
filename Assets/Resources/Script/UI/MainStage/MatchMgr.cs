@@ -41,7 +41,7 @@ public class MatchMgr : Photon.PunBehaviour
     {
         ringText.text = PhotonNetwork.playerList.Length + "";
 
-        if (!Battle.started && PhotonNetwork.playerList.Length >= 3)
+        if (!Battle.started && PhotonNetwork.playerList.Length >= 2)
         {
             if (PhotonNetwork.isMasterClient)
             {

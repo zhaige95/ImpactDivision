@@ -24,17 +24,14 @@ public class CS_Idle : AvatarState {
         return _velocity.idle;
     }
 
-    public override void Enter() { }
-
     public override void OnUpdate() {
-
-        Aspect.RotateToCameraY(_camera.Carryer, transform, 0.5f);
+        if (_velocity.isLocalPlayer)
+        {
+            Aspect.RotateToCameraY(_camera.Carryer, transform, 0.5f);
+        }
         _characterController.SimpleMove(Vector3.zero);
     }
 
-    public override void Exit() { }
-
-    
 
 }
            

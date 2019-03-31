@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1239038810545592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41, y: 2.313, z: -0.78}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,6 +56,7 @@ MonoBehaviour:
   effectTag: BulletYellow
   speed: 150
   isActive: 1
+  visible: 1
   impactEffect: {fileID: 1213904565693942, guid: c3bb04037739fd040ada1dc267d06a35,
     type: 2}
   layerMask:
@@ -113,13 +114,13 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 1
+    widthMultiplier: 0.01
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.11111756
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0

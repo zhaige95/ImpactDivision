@@ -17,10 +17,18 @@ public class AvatarState : MonoBehaviour {
 
     public virtual bool Listener() { return false; }
 
-    public virtual void Enter() { }
+    public virtual void Enter() {
+        _active = true;
+        _exitTick = false;
+        _enterTick = false;
+    }
 
     public virtual void OnUpdate() { }
 
-    public virtual void Exit() { }
+    public virtual void Exit() {
+        _active = false;
+        _exitTick = false;
+        _enterTick = false;
+    }
 
 }
