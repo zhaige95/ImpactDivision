@@ -37,7 +37,9 @@ public class Run_Rifle : WeaponState
     }
 
 
-    public override void Enter() {
+    public override void Enter()
+    {
+        base.Enter();
         _iKManager.SetAim(false);
         _weaponHandle.handPoint.localPosition = runOffset._position;
         _weaponHandle.handPoint.localEulerAngles = runOffset._rotation;
@@ -52,7 +54,9 @@ public class Run_Rifle : WeaponState
             this._exitTick = true;
         }
     }
-    public override void Exit() {
+    public override void Exit()
+    {
+        base.Exit();
         _iKManager.SetAim(true);
         _weaponHandle.handPoint.localPosition = _weaponAttribute.holdOffset._position;
         _weaponHandle.handPoint.localEulerAngles = _weaponAttribute.holdOffset._rotation;

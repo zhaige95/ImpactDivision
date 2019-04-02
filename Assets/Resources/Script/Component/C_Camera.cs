@@ -19,7 +19,6 @@ public class C_Camera : MonoBehaviour, IPunObservable
     public float FOVdefault;
     public float FOVtarget;
     public float radius;
-    public bool m_cursorIsLocked = true;
     public LayerMask shootLayerMask;
     public LayerMask coverLayerMask;
     public ClipPlanePoints planePoints;
@@ -33,7 +32,7 @@ public class C_Camera : MonoBehaviour, IPunObservable
     public Vector3 targetSideOffset2;
 
     [Header("Network Property")]
-    public Quaternion syncX;
+    public Quaternion syncX = Quaternion.identity;
 
     public struct ClipPlanePoints
     {
@@ -51,9 +50,7 @@ public class C_Camera : MonoBehaviour, IPunObservable
         }
         targetSideOffset1 = camera_x.localPosition;
         targetSideOffset2 = cameraHandle.localPosition;
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        
         //var cameraController = GameObject.Instantiate(this.Carryer);
         //mainCamera = cameraController.GetComponentInChildren<Camera>();
         //camera_y = cameraController.transform;

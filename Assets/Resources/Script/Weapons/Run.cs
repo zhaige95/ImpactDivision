@@ -32,9 +32,11 @@ public class Run : WeaponState
     }
 
 
-    public override void Enter() {
+    public override void Enter()
+    {
+        base.Enter();
         _iKManager.SetAim(false);
-        
+        //_weaponAttribute.   
     }
 
     public override void OnUpdate()
@@ -47,7 +49,8 @@ public class Run : WeaponState
         }
     }
     public override void Exit() {
-        
+
+        base.Exit();
     }
 }
  

@@ -31,7 +31,9 @@ public class Railgun_Run : WeaponState
     }
 
 
-    public override void Enter() {
+    public override void Enter()
+    {
+        base.Enter();
         _iKManager.SetAim(false);
         _iKManager.SetHold(false);
     }
@@ -46,6 +48,7 @@ public class Railgun_Run : WeaponState
     }
     public override void Exit()
     {
+        base.Exit();
         _iKManager.SetAim(true);
         _iKManager.SetHold(true);
     }

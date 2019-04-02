@@ -48,7 +48,9 @@ public class Pick : WeaponState
         return false;
     }
 
-    public override void Enter() {
+    public override void Enter()
+    {
+        base.Enter();
         process = 1;
         _iKManager.SetAim(false);
         if (_weaponAttribute.active)
@@ -60,21 +62,20 @@ public class Pick : WeaponState
             _iKManager.SetHoldTarget(_weaponAttribute.holdPoint);
             endTimer.Enter(endTime);
             pickTimer.Enter(pickTime);
-            //if ((int) _weaponAttribute.magType == 1)
-            //{
-            //    _weaponAttribute.magObj.GetComponent<ParentConstraint>().SetSource(0, new ConstraintSource()
-            //        {
-            //            sourceTransform = _weaponHandle.leftHand,
-            //            weight = 1
-            //        }
-            //    );
-            //}
+
             _weaponHandle.locked = true;
             var cutMsg = new UiEvent.UiMsgs.WeaponCut()
             {
                 texture = _weaponAttribute.cutPicInBattle
             };
             _uiMgr.SendEvent(cutMsg);
+
+            var ammoMsg = new UiEvent.UiMsgs.Ammo()
+            {
+                ammo = _weaponAttribute.runtimeMag + (_weaponAttribute.bore ? 1f : 0f),
+                mag = _weaponAttribute.mag
+            };
+            _uiMgr.SendEvent(ammoMsg);
         }
         else
         {
@@ -88,8 +89,8 @@ public class Pick : WeaponState
 
     public override void OnUpdate()
     {
-        endTimer.Update();
-        pickTimer.Update();
+        endTimer.FixedUpdate();
+        pickTimer.FixedUpdate();
 
         if (!pickTimer.isRunning && process == 1)
         {
@@ -123,15 +124,11 @@ public class Pick : WeaponState
             this._exitTick = true;
         }
     }
-    public override void Exit() {
+    public override void Exit()
+    {
+        base.Exit();
         _isPicked = _weaponAttribute.active;
-
-        var ammoMsg = new UiEvent.UiMsgs.Ammo()
-        {
-            ammo = _weaponAttribute.runtimeMag + (_weaponAttribute.bore ? 1f : 0f),
-            mag = _weaponAttribute.mag
-        };
-        _uiMgr.SendEvent(ammoMsg);
+        
     }
 }
  

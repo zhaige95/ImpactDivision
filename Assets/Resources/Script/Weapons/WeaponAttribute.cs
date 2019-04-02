@@ -11,8 +11,6 @@ public class WeaponAttribute : MonoBehaviour
     public string wname;
     public WeaponType type;
     public MagType magType;
-    public string defaultState;
-    public string runningState = "";
     public int mag;
     public int runtimeMag;
     public bool bore = false; // 枪膛，上膛的子弹
@@ -35,10 +33,12 @@ public class WeaponAttribute : MonoBehaviour
     public Dictionary<string, int> statesLayer = new Dictionary<string, int>();
     public Dictionary<int, List<string>> layerState = new Dictionary<int, List<string>>();
 
-    private void Awake()
-    {
-    }
+    [Header("State Property")]
+    public string defaultState = "";
+    public string lastState = "";
+    public string runningState = "";
 
+ 
     public void RegState(string name, WeaponState state)
     {
         this.states.Add(name, state);

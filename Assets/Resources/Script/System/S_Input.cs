@@ -7,6 +7,7 @@ public class S_Input : ComponentSystem {
 	struct Group{
 		public C_Input _Input;
 		public C_Velocity _Velocity;
+        public C_Cursor _Cursor;
 	}
 
 	protected override void OnUpdate()
@@ -14,10 +15,11 @@ public class S_Input : ComponentSystem {
 		foreach (var e in GetEntities<Group>())
 		{
             var _velocity = e._Velocity;
+            var _input = e._Input;
 
-            if (_velocity.isActive)
+            _velocity.Dback = Input.GetKeyDown(_input.back);
+            if (_velocity.isActive && e._Cursor.isLocked)
             {
-                var _input = e._Input;
                 _velocity.Dfwd = Input.GetKey(_input.fwd);
                 _velocity.Dbwd = Input.GetKey(_input.bwd);
                 _velocity.Dleft = Input.GetKey(_input.left);

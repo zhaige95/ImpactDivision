@@ -66,7 +66,7 @@ public class MatchMgr : Photon.PunBehaviour
     {
         ringText.text = PhotonNetwork.playerList.Length + "";
 
-        if (!Battle.started && PhotonNetwork.playerList.Length >= 2)
+        if (!Battle.started && PhotonNetwork.playerList.Length >= 1)
         {
             if (PhotonNetwork.isMasterClient)
             {
@@ -107,23 +107,13 @@ public class MatchMgr : Photon.PunBehaviour
 
         // test code 
 
-        //onPlayStart.Invoke();
-        //async = PhotonNetwork.LoadLevelAsync("Battle001");
-        //async.allowSceneActivation = true;
+        onPlayStart.Invoke();
+        async = PhotonNetwork.LoadLevelAsync("Battle001");
+        async.allowSceneActivation = true;
+        Hashtable p = new Hashtable();
+        p.Add("team", "1");
+        PhotonNetwork.playerList[0].SetCustomProperties(p, null, false);
 
-        //for (int i = 0; i < PhotonNetwork.playerList.Length; i++)
-        //{
-        //    Hashtable p = new Hashtable();
-        //    p.Add("team", "1");
-        //    PhotonNetwork.playerList[i].SetCustomProperties(p, null, false);
-        //}
-
-        //for (int i = PhotonNetwork.playerList.Length / 2 - 1; i < PhotonNetwork.playerList.Length; i++)
-        //{
-        //    Hashtable p = new Hashtable();
-        //    p.Add("team", "2");
-        //    PhotonNetwork.playerList[i].SetCustomProperties(p, null, false);
-        //}
 
     }
     

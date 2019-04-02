@@ -45,14 +45,14 @@ public class CS_StateMgr : MonoBehaviour, IPunObservable {
         if (stream.isWriting)
         {
             var nextState = this.lastState.Equals(this.runningState) ? "" : this.runningState;
-            Debug.Log("Writting " + nextState);
+
             stream.SendNext(nextState);
             this.lastState = this.runningState;
         }
         else if (stream.isReading)
         {
             var nextState = (string)stream.ReceiveNext();
-            Debug.Log("Reading " + nextState);
+
             if (!nextState.Equals(""))
             {
                 this.ExitState(runningState);

@@ -7,10 +7,10 @@ using UnityEngine.Animations;
 public class C_WeaponHandle : MonoBehaviour
 {
     public PhotonView pView;
+    public C_Velocity velocity;
     public ConfigWeapon mainWeapon;
     public ConfigWeapon secondWeapon;
-
-    //public Dictionary<int, WeaponData> weaponDataList = new Dictionary<int, WeaponData>();
+    
     public Dictionary<int, WeaponAttribute> weaponAttributes = new Dictionary<int, WeaponAttribute>();
 
     public bool active = true;
@@ -39,6 +39,47 @@ public class C_WeaponHandle : MonoBehaviour
             if (targetWeapon == 0)
             {
                 targetWeapon = 2;
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+
+        foreach (var weaponAtt in weaponAttributes.Values)
+        {
+            if (weaponAtt.active)
+            {
+                foreach (WeaponState state in weaponAtt.states.Values)
+                {
+                    if (state._active)
+                    {
+                        if (state._exitTick)
+                        {
+                            state.Exit();
+                        }
+                        else
+                        {
+                            state.OnUpdate();
+                        }
+                    }
+                }
+                
+            }
+            else
+            {
+                var state = weaponAtt.states[weaponAtt.defaultState];
+                if (state._active)
+                {
+                    if (state._exitTick)
+                    {
+                        state.Exit();
+                    }
+                    else
+                    {
+                        state.OnUpdate();
+                    }
+                }
             }
         }
     }
@@ -74,9 +115,6 @@ public class C_WeaponHandle : MonoBehaviour
             var att = weaponAttributes[currentWeapon];
             var stateName = att.runningState;
             att.states[stateName].Exit();
-            att.states[stateName]._active = false;
-            att.states[stateName]._enterTick = false;
-            att.states[stateName]._exitTick = false;
         }
         foreach (var weapon in weaponAttributes.Values)
         {
@@ -84,9 +122,39 @@ public class C_WeaponHandle : MonoBehaviour
         }
 
         locked = false;
-
     }
 
+    [PunRPC]
+    public void NetworkFire(int wIndex, Vector3 targetPoint)
+    {
+        Fire state = (Fire)weaponAttributes[wIndex].states["fire"];
+        state.targetPoint = targetPoint;
+        state.Enter();
+    }
+    
+    [PunRPC]
+    public void EnterState(string sName)
+    {
+        if (weaponAttributes[this.currentWeapon].states.ContainsKey(sName))
+        {
+            var attr = weaponAttributes[this.currentWeapon];
+            var state = attr.states[sName];
+            var runningState = attr.states[attr.runningState];
+            
+            if (state.layer == runningState.layer)
+            {
+                runningState.Exit();
+            }
+            state.Enter();
+            attr.runningState = sName;
+        }
+    }
+    
+    public void ExitState(string sName)
+    {
+        weaponAttributes[this.currentWeapon].states[sName].Exit();
+    }
+    
     [PunRPC]
     public void PickWeapon()
     {
@@ -105,7 +173,7 @@ public class C_WeaponHandle : MonoBehaviour
             }
         }
     }
-
+    
 }
 
 

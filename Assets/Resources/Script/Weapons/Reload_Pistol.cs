@@ -49,7 +49,9 @@ public class Reload_Pistol : WeaponState
     }
 
 
-    public override void Enter() {
+    public override void Enter()
+    {
+        base.Enter();
 
         _weaponAttribute.reload = true;
 
@@ -99,6 +101,7 @@ public class Reload_Pistol : WeaponState
 
     public override void Exit() {
 
+        base.Exit();
         _iKManager.SetAim(true);
         _iKManager.SetHold(true);
         _weaponAttribute.reload = false;

@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 114166651141621798}
   - component: {fileID: 114455105426851954}
   - component: {fileID: 114569502687907570}
+  - component: {fileID: 114524251598315748}
   - component: {fileID: 114493978813828184}
   - component: {fileID: 114528926027309116}
   - component: {fileID: 114750585671936190}
@@ -4960,6 +4961,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.15
+--- !u!114 &114524251598315748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1070887550732324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6413a57327ff14ba5589245f70b6b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 1
 --- !u!114 &114528926027309116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5769,7 +5782,6 @@ MonoBehaviour:
   FOVdefault: 60
   FOVtarget: 60
   radius: 0.05
-  m_cursorIsLocked: 1
   shootLayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -6067,6 +6079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
+  Dback: 0
   Dfwd: 0
   Dbwd: 0
   Dright: 0
@@ -6131,6 +6144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pView: {fileID: 114528926027309116}
+  velocity: {fileID: 114941734476039396}
   mainWeapon: {fileID: 0}
   secondWeapon: {fileID: 0}
   active: 1

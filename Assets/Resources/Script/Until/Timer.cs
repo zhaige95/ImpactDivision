@@ -13,7 +13,7 @@ public class Timer {
         this.time = t;
     }
 
-    public void Update(){
+    public void Update(float dt){
         if (this.isRunning)
         {
             //if (Time.time - this.rate >= this.time)
@@ -24,9 +24,17 @@ public class Timer {
             {
                 Stop();
             }
-            this.rate += Time.deltaTime;
-            
+            this.rate += dt;
         }
+    }
+
+    public void Update()
+    {
+        this.Update(Time.deltaTime);
+    }
+    public void FixedUpdate()
+    {
+        this.Update(Time.fixedDeltaTime);
     }
 
     public void Enter(float t){

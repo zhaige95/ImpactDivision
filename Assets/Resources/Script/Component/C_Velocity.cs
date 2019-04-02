@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class C_Velocity : MonoBehaviour, IPunObservable {
     public bool isActive = true;
+    public bool Dback = false;
     public bool Dfwd = false;
     public bool Dbwd = false;
     public bool Dright = false;

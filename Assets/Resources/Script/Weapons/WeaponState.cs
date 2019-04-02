@@ -24,7 +24,10 @@ public class WeaponState : MonoBehaviour
 
     public virtual bool Listener() { return false; }
 
-    public virtual void Enter() { }
+    public virtual void Enter()
+    {
+        _active = true;
+    }
 
     public virtual void OnUpdate() { }
 
@@ -36,7 +39,11 @@ public class WeaponState : MonoBehaviour
         _exitTick = false;
     }
 
-    public virtual void Exit() { }
+    public virtual void Exit() {
+        _active = false;
+        _enterTick = false;
+        _exitTick = false;
+    }
 
 
 

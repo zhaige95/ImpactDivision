@@ -57,6 +57,7 @@ public class NV4_Reload : WeaponState
     }
 
     public override void Enter() {
+        base.Enter();
 
         _weaponAttribute.reload = true;
 
@@ -122,6 +123,7 @@ public class NV4_Reload : WeaponState
         }
     }
     public override void Exit() {
+        base.Exit();
     
         _iKManager.SetHold(true);
         _iKManager.SetAim(true);

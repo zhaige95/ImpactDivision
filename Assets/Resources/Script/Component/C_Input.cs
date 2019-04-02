@@ -4,6 +4,7 @@ using UnityEngine;
 public class C_Input : MonoBehaviour{
 
     public bool isActive = true;
+    public string back = "escape";
     public string fwd = "w";
     public string bwd = "s";
     public string right = "d";

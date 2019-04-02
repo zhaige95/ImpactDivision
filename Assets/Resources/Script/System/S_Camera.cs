@@ -7,6 +7,7 @@ public class S_Camera : ComponentSystem {
     {
         public C_Camera _Camera;
         public C_Velocity _Velocity;
+        public C_Cursor _Cursor;
     }
 
     public RaycastHit hit;
@@ -22,7 +23,7 @@ public class S_Camera : ComponentSystem {
             // local player logic
             if (_velocity.isLocalPlayer)
             {
-                if (_camera.m_cursorIsLocked)
+                if (e._Cursor.isLocked)
                 {
                     float x = 0f;
                     float y = 0f;
@@ -81,22 +82,7 @@ public class S_Camera : ComponentSystem {
                 _camera.mainCamera.fieldOfView = Mathf.Lerp(_camera.mainCamera.fieldOfView, _camera.FOVtarget, 10f * Time.deltaTime);
                 PhysicalProcess(e);
                 //_camera.m_cursorIsLocked = this.InternalLockUpdate();
-
-                if (Input.GetKeyUp(KeyCode.Escape))
-                {
-                    _camera.m_cursorIsLocked = !_camera.m_cursorIsLocked;
-                }
-
-                if (_camera.m_cursorIsLocked)
-                {
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Cursor.visible = false;
-                }
-                else if (!_camera.m_cursorIsLocked)
-                {
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
-                }
+                
 
                 if (_velocity.DcutCameraSide)
                 {
@@ -115,28 +101,7 @@ public class S_Camera : ComponentSystem {
             }
         }
     }
-
-    private bool InternalLockUpdate()
-    {   
-        
-        //if(Input.GetKeyUp(KeyCode.Escape))
-        //{
-        //    cursorIsLocked = !cursorIsLocked;
-        //}
-
-        //if (cursorIsLocked)
-        //{
-        //    Cursor.lockState = CursorLockMode.Locked;
-        //    Cursor.visible = false;
-        //}
-        //else if (!cursorIsLocked)
-        //{
-        //    Cursor.lockState = CursorLockMode.None;
-        //    Cursor.visible = true;
-        //}
-
-        return cursorIsLocked;
-    }
+    
 
     void PhysicalProcess(Group e)
     {

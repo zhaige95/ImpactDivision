@@ -15,11 +15,6 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
 		
 	}
 
-    void OnLevelWasLoaded(int level)
-    {
-
-    }
-
     IEnumerator ShowPlayer()
     {
         yield return new WaitForSeconds(1);

@@ -34,7 +34,9 @@ public class Aim : WeaponState
         return false;
     }
 
-    public override void Enter() {
+    public override void Enter()
+    {
+        base.Enter();
         _iKManager.SetAim(true);
         _velocity.Drun = false;
         _velocity.aiming = true;
@@ -51,6 +53,7 @@ public class Aim : WeaponState
     }
     public override void Exit() {
 
+        base.Exit();
         _camera.FOVtarget = _camera.FOVdefault;
         _velocity.aiming = false;
     }

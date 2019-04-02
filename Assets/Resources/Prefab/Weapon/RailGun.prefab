@@ -523,13 +523,11 @@ MonoBehaviour:
   wname: RailGun
   type: 2
   magType: 2
-  defaultState: pick
-  runningState: pick
   mag: 12
   runtimeMag: 12
   bore: 0
   fireSpeed: 900
-  demage: 32
+  damage: 32
   reloadTime: 1
   interval: 0
   spread: 15
@@ -540,11 +538,14 @@ MonoBehaviour:
   holdOffset:
     _position: {x: -0.0915, y: 0.0348, z: 0.0096}
     _rotation: {x: -104.924, y: -75.43701, z: 80.45899}
-  cutTexture: {fileID: 2800000, guid: 6411d49d562429e4bb163fc6429a8876, type: 3}
+  cutPicInBattle: {fileID: 0}
   holdPoint: {fileID: 4022105809440286}
   shootPoint: {fileID: 4198249403142180}
   magObj: {fileID: 0}
   constraint: {fileID: 7973541676911364100}
+  defaultState: pick
+  lastState: pick
+  runningState: pick
 --- !u!114 &114714607737536574
 MonoBehaviour:
   m_ObjectHideFlags: 1
