@@ -37,42 +37,40 @@ public class S_WeaponHandle : ComponentSystem {
                 }
 
                 // weapon state process
-                if (_velocity.isLocalPlayer)
+               
+                foreach (var weaponAtt in _handle.weaponAttributes.Values)
                 {
-                    foreach (var weaponAtt in _handle.weaponAttributes.Values)
+                    if (weaponAtt.active)
                     {
-                        if (weaponAtt.active)
+                        var currentState = weaponAtt.states[weaponAtt.runningState];
+                        int currentStateLayer = (int)currentState.layer;
+
+                        // 取状态层级
+                        foreach (int layerIndex in weaponAtt.layerState.Keys)
                         {
-                            var currentState = weaponAtt.states[weaponAtt.runningState];
-                            int currentStateLayer = (int)currentState.layer;
+                            // 取当前层的状态列表
+                            var nameList = weaponAtt.layerState[layerIndex];
 
-                            // 取状态层级
-                            foreach (int layerIndex in weaponAtt.layerState.Keys)
+                            if (layerIndex == currentStateLayer)
                             {
-                                // 取当前层的状态列表
-                                var nameList = weaponAtt.layerState[layerIndex];
-
-                                if (layerIndex == currentStateLayer)
+                                if (!currentState._active)
                                 {
-                                    if (!currentState._active)
-                                    {
-                                        ListenerProcess(nameList, weaponAtt);
-                                    }
-                                    else if (!currentState._unique)
-                                    {
-                                        ListenerProcess(nameList, weaponAtt);
-                                    }
+                                    ListenerProcess(nameList, weaponAtt);
                                 }
-                                else
+                                else if (!currentState._unique)
                                 {
                                     ListenerProcess(nameList, weaponAtt);
                                 }
                             }
+                            else
+                            {
+                                ListenerProcess(nameList, weaponAtt);
+                            }
                         }
-                        else
-                        {
-                            ListenerProcess(weaponAtt.defaultState, weaponAtt);
-                        }
+                    }
+                    else
+                    {
+                        ListenerProcess(weaponAtt.defaultState, weaponAtt);
                     }
                 }
                 

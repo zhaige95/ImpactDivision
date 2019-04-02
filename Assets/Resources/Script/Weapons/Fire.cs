@@ -90,7 +90,6 @@ public class Fire : WeaponState
             {
 
                 Sound.PlayOneShot(_audio, sound);
-
                 _iKManager.aimIK.solver.axis = fireAxis;
 
                 // 后坐力
@@ -176,7 +175,7 @@ public class Fire : WeaponState
         else
         {
             Sound.PlayOneShot(_audio, sound);
-
+            _iKManager.aimIK.solver.axis = fireAxis;
 
             if (Physics.Raycast(OcclusionPoint.position, OcclusionPoint.forward, out hitInfo, OcclusionSensorDistance, occlusionLayer.layerMask))
             {

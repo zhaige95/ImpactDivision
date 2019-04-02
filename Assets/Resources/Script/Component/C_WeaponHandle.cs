@@ -125,9 +125,9 @@ public class C_WeaponHandle : MonoBehaviour
     }
 
     [PunRPC]
-    public void NetworkFire(int wIndex, Vector3 targetPoint)
+    public void NetworkFire(Vector3 targetPoint)
     {
-        Fire state = (Fire)weaponAttributes[wIndex].states["fire"];
+        Fire state = (Fire)weaponAttributes[this.currentWeapon].states["fire"];
         state.targetPoint = targetPoint;
         state.Enter();
     }

@@ -15,14 +15,6 @@ public class S_Health : ComponentSystem {
 	{
 		foreach (var e in GetEntities<Group>())
 		{
-            if (Input.GetKeyDown("e"))
-            {
-                e._Attributes.HP = 0;
-            }
-            if (Input.GetKeyDown("f"))
-            {
-                Revive(e);
-            }
 
             if (e._Attributes.HP <= 0 && e._AttackListener.isActive)
             {
