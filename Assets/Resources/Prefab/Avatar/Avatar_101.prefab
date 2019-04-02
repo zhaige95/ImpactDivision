@@ -4533,7 +4533,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 6ff23937c4df40a449620634af95b61b, type: 3}
   m_Controller: {fileID: 9100000, guid: eb046380a940e0e45b4d45826aea9c7e, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 1
+  m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -4897,6 +4897,7 @@ MonoBehaviour:
   _onGroundSensor: {fileID: 114567977899816288}
   _audioSource: {fileID: 82076460438832134}
   _characterController: {fileID: 143902589011073922}
+  pView: {fileID: 0}
   activeTime: 0.4
   part: 1
   gravity: 20
@@ -4982,6 +4983,7 @@ MonoBehaviour:
   - {fileID: 114750585671936190}
   - {fileID: 114576564685032682}
   - {fileID: 114941734476039396}
+  - {fileID: 114798856965775900}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
@@ -5056,9 +5058,7 @@ MonoBehaviour:
   radius: 0
   height: 0
   skinWidth: 0
-  layer:
-    serializedVersion: 2
-    m_Bits: 1048576
+  layerConfig: {fileID: 11400000, guid: 940d3689c345a51419211009ff9edeee, type: 2}
   isGrounded: 1
 --- !u!114 &114569502687907570
 MonoBehaviour:
@@ -5259,7 +5259,7 @@ MonoBehaviour:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 4
+    InterpolateOption: 2
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 10
     InterpolateMoveTowardsAcceleration: 2
@@ -5313,9 +5313,9 @@ MonoBehaviour:
     DrawErrorGizmo: 1
   m_RotationModel:
     SynchronizeEnabled: 1
-    InterpolateOption: 1
+    InterpolateOption: 2
     InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 5
+    InterpolateLerpSpeed: 20
   m_ScaleModel:
     SynchronizeEnabled: 0
     InterpolateOption: 0
@@ -5783,6 +5783,7 @@ MonoBehaviour:
   sideSwitch: 0
   targetSideOffset1: {x: 0, y: 0, z: 0}
   targetSideOffset2: {x: 0, y: 0, z: 0}
+  syncX: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &114820868985768058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6088,6 +6089,8 @@ MonoBehaviour:
   isLocalPlayer: 0
   fwd: 0
   right: 0
+  targetFwd: 0
+  targetRight: 0
   mouse: 0
   idle: 1
   crouch: 0
@@ -6127,6 +6130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec817e08b5937f94293d1990d371a6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pView: {fileID: 114528926027309116}
   mainWeapon: {fileID: 0}
   secondWeapon: {fileID: 0}
   active: 1

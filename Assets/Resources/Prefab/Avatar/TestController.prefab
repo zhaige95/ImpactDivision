@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 114052190378782918}
   - component: {fileID: 114667938724669026}
   - component: {fileID: 114548639222391160}
+  - component: {fileID: 82138658839558462}
   m_Layer: 16
   m_Name: Avatar_Kiana_C1_003
   m_TagString: Untagged
@@ -2146,7 +2147,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202918126331540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 1.853, z: -0.6}
+  m_LocalPosition: {x: -6.059, y: 0.83, z: 0.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4758201827600920}
@@ -2999,7 +3000,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1083405147730456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0036776066, y: 0.95115006, z: 0.040235996}
+  m_LocalPosition: {x: 0.0036773682, y: 0.9511499, z: 0.040235996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4305346627539050}
@@ -4352,6 +4353,102 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.22749901, y: 0.23768365, z: 0.2951022}
   m_Center: {x: 0.02024772, y: -0.034217924, z: 0.11655106}
+--- !u!82 &82138658839558462
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1087049453023948}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243176054486452420, guid: 5fedc24a7bf673c47ba5580df3c5e018,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!82 &82508784894854316
 AudioSource:
   m_ObjectHideFlags: 1
@@ -4360,7 +4457,8 @@ AudioSource:
   m_GameObject: {fileID: 1202918126331540}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243956078740671318, guid: 5fedc24a7bf673c47ba5580df3c5e018,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.506
@@ -4529,8 +4627,8 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6ff23937c4df40a449620634af95b61b, type: 3}
   m_Controller: {fileID: 9100000, guid: eb046380a940e0e45b4d45826aea9c7e, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 1
+  m_CullingMode: 0
+  m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -4649,13 +4747,13 @@ MonoBehaviour:
     - {fileID: 4627853285927372}
   solvers:
     leftFoot:
-      IKPosition: {x: -1.7902653, y: 1.9619457, z: -0.5741316}
+      IKPosition: {x: -6.3492656, y: 0.9389456, z: 0.35586843}
       IKPositionWeight: 0
       root: {fileID: 4758201827600920}
       target: {fileID: 0}
       IKRotationWeight: 0
       IKRotation: {x: -0.44804057, y: -0.44749275, z: -0.5484624, w: -0.5460758}
-      bendNormal: {x: 0.046470385, y: -0.012252417, z: 0.011190877}
+      bendNormal: {x: 0.046470426, y: -0.012252446, z: 0.0111908475}
       bone1:
         transform: {fileID: 4554520136631562}
         weight: 1
@@ -4693,13 +4791,13 @@ MonoBehaviour:
       bendModifierWeight: 1
       bendGoal: {fileID: 0}
     rightFoot:
-      IKPosition: {x: -1.3552042, y: 1.9300758, z: -0.6175321}
+      IKPosition: {x: -5.914204, y: 0.9070757, z: 0.31246796}
       IKPositionWeight: 0
       root: {fileID: 4758201827600920}
       target: {fileID: 0}
       IKRotationWeight: 0
       IKRotation: {x: -0.5393675, y: -0.5397822, z: -0.4585399, w: -0.45547697}
-      bendNormal: {x: 0.029736083, y: 0.0022296486, z: -0.0022548514}
+      bendNormal: {x: 0.029736083, y: 0.002229635, z: -0.002254602}
       bone1:
         transform: {fileID: 4644337097456038}
         weight: 1
@@ -4737,13 +4835,13 @@ MonoBehaviour:
       bendModifierWeight: 1
       bendGoal: {fileID: 0}
     leftHand:
-      IKPosition: {x: -2.051518, y: 3.0522866, z: -0.6034341}
+      IKPosition: {x: -6.610518, y: 2.0292866, z: 0.32656595}
       IKPositionWeight: 0
       root: {fileID: 4758201827600920}
       target: {fileID: 4537385639279196}
       IKRotationWeight: 0
       IKRotation: {x: -0.98361963, y: -0.11207527, z: 0.023665935, w: -0.13918121}
-      bendNormal: {x: -0.007429817, y: 0.01966928, z: -0.009120385}
+      bendNormal: {x: -0.007429802, y: 0.019669272, z: -0.009120346}
       bone1:
         transform: {fileID: 4705399646347822}
         weight: 1
@@ -4781,13 +4879,13 @@ MonoBehaviour:
       bendModifierWeight: 1
       bendGoal: {fileID: 0}
     rightHand:
-      IKPosition: {x: -0.9765859, y: 3.1470218, z: -0.6505105}
+      IKPosition: {x: -5.535586, y: 2.1240215, z: 0.27948958}
       IKPositionWeight: 0
       root: {fileID: 4758201827600920}
       target: {fileID: 0}
       IKRotationWeight: 0
       IKRotation: {x: -0.039035246, y: -0.13221328, z: 0.98706985, w: 0.08178562}
-      bendNormal: {x: -0.004996096, y: -0.026997421, z: -0.003415211}
+      bendNormal: {x: -0.004996113, y: -0.026997445, z: -0.0034153108}
       bone1:
         transform: {fileID: 4387681940263264}
         weight: 1
@@ -4825,7 +4923,7 @@ MonoBehaviour:
       bendModifierWeight: 1
       bendGoal: {fileID: 0}
     spine:
-      IKPosition: {x: -1.5190814, y: 2.9610963, z: -0.53058255}
+      IKPosition: {x: -6.078081, y: 1.9380963, z: 0.39941752}
       IKPositionWeight: 0
       root: {fileID: 4758201827600920}
       target: {fileID: 0}
@@ -4836,24 +4934,24 @@ MonoBehaviour:
       bones:
       - transform: {fileID: 4635523266237206}
         weight: 1
-        solverPosition: {x: -1.5109057, y: 2.898643, z: -0.5351893}
+        solverPosition: {x: -6.0699058, y: 1.875643, z: 0.39481077}
         solverRotation: {x: 0.56164014, y: -0.45883662, z: -0.47403753, w: 0.4993172}
         defaultLocalPosition: {x: -0.09589309, y: 0.022887388, z: -0.005118694}
         defaultLocalRotation: {x: 0.012221876, y: -0.03565742, z: -0.027643237, w: 0.9989069}
-        length: 0.06315436
+        length: 0.06315433
         sqrMag: 0
-        axis: {x: -0.0631543, y: -0.00008391138, z: -0.00000027656367}
+        axis: {x: -0.06315427, y: -0.00008389172, z: -0.0000005143098}
       - transform: {fileID: 4786061498057092}
         weight: 1
-        solverPosition: {x: -1.5190814, y: 2.9610963, z: -0.53058255}
+        solverPosition: {x: -6.078081, y: 1.9380963, z: 0.39941752}
         solverRotation: {x: 0.5437361, y: -0.48057362, z: -0.4828601, w: 0.49014908}
         defaultLocalPosition: {x: -0.06315437, y: -0.0000838995, z: -0.0000003528595}
         defaultLocalRotation: {x: 0.0024654206, y: -0.028502677, z: 0.011672137, w: 0.9995225}
         length: 0
         sqrMag: 0
-        axis: {x: -0.06303645, y: 0.0013985733, z: 0.0035949673}
+        axis: {x: -0.06303643, y: 0.0013985913, z: 0.0035947282}
     lookAt:
-      IKPosition: {x: -1.5190814, y: 2.9610963, z: 2.4694176}
+      IKPosition: {x: -6.078081, y: 1.9380963, z: 3.3994174}
       IKPositionWeight: 1
       root: {fileID: 4758201827600920}
       target: {fileID: 4461862078290730}
@@ -4978,7 +5076,7 @@ MonoBehaviour:
       transform: {fileID: 4813220414586186}
       target: {fileID: 0}
       positionOffset: {x: 0, y: 0, z: 0}
-      position: {x: -1.5, y: 1.853, z: -0.6}
+      position: {x: -6.059, y: 0.83, z: 0.33}
       positionWeight: 0
       rotationOffset: {x: 0, y: 0, z: 0}
       rotation: {x: -0, y: 0, z: 0}
@@ -5020,6 +5118,7 @@ MonoBehaviour:
   _onGroundSensor: {fileID: 114761686747328708}
   _audioSource: {fileID: 82508784894854316}
   _characterController: {fileID: 143054087646442392}
+  pView: {fileID: 0}
   activeTime: 0.4
   part: 1
   gravity: 20
@@ -5090,6 +5189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultState: idle
+  lastState: 
   runningState: idle
 --- !u!114 &114223504959813088
 MonoBehaviour:
@@ -5780,9 +5880,7 @@ MonoBehaviour:
   radius: 0
   height: 0
   skinWidth: 0
-  layer:
-    serializedVersion: 2
-    m_Bits: 1048576
+  layerConfig: {fileID: 11400000, guid: 940d3689c345a51419211009ff9edeee, type: 2}
   isGrounded: 1
 --- !u!114 &114837230201397816
 MonoBehaviour:
@@ -5946,6 +6044,8 @@ MonoBehaviour:
   isLocalPlayer: 0
   fwd: 0
   right: 0
+  targetFwd: 0
+  targetRight: 0
   mouse: 0
   idle: 1
   crouch: 0
@@ -5993,6 +6093,7 @@ MonoBehaviour:
   sideSwitch: 0
   targetSideOffset1: {x: 0, y: 0, z: 0}
   targetSideOffset2: {x: 0, y: 0, z: 0}
+  syncX: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &114953886395074400
 MonoBehaviour:
   m_ObjectHideFlags: 1

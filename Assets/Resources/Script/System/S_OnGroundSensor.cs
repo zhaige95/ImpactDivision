@@ -18,7 +18,7 @@ public class S_OnGroundSensor : ComponentSystem {
 
             _sensor.point1 = _trans.position + _trans.up * (_sensor.radius - _sensor.skinWidth * 2);
             _sensor.point2 = _sensor.point1 + _trans.up * _sensor.height - _trans.up * _sensor.radius;
-            Collider[] outputColliders = Physics.OverlapCapsule(_sensor.point1, _sensor.point2, _sensor.radius, LayerMask.GetMask("Collide"));
+            Collider[] outputColliders = Physics.OverlapCapsule(_sensor.point1, _sensor.point2, _sensor.radius, _sensor.layerConfig.layerMask);
 
             _sensor.isGrounded = outputColliders.Length > 0;
         }

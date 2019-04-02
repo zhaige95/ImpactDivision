@@ -10,9 +10,6 @@ public class S_Velocity : ComponentSystem {
         public C_Animator _Animator;
 	}
 
-	float targetFwd;
-	float targetRight;
-
     float fwd;
     float right;
 
@@ -35,11 +32,11 @@ public class S_Velocity : ComponentSystem {
                 this.fwd = (_velocity.Dfwd ? 1f : 0) + (_velocity.Dbwd ? -1f : 0);
                 this.right = (_velocity.Dright ? 1f : 0) + (_velocity.Dleft ? -1f : 0);
 
-                this.targetFwd = fwd * Mathf.Sqrt(1 - (right * right) * 0.5f);
-                this.targetRight = right * Mathf.Sqrt(1 - (fwd * fwd) * 0.5f);
+                _velocity.targetFwd = fwd * Mathf.Sqrt(1 - (right * right) * 0.5f);
+                _velocity.targetRight = right * Mathf.Sqrt(1 - (fwd * fwd) * 0.5f);
 
-                DOTween.To(() => _velocity.fwd, x => _velocity.fwd = x, this.targetFwd, 0.3f);
-                DOTween.To(() => _velocity.right, x => _velocity.right = x, this.targetRight, 0.3f);
+                DOTween.To(() => _velocity.fwd, x => _velocity.fwd = x, _velocity.targetFwd, 0.3f);
+                DOTween.To(() => _velocity.right, x => _velocity.right = x, _velocity.targetRight, 0.3f);
 
 
                 _velocity.mouse = _velocity.Dmouse_x > 0 ? 1f : _velocity.Dmouse_x < 0 ? -1f : 0;

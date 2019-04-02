@@ -31,9 +31,13 @@ public class PhotonEngine : Photon.PunBehaviour {
     // Use this for initialization
     private void Start()
     {
+        Application.targetFrameRate = 60;
         DontDestroyOnLoad(this.gameObject);
-        
-        StartCoroutine(GetPhotos());
+
+        StartConnect();
+
+        // check game version
+        //StartCoroutine(GetPhotos());
     }
 
     // 从网络获取版本设置，旧版本不进行网络连接
@@ -51,6 +55,7 @@ public class PhotonEngine : Photon.PunBehaviour {
             onVersionOld.Invoke();
             Debug.Log("游戏版本旧");
         }
+
     }
 
     // Update is called once per frame

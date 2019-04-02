@@ -20,21 +20,21 @@ public class S_WeaponHandle : ComponentSystem {
             {
                 if (_velocity.DswitchWeapon && !_handle.locked)
                 {
-                    if (_handle.currentWeapon == 1)
-                    {
-                        if (_handle.secondWeapon)
-                        {
-                            _handle.targetWeapon = 2;
-                        }
-                    }
-                    if (_handle.currentWeapon == 2)
-                    {
-                        if (_handle.mainWeapon)
-                        {
-                            _handle.targetWeapon = 1;
-                        }
-                    }
-
+                    _handle.pView.RPC("PickWeapon", PhotonTargets.All);
+                    //if (_handle.currentWeapon == 1)
+                    //{
+                    //    if (_handle.secondWeapon)
+                    //    {
+                    //        _handle.targetWeapon = 2;
+                    //    }
+                    //}
+                    //if (_handle.currentWeapon == 2)
+                    //{
+                    //    if (_handle.mainWeapon)
+                    //    {
+                    //        _handle.targetWeapon = 1;
+                    //    }
+                    //}
                 }
 
                 int currentWeapon = _handle.currentWeapon;
@@ -42,7 +42,6 @@ public class S_WeaponHandle : ComponentSystem {
 
                 if (currentWeapon != targetWeapon)
                 {
-
                     foreach (var item in _handle.weaponAttributes.Values)
                     {
                         item.active = false;

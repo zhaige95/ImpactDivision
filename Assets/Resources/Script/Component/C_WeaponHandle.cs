@@ -6,6 +6,7 @@ using UnityEngine.Animations;
 
 public class C_WeaponHandle : MonoBehaviour
 {
+    public PhotonView pView;
     public ConfigWeapon mainWeapon;
     public ConfigWeapon secondWeapon;
 
@@ -84,6 +85,25 @@ public class C_WeaponHandle : MonoBehaviour
 
         locked = false;
 
+    }
+
+    [PunRPC]
+    public void PickWeapon()
+    {
+        if (currentWeapon == 1)
+        {
+            if (secondWeapon)
+            {
+                targetWeapon = 2;
+            }
+        }
+        if (currentWeapon == 2)
+        {
+            if (mainWeapon)
+            {
+                targetWeapon = 1;
+            }
+        }
     }
 
 }

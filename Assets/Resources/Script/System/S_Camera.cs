@@ -19,65 +19,65 @@ public class S_Camera : ComponentSystem {
             var _camera = e._Camera;
             var _velocity = e._Velocity;
             
-            if (_camera.m_cursorIsLocked)
-            {
-                float x = 0f;
-                float y = 0f;
-
-                if (_velocity.aiming)
-                {
-                    x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * _camera.c_speed_x * _camera.aimRate;
-                    y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * _camera.c_speed_y * _camera.aimRate;
-                }
-                else
-                {
-                    x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * _camera.c_speed_x ;
-                    y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * _camera.c_speed_y ;
-                }
-
-                if (x >= 260f && x <= 360f)
-                {
-                    if (x < 270f)
-                    {
-                        x = 270f;
-                    }
-                }
-                else
-                {
-                    if (x > 70f && x <= 100f)
-                    {
-                        x = 70f;
-                    }
-                }
-
-                _camera.camera_x.localEulerAngles = new Vector3(x, 0, 0);
-                _camera.camera_y.localEulerAngles = new Vector3(0, y, 0);
-            }
-            
-
-            if (_camera.forceX != 0)
-            {
-                _camera.camera_x.Rotate(-Time.deltaTime * _camera.forceX, 0, 0);
-                _camera.forceX -= Time.deltaTime * 100f;
-
-                if (_camera.forceX < 0.001f)
-                {
-                    _camera.forceX = 0f;
-                }
-            }
-            if (_camera.forceY != 0)
-            {
-                _camera.camera_y.Rotate(0, Time.deltaTime * _camera.forceY, 0);
-                _camera.forceY -= Time.deltaTime * 100f;
-                if (_camera.forceY < 0.001f)
-                {
-                    _camera.forceY = 0f;
-                }
-            }
-
             // local player logic
             if (_velocity.isLocalPlayer)
             {
+                if (_camera.m_cursorIsLocked)
+                {
+                    float x = 0f;
+                    float y = 0f;
+
+                    if (_velocity.aiming)
+                    {
+                        x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * _camera.c_speed_x * _camera.aimRate;
+                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * _camera.c_speed_y * _camera.aimRate;
+                    }
+                    else
+                    {
+                        x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * _camera.c_speed_x;
+                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * _camera.c_speed_y;
+                    }
+
+                    if (x >= 260f && x <= 360f)
+                    {
+                        if (x < 270f)
+                        {
+                            x = 270f;
+                        }
+                    }
+                    else
+                    {
+                        if (x > 70f && x <= 100f)
+                        {
+                            x = 70f;
+                        }
+                    }
+
+                    _camera.camera_x.localEulerAngles = new Vector3(x, 0, 0);
+                    _camera.camera_y.localEulerAngles = new Vector3(0, y, 0);
+                }
+
+                // 后座力
+                if (_camera.forceX != 0)
+                {
+                    _camera.camera_x.Rotate(-Time.deltaTime * _camera.forceX, 0, 0);
+                    _camera.forceX -= Time.deltaTime * 100f;
+
+                    if (_camera.forceX < 0.001f)
+                    {
+                        _camera.forceX = 0f;
+                    }
+                }
+                if (_camera.forceY != 0)
+                {
+                    _camera.camera_y.Rotate(0, Time.deltaTime * _camera.forceY, 0);
+                    _camera.forceY -= Time.deltaTime * 100f;
+                    if (_camera.forceY < 0.001f)
+                    {
+                        _camera.forceY = 0f;
+                    }
+                }
+
                 _camera.mainCamera.fieldOfView = Mathf.Lerp(_camera.mainCamera.fieldOfView, _camera.FOVtarget, 10f * Time.deltaTime);
                 PhysicalProcess(e);
                 //_camera.m_cursorIsLocked = this.InternalLockUpdate();
@@ -98,17 +98,21 @@ public class S_Camera : ComponentSystem {
                     Cursor.visible = true;
                 }
 
-            }
+                if (_velocity.DcutCameraSide)
+                {
+                    _camera.sideOffset *= -1f;
+                    _camera.targetSideOffset1 = new Vector3(_camera.targetSideOffset1.x * -1f, _camera.targetSideOffset1.y, _camera.targetSideOffset1.z);
+                    _camera.targetSideOffset2 = new Vector3(_camera.targetSideOffset2.x * -1f, _camera.targetSideOffset2.y, _camera.targetSideOffset2.z);
+                }
 
-            if (_velocity.DcutCameraSide)
+                _camera.camera_x.localPosition = Vector3.Lerp(_camera.camera_x.localPosition, _camera.targetSideOffset1, 10f * Time.deltaTime);
+                _camera.cameraHandle.localPosition = Vector3.Lerp(_camera.cameraHandle.localPosition, _camera.targetSideOffset2, 10f * Time.deltaTime);
+            }
+            else
             {
-                _camera.sideOffset *= -1f; 
-                _camera.targetSideOffset1 = new Vector3(_camera.targetSideOffset1.x * -1f, _camera.targetSideOffset1.y, _camera.targetSideOffset1.z);
-                _camera.targetSideOffset2 = new Vector3(_camera.targetSideOffset2.x * -1f, _camera.targetSideOffset2.y, _camera.targetSideOffset2.z);
+                var t = _camera.camera_x.transform;
+                t.localRotation = Quaternion.Lerp(t.localRotation, _camera.syncX, 10f * Time.deltaTime);
             }
-
-            _camera.camera_x.localPosition = Vector3.Lerp(_camera.camera_x.localPosition, _camera.targetSideOffset1, 10f * Time.deltaTime);
-            _camera.cameraHandle.localPosition = Vector3.Lerp(_camera.cameraHandle.localPosition, _camera.targetSideOffset2, 10f * Time.deltaTime);
         }
     }
 

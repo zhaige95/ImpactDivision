@@ -9,10 +9,10 @@ Material:
   m_Name: Npc_Kiana_C1_Material_Face
   m_Shader: {fileID: 4800000, guid: 9baf30ce95c751649b14d96da3a4b4d5, type: 3}
   m_ShaderKeywords: _INVERSE_CLIPPING_ON _INVERSE_Z_AXIS_BLD_ON _ISRIM_NORMAL_ON _IS_BLENDADDTOHICOLOR_ON
-    _IS_BLENDADDTOMATCAP_ON _IS_BLENDBASECOLOR_ON _IS_FILTER_HICUTPOINTLIGHTCOLOR_ON
-    _IS_LIGHTCOLOR_1ST_SHADE_ON _IS_LIGHTCOLOR_2ND_SHADE_ON _IS_LIGHTCOLOR_AP_RIMLIGHT_ON
-    _IS_LIGHTCOLOR_BASE_ON _IS_LIGHTCOLOR_HIGHCOLOR_ON _IS_LIGHTCOLOR_MATCAP_ON _IS_LIGHTCOLOR_RIMLIGHT_ON
-    _IS_SPECULARTOHIGHCOLOR_ON _OUTLINE_NML _RIMLIGHT_ON _SET_SYSTEMSHADOWSTOBASE_ON
+    _IS_BLENDBASECOLOR_ON _IS_FILTER_HICUTPOINTLIGHTCOLOR_ON _IS_LIGHTCOLOR_1ST_SHADE_ON
+    _IS_LIGHTCOLOR_2ND_SHADE_ON _IS_LIGHTCOLOR_AP_RIMLIGHT_ON _IS_LIGHTCOLOR_BASE_ON
+    _IS_LIGHTCOLOR_HIGHCOLOR_ON _IS_SPECULARTOHIGHCOLOR_ON _IS_USETWEAKHIGHCOLORONSHADOW_ON
+    _OUTLINE_NML _SET_SYSTEMSHADOWSTOBASE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -139,12 +139,12 @@ Material:
     - _Add_Antipodean_RimLight: 0
     - _Ap_RimLight_FeatherOff: 0
     - _Ap_RimLight_Power: 0.1
-    - _BaseColor_Step: 0.5
+    - _BaseColor_Step: 0.265
     - _BaseShade_Feather: 0.0001
     - _BumpScale: 1
     - _Clipping_Level: 0
     - _ColorBoost: 1
-    - _CullMode: 0
+    - _CullMode: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -160,7 +160,7 @@ Material:
     - _Is_BLD: 0
     - _Is_BakedNormal: 0
     - _Is_BlendAddToHiColor: 1
-    - _Is_BlendAddToMatCap: 1
+    - _Is_BlendAddToMatCap: 0
     - _Is_BlendBaseColor: 1
     - _Is_Filter_HiCutPointLightColor: 1
     - _Is_Filter_LightColor: 0
@@ -169,8 +169,8 @@ Material:
     - _Is_LightColor_Ap_RimLight: 1
     - _Is_LightColor_Base: 1
     - _Is_LightColor_HighColor: 1
-    - _Is_LightColor_MatCap: 1
-    - _Is_LightColor_RimLight: 1
+    - _Is_LightColor_MatCap: 0
+    - _Is_LightColor_RimLight: 0
     - _Is_NormalMapForMatCap: 0
     - _Is_NormalMapToBase: 0
     - _Is_NormalMapToHighColor: 0
@@ -178,7 +178,7 @@ Material:
     - _Is_Ortho: 0
     - _Is_OutlineTex: 0
     - _Is_SpecularToHighColor: 1
-    - _Is_UseTweakHighColorOnShadow: 0
+    - _Is_UseTweakHighColorOnShadow: 1
     - _Is_UseTweakMatCapOnShadow: 0
     - _LightDirection_MaskOn: 0
     - _MatCap: 0
@@ -193,7 +193,7 @@ Material:
     - _Outline: 0.002
     - _Outline_Width: 1
     - _Parallax: 0.02
-    - _RimLight: 1
+    - _RimLight: 0
     - _RimLight_FeatherOff: 0
     - _RimLight_InsideMask: 0.528
     - _RimLight_Power: 0
@@ -222,9 +222,9 @@ Material:
     - _Use_BaseAs1st: 0
     - _ZWrite: 1
     m_Colors:
-    - _1st_ShadeColor: {r: 1, g: 0.9292453, b: 0.9292453, a: 1}
-    - _2nd_ShadeColor: {r: 1, g: 0.8443396, b: 0.8443396, a: 1}
-    - _Ap_RimLightColor: {r: 1, g: 0.7877358, b: 0.7877358, a: 1}
+    - _1st_ShadeColor: {r: 1, g: 0.8627451, b: 0.8627451, a: 1}
+    - _2nd_ShadeColor: {r: 1, g: 0.84313726, b: 0.84313726, a: 1}
+    - _Ap_RimLightColor: {r: 1, g: 0.7783019, b: 0.7783019, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
@@ -232,5 +232,5 @@ Material:
     - _HighColor: {r: 1, g: 1, b: 1, a: 1}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0.026032407, g: 0.26657766, b: 0.4245283, a: 1}
-    - _Outline_Color: {r: 1, g: 0.6367924, b: 0.6367924, a: 1}
-    - _RimLightColor: {r: 0.8962264, g: 0.7228996, b: 0.7228996, a: 1}
+    - _Outline_Color: {r: 1, g: 0.4575472, b: 0.4575472, a: 1}
+    - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}

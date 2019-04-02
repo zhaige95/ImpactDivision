@@ -235,7 +235,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: bae347543fb35194c9b7b322b3abaaea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -214
+      value: 5425
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bae347543fb35194c9b7b322b3abaaea, type: 3}
       propertyPath: m_LocalPosition.y
@@ -285,6 +285,10 @@ Prefab:
       propertyPath: m_Layer
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bae347543fb35194c9b7b322b3abaaea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2300000, guid: bae347543fb35194c9b7b322b3abaaea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bae347543fb35194c9b7b322b3abaaea, type: 3}
@@ -324,7 +328,7 @@ GameObject:
   - component: {fileID: 795859104}
   - component: {fileID: 795859103}
   - component: {fileID: 795859102}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +455,7 @@ GameObject:
   - component: {fileID: 962361301}
   - component: {fileID: 962361300}
   - component: {fileID: 962361299}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

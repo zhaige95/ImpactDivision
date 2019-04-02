@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class C_Camera : MonoBehaviour {
+public class C_Camera : MonoBehaviour, IPunObservable
+{
     public Transform Carryer;
     public Camera mainCamera;
     public Transform camera_y;
@@ -30,6 +31,9 @@ public class C_Camera : MonoBehaviour {
     public bool sideSwitch = false;
     public Vector3 targetSideOffset1;
     public Vector3 targetSideOffset2;
+
+    [Header("Network Property")]
+    public Quaternion syncX;
 
     public struct ClipPlanePoints
     {
@@ -118,5 +122,17 @@ public class C_Camera : MonoBehaviour {
         planePoints.UpperLeft += transform.up * height;
         planePoints.UpperLeft += transform.forward * distance;
         
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            stream.SendNext(this.camera_x.transform.localEulerAngles.x);
+        }
+        else if (stream.isReading)
+        {
+            this.syncX = Quaternion.Euler((float)stream.ReceiveNext(), 0, 0);
+        }
     }
 }

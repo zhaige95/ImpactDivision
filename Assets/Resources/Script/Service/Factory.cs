@@ -20,7 +20,7 @@ public class Factory
         // 本机用户的话开启相机组件，否则关闭
         avatarObj.GetComponentInChildren<Camera>().enabled = isLocal;
         // 设置射击时的射线判定需要碰撞的Layer
-        _camera.shootLayerMask = 1 << 16 | 1 << 17 | 1 << 18 | 1 << 20 | 0 << (camp + 14);
+        _camera.shootLayerMask = 1 << 16 | 1 << 17 | 1 << 15 | 1 << 20 | 0 << (camp + 14);
         // 添加武器
         var weaponHandle = avatarObj.GetComponent<C_WeaponHandle>();
         weaponHandle.mainWeapon = main;

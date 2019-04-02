@@ -29,7 +29,10 @@ public class C_Velocity : MonoBehaviour, IPunObservable {
 	
 	public float fwd = 0;
 	public float right = 0;
-	public float mouse = 0;
+    public float targetFwd;
+    public float targetRight;
+
+    public float mouse = 0;
     
     // ------------------------------
     public bool idle = true;
@@ -45,8 +48,8 @@ public class C_Velocity : MonoBehaviour, IPunObservable {
     {
         if (stream.isWriting)
         {
-            stream.SendNext(this.fwd);
-            stream.SendNext(this.right);
+            stream.SendNext(this.targetFwd);
+            stream.SendNext(this.targetRight);
         }
         else if (stream.isReading)
         {

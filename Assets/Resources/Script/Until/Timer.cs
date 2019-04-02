@@ -20,11 +20,12 @@ public class Timer {
             //{
             //    Stop();
             //}
-            this.rate += Time.deltaTime;
             if (this.rate >= this.time)
             {
                 Stop();
             }
+            this.rate += Time.deltaTime;
+            
         }
     }
 
@@ -37,7 +38,6 @@ public class Timer {
     public void Enter(){
         if (this.time <= 0)
         {
-            Debug.LogWarning("timer is 0!");
             return;
         }
         //this.rate = Time.time;

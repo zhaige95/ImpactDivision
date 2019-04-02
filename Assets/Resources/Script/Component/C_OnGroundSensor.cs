@@ -15,12 +15,12 @@ public class C_OnGroundSensor : MonoBehaviour {
     public float height;
     [HideInInspector]
     public float skinWidth;
-    public LayerMask layer;
+    public ConfigLayer layerConfig;
     public bool isGrounded = true;
 
     void Start () {
         radius = controller.radius;
-        height = controller.height;
+        height = controller.height / 2;
         skinWidth = controller.skinWidth;
     }
 

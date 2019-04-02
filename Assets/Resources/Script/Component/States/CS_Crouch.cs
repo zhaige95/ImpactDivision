@@ -18,8 +18,7 @@ public class CS_Crouch : AvatarState {
     [Header("[Extra Properties]")]
     public float speed;
     public AudioClip[] sounds;
-
-
+    
     private void OnEnable()
     {
         var stateMgr = GetComponent<CS_StateMgr>();
@@ -50,20 +49,21 @@ public class CS_Crouch : AvatarState {
     public override void OnUpdate() {
         _animator.AddEvent("Dfwd", _velocity.fwd);
         _animator.AddEvent("Dright", _velocity.right);
-
-        var currentSpeed = _velocity.currentSpeed;
-
-        Aspect.RotateToCameraY(_camera.Carryer, transform, 0.5f);
-        _characterController.Move(transform.forward * currentSpeed * _attributes.rate * _velocity.fwd * Time.deltaTime +
-                            transform.right * currentSpeed * _attributes.rate * _velocity.right * Time.deltaTime);
-
-        _characterController.SimpleMove(Vector3.zero);
-
-        if (_velocity.Dcrouch || _velocity.Drun || _velocity.Djump)
+        if (_velocity.isLocalPlayer)
         {
-            _exitTick = true;
-        }
+            var currentSpeed = _velocity.currentSpeed;
 
+            Aspect.RotateToCameraY(_camera.Carryer, transform, 0.5f);
+            _characterController.Move(transform.forward * currentSpeed * _attributes.rate * _velocity.fwd * Time.deltaTime +
+                                transform.right * currentSpeed * _attributes.rate * _velocity.right * Time.deltaTime);
+
+            _characterController.SimpleMove(Vector3.zero);
+
+            if (_velocity.Dcrouch || _velocity.Drun || _velocity.Djump)
+            {
+                _exitTick = true;
+            }
+        }
     }
 
     public override void Exit()

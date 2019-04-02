@@ -7,13 +7,15 @@ public class NetworkCreator : Photon.PunBehaviour {
     public bool isLocal = false;
 	// Use this for initialization
 	void Start () {
+        Debug.Log("create player");
+
         pView = GetComponent<PhotonView>();
         this.isLocal = pView.isMine;
 
-        var save = Battle.playerBattleSave;
         if (isLocal)
         {
-            pView.RPC("Create", PhotonTargets.AllBuffered, PhotonNetwork.AllocateViewID(), save.characterId, save.mainWeaponId, save.secondWeaponId);
+            var save = Battle.playerBattleSave;
+            pView.RPC("Create", PhotonTargets.AllBuffered, PhotonNetwork.AllocateViewID(), Battle.localPlayerCamp, save.characterId, save.mainWeaponId, save.secondWeaponId);
         }
 
     }
@@ -24,13 +26,14 @@ public class NetworkCreator : Photon.PunBehaviour {
 	}
 
     [PunRPC]
-    public void Create(int vID, int characterID, int mainWeaponID, int secondWeaponID)
+    public void Create(int vID, int team, int characterID, int mainWeaponID, int secondWeaponID)
     {
         GameObject model = Resources.Load("Prefab/Avatar/Avatar_" + characterID) as GameObject;
         ConfigWeapon main = Source.ReadWeaponConfig(mainWeaponID);
         ConfigWeapon second = Source.ReadWeaponConfig(secondWeaponID);
-        GameObject avatar = Factory.CreateAvatar(model, 1, this.isLocal, this.transform.position, this.transform.rotation, main, second);
+        GameObject avatar = Factory.CreateAvatar(model, team, this.isLocal, this.transform.position, this.transform.rotation, main, second);
         avatar.GetComponent<PhotonView>().viewID = vID;
+        Debug.Log("read local camp =======" + Battle.localPlayerCamp);
     }
 
 }

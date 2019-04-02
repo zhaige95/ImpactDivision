@@ -14,6 +14,7 @@ public class CS_Jump : AvatarState {
     public C_OnGroundSensor _onGroundSensor;
     public AudioSource _audioSource;
     public CharacterController _characterController;
+    public PhotonView pView;
 
     [Header("[Extra Properties]")]
     public Timer timer = new Timer();
@@ -27,6 +28,7 @@ public class CS_Jump : AvatarState {
 
     private void OnEnable()
     {
+        this.pView = GetComponent<PhotonView>();
         var stateMgr = GetComponent<CS_StateMgr>();
         //_name = "aim";
         stateMgr.RegState(_name, this);
@@ -54,9 +56,12 @@ public class CS_Jump : AvatarState {
         }
         else
         {
-            timer.Enter(activeTime);
-            process = 1;
-            force = _attributes.jumpForce;
+            if (_velocity.isLocalPlayer)
+            {
+                timer.Enter(activeTime);
+                process = 1;
+                force = _attributes.jumpForce;
+            }
             _animator.animator.SetBool("jump", true);
             _velocity.jumping = true;
         }
@@ -67,46 +72,40 @@ public class CS_Jump : AvatarState {
 
         if (!_attributes.isDead)
         {
-            timer.Update();
-
-            var currentSpeed = _velocity.currentSpeed;
-
-            if (_velocity.armed)
+            
+            if (_velocity.isLocalPlayer)
             {
-                if (_velocity.isLocalPlayer)
-                {
-                    Aspect.RotateToCameraY(_camera.Carryer, transform, 0.5f);
-                    _characterController.Move(
-                       transform.forward * currentSpeed * _attributes.rate * _velocity.fwd * Time.deltaTime +
-                       transform.right * currentSpeed * _attributes.rate * _velocity.right * Time.deltaTime +
-                       transform.up * force * _attributes.rate * Time.deltaTime
-                   );
-                }
-            }
+                timer.Update();
+                var currentSpeed = _velocity.currentSpeed;
 
-            force -= (gravity * Time.deltaTime);
+                Aspect.RotateToCameraY(_camera.Carryer, transform, 0.5f);
+                _characterController.Move(
+                    transform.forward * currentSpeed * _attributes.rate * _velocity.fwd * Time.deltaTime +
+                    transform.right * currentSpeed * _attributes.rate * _velocity.right * Time.deltaTime +
+                    transform.up * force * _attributes.rate * Time.deltaTime
+                );
 
-            if (process == 1 && _velocity.Djump && !timer.isRunning)
-            {
-                process = 2;
-                if (force < 0)
+                force -= (gravity * Time.deltaTime);
+
+                if (process == 1 && _velocity.Djump && !timer.isRunning)
                 {
-                    force = _attributes.jumpForce2;
-                }
-                else
-                {
-                    force += _attributes.jumpForce2;
+                    process = 2;
+                    if (force < 0)
+                    {
+                        force = _attributes.jumpForce2;
+                    }
+                    else
+                    {
+                        force += _attributes.jumpForce2;
+                    }
+                    this.pView.RPC("NetworkDoubleJump", PhotonTargets.All);
                 }
 
-                _animator.animator.SetTrigger("tjump");
+                if (force < 0 && _onGroundSensor.isGrounded)
+                {
+                    this._exitTick = true;
+                }
             }
-
-
-            if (force < 0 && _onGroundSensor.isGrounded)
-            {
-                this._exitTick = true;
-            }
-
         }
        
     }
@@ -118,6 +117,11 @@ public class CS_Jump : AvatarState {
         _velocity.jumping = false;
     }
     
+    [PunRPC]
+    public void NetworkDoubleJump()
+    {
+        _animator.animator.SetTrigger("tjump");
+    }
     
 }
            

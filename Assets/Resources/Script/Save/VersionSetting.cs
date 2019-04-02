@@ -5,4 +5,5 @@ using UnityEngine;
 public class VersionSetting {
 
     public string version = "";
+    public int linkNum = 8;
 }
