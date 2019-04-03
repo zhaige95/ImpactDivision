@@ -11,54 +11,49 @@ public class Effect
         var bulletData = obj.GetComponent<C_Bullet>();
         List<GameObject> pool = GetPool(bulletData.effectTag);
 
+        // 查询缓存池中是否有未激活的子弹
         foreach (GameObject item in pool)
         {
             if (!item.GetComponent<C_Bullet>().isActive)
             {
                 item.transform.position = start;
                 item.transform.LookAt(target);
-                ActiveBullet(item, attack, visible);
-
+                ActivateBullet(item, attack, camp, target, visible);
                 return true;
             }
         }
 
+        // 缓存池中没有可用的闲置子弹，额外生成
         // 实例化
-        var bullet = GameObject.Instantiate(obj, start, Quaternion.Euler(Vector3.zero));
+        var bullet = GameObject.Instantiate(obj, start, Quaternion.identity);
         // 放入对象池
         pool.Add(bullet);
-        
+
+        // 激活子弹
+        ActivateBullet(bullet, attack, camp, target, visible);
+        // 激活Entity组件
+        //bullet.GetComponent<GameObjectEntity>().enabled = true;
+        return true;
+    }
+    
+
+    public static void ActivateBullet(GameObject bullet, Attack attack, int camp, Vector3 target, bool visible = true)
+    {
+        // 将子弹指向目标
         bullet.transform.LookAt(target);
-        bullet.layer = 14 + camp;
-        bulletData = bullet.GetComponent<C_Bullet>();
-
-        bulletData.visible = true;
-
-        // 设置attack
-        bulletData.attack = attack;
-        // 设置layer mask
+        
+        var bulletData = bullet.GetComponent<C_Bullet>();
+        // 设置射线检测的layer mask
         switch (camp)
         {
             case 1: bulletData.layerMask = 1 << 16 | 1 << 17 | 1 << 20; break;
             case 2: bulletData.layerMask = 1 << 15 | 1 << 17 | 1 << 20; break;
             case 3: bulletData.layerMask = 1 << 16 | 1 << 15 | 1 << 20; break;
         }
-        // 激活子弹
-        ActiveBullet(bulletData, attack, visible);
-        // 激活Entity组件
-        //bullet.GetComponent<GameObjectEntity>().enabled = true;
-        return true;
-    }
-
-    public static void ActiveBullet(GameObject obj, Attack attack, bool visible)
-    {
-        var bulletData = obj.GetComponent<C_Bullet>();
-        ActiveBullet(bulletData, attack, visible);
-    }
-    public static void ActiveBullet(C_Bullet bullet, Attack attack, bool visible)
-    {
-        bullet.SetActive(attack);
-        bullet.SetVisible(visible);
+        // 设置子弹的可视属性
+        bulletData.SetVisible(visible);
+        // 使用传入Attack信息的方法直接设置伤害信息并激活子弹
+        bulletData.SetActive(attack);
     }
 
     public static bool AddEffect(GameObject obj, Vector3 position, Quaternion rotation)

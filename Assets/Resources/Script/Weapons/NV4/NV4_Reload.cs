@@ -11,6 +11,7 @@ public class NV4_Reload : WeaponState
     public C_IKManager _iKManager;
     public C_WeaponHandle _weaponHandle;
     public C_UiEventMgr _uiMgr;
+    public PhotonView _photonView;
 
     public CS_StateMgr _stateMgr;
 
@@ -34,6 +35,7 @@ public class NV4_Reload : WeaponState
         _iKManager = obj.GetComponent<C_IKManager>();
         _weaponHandle = obj.GetComponent<C_WeaponHandle>();
         _stateMgr = obj.GetComponent<CS_StateMgr>();
+        _photonView = obj.GetComponent<PhotonView>();
 
         _ownAnimator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
@@ -49,6 +51,10 @@ public class NV4_Reload : WeaponState
         {
             if (_weaponAttribute.runtimeMag < _weaponAttribute.mag)
             {
+                if (_velocity.isLocalPlayer)
+                {
+                    _photonView.RPC("EnterState", PhotonTargets.Others, this._name);
+                }
                 return true;
             }
         }
@@ -98,22 +104,25 @@ public class NV4_Reload : WeaponState
             {
                 if (animatorInfo.normalizedTime >= 0.9f)
                 {
-                    if (_weaponAttribute.bore)
+                    if (_velocity.isLocalPlayer)
                     {
-                        _weaponAttribute.runtimeMag = _weaponAttribute.mag;
-                    }
-                    else
-                    {
-                        _weaponAttribute.runtimeMag = _weaponAttribute.mag - 1;
-                        _weaponAttribute.bore = true;
-                    }
+                        if (_weaponAttribute.bore)
+                        {
+                            _weaponAttribute.runtimeMag = _weaponAttribute.mag;
+                        }
+                        else
+                        {
+                            _weaponAttribute.runtimeMag = _weaponAttribute.mag - 1;
+                            _weaponAttribute.bore = true;
+                        }
 
-                    var ammoMsg = new UiEvent.UiMsgs.Ammo()
-                    {
-                        ammo = _weaponAttribute.runtimeMag + (_weaponAttribute.bore ? 1 : 0),
-                        mag = _weaponAttribute.mag
-                    };
-                    _uiMgr.SendEvent(ammoMsg);
+                        var ammoMsg = new UiEvent.UiMsgs.Ammo()
+                        {
+                            ammo = _weaponAttribute.runtimeMag + (_weaponAttribute.bore ? 1 : 0),
+                            mag = _weaponAttribute.mag
+                        };
+                        _uiMgr.SendEvent(ammoMsg);
+                    }
 
                     this._exitTick = true;
                     process = 6;
@@ -124,7 +133,7 @@ public class NV4_Reload : WeaponState
     }
     public override void Exit() {
         base.Exit();
-    
+        
         _iKManager.SetHold(true);
         _iKManager.SetAim(true);
         _weaponAttribute.reload = false;

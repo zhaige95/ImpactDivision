@@ -150,6 +150,7 @@ public class C_WeaponHandle : MonoBehaviour
         }
     }
     
+    [PunRPC]
     public void ExitState(string sName)
     {
         weaponAttributes[this.currentWeapon].states[sName].Exit();

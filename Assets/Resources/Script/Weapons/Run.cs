@@ -9,12 +9,14 @@ public class Run : WeaponState
     public C_Velocity _velocity;
     public C_IKManager _iKManager;
     public WeaponAttribute _weaponAttribute;
+    public PhotonView _photonView;
 
     public override void Init(GameObject obj)
     {
         _velocity = obj.GetComponent<C_Velocity>();
         _iKManager = obj.GetComponent<C_IKManager>();
         _weaponAttribute = GetComponent<WeaponAttribute>();
+        _photonView = obj.GetComponent<PhotonView>();
 
     }
 
@@ -24,6 +26,11 @@ public class Run : WeaponState
         {
             if (!_weaponAttribute.reload)
             {
+                if (_velocity.isLocalPlayer)
+                {
+                    _photonView.RPC("EnterState", PhotonTargets.Others, this._name);
+                    Debug.LogWarning("send enter RPC");
+                }
                 return true;
             }
         }
@@ -41,15 +48,22 @@ public class Run : WeaponState
 
     public override void OnUpdate()
     {
-        
-        if (!_velocity.Drun || _velocity.jumping)
+        if (_velocity.isLocalPlayer)
         {
-            _iKManager.SetAim(true);
-            this._exitTick = true;
+            if (!_velocity.Drun || _velocity.jumping)
+            {
+                _iKManager.SetAim(true);
+                this._exitTick = true;
+            }
         }
+       
     }
     public override void Exit() {
-
+        if (_velocity.isLocalPlayer)
+        {
+            _photonView.RPC("ExitState", PhotonTargets.Others, this._name);
+            Debug.LogWarning("send Exit RPC");
+        }
         base.Exit();
     }
 }

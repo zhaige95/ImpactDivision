@@ -12,6 +12,7 @@ public class Reload_Pistol : WeaponState
     public CS_StateMgr _stateMgr;
     public C_WeaponHandle _weaponHandle;
     public C_UiEventMgr _uiMgr;
+    public PhotonView _photonView;
 
     public AudioSource _audioSource;
     public WeaponAttribute _weaponAttribute;
@@ -29,6 +30,7 @@ public class Reload_Pistol : WeaponState
         _stateMgr = obj.GetComponent<CS_StateMgr>();
         _weaponHandle = obj.GetComponent<C_WeaponHandle>();
         _uiMgr = obj.GetComponent<C_UiEventMgr>();
+        _photonView = obj.GetComponent<PhotonView>();
 
         _audioSource = GetComponent<AudioSource>();
         _weaponAttribute = GetComponent<WeaponAttribute>();
@@ -41,6 +43,10 @@ public class Reload_Pistol : WeaponState
         {
             if (_weaponAttribute.runtimeMag < _weaponAttribute.mag)
             {
+                if (_velocity.isLocalPlayer)
+                {
+                    _photonView.RPC("EnterState", PhotonTargets.Others, this._name);
+                }
                 return true;
             }
         }

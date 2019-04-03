@@ -8,12 +8,14 @@ public class Railgun_Run : WeaponState
     public C_Velocity _velocity;
     public C_IKManager _iKManager;
     public WeaponAttribute _weaponAttribute;
+    public PhotonView _photonView;
 
     public override void Init(GameObject obj)
     {
         _velocity = obj.GetComponent<C_Velocity>();
         _iKManager = obj.GetComponent<C_IKManager>();
         _weaponAttribute = GetComponent<WeaponAttribute>();
+        _photonView = obj.GetComponent<PhotonView>();
 
     }
 
@@ -23,6 +25,10 @@ public class Railgun_Run : WeaponState
         {
             if (!_weaponAttribute.reload)
             {
+                if (_velocity.isLocalPlayer)
+                {
+                    _photonView.RPC("EnterState", PhotonTargets.Others, this._name);
+                }
                 return true;
             }
         }
@@ -40,15 +46,22 @@ public class Railgun_Run : WeaponState
 
     public override void OnUpdate()
     {
-        
-        if (!_velocity.Drun || _velocity.jumping)
+        if (_velocity.isLocalPlayer)
         {
-            this._exitTick = true;
+            if (!_velocity.Drun || _velocity.jumping)
+            {
+                this._exitTick = true;
+            }
         }
     }
     public override void Exit()
     {
         base.Exit();
+
+        if (_velocity.isLocalPlayer)
+        {
+            _photonView.RPC("ExitState", PhotonTargets.Others, this._name);
+        }
         _iKManager.SetAim(true);
         _iKManager.SetHold(true);
     }

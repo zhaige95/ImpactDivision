@@ -9,6 +9,7 @@ public class Run_Rifle : WeaponState
     public C_IKManager _iKManager;
     public C_WeaponHandle _weaponHandle;
     public WeaponAttribute _weaponAttribute;
+    public PhotonView _photonView;
 
 
     [Header("[Extra Properties]")]
@@ -20,6 +21,7 @@ public class Run_Rifle : WeaponState
         _iKManager = obj.GetComponent<C_IKManager>();
         _weaponHandle = obj.GetComponent<C_WeaponHandle>();
         _weaponAttribute = GetComponent<WeaponAttribute>();
+        _photonView = obj.GetComponent<PhotonView>();
 
     }
 
@@ -29,10 +31,14 @@ public class Run_Rifle : WeaponState
         {
             if (!_weaponAttribute.reload)
             {
+                if (_velocity.isLocalPlayer)
+                {
+                    _photonView.RPC("EnterState", PhotonTargets.Others, this._name);
+                    Debug.LogWarning("send enter RPC");
+                }
                 return true;
             }
         }
-
         return false;
     }
 
@@ -48,15 +54,22 @@ public class Run_Rifle : WeaponState
 
     public override void OnUpdate()
     {
-        
-        if (!_velocity.Drun || _velocity.jumping)
+        if (_velocity.isLocalPlayer)
         {
-            this._exitTick = true;
+            if (!_velocity.Drun || _velocity.jumping)
+            {
+                this._exitTick = true;
+            }
         }
     }
     public override void Exit()
     {
         base.Exit();
+        if (_velocity.isLocalPlayer)
+        {
+            _photonView.RPC("ExitState", PhotonTargets.Others, this._name);
+            Debug.LogWarning("send Exit RPC");
+        }
         _iKManager.SetAim(true);
         _weaponHandle.handPoint.localPosition = _weaponAttribute.holdOffset._position;
         _weaponHandle.handPoint.localEulerAngles = _weaponAttribute.holdOffset._rotation;

@@ -33,7 +33,7 @@ public class NetworkCreator : Photon.PunBehaviour {
         ConfigWeapon second = Source.ReadWeaponConfig(secondWeaponID);
         GameObject avatar = Factory.CreateAvatar(model, team, this.isLocal, this.transform.position, this.transform.rotation, main, second);
         avatar.GetComponent<PhotonView>().viewID = vID;
-        Debug.Log("read local camp =======" + Battle.localPlayerCamp);
+
     }
 
 }
