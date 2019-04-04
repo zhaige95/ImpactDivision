@@ -87,19 +87,19 @@ public class CS_Jump : AvatarState {
 
                 force -= (gravity * Time.deltaTime);
 
-                if (process == 1 && _velocity.Djump && !timer.isRunning)
-                {
-                    process = 2;
-                    if (force < 0)
-                    {
-                        force = _attributes.jumpForce2;
-                    }
-                    else
-                    {
-                        force += _attributes.jumpForce2;
-                    }
-                    this.pView.RPC("NetworkDoubleJump", PhotonTargets.All);
-                }
+                //if (process == 1 && _velocity.Djump && !timer.isRunning)
+                //{
+                //    process = 2;
+                //    if (force < 0)
+                //    {
+                //        force = _attributes.jumpForce2;
+                //    }
+                //    else
+                //    {
+                //        force += _attributes.jumpForce2;
+                //    }
+                //    this.pView.RPC("NetworkDoubleJump", PhotonTargets.All);
+                //}
 
                 if (force < 0 && _onGroundSensor.isGrounded)
                 {

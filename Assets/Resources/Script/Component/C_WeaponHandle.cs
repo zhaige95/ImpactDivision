@@ -45,13 +45,31 @@ public class C_WeaponHandle : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-        foreach (var weaponAtt in weaponAttributes.Values)
+        if (this.active)
         {
-            if (weaponAtt.active)
+            foreach (var weaponAtt in weaponAttributes.Values)
             {
-                foreach (WeaponState state in weaponAtt.states.Values)
+                if (weaponAtt.active)
                 {
+                    foreach (WeaponState state in weaponAtt.states.Values)
+                    {
+                        if (state._active)
+                        {
+                            if (state._exitTick)
+                            {
+                                state.Exit();
+                            }
+                            else
+                            {
+                                state.OnUpdate();
+                            }
+                        }
+                    }
+
+                }
+                else
+                {
+                    var state = weaponAtt.states[weaponAtt.defaultState];
                     if (state._active)
                     {
                         if (state._exitTick)
@@ -64,24 +82,9 @@ public class C_WeaponHandle : MonoBehaviour
                         }
                     }
                 }
-                
-            }
-            else
-            {
-                var state = weaponAtt.states[weaponAtt.defaultState];
-                if (state._active)
-                {
-                    if (state._exitTick)
-                    {
-                        state.Exit();
-                    }
-                    else
-                    {
-                        state.OnUpdate();
-                    }
-                }
             }
         }
+        
     }
 
     public void InstallWeapon(int index, ConfigWeapon config, bool isActive)
@@ -110,17 +113,16 @@ public class C_WeaponHandle : MonoBehaviour
 
     public void Reset()
     {
-        if (weaponAttributes.ContainsKey(currentWeapon))
+        foreach (var att in weaponAttributes.Values)
         {
-            var att = weaponAttributes[currentWeapon];
-            var stateName = att.runningState;
-            att.states[stateName].Exit();
+            att.states[att.runningState].Exit();
+            att.active = false;
+            att.ready = false;
+            att.runtimeMag = att.mag - 1;
+            att.bore = true;
         }
-        foreach (var weapon in weaponAttributes.Values)
-        {
-            weapon.runtimeMag = weapon.mag;
-        }
-
+        this.currentWeapon = 0;
+        this.targetWeapon = 0;
         locked = false;
     }
 
@@ -141,11 +143,13 @@ public class C_WeaponHandle : MonoBehaviour
             var state = attr.states[sName];
             var runningState = attr.states[attr.runningState];
             
-            if (state.layer == runningState.layer)
+            if (state.layer == runningState.layer && runningState._active)
             {
                 runningState.Exit();
             }
+
             state.Enter();
+            attr.lastState = attr.runningState;
             attr.runningState = sName;
         }
     }
@@ -153,20 +157,32 @@ public class C_WeaponHandle : MonoBehaviour
     [PunRPC]
     public void ExitState(string sName)
     {
-        weaponAttributes[this.currentWeapon].states[sName].Exit();
+        if (weaponAttributes[this.currentWeapon].states.ContainsKey(sName))
+        {
+            var state = weaponAttributes[this.currentWeapon].states[sName];
+            if (state._active)
+            {
+                state.Exit();
+            }
+        }
     }
     
     [PunRPC]
     public void PickWeapon()
     {
-        if (currentWeapon == 1)
+        Debug.Log("pick weapon");
+        if (currentWeapon == 0)
+        {
+            targetWeapon = 1;
+        }
+        else if (currentWeapon == 1)
         {
             if (secondWeapon)
             {
                 targetWeapon = 2;
             }
         }
-        if (currentWeapon == 2)
+        else if (currentWeapon == 2)
         {
             if (mainWeapon)
             {

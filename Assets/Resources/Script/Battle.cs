@@ -12,6 +12,9 @@ public class Battle : MonoBehaviour
     public static int localPlayerCamp;
     public static bool started = false;
     public static bool inRoom = false;
+    public static PlaneHUDMgr planeHUDMgr;
+    public static HUDMgr hudMgr;
+    public static BornPointsMgr bornMgr;
     //public Dictionary<string, C_Attributes> campPool1;
     //public Dictionary<string, C_Attributes> campPool2;
 

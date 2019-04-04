@@ -37,8 +37,7 @@ public class S_Velocity : ComponentSystem {
 
                 DOTween.To(() => _velocity.fwd, x => _velocity.fwd = x, _velocity.targetFwd, 0.3f);
                 DOTween.To(() => _velocity.right, x => _velocity.right = x, _velocity.targetRight, 0.3f);
-
-
+                
                 _velocity.mouse = _velocity.Dmouse_x > 0 ? 1f : _velocity.Dmouse_x < 0 ? -1f : 0;
             }
 		}

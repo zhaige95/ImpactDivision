@@ -173,7 +173,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4194102449757256}
   - component: {fileID: 114275422358046832}
-  - component: {fileID: 114692457603514304}
   - component: {fileID: 143902589011073922}
   - component: {fileID: 82076460438832134}
   - component: {fileID: 54643461715377750}
@@ -191,6 +190,8 @@ GameObject:
   - component: {fileID: 114166651141621798}
   - component: {fileID: 114455105426851954}
   - component: {fileID: 114569502687907570}
+  - component: {fileID: 114892681638604756}
+  - component: {fileID: 114481124571962818}
   - component: {fileID: 114524251598315748}
   - component: {fileID: 114493978813828184}
   - component: {fileID: 114528926027309116}
@@ -4497,8 +4498,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.34072113
-      value: 0.09370422
+      time: 0
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4534,7 +4535,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 6ff23937c4df40a449620634af95b61b, type: 3}
   m_Controller: {fileID: 9100000, guid: eb046380a940e0e45b4d45826aea9c7e, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -4611,22 +4612,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e72942308d12645a217dee7412ac0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  photonView: {fileID: 114528926027309116}
+  audioSource: {fileID: 82076460438832134}
+  velocity: {fileID: 114941734476039396}
   isActive: 1
   killSound: {fileID: 8300000, guid: a0fea9fa820519c4aa8fca0e36573372, type: 3}
   beAttackedSounds:
-  - {fileID: 8300000, guid: df16135b895110941b99fcb243ffe22a, type: 3}
-  - {fileID: 8300000, guid: 2eafcee9a6f3a0c40b50080e2f619d57, type: 3}
-  - {fileID: 8300000, guid: 09c377f5c16ec0040b0e5ece815839d6, type: 3}
-  - {fileID: 8300000, guid: a82dbf30d348acb4aa1ef13ef80c4686, type: 3}
-  - {fileID: 8300000, guid: 3080b671a09c95b4484ba925dcd88259, type: 3}
-  - {fileID: 8300000, guid: ea035b0637cac6041b48a7a4da2919ae, type: 3}
-  hitFeedBackSounds:
   - {fileID: 8300000, guid: e5d0532700449954f836895cd7a1fe5a, type: 3}
   - {fileID: 8300000, guid: 0d999ce26a6c6e845b29b3f1fd22b465, type: 3}
   - {fileID: 8300000, guid: c87deb685aca90b4ead642b816cf8311, type: 3}
   - {fileID: 8300000, guid: 68e24fbd0f6171942b29b6d250a529aa, type: 3}
   - {fileID: 8300000, guid: 92269e93789a45743b5c22d5b25d3d1e, type: 3}
   - {fileID: 8300000, guid: 51798e02a7cdb1d4da82d9578387b246, type: 3}
+  hitFeedBackSounds:
+  - {fileID: 8300000, guid: df16135b895110941b99fcb243ffe22a, type: 3}
+  - {fileID: 8300000, guid: 2eafcee9a6f3a0c40b50080e2f619d57, type: 3}
+  - {fileID: 8300000, guid: 09c377f5c16ec0040b0e5ece815839d6, type: 3}
+  - {fileID: 8300000, guid: a82dbf30d348acb4aa1ef13ef80c4686, type: 3}
+  - {fileID: 8300000, guid: 3080b671a09c95b4484ba925dcd88259, type: 3}
+  - {fileID: 8300000, guid: ea035b0637cac6041b48a7a4da2919ae, type: 3}
   hitEffect: {fileID: 1215458127109096, guid: a9a09ac78666b624e859df8f548bf7ce, type: 2}
   injuredAnimLayer: 8
 --- !u!114 &114166651141621798
@@ -4917,6 +4921,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.08
+--- !u!114 &114481124571962818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1070887550732324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7774117919092a409f8267b25c9e0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: {fileID: 114868711761955298}
+  kill: 0
+  dead: 0
+  miltikill: 0
+  assists: 0
+  score: 0
+  fireCount: 0
+  hitCount: 0
+  headShot: 0
+  demageCount: 0
+  tempMultikill: 0
 --- !u!114 &114489386523081192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5220,17 +5246,6 @@ MonoBehaviour:
   colliders: []
   debug: 1
   threshold: 0.01
---- !u!114 &114692457603514304
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1070887550732324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad7168fb2f8a9124293790c89506a238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114744999440052986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5860,8 +5875,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocalPlayer: 0
-  HP: 200
-  HPMax: 200
+  HP: 100
+  HPMax: 100
   runSpeed: 4.3
   jogSpeed: 3.5
   walkSpeed: 1.7
@@ -5870,8 +5885,28 @@ MonoBehaviour:
   jumpForce2: 10
   camp: 1
   isDead: 0
+  recoverTime: 3
+  uiMgr: {fileID: 114493978813828184}
   tinyHpBarNode: {fileID: 4128310525699904}
   friendMark: {fileID: 4435716400327022}
+--- !u!114 &114892681638604756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1070887550732324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f6e7a7e5985fd40bbefdc1fc45a5c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: dead
+  layer: 1
+  _active: 0
+  _unique: 1
+  _pause: 0
+  _enterTick: 0
+  _exitTick: 0
 --- !u!114 &114917177932166678
 MonoBehaviour:
   m_ObjectHideFlags: 1

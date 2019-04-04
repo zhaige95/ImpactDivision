@@ -36,15 +36,7 @@ public class C_IKManager : MonoBehaviour {
     {
         bipedIK.solvers.leftHand.target = t;
     }
-    //public void SetHoldTarget(Transform target)
-    //{
-    //    LeftHandIKHandle.constraint.SetSource(0, new ConstraintSource()
-    //    {
-    //        sourceTransform = target,
-    //        weight = 1
-    //    });
 
-    //}
 
     public void SetDead(bool active)
     {

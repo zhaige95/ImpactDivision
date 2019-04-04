@@ -1300,9 +1300,10 @@ AudioSource:
   m_GameObject: {fileID: 1633922143633922}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243956078740671318, guid: 5fedc24a7bf673c47ba5580df3c5e018,
+    type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.471
   m_Pitch: 1
   Loop: 0
@@ -1398,7 +1399,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 94114058e89a4d749818821a562cd39e, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -1501,6 +1502,7 @@ MonoBehaviour:
   _iKManager: {fileID: 0}
   _weaponHandle: {fileID: 0}
   _uiMgr: {fileID: 0}
+  _photonView: {fileID: 0}
   _stateMgr: {fileID: 0}
   _audioSource: {fileID: 0}
   _weaponAttribute: {fileID: 0}
@@ -1615,23 +1617,16 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  _camera: {fileID: 0}
-  _velocity: {fileID: 0}
-  _photonView: {fileID: 0}
-  _iKManager: {fileID: 0}
-  _uiMgr: {fileID: 0}
-  _attributes: {fileID: 0}
-  _weaponHandle: {fileID: 0}
-  _weaponAttribute: {fileID: 0}
-  _audio: {fileID: 0}
   triggerType: 2
   fireAxis: {x: -1, y: 0, z: -0.15}
   sound: {fileID: 8300000, guid: e44fa7c0adcbf154fb0c412a8258bae5, type: 3}
+  bulletVisibleDistence: 2
   bullet: {fileID: 1239038810545592, guid: 20df5b9577521c343b3e540a76a2454d, type: 2}
   muzzleFlash: {fileID: 1692854838645264}
   OcclusionPoint: {fileID: 4589277299324358}
   OcclusionSensorDistance: 0.9
   occlusionLayer: {fileID: 11400000, guid: 29b833a17bee51642a7c8085006ca7f4, type: 2}
+  targetPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &114433337746765080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1704,6 +1699,7 @@ MonoBehaviour:
   _iKManager: {fileID: 0}
   _weaponHandle: {fileID: 0}
   _weaponAttribute: {fileID: 0}
+  _photonView: {fileID: 0}
   runOffset:
     _position: {x: -0.2515, y: 0.1118, z: 0.0537}
     _rotation: {x: 5.936, y: -7.481, z: -30.432}

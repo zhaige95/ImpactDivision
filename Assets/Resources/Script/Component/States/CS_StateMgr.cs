@@ -26,6 +26,10 @@ public class CS_StateMgr : MonoBehaviour, IPunObservable {
     {
         if (avatarStates.ContainsKey(sName))
         {
+            if (avatarStates[runningState]._active)
+            {
+                avatarStates[runningState].Exit();
+            }
             this.avatarStates[sName].Enter();
             runningState = sName;
         }

@@ -1,7 +1,6 @@
 ﻿using Unity.Entities;
 using System;
 using UnityEngine;
-using Random = UnityEngine.Random;
 using UiEvent;
 
 public class S_AttackListener : ComponentSystem {
@@ -11,7 +10,6 @@ public class S_AttackListener : ComponentSystem {
         public C_Attributes _Attributes;
         public C_Animator _Animator;
         public AudioSource _Audio;
-        public C_UiEventMgr _uiMgr;
     }
 
 	protected override void OnUpdate()
@@ -26,43 +24,36 @@ public class S_AttackListener : ComponentSystem {
             {
                 foreach (Attack attack in _attackList)
                 {
-                    Attributes.Add(ref _attribute, "HP", attack.demage, "-");
-
-                    var hpMsg = new UiEvent.UiMsgs.Hp()
-                    {
-                        hp = _attribute.HP,
-                        hpMax = _attribute.HPMax
-                    };
-                    e._uiMgr.SendEvent(hpMsg);
-                
+                    //Attributes.Add(ref _attribute, "HP", attack.demage, "-");
+                    //e._Attributes.Demaged(attack.demage);
+                    _attackListener.photonView.RPC("Demaged", PhotonTargets.All, attack.demage);
+                    
                     e._Animator.animator.SetTrigger("hit");
 
-                    if (_velocity.isLocalPlayer)
+                    //if (_velocity.isLocalPlayer)
+                    //{
+                    //    Sound.PlayOneShot(e._Audio, _attackListener.beAttackedSounds);
+                    //}
+                    //else
+                    //{
+                    var source = attack.source;
+                    var sourceAudio = source.GetComponent<AudioSource>();
+                    var sourceIsLocalPlayer = source.GetComponent<C_Velocity>().isLocalPlayer;
+                    var sourceBattleMgr = source.GetComponent<C_BattleMgr>();
+
+                    sourceBattleMgr.AddDemage(attack.demage);
+                    var hitMsg = new UiEvent.UiMsgs.Hit()
                     {
-                        Sound.PlayOneShot(e._Audio, _attackListener.beAttackedSounds);
-                    }
-                    else
+                        HeadShot = attack.headShot
+                    };
+                    source.GetComponent<C_UiEventMgr>().SendEvent(hitMsg);
+                    Sound.PlayOneShot(sourceAudio, _attackListener.hitFeedBackSounds);
+
+                    if (_attribute.HP <= 0)
                     {
-                        var source = attack.source;
-                        var sourceAudio = source.GetComponent<AudioSource>();
-                        var sourceIsLocalPlayer = source.GetComponent<C_Velocity>().isLocalPlayer;
-
-                        
-                        if (sourceIsLocalPlayer)
-                        {
-                            var hitMsg = new UiEvent.UiMsgs.Hit() {
-                                HeadShot = attack.headShot
-                            };
-                            source.GetComponent<C_UiEventMgr>().SendEvent(hitMsg);
-
-                            Sound.PlayOneShot(sourceAudio, _attackListener.hitFeedBackSounds);
-
-                            if (_attribute.HP <= 0)
-                            {
-                                source.GetComponent<AudioSource>().PlayOneShot(_attackListener.killSound);
-                                Sound.PlayOneShot(source.GetComponent<AudioSource>(), _attackListener.killSound);
-                            }
-                        }
+                        source.GetComponent<AudioSource>().PlayOneShot(_attackListener.killSound);
+                        sourceBattleMgr.AddKill();
+                        Sound.PlayOneShot(source.GetComponent<AudioSource>(), _attackListener.killSound);
                     }
                     
                 }

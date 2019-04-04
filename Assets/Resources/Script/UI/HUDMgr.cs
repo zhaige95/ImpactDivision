@@ -11,6 +11,11 @@ public class HUDMgr : MonoBehaviour
     public Text mag;
     public RawImage weaponCut;
 
+    private void Awake()
+    {
+        Battle.hudMgr = this;
+    }
+
     public void Init(C_UiEventMgr eventMgr)
     {
         eventMgr.BindEvent(typeof(UiMsgs.Hp), RefreshHp);

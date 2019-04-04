@@ -54,9 +54,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectTag: BulletYellow
-  speed: 150
+  speed: 300
   isActive: 1
   visible: 1
+  isLocal: 1
   impactEffect: {fileID: 1213904565693942, guid: c3bb04037739fd040ada1dc267d06a35,
     type: 2}
   layerMask:

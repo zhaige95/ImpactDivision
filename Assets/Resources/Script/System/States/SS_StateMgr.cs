@@ -12,10 +12,14 @@ public class SS_StateMgr : ComponentSystem {
 	protected override void OnUpdate()
 	{
 		foreach (var e in GetEntities<Group>())
-		{
-            if (!e._Attributes.isDead)
+        {
+            var _stateMgr = e.stateMgr;
+            if (e._Attributes.isDead)
             {
-                var _stateMgr = e.stateMgr;
+                _stateMgr.avatarStates["dead"].OnUpdate();
+            }
+            else
+            {
                 var _velocity = e._Velocity;
                 var currentState = _stateMgr.avatarStates[_stateMgr.runningState];
                 if (_velocity.isLocalPlayer)
@@ -42,10 +46,7 @@ public class SS_StateMgr : ComponentSystem {
                         }
                     }
                 }
-
             }
-
-            
 		}
 	}
 

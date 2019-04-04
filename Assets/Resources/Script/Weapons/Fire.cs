@@ -7,27 +7,29 @@ using UiEvent;
 public class Fire : WeaponState
 {
     [Header("[Components]")]
-    public C_Camera _camera;
-    public C_Velocity _velocity;
-    public PhotonView _photonView;
-    public C_IKManager _iKManager;
-    public C_UiEventMgr _uiMgr;
-    public C_Attributes _attributes;
-    public C_WeaponHandle _weaponHandle;
-    public WeaponAttribute _weaponAttribute;
-    public AudioSource _audio;
+    C_Camera _camera;
+    C_Velocity _velocity;
+    PhotonView _photonView;
+    C_IKManager _iKManager;
+    C_UiEventMgr _uiMgr;
+    C_Attributes _attributes;
+    C_WeaponHandle _weaponHandle;
+    WeaponAttribute _weaponAttribute;
+    AudioSource _audio;
 
     [Header("[Extra Properties]")]
     public TriggerType triggerType;
     public Timer timer;
     public Vector3 fireAxis;
     public AudioClip sound;
+    public float bulletVisibleDistence;
     public GameObject bullet;
     public GameObject muzzleFlash;
     public Transform OcclusionPoint;
-    public float OcclusionSensorDistance;
+    public float OcclusionSensorDistance = 2f;
     public ConfigLayer occlusionLayer;
 
+    [HideInInspector]
     public Vector3 targetPoint = new Vector3();
     Vector3 startPoint = new Vector3();
     bool visable = true;
@@ -106,10 +108,10 @@ public class Fire : WeaponState
 
                 if (Physics.Raycast(OcclusionPoint.position, OcclusionPoint.forward, out hitInfo, OcclusionSensorDistance, occlusionLayer.layerMask))
                 {
-                    startPoint = _weaponHandle.shootPoint.position;
-                    targetPoint = OcclusionPoint.position;
+                    startPoint = OcclusionPoint.position;
+                    targetPoint = hitInfo.point;
                     visable = false;
-                    
+
                 }
                 else
                 {
@@ -124,7 +126,7 @@ public class Fire : WeaponState
 
                         startPoint = _weaponHandle.shootPoint.position;
                         targetPoint = hitPos;
-                        visable = true;
+                        visable = Vector3.Distance(startPoint, targetPoint) >= bulletVisibleDistence;
                         
                     }
                     else
@@ -134,10 +136,11 @@ public class Fire : WeaponState
 
                         startPoint = _weaponHandle.shootPoint.position;
                         targetPoint = _camera.GetAimPoint(offset);
-                        visable = true;
-                        
+                        visable = Vector3.Distance(startPoint, targetPoint) >= bulletVisibleDistence;
+
                     }
                 }
+
                 Effect.AddBullet(
                     bullet, new Attack()
                     {
@@ -194,13 +197,14 @@ public class Fire : WeaponState
                 bullet, new Attack()
                 {
                     source = _velocity.gameObject,
-                    demage = _weaponAttribute.damage,
+                    demage = 0,
                     sourcePosition = startPoint,
                 },
                 startPoint,
                 targetPoint,
                 _attributes.camp,
-                visable
+                visable,
+                false
             );
         }
         

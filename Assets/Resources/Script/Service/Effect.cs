@@ -6,7 +6,7 @@ public class Effect
 {
     public static Dictionary<string, List<GameObject>> _effectPool = new Dictionary<string, List<GameObject>>();
 
-    public static bool AddBullet(GameObject obj, Attack attack, Vector3 start, Vector3 target, int camp, bool visible = true)
+    public static bool AddBullet(GameObject obj, Attack attack, Vector3 start, Vector3 target, int camp, bool visible = true, bool isLocal = true)
     {
         var bulletData = obj.GetComponent<C_Bullet>();
         List<GameObject> pool = GetPool(bulletData.effectTag);
@@ -18,7 +18,7 @@ public class Effect
             {
                 item.transform.position = start;
                 item.transform.LookAt(target);
-                ActivateBullet(item, attack, camp, target, visible);
+                ActivateBullet(item, attack, camp, target, visible, isLocal);
                 return true;
             }
         }
@@ -30,14 +30,14 @@ public class Effect
         pool.Add(bullet);
 
         // 激活子弹
-        ActivateBullet(bullet, attack, camp, target, visible);
+        ActivateBullet(bullet, attack, camp, target, visible, isLocal);
         // 激活Entity组件
         //bullet.GetComponent<GameObjectEntity>().enabled = true;
         return true;
     }
     
 
-    public static void ActivateBullet(GameObject bullet, Attack attack, int camp, Vector3 target, bool visible = true)
+    public static void ActivateBullet(GameObject bullet, Attack attack, int camp, Vector3 target, bool visible = true, bool isLocal = true)
     {
         // 将子弹指向目标
         bullet.transform.LookAt(target);
@@ -53,7 +53,7 @@ public class Effect
         // 设置子弹的可视属性
         bulletData.SetVisible(visible);
         // 使用传入Attack信息的方法直接设置伤害信息并激活子弹
-        bulletData.SetActive(attack);
+        bulletData.SetActive(attack, isLocal);
     }
 
     public static bool AddEffect(GameObject obj, Vector3 position, Quaternion rotation)

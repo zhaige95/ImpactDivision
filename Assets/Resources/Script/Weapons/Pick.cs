@@ -111,7 +111,6 @@ public class Pick : WeaponState
             transform.localPosition = Vector3.zero;
             transform.localEulerAngles = Vector3.zero;
             _velocity.armed = true;
-            
             process = 2;
         }
         

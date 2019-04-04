@@ -8,6 +8,7 @@ public class C_Bullet : MonoBehaviour
     public float speed = 150f;
     public bool isActive = false;
     public bool visible = true;
+    public bool isLocal = true;
 
     public GameObject impactEffect;
     public LayerMask layerMask;
@@ -18,10 +19,11 @@ public class C_Bullet : MonoBehaviour
     public float time = 2f;
     public Timer timer = new Timer();
 
-    public void SetActive(Attack attack)
+    public void SetActive(Attack attack, bool local = true)
     {
         this.timer.Enter(time);
         this.attack = attack;
+        this.isLocal = local;
         this.isActive = true;
     }
 

@@ -34,10 +34,11 @@ public class PhotonEngine : Photon.PunBehaviour {
         Application.targetFrameRate = 60;
         DontDestroyOnLoad(this.gameObject);
 
-        StartConnect();
-
         // check game version
         //StartCoroutine(GetPhotos());
+
+        StartConnect();
+
     }
 
     // 从网络获取版本设置，旧版本不进行网络连接
@@ -134,7 +135,7 @@ public class PhotonEngine : Photon.PunBehaviour {
         // 随机取一种对战模式设定
         
         // 设置房间信息
-        PhotonNetwork.CreateRoom(DateTime.Now.GetHashCode() + "", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
+        //PhotonNetwork.CreateRoom("Impact", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
         Debug.Log("join random filed");
     }
 
@@ -143,6 +144,11 @@ public class PhotonEngine : Photon.PunBehaviour {
         Battle.inRoom = true;
         PhotonNetwork.automaticallySyncScene = true;
         Debug.Log("joined");
+    }
+
+    public override void OnPhotonJoinRoomFailed(object[] codeAndMsg)
+    {
+        PhotonNetwork.CreateRoom("Impact", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
     }
 
     public override void OnLeftRoom()

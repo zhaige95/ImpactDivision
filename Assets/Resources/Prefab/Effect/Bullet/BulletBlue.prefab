@@ -54,9 +54,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectTag: BulletBlue
-  speed: 150
+  speed: 300
   isActive: 1
   visible: 1
+  isLocal: 1
   impactEffect: {fileID: 1544474115454700, guid: 55eeb5fd97b685b48a48ec749ddfa3df,
     type: 2}
   layerMask:

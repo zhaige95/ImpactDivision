@@ -29,6 +29,7 @@ public class CS_Idle : AvatarState {
         {
             Aspect.RotateToCameraY(_camera.Carryer, transform, 0.5f);
         }
+
         _characterController.SimpleMove(Vector3.zero);
     }
 

@@ -43,7 +43,14 @@ public class S_Bullet : ComponentSystem {
                             Effect.AddEffect(_attackListener.hitEffect, hitInfo);
 
                             // Add attack info in attackListener component
-                            _attackListener.attackList.Add(_bullet.attack);
+                            if (_bullet.isLocal)
+                            {
+                                _attackListener.attackList.Add(_bullet.attack);
+                            }
+                            else
+                            {
+                                _attackListener.PlayBeAttackedSound();
+                            }
                         }
                     }
                     else

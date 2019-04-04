@@ -7,6 +7,11 @@ public class PlaneHUDMgr : MonoBehaviour
 {
     public Animator animator;
 
+    private void Awake()
+    {
+        Battle.planeHUDMgr = this;
+    }
+
     public void Init(C_UiEventMgr eventMgr)
     {
         eventMgr.BindEvent(typeof(UiMsgs.Hit), Hit);

@@ -45,7 +45,7 @@ public class MatchMgr : Photon.PunBehaviour
     public void StartMatch()
     {
         matching = true;
-        PhotonNetwork.JoinRandomRoom();
+        PhotonNetwork.JoinRoom("Impact");
     }
 
     public void CancleMatch()
@@ -76,15 +76,19 @@ public class MatchMgr : Photon.PunBehaviour
 
                 for (int i = 0; i < PhotonNetwork.playerList.Length / 2; i++)
                 {
-                    Hashtable p = new Hashtable();
-                    p.Add("team", "1");
+                    Hashtable p = new Hashtable
+                    {
+                        { "team", "1" }
+                    };
                     PhotonNetwork.playerList[i].SetCustomProperties(p, null, false);
                 }
 
                 for (int i = PhotonNetwork.playerList.Length / 2; i < PhotonNetwork.playerList.Length; i++)
                 {
-                    Hashtable p = new Hashtable();
-                    p.Add("team", "2");
+                    Hashtable p = new Hashtable
+                    {
+                        { "team", "2" }
+                    };
                     PhotonNetwork.playerList[i].SetCustomProperties(p, null, false);
                 }
 
@@ -104,7 +108,6 @@ public class MatchMgr : Photon.PunBehaviour
         onJoinedRoom.Invoke();
         ringText.text = PhotonNetwork.playerList.Length + "";
 
-
         // test code 
 
         //onPlayStart.Invoke();
@@ -113,8 +116,7 @@ public class MatchMgr : Photon.PunBehaviour
         //Hashtable p = new Hashtable();
         //p.Add("team", "1");
         //PhotonNetwork.playerList[0].SetCustomProperties(p, null, false);
-
-
+        
     }
     
     

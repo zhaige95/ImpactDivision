@@ -31,14 +31,6 @@ public class WeaponState : MonoBehaviour
 
     public virtual void OnUpdate() { }
 
-    public void StateExit()
-    {
-        Exit();
-        _active = false;
-        _enterTick = false;
-        _exitTick = false;
-    }
-
     public virtual void Exit() {
         _active = false;
         _enterTick = false;
