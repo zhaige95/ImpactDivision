@@ -27,7 +27,7 @@ public class C_Camera : MonoBehaviour, IPunObservable
     RaycastHit hitInfo;
     public bool sideSwitch = false;
     public float correctOffset = 2f;
-    //[HideInInspector]
+    [HideInInspector]
     public float correct = 0f;
     public Vector3 targetSideOffset1;
     public Vector3 targetSideOffset2;

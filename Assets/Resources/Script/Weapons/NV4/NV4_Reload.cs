@@ -73,7 +73,7 @@ public class NV4_Reload : WeaponState
         _ownAnimator.SetTrigger("reload");
         _iKManager.SetAim(false);
         _iKManager.SetHoldTarget(magIK);
-        _weaponHandle.locked = true;
+        //_weaponHandle.locked = true;
 
     }
 
@@ -97,13 +97,6 @@ public class NV4_Reload : WeaponState
                 if (animatorInfo.normalizedTime >= 0.65f)
                 {
                     _audioSource.PlayOneShot(sounds[1]);
-                    process = 3;
-                }
-            }
-            else if (process == 3)
-            {
-                if (animatorInfo.normalizedTime >= 0.9f)
-                {
                     if (_velocity.isLocalPlayer)
                     {
                         if (_weaponAttribute.bore)
@@ -123,17 +116,25 @@ public class NV4_Reload : WeaponState
                         };
                         _uiMgr.SendEvent(ammoMsg);
                     }
-
-                    this._exitTick = true;
-                    process = 6;
+                    process = 3;
                 }
             }
-            
+            else if (process == 3)
+            {
+                if (animatorInfo.normalizedTime >= 0.9f)
+                {
+                    this._exitTick = true;
+                    process = 4;
+                }
+            }
         }
     }
     public override void Exit() {
         base.Exit();
-        
+        if (process < 4)
+        {
+            _ownAnimator.SetTrigger("exitReload");
+        }
         _iKManager.SetHold(true);
         _iKManager.SetAim(true);
         _weaponAttribute.reload = false;

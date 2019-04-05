@@ -69,6 +69,7 @@ public class C_WeaponHandle : MonoBehaviour
                 }
                 else
                 {
+                    
                     var state = weaponAtt.states[weaponAtt.defaultState];
                     if (state._active)
                     {
@@ -121,6 +122,7 @@ public class C_WeaponHandle : MonoBehaviour
             att.runtimeMag = att.mag - 1;
             att.bore = true;
         }
+        weaponAttributes[currentWeapon].states["pick"].Enter();
         this.currentWeapon = 0;
         this.targetWeapon = 0;
         locked = false;

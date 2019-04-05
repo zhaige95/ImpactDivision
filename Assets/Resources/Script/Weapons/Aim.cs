@@ -26,7 +26,7 @@ public class Aim : WeaponState
 
     public override bool Listener() {
 
-        if (_velocity.Daim && !_velocity.jumping && !_weaponAttribute.reload && !_weaponHandle.locked)
+        if (_velocity.Daim && !_velocity.jumping && _weaponAttribute.ready && !_weaponHandle.locked)
         {
             return true; 
         }
@@ -45,10 +45,12 @@ public class Aim : WeaponState
 
     public override void OnUpdate()
     {
-
-        if (!_velocity.Daim || _velocity.jumping || _weaponHandle.locked)
+        if (_velocity.isLocalPlayer)
         {
-            this._exitTick = true;
+            if (!_velocity.Daim || _velocity.jumping || _weaponHandle.locked)
+            {
+                this._exitTick = true;
+            }
         }
     }
     public override void Exit() {

@@ -17,13 +17,7 @@ public class NetworkCreator : Photon.PunBehaviour {
             var save = Battle.playerBattleSave;
             pView.RPC("Create", PhotonTargets.AllBuffered, PhotonNetwork.AllocateViewID(), Battle.localPlayerCamp, save.characterId, save.mainWeaponId, save.secondWeaponId);
         }
-
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     [PunRPC]
     public void Create(int vID, int team, int characterID, int mainWeaponID, int secondWeaponID)

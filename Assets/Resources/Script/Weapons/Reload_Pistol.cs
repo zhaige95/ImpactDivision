@@ -68,7 +68,7 @@ public class Reload_Pistol : WeaponState
 
         _audioSource.PlayOneShot(sound);
 
-        _weaponHandle.locked = true;
+        //_weaponHandle.locked = true;
 
     }
 

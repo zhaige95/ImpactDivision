@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.Animations;
 using UiEvent;
+using Data;
 
 public class Pick : WeaponState
 {
@@ -40,10 +41,10 @@ public class Pick : WeaponState
 
     public override bool Listener() {
 
-        if (_isPicked != _weaponAttribute.active)
-        {
-            return true;
-        }
+        //if (_isPicked != _weaponAttribute.active)
+        //{
+        //    return true;
+        //}
 
         return false;
     }
@@ -80,8 +81,18 @@ public class Pick : WeaponState
         else
         {
             _weaponAttribute.constraint.weight = 1;
-            _iKManager.SetHold(false);
+            foreach (var state in _weaponAttribute.states.Values)
+            {
+                if (!state._name.Equals(this._name))
+                {
+                    if (state._active)
+                    {
+                        state.Exit();
+                    }
+                }
+            }
             _weaponAttribute.ready = false;
+            _iKManager.SetHold(false);
             this._exitTick = true;
         }
 
@@ -116,8 +127,24 @@ public class Pick : WeaponState
         
         if (!endTimer.isRunning)
         {
-            _iKManager.SetAim(true);
-            _iKManager.SetHold(true);
+            if (_velocity.Drun)
+            {
+                _iKManager.SetAim(false);
+                if (_weaponAttribute.type == WeaponType.Pistol)
+                {
+                    _iKManager.SetHold(false);
+                }
+                else if (_weaponAttribute.type == WeaponType.Rifle)
+                {
+                    _iKManager.SetHold(true);
+                }
+            }
+            else
+            {
+                _iKManager.SetAim(true);
+                _iKManager.SetHold(true);
+            }
+
             _weaponAttribute.ready = true;
             _weaponHandle.locked = false;
             this._exitTick = true;

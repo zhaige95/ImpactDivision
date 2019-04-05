@@ -15,6 +15,12 @@ public class AvatarState : MonoBehaviour {
     public bool _enterTick = false;
     public bool _exitTick = false;
 
+    private void OnEnable()
+    {
+        var stateMgr = GetComponent<CS_StateMgr>();
+        stateMgr.RegState(_name, this);
+    }
+
     public virtual bool Listener() { return false; }
 
     public virtual void Enter() {

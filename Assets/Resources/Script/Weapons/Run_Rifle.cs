@@ -40,8 +40,7 @@ public class Run_Rifle : WeaponState
         }
         return false;
     }
-
-
+    
     public override void Enter()
     {
         base.Enter();
@@ -69,6 +68,7 @@ public class Run_Rifle : WeaponState
             _photonView.RPC("ExitState", PhotonTargets.Others, this._name);
         }
         _iKManager.SetAim(true);
+        _iKManager.SetHold(true);
         _weaponHandle.handPoint.localPosition = _weaponAttribute.holdOffset._position;
         _weaponHandle.handPoint.localEulerAngles = _weaponAttribute.holdOffset._rotation;
     }

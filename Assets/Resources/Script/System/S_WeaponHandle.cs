@@ -28,11 +28,19 @@ public class S_WeaponHandle : ComponentSystem {
 
                 if (currentWeapon != targetWeapon)
                 {
-                    foreach (var item in _handle.weaponAttributes.Values)
+                    var atts = _handle.weaponAttributes;
+                    foreach (var item in atts.Values)
                     {
                         item.active = false;
                     }
                     _handle.weaponAttributes[targetWeapon].active = true;
+
+                    if (atts.ContainsKey(currentWeapon))
+                    {
+                        atts[currentWeapon].states["pick"].Enter();
+                    }
+                    atts[targetWeapon].states["pick"].Enter();
+
                     _handle.currentWeapon = targetWeapon;
                 }
 
@@ -73,8 +81,6 @@ public class S_WeaponHandle : ComponentSystem {
                         ListenerProcess(weaponAtt.defaultState, weaponAtt);
                     }
                 }
-                
-                
             }
             
         }
@@ -93,7 +99,6 @@ public class S_WeaponHandle : ComponentSystem {
     }
     bool ListenerProcess(string name, WeaponAttribute attribute)
     {
-
         var state = attribute.states[name];
         if (!state._active)
         {
@@ -108,7 +113,7 @@ public class S_WeaponHandle : ComponentSystem {
                         lastState.Exit();
                     }
                 }
-
+                attribute.lastState = state._name.Equals(attribute.runningState) ? attribute.lastState : attribute.runningState;
                 attribute.runningState = state._name;
                 state.Enter();
                 return true;
