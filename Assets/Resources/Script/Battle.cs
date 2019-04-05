@@ -7,6 +7,7 @@ using Newtonsoft.Json.Bson;
 
 public class Battle : MonoBehaviour
 {
+    public static Dictionary<int, int> campNumber = new Dictionary<int, int>();
     public static Transform localPlayerCameraTrans;
     public static Camera localPlayerCamera;
     public static int localPlayerCamp;
@@ -39,6 +40,30 @@ public class Battle : MonoBehaviour
     {
         string str = JsonConvert.SerializeObject(systemSettingSave);
         File.WriteAllText(savePath + "/SystemSetting.cfg", str);
+    }
+
+    public static void PlayerJoin(int camp)
+    {
+        if (campNumber.ContainsKey(camp))
+        {
+            campNumber[camp] += 1;
+        }
+        else
+        {
+            campNumber.Add(camp, 1);
+        }
+    }
+
+    public static void playerExit(int camp)
+    {
+        if (campNumber.ContainsKey(camp))
+        {
+            campNumber[camp] -= 1;
+        }
+        else
+        {
+            campNumber.Add(camp, 0);
+        }
     }
 }
 

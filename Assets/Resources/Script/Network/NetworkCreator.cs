@@ -34,6 +34,8 @@ public class NetworkCreator : Photon.PunBehaviour {
         GameObject avatar = Factory.CreateAvatar(model, team, this.isLocal, this.transform.position, this.transform.rotation, main, second);
         avatar.GetComponent<PhotonView>().viewID = vID;
 
+        Battle.PlayerJoin(team);
+        Debug.Log("team" + team + " number = " + Battle.campNumber[team]);
         if (this.isLocal)
         {
             var uiMgr = avatar.GetComponent<C_UiEventMgr>();

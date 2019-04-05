@@ -31,7 +31,7 @@ public class PhotonEngine : Photon.PunBehaviour {
     // Use this for initialization
     private void Start()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 90;
         DontDestroyOnLoad(this.gameObject);
 
         // check game version
@@ -165,6 +165,10 @@ public class PhotonEngine : Photon.PunBehaviour {
 
     public override void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
     {
+        //var camp = int.Parse(otherPlayer.CustomProperties["team"].ToString());
+        //Battle.playerExit(camp);
+
+        Debug.LogWarning("player exit");
 
     }
     

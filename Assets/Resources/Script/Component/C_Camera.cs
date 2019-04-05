@@ -15,7 +15,6 @@ public class C_Camera : MonoBehaviour, IPunObservable
     public float c_speed_x = 5f;
     public float c_speed_y = 5f;
     public float aimRate = 0.4f;
-    public float hight;
     public float FOVdefault;
     public float FOVtarget;
     public float radius;
@@ -26,8 +25,10 @@ public class C_Camera : MonoBehaviour, IPunObservable
     public float forceY = 0;
     public float backForce = 3;
     RaycastHit hitInfo;
-    public float sideOffset = 0.25f;
     public bool sideSwitch = false;
+    public float correctOffset = 2f;
+    //[HideInInspector]
+    public float correct = 0f;
     public Vector3 targetSideOffset1;
     public Vector3 targetSideOffset2;
 

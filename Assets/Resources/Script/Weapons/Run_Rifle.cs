@@ -34,7 +34,6 @@ public class Run_Rifle : WeaponState
                 if (_velocity.isLocalPlayer)
                 {
                     _photonView.RPC("EnterState", PhotonTargets.Others, this._name);
-                    Debug.LogWarning("send enter RPC");
                 }
                 return true;
             }
@@ -68,7 +67,6 @@ public class Run_Rifle : WeaponState
         if (_velocity.isLocalPlayer)
         {
             _photonView.RPC("ExitState", PhotonTargets.Others, this._name);
-            Debug.LogWarning("send Exit RPC");
         }
         _iKManager.SetAim(true);
         _weaponHandle.handPoint.localPosition = _weaponAttribute.holdOffset._position;

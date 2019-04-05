@@ -31,14 +31,14 @@ public class S_Camera : ComponentSystem {
                     if (_velocity.aiming)
                     {
                         x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * _camera.c_speed_x * _camera.aimRate;
-                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * _camera.c_speed_y * _camera.aimRate;
+                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * _camera.c_speed_y * _camera.aimRate + _camera.correct;
                     }
                     else
                     {
                         x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * _camera.c_speed_x;
-                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * _camera.c_speed_y;
+                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * _camera.c_speed_y + _camera.correct;
                     }
-
+                    _camera.correct = 0f;
                     if (x >= 260f && x <= 360f)
                     {
                         if (x < 270f)
@@ -83,16 +83,26 @@ public class S_Camera : ComponentSystem {
                 PhysicalProcess(e);
                 //_camera.m_cursorIsLocked = this.InternalLockUpdate();
                 
-
                 if (_velocity.DcutCameraSide)
                 {
-                    _camera.sideOffset *= -1f;
+                    _camera.sideSwitch = true;
                     _camera.targetSideOffset1 = new Vector3(_camera.targetSideOffset1.x * -1f, _camera.targetSideOffset1.y, _camera.targetSideOffset1.z);
                     _camera.targetSideOffset2 = new Vector3(_camera.targetSideOffset2.x * -1f, _camera.targetSideOffset2.y, _camera.targetSideOffset2.z);
+                    _camera.correct = _camera.correctOffset;
+                    _camera.correctOffset *= (_camera.targetSideOffset2.y > 0) ? 1f : -1f;
                 }
-
-                _camera.camera_x.localPosition = Vector3.Lerp(_camera.camera_x.localPosition, _camera.targetSideOffset1, 10f * Time.deltaTime);
-                _camera.cameraHandle.localPosition = Vector3.Lerp(_camera.cameraHandle.localPosition, _camera.targetSideOffset2, 10f * Time.deltaTime);
+                if (_camera.sideSwitch)
+                {
+                    _camera.camera_x.localPosition = Vector3.Lerp(_camera.camera_x.localPosition, _camera.targetSideOffset1, 10f * Time.deltaTime);
+                    _camera.cameraHandle.localPosition = Vector3.Lerp(_camera.cameraHandle.localPosition, _camera.targetSideOffset2, 10f * Time.deltaTime);
+                    if (Vector3.Distance(_camera.camera_x.localPosition, _camera.targetSideOffset1) <= 0.001f)
+                    {
+                        if (Vector3.Distance(_camera.cameraHandle.localPosition, _camera.targetSideOffset2) <= 0.001f)
+                        {
+                            _camera.sideSwitch = false;
+                        }
+                    }
+                }
             }
             else
             {

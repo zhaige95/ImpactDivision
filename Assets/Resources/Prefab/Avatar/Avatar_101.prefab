@@ -2719,7 +2719,7 @@ Transform:
   m_GameObject: {fileID: 1743003562400024}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4194102449757256}
   m_RootOrder: 5
@@ -3819,7 +3819,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294966271
+    m_Bits: 8122641
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -4658,7 +4658,7 @@ MonoBehaviour:
   _attributes: {fileID: 114868711761955298}
   _audioSource: {fileID: 82076460438832134}
   _characterController: {fileID: 143902589011073922}
-  speed: 5
+  speed: 4
 --- !u!114 &114175405923590462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4684,8 +4684,8 @@ MonoBehaviour:
   _attributes: {fileID: 114868711761955298}
   _audioSource: {fileID: 82076460438832134}
   _characterController: {fileID: 143902589011073922}
-  jogSpeed: 3.5
-  walkSpeed: 2.2
+  jogSpeed: 3
+  walkSpeed: 1.5
   sounds: []
   runSteptime: 0
   walkSteptime: 0
@@ -5287,7 +5287,7 @@ MonoBehaviour:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
+    InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 10
     InterpolateMoveTowardsAcceleration: 2
@@ -5793,7 +5793,6 @@ MonoBehaviour:
   c_speed_x: 2
   c_speed_y: 2
   aimRate: 0.4
-  hight: 1.33
   FOVdefault: 60
   FOVtarget: 60
   radius: 0.05
@@ -5806,8 +5805,9 @@ MonoBehaviour:
   forceX: 0
   forceY: 0
   backForce: 20
-  sideOffset: 0.25
-  sideSwitch: 0
+  sideSwitch: 1
+  correctOffset: 2
+  correct: 0
   targetSideOffset1: {x: 0, y: 0, z: 0}
   targetSideOffset2: {x: 0, y: 0, z: 0}
   syncX: {x: 0, y: 0, z: 0, w: 0}
@@ -5907,6 +5907,15 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
+  attributes: {fileID: 0}
+  velocity: {fileID: 0}
+  anim: {fileID: 0}
+  attackListener: {fileID: 0}
+  iKManager: {fileID: 0}
+  weaponHandle: {fileID: 0}
+  battleMgr: {fileID: 0}
+  recoverTime: 1
+  vanishTime: 2
 --- !u!114 &114917177932166678
 MonoBehaviour:
   m_ObjectHideFlags: 1

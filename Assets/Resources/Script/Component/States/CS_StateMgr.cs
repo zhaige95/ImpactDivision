@@ -12,7 +12,6 @@ public class CS_StateMgr : MonoBehaviour, IPunObservable {
     public string lastState = "";
     public string runningState = "";
 
-
     public void RegState(string name, AvatarState state)
     {
         if (!avatarStates.ContainsKey(name))
@@ -20,8 +19,7 @@ public class CS_StateMgr : MonoBehaviour, IPunObservable {
             this.avatarStates.Add(name, state);
         }
     }
-
-
+    
     public void EnterState(string sName)
     {
         if (avatarStates.ContainsKey(sName))

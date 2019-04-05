@@ -36,13 +36,13 @@ namespace UnityChan
 		void Update ()
 		{
 
-		//Kobayashi
-		if(dynamicRatio >= 1.0f)
-			dynamicRatio = 1.0f;
-		else if(dynamicRatio <= 0.0f)
-			dynamicRatio = 0.0f;
-		//Ebata
-		UpdateParameters();
+		    //Kobayashi
+		    if(dynamicRatio >= 1.0f)
+			    dynamicRatio = 1.0f;
+		    else if(dynamicRatio <= 0.0f)
+			    dynamicRatio = 0.0f;
+		    //Ebata
+		    UpdateParameters();
 
 		}
 

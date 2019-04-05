@@ -46,9 +46,9 @@ public class Effect
         // 设置射线检测的layer mask
         switch (camp)
         {
-            case 1: bulletData.layerMask = 1 << 16 | 1 << 17 | 1 << 20; break;
-            case 2: bulletData.layerMask = 1 << 15 | 1 << 17 | 1 << 20; break;
-            case 3: bulletData.layerMask = 1 << 16 | 1 << 15 | 1 << 20; break;
+            case 1: bulletData.layerMask = 1 << 12 | 1 << 16 | 1 << 17 | 1 << 20; break;
+            case 2: bulletData.layerMask = 1 << 12 | 1 << 15 | 1 << 17 | 1 << 20; break;
+            case 3: bulletData.layerMask = 1 << 12 | 1 << 16 | 1 << 15 | 1 << 20; break;
         }
         // 设置子弹的可视属性
         bulletData.SetVisible(visible);

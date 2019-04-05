@@ -116,7 +116,7 @@ public class MatchMgr : Photon.PunBehaviour
         //Hashtable p = new Hashtable();
         //p.Add("team", "1");
         //PhotonNetwork.playerList[0].SetCustomProperties(p, null, false);
-        
+
     }
     
     
