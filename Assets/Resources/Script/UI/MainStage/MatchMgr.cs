@@ -93,7 +93,7 @@ public class MatchMgr : Photon.PunBehaviour
                 }
 
                 PhotonNetwork.room.IsVisible = false;
-
+                Battle.started = true;
             }
         }
     }

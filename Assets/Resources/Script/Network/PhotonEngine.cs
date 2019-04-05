@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
 using Random = UnityEngine.Random;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class PhotonEngine : Photon.PunBehaviour {
 
@@ -155,21 +156,30 @@ public class PhotonEngine : Photon.PunBehaviour {
     {
         Battle.inRoom = false;
         PhotonNetwork.automaticallySyncScene = false;
-        Debug.Log("left room");
     }
 
     public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {
-
+        if (Battle.started)
+        {
+            if (PhotonNetwork.isMasterClient)
+            {
+                string tCamp = Battle.GetWeakCamp().ToString();
+                Hashtable p = new Hashtable
+                {
+                    { "team", tCamp }
+                };
+                newPlayer.SetCustomProperties(p, null, false);
+                Debug.LogWarning("Player enter");
+            }
+        }
     }
 
     public override void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
     {
-        //var camp = int.Parse(otherPlayer.CustomProperties["team"].ToString());
-        //Battle.playerExit(camp);
-
-        Debug.LogWarning("player exit");
-
+        var camp = int.Parse(otherPlayer.CustomProperties["team"].ToString());
+        Battle.playerExit(camp);
+        Debug.LogWarning("Player exit");
     }
     
 }

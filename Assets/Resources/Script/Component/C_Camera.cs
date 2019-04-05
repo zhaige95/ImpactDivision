@@ -52,11 +52,10 @@ public class C_Camera : MonoBehaviour, IPunObservable
         targetSideOffset1 = camera_x.localPosition;
         targetSideOffset2 = cameraHandle.localPosition;
         
-        //var cameraController = GameObject.Instantiate(this.Carryer);
-        //mainCamera = cameraController.GetComponentInChildren<Camera>();
-        //camera_y = cameraController.transform;
-        //camera_x = camera_y.GetChild(1);
-        //aimPoint = camera_y.GetChild(3);
+    }
+
+    public void SetFollowPlayer(bool b)
+    {
 
     }
 

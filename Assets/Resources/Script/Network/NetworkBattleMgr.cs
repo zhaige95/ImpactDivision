@@ -15,9 +15,13 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
 
     IEnumerator ShowPlayer()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
 
+        Debug.LogWarning("read player team");
         Battle.localPlayerCamp = int.Parse(PhotonNetwork.player.CustomProperties["team"].ToString());
+
+        Debug.LogWarning("read player team successed");
+
         var t = Battle.bornMgr.GetPoint(Battle.localPlayerCamp);
         PhotonNetwork.Instantiate("NetworkCreator", t.position, t.rotation, 0);
 

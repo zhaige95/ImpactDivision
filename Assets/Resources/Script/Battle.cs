@@ -65,6 +65,14 @@ public class Battle : MonoBehaviour
             campNumber.Add(camp, 0);
         }
     }
+
+    public static int GetWeakCamp()
+    {
+        var camp1 = campNumber.ContainsKey(1) ? campNumber[1] : 0;
+        var camp2 = campNumber.ContainsKey(2) ? campNumber[1] : 0;
+        return camp1 <= camp2 ? 1 : 2;
+    }
+
 }
 
 
