@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class C_BattleMgr : MonoBehaviour {
     public C_Attributes attributes;
+    public GameObject friendlyMark;
     public int kill;
     public int dead;
     public int miltikill;
@@ -19,8 +20,8 @@ public class C_BattleMgr : MonoBehaviour {
 
     private void Awake()
     {
-        //    attributes.OnDead = AddDead;
-        //    attributes.OnRecover = Recover;
+    //    attributes.OnDead = AddDead;
+    //    attributes.OnRecover = Recover;
     }
 
     public void AddKill()
@@ -57,6 +58,12 @@ public class C_BattleMgr : MonoBehaviour {
     {
         var t = Battle.bornMgr.GetPoint(attributes.camp);
         this.transform.SetPositionAndRotation(t.position, t.rotation);
+    }
+
+    public void SetFirendlyMark()
+    {
+        Debug.Log("Local player camp =  " + Battle.localPlayerCamp);
+        friendlyMark.SetActive(Battle.localPlayerCamp == attributes.camp);
     }
 
 }

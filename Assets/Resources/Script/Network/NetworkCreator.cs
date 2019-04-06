@@ -15,12 +15,12 @@ public class NetworkCreator : Photon.PunBehaviour {
         if (isLocal)
         {
             var save = Battle.playerBattleSave;
-            pView.RPC("Create", PhotonTargets.AllBuffered, PhotonNetwork.AllocateViewID(), Battle.localPlayerCamp, save.characterId, save.mainWeaponId, save.secondWeaponId);
+            pView.RPC("Create", PhotonTargets.AllBuffered, PhotonNetwork.AllocateViewID(), PhotonNetwork.player.ID, Battle.localPlayerCamp, save.characterId, save.mainWeaponId, save.secondWeaponId);
         }
     }
 
     [PunRPC]
-    public void Create(int vID, int team, int characterID, int mainWeaponID, int secondWeaponID)
+    public void Create(int vID, int roomID, int team, int characterID, int mainWeaponID, int secondWeaponID)
     {
         GameObject model = Resources.Load("Prefab/Avatar/Avatar_" + characterID) as GameObject;
         ConfigWeapon main = Source.ReadWeaponConfig(mainWeaponID);
@@ -28,14 +28,15 @@ public class NetworkCreator : Photon.PunBehaviour {
         GameObject avatar = Factory.CreateAvatar(model, team, this.isLocal, this.transform.position, this.transform.rotation, main, second);
         avatar.GetComponent<PhotonView>().viewID = vID;
 
-        Battle.PlayerJoin(team);
-        Debug.Log("team" + team + " number = " + Battle.campNumber[team]);
+        Battle.PlayerJoin(team, roomID, avatar.GetComponent<C_BattleMgr>());
+
         if (this.isLocal)
         {
             var uiMgr = avatar.GetComponent<C_UiEventMgr>();
             Battle.hudMgr.Init(uiMgr);
             Battle.planeHUDMgr.Init(uiMgr); 
         }
+        
 
     }
 

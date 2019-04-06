@@ -38,12 +38,16 @@ public class CS_Dead : AvatarState {
         process = 1;
         timer.Enter(vanishTime);
 
+        attributes.isDead = true;
         battleMgr.AddDead();
         velocity.isActive = false;
         anim.animator.enabled = false;
         attackListener.isActive = false;
+        iKManager.SetAim(false);
+        iKManager.SetHold(false);
         iKManager.SetDead(true);
         weaponHandle.Reset();
+        weaponHandle.active = false;
     }
 
     public override void OnUpdate()
@@ -60,7 +64,7 @@ public class CS_Dead : AvatarState {
             }
             else if (process == 2)
             {
-                this.Exit();
+                this._exitTick = true;
             }
         }
     }
@@ -75,8 +79,10 @@ public class CS_Dead : AvatarState {
         velocity.isActive = true;
         anim.animator.enabled = true;
         attackListener.isActive = true;
-        attackListener.Reset();
         iKManager.SetDead(false);
+
+        attackListener.Reset();
         weaponHandle.targetWeapon = 1;
+        weaponHandle.active = true;
     }
 }

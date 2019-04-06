@@ -53,13 +53,11 @@ public class Pick : WeaponState
     {
         base.Enter();
         process = 1;
-        _iKManager.SetAim(false);
         if (_weaponAttribute.active)
         {
             _animator.animator.SetTrigger("pickWeapon");
             _animator.animator.SetInteger("weaponTarget", (int)_weaponAttribute.type);
             _animator.AddEvent("weaponType", (int)_weaponAttribute.type);
-            _iKManager.SetHold(false);
             _iKManager.SetHoldTarget(_weaponAttribute.holdPoint);
             endTimer.Enter(endTime);
             pickTimer.Enter(pickTime);
@@ -92,62 +90,66 @@ public class Pick : WeaponState
                 }
             }
             _weaponAttribute.ready = false;
-            _iKManager.SetHold(false);
             this._exitTick = true;
         }
+        _iKManager.SetAim(false);
+        _iKManager.SetHold(false);
 
     }
 
     public override void OnUpdate()
     {
-        endTimer.FixedUpdate();
-        pickTimer.FixedUpdate();
-
-        if (!pickTimer.isRunning && process == 1)
+        if (!this._exitTick)
         {
-            Sound.PlayOneShot(_audio, sounds);
-            _weaponAttribute.constraint.weight = 0;
+            endTimer.FixedUpdate();
+            pickTimer.FixedUpdate();
 
-            _weaponHandle.handPoint.localPosition = _weaponAttribute.holdOffset._position;
-            _weaponHandle.handPoint.localEulerAngles = _weaponAttribute.holdOffset._rotation;
-            _weaponHandle.shootPoint.GetComponent<ParentConstraint>().SetSource(0,
-                new ConstraintSource()
-                {
-                    sourceTransform = _weaponAttribute.shootPoint,
-                    weight = 1
-                });
-            
-            _iKManager.targetAxis = axis;
-            _iKManager.aimIK.solver.axis = axis;
-            transform.localPosition = Vector3.zero;
-            transform.localEulerAngles = Vector3.zero;
-            _velocity.armed = true;
-            process = 2;
-        }
-        
-        if (!endTimer.isRunning)
-        {
-            if (_velocity.Drun)
+            if (!pickTimer.isRunning && process == 1)
             {
-                _iKManager.SetAim(false);
-                if (_weaponAttribute.type == WeaponType.Pistol)
+                Sound.PlayOneShot(_audio, sounds);
+                _weaponAttribute.constraint.weight = 0;
+
+                _weaponHandle.handPoint.localPosition = _weaponAttribute.holdOffset._position;
+                _weaponHandle.handPoint.localEulerAngles = _weaponAttribute.holdOffset._rotation;
+                _weaponHandle.shootPoint.GetComponent<ParentConstraint>().SetSource(0,
+                    new ConstraintSource()
+                    {
+                        sourceTransform = _weaponAttribute.shootPoint,
+                        weight = 1
+                    });
+
+                _iKManager.targetAxis = axis;
+                _iKManager.aimIK.solver.axis = axis;
+                transform.localPosition = Vector3.zero;
+                transform.localEulerAngles = Vector3.zero;
+                _velocity.armed = true;
+                process = 2;
+            }
+
+            if (!endTimer.isRunning)
+            {
+                if (_velocity.Drun)
                 {
-                    _iKManager.SetHold(false);
+                    _iKManager.SetAim(false);
+                    if (_weaponAttribute.type == WeaponType.Pistol)
+                    {
+                        _iKManager.SetHold(false);
+                    }
+                    else if (_weaponAttribute.type == WeaponType.Rifle)
+                    {
+                        _iKManager.SetHold(true);
+                    }
                 }
-                else if (_weaponAttribute.type == WeaponType.Rifle)
+                else
                 {
+                    _iKManager.SetAim(true);
                     _iKManager.SetHold(true);
                 }
-            }
-            else
-            {
-                _iKManager.SetAim(true);
-                _iKManager.SetHold(true);
-            }
 
-            _weaponAttribute.ready = true;
-            _weaponHandle.locked = false;
-            this._exitTick = true;
+                _weaponAttribute.ready = true;
+                _weaponHandle.locked = false;
+                this._exitTick = true;
+            }
         }
     }
     public override void Exit()

@@ -23,6 +23,7 @@ public class C_Attributes : MonoBehaviour {
     public float recoverTime = 3f;
     [Header("[Component]")]
     public C_UiEventMgr uiMgr;
+    public Animator animator;
     [Header("[Node]")]
     public Transform tinyHpBarNode;
     public Transform friendMark;
@@ -64,11 +65,14 @@ public class C_Attributes : MonoBehaviour {
     public void Demaged(float demage)
     {
         this.Demaged(demage, "-");
+
+        animator.SetTrigger("hit");
     }
 
     public void Recover()
     {
         this.Demaged(HPMax, "+");
+        this.isDead = false;
         OnRecover?.Invoke();
     }
 

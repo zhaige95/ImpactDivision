@@ -35,13 +35,20 @@ public class CS_StateMgr : MonoBehaviour, IPunObservable {
 
     public void ExitState(string sName)
     {
-        if (avatarStates.ContainsKey(sName))
+        if (!sName.Equals("dead"))
         {
-            this.avatarStates[sName].Exit();
+            if (avatarStates.ContainsKey(sName))
+            {
+                var state = this.avatarStates[sName];
+                if (state._active)
+                {
+                    this.avatarStates[sName].Exit();
+                }
+            }
         }
+        
     }
-
-
+    
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.isWriting)

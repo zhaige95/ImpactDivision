@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class C_Animator : MonoBehaviour {
+public class C_Animator : MonoBehaviour, IPunObservable {
 	public Animator animator;
     public Dictionary<string, float> targetFloat;
     public Dictionary<int, float> layerTransform;
@@ -13,6 +13,11 @@ public class C_Animator : MonoBehaviour {
         targetFloat = new Dictionary<string, float>();
         layerTransform = new Dictionary<int, float>();
     }
+
+    //public void Start()
+    //{
+    //    this.animator = GetComponentInChildren<Animator>();
+    //}
 
     public void AddEvent(string name, float target)
     {
@@ -38,8 +43,15 @@ public class C_Animator : MonoBehaviour {
         }
     }
 
-    //public void Start()
-    //{
-    //    this.animator = GetComponentInChildren<Animator>();
-    //}
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            stream.SendNext(this.animator.GetFloat("aim"));
+        }
+        else if (stream.isReading)
+        {
+            this.animator.SetFloat("aim", (float)stream.ReceiveNext());
+        }
+    }
 }

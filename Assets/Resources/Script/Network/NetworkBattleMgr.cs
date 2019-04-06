@@ -6,6 +6,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
 	// Use this for initialization
 	void Start () {
         StartCoroutine(ShowPlayer());
+        Battle.started = true;
     }
 
     // Update is called once per frame

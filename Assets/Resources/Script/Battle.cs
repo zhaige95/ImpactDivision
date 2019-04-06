@@ -8,6 +8,10 @@ using Newtonsoft.Json.Bson;
 public class Battle : MonoBehaviour
 {
     public static Dictionary<int, int> campNumber = new Dictionary<int, int>();
+    //public static Dictionary<int, List<C_BattleMgr>> playerList = new Dictionary<int, List<C_BattleMgr>>();
+    public static Dictionary<int, C_BattleMgr> playerListCamp1 = new Dictionary<int, C_BattleMgr>();
+    public static Dictionary<int, C_BattleMgr> playerListCamp2 = new Dictionary<int, C_BattleMgr>();
+
     public static Transform localPlayerCameraTrans;
     public static Camera localPlayerCamera;
     public static int localPlayerCamp;
@@ -16,8 +20,7 @@ public class Battle : MonoBehaviour
     public static PlaneHUDMgr planeHUDMgr;
     public static HUDMgr hudMgr;
     public static BornPointsMgr bornMgr;
-    //public Dictionary<string, C_Attributes> campPool1;
-    //public Dictionary<string, C_Attributes> campPool2;
+
 
     // save
     public static bool login = false;
@@ -42,8 +45,28 @@ public class Battle : MonoBehaviour
         File.WriteAllText(savePath + "/SystemSetting.cfg", str);
     }
 
-    public static void PlayerJoin(int camp)
+    //public static void PlayerJoin(int camp)
+    //{
+    //    if (campNumber.ContainsKey(camp))
+    //    {
+    //        campNumber[camp] += 1;
+    //    }
+    //    else
+    //    {
+    //        campNumber.Add(camp, 1);
+    //    }
+    //}
+
+    public static void PlayerJoin(int camp, int roomID, C_BattleMgr battleMgr)
     {
+        if (camp == 1)
+        {
+            playerListCamp1.Add(roomID, battleMgr);
+        }
+        else if (camp == 2)
+        {
+            playerListCamp1.Add(roomID, battleMgr);
+        }
         if (campNumber.ContainsKey(camp))
         {
             campNumber[camp] += 1;
@@ -72,6 +95,7 @@ public class Battle : MonoBehaviour
         var camp2 = campNumber.ContainsKey(2) ? campNumber[1] : 0;
         return camp1 <= camp2 ? 1 : 2;
     }
+
 
 }
 

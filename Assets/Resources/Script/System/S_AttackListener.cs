@@ -24,18 +24,9 @@ public class S_AttackListener : ComponentSystem {
             {
                 foreach (Attack attack in _attackList)
                 {
-                    //Attributes.Add(ref _attribute, "HP", attack.demage, "-");
-                    //e._Attributes.Demaged(attack.demage);
+                    
                     _attackListener.photonView.RPC("Demaged", PhotonTargets.All, attack.demage);
                     
-                    e._Animator.animator.SetTrigger("hit");
-
-                    //if (_velocity.isLocalPlayer)
-                    //{
-                    //    Sound.PlayOneShot(e._Audio, _attackListener.beAttackedSounds);
-                    //}
-                    //else
-                    //{
                     var source = attack.source;
                     var sourceAudio = source.GetComponent<AudioSource>();
                     var sourceIsLocalPlayer = source.GetComponent<C_Velocity>().isLocalPlayer;

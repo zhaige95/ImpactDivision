@@ -100,7 +100,6 @@ public class PhotonEngine : Photon.PunBehaviour {
     // 连接失败
     public override void OnFailedToConnectToPhoton(DisconnectCause cause)
     {
-        Debug.LogWarning("connect photon filed");
         onConnToPhotonFiled.Invoke();
     }
 
@@ -114,8 +113,9 @@ public class PhotonEngine : Photon.PunBehaviour {
 
     public override void OnJoinedLobby()
     {
+        PhotonNetwork.player.NickName = Battle.playerBasicSave.playerName + "#" + DateTime.Now.GetHashCode().ToString().Substring(0,5);
+        Debug.Log(PhotonNetwork.player.NickName);
         onJoinedLobby.Invoke();
-        Debug.Log("joind lobby~~~~~~~~~~");
     }
 
     public override void OnLeftLobby()
@@ -144,7 +144,6 @@ public class PhotonEngine : Photon.PunBehaviour {
     {
         Battle.inRoom = true;
         PhotonNetwork.automaticallySyncScene = true;
-        Debug.Log("joined");
     }
 
     public override void OnPhotonJoinRoomFailed(object[] codeAndMsg)
@@ -170,7 +169,6 @@ public class PhotonEngine : Photon.PunBehaviour {
                     { "team", tCamp }
                 };
                 newPlayer.SetCustomProperties(p, null, false);
-                Debug.LogWarning("Player enter");
             }
         }
     }
@@ -179,7 +177,6 @@ public class PhotonEngine : Photon.PunBehaviour {
     {
         var camp = int.Parse(otherPlayer.CustomProperties["team"].ToString());
         Battle.playerExit(camp);
-        Debug.LogWarning("Player exit");
     }
     
 }

@@ -37,7 +37,10 @@ public class Aim : WeaponState
     public override void Enter()
     {
         base.Enter();
-        _iKManager.SetAim(true);
+        if (!_weaponAttribute.reload)
+        { 
+            _iKManager.SetAim(true);
+        }
         _velocity.Drun = false;
         _velocity.aiming = true;
         _camera.FOVtarget = FOV;

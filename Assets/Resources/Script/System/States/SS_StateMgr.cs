@@ -14,13 +14,19 @@ public class SS_StateMgr : ComponentSystem {
 		foreach (var e in GetEntities<Group>())
         {
             var _stateMgr = e.stateMgr;
+            var _velocity = e._Velocity;
             if (e._Attributes.isDead)
             {
-                _stateMgr.avatarStates["dead"].OnUpdate();
+               
+                var deadState = _stateMgr.avatarStates["dead"];
+                deadState.OnUpdate();
+                if (deadState._exitTick && _velocity.isLocalPlayer)
+                {
+                    deadState.Exit();
+                }
             }
             else
             {
-                var _velocity = e._Velocity;
                 var currentState = _stateMgr.avatarStates[_stateMgr.runningState];
                 if (_velocity.isLocalPlayer)
                 {

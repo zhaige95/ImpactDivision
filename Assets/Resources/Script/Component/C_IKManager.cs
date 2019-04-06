@@ -34,7 +34,6 @@ public class C_IKManager : MonoBehaviour {
 
     public void SetHoldTarget(Transform t)
     {
-        Debug.LogWarning("set hold t");
         bipedIK.solvers.leftHand.target = t;
     }
 

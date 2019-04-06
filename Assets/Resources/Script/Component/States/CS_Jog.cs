@@ -68,11 +68,10 @@ public class CS_Jog : AvatarState {
             {
                 _animator.AddEvent("Dfwd", _velocity.fwd);
                 _animator.AddEvent("Dright", _velocity.right);
-
-                _animator.AddEvent("aim", _velocity.aiming? 1f : 0f);
                 
                 if (_velocity.isLocalPlayer)
                 {
+                    _animator.AddEvent("aim", _velocity.aiming ? 1f : 0f);
                     _velocity.currentSpeed = _velocity.aiming ? walkSpeed : jogSpeed;
                     var currentSpeed = _velocity.currentSpeed;
                     Aspect.RotateToCameraY(_camera.Carryer, transform, 0.5f);

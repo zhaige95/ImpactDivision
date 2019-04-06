@@ -1569,7 +1569,7 @@ GameObject:
   - component: {fileID: 33151314875847600}
   - component: {fileID: 23908295975952356}
   m_Layer: 13
-  m_Name: Quad
+  m_Name: Quad Friendly Mark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4630,7 +4630,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: be194ca268ee05f49a30366bf0b9f914, type: 3}
   - {fileID: 8300000, guid: bc45b9eef5fb35e4e85ab4ea975f59a2, type: 3}
   - {fileID: 8300000, guid: f81a906f150592b4fa5d7d39514b560f, type: 3}
-  hitEffect: {fileID: 1150348680127518, guid: bfa23fe988223d64db44706f6e3803ac, type: 2}
+  hitEffect: {fileID: 1215458127109096, guid: d44629c89a4befb44999054072d4b956, type: 2}
   injuredAnimLayer: 8
 --- !u!114 &114166651141621798
 MonoBehaviour:
@@ -4932,6 +4932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 114868711761955298}
+  friendlyMark: {fileID: 1743003562400024}
   kill: 0
   dead: 0
   miltikill: 0
@@ -5022,6 +5023,7 @@ MonoBehaviour:
   - {fileID: 114576564685032682}
   - {fileID: 114941734476039396}
   - {fileID: 114798856965775900}
+  - {fileID: 114343338998794126}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
@@ -5886,6 +5888,7 @@ MonoBehaviour:
   isDead: 0
   recoverTime: 3
   uiMgr: {fileID: 114493978813828184}
+  animator: {fileID: 95989447406074648}
   tinyHpBarNode: {fileID: 4128310525699904}
   friendMark: {fileID: 4435716400327022}
 --- !u!114 &114892681638604756

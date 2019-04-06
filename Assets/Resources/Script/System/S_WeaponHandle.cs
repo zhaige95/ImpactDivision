@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Entities;
 
+[UpdateAfter(typeof(SS_StateMgr))]
 public class S_WeaponHandle : ComponentSystem {
 	struct Group{
 		public C_WeaponHandle _WeaponHandle;

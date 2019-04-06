@@ -54,8 +54,8 @@ public class C_Velocity : MonoBehaviour, IPunObservable {
         }
         else if (stream.isReading)
         {
-            this.fwd = (float)stream.ReceiveNext();
-            this.right = (float)stream.ReceiveNext();
+            this.targetFwd = (float)stream.ReceiveNext();
+            this.targetRight = (float)stream.ReceiveNext();
         }
     }
 
