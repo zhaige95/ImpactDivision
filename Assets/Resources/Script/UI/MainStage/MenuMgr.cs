@@ -9,6 +9,7 @@ public class MenuMgr : Photon.PunBehaviour
     public List<WindowBasic> windows;
     [Header("Lobby Event")]
     public OnJoinedLobby onJoinedLobby;
+    public OnDisconnFromPhoton onDisconnFromPhoton;
     // Use this for initialization
     void Start () {
         foreach (var item in windows)
@@ -39,7 +40,11 @@ public class MenuMgr : Photon.PunBehaviour
         onJoinedLobby.Invoke();
         OpenMenu(0);
     }
-    
+
+    public override void OnDisconnectedFromPhoton()
+    {
+        onDisconnFromPhoton.Invoke();
+    }
 
 }
 

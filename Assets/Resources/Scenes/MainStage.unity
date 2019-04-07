@@ -4643,6 +4643,33 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: OnPlayStart, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onDisconnFromPhoton:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1951692277}
+        m_MethodName: OpenMenu
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 702392565}
+        m_MethodName: CancleMatch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: OnDisconnFromPhoton, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &702623851
 GameObject:
   m_ObjectHideFlags: 0
@@ -5677,6 +5704,21 @@ Prefab:
         type: 2}
       propertyPath: m_Color.r
       value: 0.9622642
+      objectReference: {fileID: 0}
+    - target: {fileID: 114115730059811404, guid: af4dc23f740414f4e851c0b188e0f996,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.7735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 114115730059811404, guid: af4dc23f740414f4e851c0b188e0f996,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114115730059811404, guid: af4dc23f740414f4e851c0b188e0f996,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af4dc23f740414f4e851c0b188e0f996, type: 2}
@@ -10955,27 +10997,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 224760518385476662, guid: 2d0bb18c07f9f1d4eb54f895cb203148,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224760518385476662, guid: 2d0bb18c07f9f1d4eb54f895cb203148,
+    - target: {fileID: 224209548675232942, guid: 2d0bb18c07f9f1d4eb54f895cb203148,
         type: 2}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224760518385476662, guid: 2d0bb18c07f9f1d4eb54f895cb203148,
+    - target: {fileID: 224209548675232942, guid: 2d0bb18c07f9f1d4eb54f895cb203148,
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224209548675232942, guid: 2d0bb18c07f9f1d4eb54f895cb203148,
+    - target: {fileID: 224760518385476662, guid: 2d0bb18c07f9f1d4eb54f895cb203148,
         type: 2}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224209548675232942, guid: 2d0bb18c07f9f1d4eb54f895cb203148,
+    - target: {fileID: 224760518385476662, guid: 2d0bb18c07f9f1d4eb54f895cb203148,
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -11058,6 +11095,16 @@ Prefab:
     - target: {fileID: 224104467067662568, guid: 2d0bb18c07f9f1d4eb54f895cb203148,
         type: 2}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224696604972923850, guid: 2d0bb18c07f9f1d4eb54f895cb203148,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114323815934000244, guid: 2d0bb18c07f9f1d4eb54f895cb203148,
+        type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -14591,6 +14638,22 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: OnJoinedLobby, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  onDisconnFromPhoton:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 436215038}
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: OnDisconnFromPhoton, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!95 &1951692278
 Animator:

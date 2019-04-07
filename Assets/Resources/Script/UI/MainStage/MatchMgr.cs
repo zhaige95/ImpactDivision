@@ -23,6 +23,7 @@ public class MatchMgr : Photon.PunBehaviour
     [Header("Photon Event")]
     public OnJoinedRoom onJoinedRoom;
     public OnPlayStart onPlayStart;
+    public OnDisconnFromPhoton onDisconnFromPhoton;
 
     //public OnPlayerConnected onPlayerConnected;
 
@@ -36,9 +37,9 @@ public class MatchMgr : Photon.PunBehaviour
                 matchTimeMinute += 1;
                 matchTimeSecond -= 60f;
             }
-
+            
             var second = (int)matchTimeSecond < 10 ? ("0" + (int)matchTimeSecond) : (int)matchTimeSecond + "";
-            matchTimeText.text = "0" + matchTimeMinute + ":" + (int)matchTimeSecond + "";
+            matchTimeText.text = "0" + matchTimeMinute + ":" + second + "";
 
         }
     }
@@ -60,8 +61,16 @@ public class MatchMgr : Photon.PunBehaviour
             PhotonNetwork.LeaveRoom();
         }
     }
-    
+
     // photon event -------------------------------
+
+    public override void OnDisconnectedFromPhoton()
+    {
+        if (this.matching)
+        {
+            onDisconnFromPhoton.Invoke();
+        }
+    }
 
     public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {

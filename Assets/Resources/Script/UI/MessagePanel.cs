@@ -46,9 +46,13 @@ public class MessagePanel : Photon.PunBehaviour, IPointerEnterHandler, IPointerE
         GameObject msgObj = GameObject.Instantiate(msgText, content);
         msgObj.GetComponent<Text>().text = msg;
         this.reflashTrigger = true;
-
     }
 
+    void AddMsg(string msg, string colorValue)
+    {
+        AddMsg("<color=#" + colorValue + ">" + msg + "</color>");
+    }
+    
     public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {
         this.AddMsg("特工 <color=#ffcf69>[" + newPlayer.NickName + "]</color> 加入战场");
@@ -62,16 +66,22 @@ public class MessagePanel : Photon.PunBehaviour, IPointerEnterHandler, IPointerE
     public override void OnConnectedToPhoton()
     {
         this.AddMsg("特工 <color=#ffcf69>[" + Battle.playerBasicSave.playerName + "]</color> 欢迎游玩全境崩坏！");
+        this.AddMsg("已连接天命作战中心");
+    }
+
+    public override void OnDisconnectedFromPhoton()
+    {
+        this.AddMsg("与天命作战中心的连接断开！", "FF514A");
     }
 
     public override void OnJoinedLobby()
     {
-        this.AddMsg("进入作战中心");
+
     }
     
     public override void OnJoinedRoom()
     {
-        this.AddMsg("已进入小队：" + PhotonNetwork.room.Name);
+        this.AddMsg("已进入小队");
     }
 
     public override void OnLeftRoom()
