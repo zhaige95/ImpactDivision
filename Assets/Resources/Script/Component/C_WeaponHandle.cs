@@ -18,6 +18,7 @@ public class C_WeaponHandle : MonoBehaviour
     public Transform pistolPoint;
     public Transform riflePoint;
     public Transform shootPoint;
+    public Transform OcclusionPoint;
     public Transform leftHand;
     public int currentWeapon = 0;
     public int targetWeapon = 0;

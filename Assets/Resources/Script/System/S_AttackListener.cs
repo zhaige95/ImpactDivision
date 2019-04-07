@@ -42,9 +42,8 @@ public class S_AttackListener : ComponentSystem {
 
                     if (_attribute.HP <= 0)
                     {
-                        source.GetComponent<AudioSource>().PlayOneShot(_attackListener.killSound);
                         sourceBattleMgr.AddKill();
-                        Sound.PlayOneShot(source.GetComponent<AudioSource>(), _attackListener.killSound);
+                        Sound.PlayOneShot(sourceAudio, _attackListener.killSound);
                     }
                     
                 }

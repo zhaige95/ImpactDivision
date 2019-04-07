@@ -28,6 +28,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1072652375550298
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4364184602698284}
+  m_Layer: 21
+  m_Name: Occlusion Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1101250844740144
 GameObject:
   m_ObjectHideFlags: 1
@@ -302,21 +317,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!1 &1746016565438586
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4589277299324358}
-  m_Layer: 21
-  m_Name: Occlusion Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1776489416566798
 GameObject:
   m_ObjectHideFlags: 1
@@ -535,7 +535,7 @@ Transform:
   m_Children:
   - {fileID: 4037915967028446}
   - {fileID: 4362046641234806}
-  - {fileID: 4589277299324358}
+  - {fileID: 4364184602698284}
   m_Father: {fileID: 4513956702660310}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -593,6 +593,19 @@ Transform:
   m_Father: {fileID: 4238983279649186}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4364184602698284
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1072652375550298}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.3491, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4238983279649186}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4368684984490700
 Transform:
   m_ObjectHideFlags: 1
@@ -689,19 +702,6 @@ Transform:
   m_Father: {fileID: 4065316302114090}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4589277299324358
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1746016565438586}
-  m_LocalRotation: {x: -0.0000002682209, y: -0.7071065, z: 0.00000028871, w: 0.7071071}
-  m_LocalPosition: {x: 0.3491, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4238983279649186}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!4 &4598243798312932
 Transform:
   m_ObjectHideFlags: 1
@@ -1584,6 +1584,7 @@ MonoBehaviour:
   reloadTime: 1.3
   interval: 0
   spread: 31
+  aimSpread: 2
   recoilX: 5
   recoilY: 2
   reload: 0
@@ -1594,6 +1595,7 @@ MonoBehaviour:
   cutPicInBattle: {fileID: 0}
   holdPoint: {fileID: 4037915967028446}
   shootPoint: {fileID: 4362046641234806}
+  OcclusionPoint: {fileID: 4364184602698284}
   magObj: {fileID: 1854094414573940}
   constraint: {fileID: 7973541677760985962}
   defaultState: pick
@@ -1620,10 +1622,9 @@ MonoBehaviour:
   triggerType: 2
   fireAxis: {x: -1, y: 0, z: -0.15}
   sound: {fileID: 8300000, guid: e44fa7c0adcbf154fb0c412a8258bae5, type: 3}
-  bulletVisibleDistence: 2
+  bulletVisibleDistence: 5
   bullet: {fileID: 1239038810545592, guid: 20df5b9577521c343b3e540a76a2454d, type: 2}
   muzzleFlash: {fileID: 1692854838645264}
-  OcclusionPoint: {fileID: 4589277299324358}
   OcclusionSensorDistance: 0.9
   occlusionLayer: {fileID: 11400000, guid: 29b833a17bee51642a7c8085006ca7f4, type: 2}
   targetPoint: {x: 0, y: 0, z: 0}
@@ -1649,6 +1650,7 @@ MonoBehaviour:
   _iKManager: {fileID: 0}
   _weaponHandle: {fileID: 0}
   _camera: {fileID: 0}
+  _uiMgr: {fileID: 0}
   _weaponAttribute: {fileID: 0}
   FOV: 30
 --- !u!114 &114473877028511802
@@ -29414,8 +29416,8 @@ ParentConstraint:
   m_GameObject: {fileID: 1633922143633922}
   m_Enabled: 1
   m_Weight: 0
-  m_TranslationAtRest: {x: 0.5000002, y: 0.471, z: 0.058}
-  m_RotationAtRest: {x: -4.0850053, y: 87.782, z: -72.61224}
+  m_TranslationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
   m_TranslationOffsets:
   - {x: 0.049443662, y: 0.038062334, z: 0.031033516}
   m_RotationOffsets:

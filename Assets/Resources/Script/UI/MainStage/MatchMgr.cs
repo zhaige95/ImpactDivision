@@ -13,6 +13,7 @@ public class MatchMgr : Photon.PunBehaviour
     private AsyncOperation async = null;
     private float progressValue;
     public bool matching = false;
+    public bool single;
     // -----------------------
     public Text matchTimeText;
     public float matchTimeSecond = 0f;
@@ -108,18 +109,21 @@ public class MatchMgr : Photon.PunBehaviour
         ringText.text = PhotonNetwork.playerList.Length + "";
 
         // test code 
+        if (this.single)
+        {
 
-        //onPlayStart.Invoke();
-        //async = PhotonNetwork.LoadLevelAsync("Battle001");
-        //async.allowSceneActivation = true;
-        //Hashtable p = new Hashtable();
-        //p.Add("team", "1");
-        //PhotonNetwork.playerList[0].SetCustomProperties(p, null, false);
+            onPlayStart.Invoke();
+            async = PhotonNetwork.LoadLevelAsync("Battle001");
+            async.allowSceneActivation = true;
+            Hashtable p = new Hashtable();
+            p.Add("team", "1");
+            PhotonNetwork.playerList[0].SetCustomProperties(p, null, false);
+        }
 
     }
-    
-    
 
 
-    
+
+
+
 }

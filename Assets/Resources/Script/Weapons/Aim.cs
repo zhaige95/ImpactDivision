@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Animations;
+using UiEvent;
 
 public class Aim : WeaponState
 {
@@ -9,6 +10,7 @@ public class Aim : WeaponState
     public C_IKManager _iKManager;
     public C_WeaponHandle _weaponHandle;
     public C_Camera _camera;
+    public C_UiEventMgr _uiMgr;
     public WeaponAttribute _weaponAttribute;
     [Header("[Extra Properties]")]
     public float FOV;
@@ -21,6 +23,8 @@ public class Aim : WeaponState
         _iKManager = obj.GetComponent<C_IKManager>();
         _weaponHandle = obj.GetComponent<C_WeaponHandle>();
         _camera = obj.GetComponent<C_Camera>();
+        _uiMgr = obj.GetComponent<C_UiEventMgr>();
+
         _weaponAttribute = GetComponent<WeaponAttribute>();
     }
 
@@ -44,6 +48,13 @@ public class Aim : WeaponState
         _velocity.Drun = false;
         _velocity.aiming = true;
         _camera.FOVtarget = FOV;
+
+        var spreadMsg = new UiEvent.UiMsgs.Spread()
+        {
+            value = 5f
+        };
+        _uiMgr.SendEvent(spreadMsg);
+
     }
 
     public override void OnUpdate()
@@ -61,6 +72,11 @@ public class Aim : WeaponState
         base.Exit();
         _camera.FOVtarget = _camera.FOVdefault;
         _velocity.aiming = false;
+        var spreadMsg = new UiEvent.UiMsgs.Spread()
+        {
+            value = _weaponAttribute.spread * 2
+        };
+        _uiMgr.SendEvent(spreadMsg);
     }
 }
  

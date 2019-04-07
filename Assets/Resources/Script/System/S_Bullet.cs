@@ -47,10 +47,6 @@ public class S_Bullet : ComponentSystem {
                             {
                                 _attackListener.attackList.Add(_bullet.attack);
                             }
-                            else
-                            {
-                                _attackListener.PlayBeAttackedSound();
-                            }
                         }
                     }
                     else

@@ -16,7 +16,8 @@ public class ConfigWeapon : ScriptableObject {
     public int mag;
     public float damage;
     public float fireSpeed;
-    public float spread = 20;
+    public float spread = 20f;
+    public float aimSpread = 20f;
     public float recoilX = 3f;
     public float recoilY = 1f;
     public GameObject model;

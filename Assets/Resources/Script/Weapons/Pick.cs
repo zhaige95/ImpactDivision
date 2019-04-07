@@ -75,6 +75,13 @@ public class Pick : WeaponState
                 mag = _weaponAttribute.mag
             };
             _uiMgr.SendEvent(ammoMsg);
+
+            var spreadMsg = new UiEvent.UiMsgs.Spread()
+            {
+                value = _weaponAttribute.spread
+            };
+            _uiMgr.SendEvent(spreadMsg);
+
         }
         else
         {
@@ -118,6 +125,12 @@ public class Pick : WeaponState
                         weight = 1
                     });
 
+                _weaponHandle.OcclusionPoint.GetComponent<ParentConstraint>().SetSource(0,
+                new ConstraintSource()
+                {
+                    sourceTransform = _weaponAttribute.OcclusionPoint,
+                    weight = 1
+                });
                 _iKManager.targetAxis = axis;
                 _iKManager.aimIK.solver.axis = axis;
                 transform.localPosition = Vector3.zero;

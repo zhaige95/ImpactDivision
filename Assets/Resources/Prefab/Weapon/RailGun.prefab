@@ -532,6 +532,7 @@ MonoBehaviour:
   reloadTime: 1
   interval: 0
   spread: 15
+  aimSpread: 2
   recoilX: 4
   recoilY: 1
   reload: 0
@@ -542,6 +543,7 @@ MonoBehaviour:
   cutPicInBattle: {fileID: 0}
   holdPoint: {fileID: 4022105809440286}
   shootPoint: {fileID: 4198249403142180}
+  OcclusionPoint: {fileID: 4763446472624730}
   magObj: {fileID: 0}
   constraint: {fileID: 7973541676911364100}
   defaultState: pick
@@ -591,6 +593,7 @@ MonoBehaviour:
   _iKManager: {fileID: 0}
   _weaponHandle: {fileID: 0}
   _camera: {fileID: 0}
+  _uiMgr: {fileID: 0}
   _weaponAttribute: {fileID: 0}
   FOV: 30
 --- !u!114 &114899555629545950
@@ -647,7 +650,6 @@ MonoBehaviour:
   bulletVisibleDistence: 2
   bullet: {fileID: 1239038810545592, guid: a5b0a5b5457cc9340ba6c3fa983eebe9, type: 2}
   muzzleFlash: {fileID: 1335894919920174}
-  OcclusionPoint: {fileID: 4763446472624730}
   OcclusionSensorDistance: 0.8
   occlusionLayer: {fileID: 11400000, guid: 29b833a17bee51642a7c8085006ca7f4, type: 2}
   targetPoint: {x: 0, y: 0, z: 0}

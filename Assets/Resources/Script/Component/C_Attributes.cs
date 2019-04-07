@@ -24,6 +24,7 @@ public class C_Attributes : MonoBehaviour {
     [Header("[Component]")]
     public C_UiEventMgr uiMgr;
     public Animator animator;
+    public C_AttackListener attackListener;
     [Header("[Node]")]
     public Transform tinyHpBarNode;
     public Transform friendMark;
@@ -66,6 +67,7 @@ public class C_Attributes : MonoBehaviour {
     {
         this.Demaged(demage, "-");
 
+        attackListener.PlayBeAttackedSound();
         animator.SetTrigger("hit");
     }
 

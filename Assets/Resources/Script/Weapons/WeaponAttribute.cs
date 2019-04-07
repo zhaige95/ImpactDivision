@@ -19,6 +19,7 @@ public class WeaponAttribute : MonoBehaviour
     public float reloadTime = 1.3f;
     public float interval = 0f;
     public float spread = 0.5f;
+    public float aimSpread = 2f;
     public float recoilX = 0.5f;
     public float recoilY = 0.5f;
     public bool reload = false;
@@ -27,6 +28,7 @@ public class WeaponAttribute : MonoBehaviour
     public Texture2D cutPicInBattle;
     public Transform holdPoint;
     public Transform shootPoint;
+    public Transform OcclusionPoint;
     public GameObject magObj;
     public ParentConstraint constraint;
     public Dictionary<string, WeaponState> states = new Dictionary<string, WeaponState>();
@@ -66,6 +68,7 @@ public class WeaponAttribute : MonoBehaviour
         damage = config.damage;
         fireSpeed = config.fireSpeed;
         spread = config.spread;
+        aimSpread = config.aimSpread;
         recoilX = config.recoilX;
         recoilY = config.recoilY;
         cutPicInBattle = config.cutPicInBattle;

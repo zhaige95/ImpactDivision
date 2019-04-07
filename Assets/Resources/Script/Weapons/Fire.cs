@@ -25,7 +25,6 @@ public class Fire : WeaponState
     public float bulletVisibleDistence;
     public GameObject bullet;
     public GameObject muzzleFlash;
-    public Transform OcclusionPoint;
     public float OcclusionSensorDistance = 2f;
     public ConfigLayer occlusionLayer;
 
@@ -36,6 +35,7 @@ public class Fire : WeaponState
 
     private RaycastHit hitInfo;
     
+
     public override void Init(GameObject obj)
     {
         _uiMgr = obj.GetComponent<C_UiEventMgr>();
@@ -104,7 +104,8 @@ public class Fire : WeaponState
                 {
                     _camera.forceX = _weaponAttribute.recoilX * 0.5f;
                 }
-                
+
+                Transform OcclusionPoint = _weaponHandle.OcclusionPoint;
 
                 if (Physics.Raycast(OcclusionPoint.position, OcclusionPoint.forward, out hitInfo, OcclusionSensorDistance, occlusionLayer.layerMask))
                 {
@@ -122,23 +123,25 @@ public class Fire : WeaponState
                     // 弹道后坐力，扩散
                     if (_velocity.aiming)
                     {
-                        var hitPos = _camera.GetAimPoint();
-
-                        startPoint = _weaponHandle.shootPoint.position;
-                        targetPoint = hitPos;
-                        visable = Vector3.Distance(startPoint, targetPoint) >= bulletVisibleDistence;
-                        
-                    }
-                    else
-                    {
-                        float range = _weaponAttribute.spread;
+                        float range = _weaponAttribute.aimSpread * 0.5f;
                         Vector2 offset = new Vector2(Random.Range(-range, range), Random.Range(-range, range));
 
                         startPoint = _weaponHandle.shootPoint.position;
                         targetPoint = _camera.GetAimPoint(offset);
-                        visable = Vector3.Distance(startPoint, targetPoint) >= bulletVisibleDistence;
 
+                        SendSpreadMsg(_weaponAttribute.aimSpread + 5f);
                     }
+                    else
+                    {
+                        float range = _weaponAttribute.spread * 0.5f;
+                        Vector2 offset = new Vector2(Random.Range(-range, range), Random.Range(-range, range));
+
+                        startPoint = _weaponHandle.shootPoint.position;
+                        targetPoint = _camera.GetAimPoint(offset);
+
+                        SendSpreadMsg(_weaponAttribute.spread + 5f);
+                    }
+                    visable = Vector3.Distance(startPoint, targetPoint) >= bulletVisibleDistence;
                 }
 
                 Effect.AddBullet(
@@ -168,6 +171,7 @@ public class Fire : WeaponState
 
             }
             timer.Enter(_weaponAttribute.interval);
+
             var ammoMsg = new UiEvent.UiMsgs.Ammo()
             {
                 ammo = _weaponAttribute.runtimeMag + (_weaponAttribute.bore ? 1 : 0),
@@ -180,6 +184,7 @@ public class Fire : WeaponState
             Sound.PlayOneShot(_audio, sound);
             _iKManager.aimIK.solver.axis = fireAxis;
 
+            Transform OcclusionPoint = _weaponHandle.OcclusionPoint;
             if (Physics.Raycast(OcclusionPoint.position, OcclusionPoint.forward, out hitInfo, OcclusionSensorDistance, occlusionLayer.layerMask))
             {
                 startPoint = OcclusionPoint.position;
@@ -210,6 +215,7 @@ public class Fire : WeaponState
         
     }
 
+
     public override void OnUpdate()
     {
         if (_velocity.isLocalPlayer)
@@ -229,6 +235,21 @@ public class Fire : WeaponState
     public override void Exit() {
 
         base.Exit();
+        SendSpreadMsg();
+    }
+
+    void SendSpreadMsg()
+    {
+        SendSpreadMsg(_velocity.Daim ? 0f : _weaponAttribute.spread);
+    }
+
+    void SendSpreadMsg(float v)
+    {
+        var spreadMsg = new UiEvent.UiMsgs.Spread()
+        {
+            value = v
+        };
+        _uiMgr.SendEvent(spreadMsg);
     }
 }
  
