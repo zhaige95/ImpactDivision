@@ -176,7 +176,7 @@ public class PhotonEngine : Photon.PunBehaviour {
     public override void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
     {
         var camp = int.Parse(otherPlayer.CustomProperties["team"].ToString());
-        Battle.playerExit(camp);
+        Battle.playerExit(camp, otherPlayer.ID);
     }
     
 }

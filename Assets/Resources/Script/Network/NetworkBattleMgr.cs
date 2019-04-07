@@ -16,7 +16,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
 
     IEnumerator ShowPlayer()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
         Battle.localPlayerCamp = int.Parse(PhotonNetwork.player.CustomProperties["team"].ToString());
        

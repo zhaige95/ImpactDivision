@@ -3583,7 +3583,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1930265085419292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.215, y: 0, z: -1.8}
+  m_LocalPosition: {x: 0.215, y: 0, z: -1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4129746331296254}
@@ -4962,7 +4962,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 114868711761955298}
+  velocity: {fileID: 114941734476039396}
   friendlyMark: {fileID: 1743003562400024}
+  nickName: 
   kill: 0
   dead: 0
   miltikill: 0

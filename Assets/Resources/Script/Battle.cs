@@ -8,7 +8,7 @@ using Newtonsoft.Json.Bson;
 public class Battle : MonoBehaviour
 {
     public static Dictionary<int, int> campNumber = new Dictionary<int, int>();
-    //public static Dictionary<int, List<C_BattleMgr>> playerList = new Dictionary<int, List<C_BattleMgr>>();
+
     public static Dictionary<int, C_BattleMgr> playerListCamp1 = new Dictionary<int, C_BattleMgr>();
     public static Dictionary<int, C_BattleMgr> playerListCamp2 = new Dictionary<int, C_BattleMgr>();
 
@@ -19,9 +19,9 @@ public class Battle : MonoBehaviour
     public static bool inRoom = false;
     public static PlaneHUDMgr planeHUDMgr;
     public static HUDMgr hudMgr;
+    public static ScoreboardMgr scoreboardMgr;
     public static BornPointsMgr bornMgr;
-
-
+    
     // save
     public static bool login = false;
     public static PlayerBasic playerBasicSave;
@@ -45,18 +45,6 @@ public class Battle : MonoBehaviour
         File.WriteAllText(savePath + "/SystemSetting.cfg", str);
     }
 
-    //public static void PlayerJoin(int camp)
-    //{
-    //    if (campNumber.ContainsKey(camp))
-    //    {
-    //        campNumber[camp] += 1;
-    //    }
-    //    else
-    //    {
-    //        campNumber.Add(camp, 1);
-    //    }
-    //}
-
     public static void PlayerJoin(int camp, int roomID, C_BattleMgr battleMgr)
     {
         if (camp == 1)
@@ -65,7 +53,7 @@ public class Battle : MonoBehaviour
         }
         else if (camp == 2)
         {
-            playerListCamp1.Add(roomID, battleMgr);
+            playerListCamp2.Add(roomID, battleMgr);
         }
         if (campNumber.ContainsKey(camp))
         {
@@ -77,7 +65,7 @@ public class Battle : MonoBehaviour
         }
     }
 
-    public static void playerExit(int camp)
+    public static void playerExit(int camp, int roomID)
     {
         if (campNumber.ContainsKey(camp))
         {
@@ -87,8 +75,32 @@ public class Battle : MonoBehaviour
         {
             campNumber.Add(camp, 0);
         }
+        if (camp == 1)
+        {
+            if (playerListCamp1.ContainsKey(roomID))
+            {
+                playerListCamp1.Remove(roomID);
+                foreach (var item in scoreboardMgr.topPanel)
+                {
+                    item.Init();
+                }
+            };
+        }
+        else if (camp == 2)
+        {
+            if (playerListCamp2.ContainsKey(roomID))
+            {
+                playerListCamp2.Remove(roomID);
+                foreach (var item in scoreboardMgr.bottomPanel)
+                {
+                    item.Init();
+                }
+            };
+        }
+
     }
 
+    // 玩家中途加入时获取人数较少的一方的阵营id
     public static int GetWeakCamp()
     {
         var camp1 = campNumber.ContainsKey(1) ? campNumber[1] : 0;
@@ -96,6 +108,23 @@ public class Battle : MonoBehaviour
         return camp1 <= camp2 ? 1 : 2;
     }
 
+    public static void ReflashScoreboard()
+    {
+        Debug.Log("ReflashScoreboard");
+        var index = 0;
+        foreach (var item in playerListCamp1.Values)
+        {
+            scoreboardMgr.topPanel[index].Init(item);
+            index++;
+            Debug.Log(index);
+        }
+        index = 0;
+        foreach (var item in playerListCamp2.Values)
+        {
+            scoreboardMgr.bottomPanel[index].Init(item);
+            index++;
+        }
+    }
 
 }
 

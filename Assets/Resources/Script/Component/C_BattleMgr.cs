@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class C_BattleMgr : MonoBehaviour {
     public C_Attributes attributes;
+    public C_Velocity velocity;
     public GameObject friendlyMark;
-    public int kill;
-    public int dead;
-    public int miltikill;
-    public int assists;
-    public int score;
-    public int fireCount;
-    public int hitCount;
-    public int headShot;
-    public float demageCount;
+    public string nickName = "";
+    public int kill = 0;
+    public int dead = 0;
+    public int miltikill = 0;
+    public int assists = 0;
+    public int score = 0;
+    public int fireCount = 0;
+    public int hitCount = 0;
+    public int headShot = 0;
+    public float demageCount = 0f;
     
     [Header("Temp Params")]
     public int tempMultikill = 0;
@@ -62,8 +64,12 @@ public class C_BattleMgr : MonoBehaviour {
 
     public void SetFirendlyMark()
     {
-        Debug.Log("Local player camp =  " + Battle.localPlayerCamp);
         friendlyMark.SetActive(Battle.localPlayerCamp == attributes.camp);
+    }
+
+    public void SetPlayerEnable(bool isEnable)
+    {
+        velocity.isActive = isEnable;
     }
 
 }

@@ -129,7 +129,7 @@ public class Fire : WeaponState
                         startPoint = _weaponHandle.shootPoint.position;
                         targetPoint = _camera.GetAimPoint(offset);
 
-                        SendSpreadMsg(_weaponAttribute.aimSpread + 5f);
+                        SendSpreadMsg(_weaponAttribute.aimSpread + 10f);
                     }
                     else
                     {
@@ -139,7 +139,7 @@ public class Fire : WeaponState
                         startPoint = _weaponHandle.shootPoint.position;
                         targetPoint = _camera.GetAimPoint(offset);
 
-                        SendSpreadMsg(_weaponAttribute.spread + 5f);
+                        SendSpreadMsg(_weaponAttribute.spread + 10f);
                     }
                     visable = Vector3.Distance(startPoint, targetPoint) >= bulletVisibleDistence;
                 }
@@ -240,7 +240,7 @@ public class Fire : WeaponState
 
     void SendSpreadMsg()
     {
-        SendSpreadMsg(_velocity.Daim ? 0f : _weaponAttribute.spread);
+        SendSpreadMsg(_velocity.Daim ? 10f : _weaponAttribute.spread);
     }
 
     void SendSpreadMsg(float v)

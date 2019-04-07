@@ -51,7 +51,7 @@ public class Aim : WeaponState
 
         var spreadMsg = new UiEvent.UiMsgs.Spread()
         {
-            value = 5f
+            value = 10f
         };
         _uiMgr.SendEvent(spreadMsg);
 
@@ -74,7 +74,7 @@ public class Aim : WeaponState
         _velocity.aiming = false;
         var spreadMsg = new UiEvent.UiMsgs.Spread()
         {
-            value = _weaponAttribute.spread * 2
+            value = _weaponAttribute.spread
         };
         _uiMgr.SendEvent(spreadMsg);
     }

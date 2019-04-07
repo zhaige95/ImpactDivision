@@ -38,7 +38,6 @@ public class PlaneHUDMgr : MonoBehaviour
         var spreadMsg = msg as UiMsgs.Spread;
         this.aimDrawTargetSize = this.aimDrawDefaultSize + spreadMsg.value;
         this.sizeVelocity = this.aimDrawTrans.sizeDelta.x;
-        Debug.Log("spread ui process");
     }
 
 
