@@ -116,12 +116,12 @@ public class Battle : MonoBehaviour
             };
         }
 
-        var str = "";
-        foreach (var item in campNumber)
-        {
-            str += "camp" + item.Key + " = " + item.Value + " || ";
-        }
-        Debug.Log(str);
+        //var str = "";
+        //foreach (var item in campNumber)
+        //{
+        //    str += "camp" + item.Key + " = " + item.Value + " || ";
+        //}
+        //Debug.Log(str);
     }
 
     // 玩家中途加入时获取人数较少的一方的阵营id
@@ -140,7 +140,6 @@ public class Battle : MonoBehaviour
         {
             scoreboardMgr.topPanel[index].Init(item);
             index++;
-            Debug.Log(index);
         }
         index = 0;
         foreach (var item in playerListCamp2.Values)

@@ -52,6 +52,7 @@ public class Pick : WeaponState
     public override void Enter()
     {
         base.Enter();
+        Debug.Log("enter pick");
         process = 1;
         if (_weaponAttribute.active)
         {

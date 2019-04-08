@@ -65,6 +65,16 @@ public class CS_Dead : AvatarState {
             }
             else if (process == 2)
             {
+                attributes.Recover();
+                anim.animator.enabled = true;
+                iKManager.SetDead(false);
+                weaponHandle.targetWeapon = 1;
+
+                timer.Enter();
+                process = 3;
+            }
+            else if (process == 3)
+            {
                 this._exitTick = true;
             }
         }
@@ -76,14 +86,11 @@ public class CS_Dead : AvatarState {
         
         var t = Battle.bornMgr.GetPoint(attributes.camp);
         this.transform.SetPositionAndRotation(t.position, t.rotation);
-        attributes.Recover();
         velocity.isActive = true;
         anim.animator.enabled = true;
-        attackListener.isActive = true;
-        iKManager.SetDead(false);
-
         attackListener.Reset();
-        weaponHandle.targetWeapon = 1;
+        attackListener.isActive = true;
+        attributes.isDead = false;
         weaponHandle.active = true;
     }
 }
