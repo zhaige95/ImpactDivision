@@ -34,7 +34,7 @@ public class S_Bullet : ComponentSystem {
 
                             var attack = _bullet.attack;
                             // Modify demage by different body part
-                            attack.demage = _bullet.attack.demage * AvatarTagsData.demageRate[hitTag];
+                            attack.demage = (int)(_bullet.attack.demage * AvatarTagsData.demageRate[hitTag]);
 
                             // Set if head shot
                             attack.headShot = AvatarTagsData.IsHead(hitTag);

@@ -8,6 +8,7 @@ public class C_AttackListener : MonoBehaviour {
     public PhotonView photonView;
     public AudioSource audioSource;
     public C_Velocity velocity;
+    public C_Attributes attributes;
     [Header("Properties")]
     public bool isActive = true;
     public AudioClip killSound;
@@ -15,20 +16,34 @@ public class C_AttackListener : MonoBehaviour {
     public AudioClip[] hitFeedBackSounds;
     public GameObject hitEffect;
     public List<Attack> attackList = new List<Attack>();
-    public Dictionary<string, GameObject> sourceList = new Dictionary<string, GameObject>(); 
+    public Dictionary<int, C_BattleMgr> sourceList = new Dictionary<int, C_BattleMgr>(); 
     public int injuredAnimLayer = 8;
     
     
     public void Reset()
     {
         attackList.Clear();
+        sourceList.Clear();
     }
-
+    
     public void PlayBeAttackedSound()
     {
         if (velocity.isLocalPlayer)
         {
             Sound.PlayOneShot(audioSource, beAttackedSounds);
+        }
+    }
+
+    [PunRPC]
+    public void AddAttackSource(int sourceID)
+    {
+        var source = Battle.GetPlayerInfoByRoomID(sourceID, attributes.camp);
+        if (source != null)
+        {
+            if (!sourceList.ContainsKey(sourceID))
+            {
+                sourceList.Add(sourceID, Battle.GetPlayerInfoByRoomID(sourceID, attributes.camp));
+            }
         }
     }
 }

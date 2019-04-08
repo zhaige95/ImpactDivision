@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
+using System;
 
 public class Battle : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class Battle : MonoBehaviour
     public static ScoreboardMgr scoreboardMgr;
     public static BornPointsMgr bornMgr;
     
+    // temp setting
+    public static float relativeRate = 1f;
+
     // save
     public static bool login = false;
     public static PlayerBasic playerBasicSave;
@@ -34,6 +38,20 @@ public class Battle : MonoBehaviour
         string str = JsonConvert.SerializeObject(playerBasicSave);
         File.WriteAllText(savePath + "/PlayerBasic.cfg", str);
     }
+
+    public static C_BattleMgr GetPlayerInfoByRoomID(int sourceID, int camp)
+    {
+        if (camp == 1)
+        {
+            return playerListCamp2.ContainsKey(sourceID) ? playerListCamp2[sourceID] : null;
+        }
+        if (camp == 2)
+        {
+            return playerListCamp1.ContainsKey(sourceID) ? playerListCamp1[sourceID] : null;
+        }
+        return null;
+    }
+
     public static void SavePlayerBattleData()
     {
         string str = JsonConvert.SerializeObject(playerBattleSave);
@@ -98,6 +116,12 @@ public class Battle : MonoBehaviour
             };
         }
 
+        var str = "";
+        foreach (var item in campNumber)
+        {
+            str += "camp" + item.Key + " = " + item.Value + " || ";
+        }
+        Debug.Log(str);
     }
 
     // 玩家中途加入时获取人数较少的一方的阵营id

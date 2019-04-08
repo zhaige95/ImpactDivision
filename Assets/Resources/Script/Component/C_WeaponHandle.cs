@@ -129,10 +129,11 @@ public class C_WeaponHandle : MonoBehaviour
             att.runtimeMag = att.mag - 1;
             att.bore = true;
         }
-        if (weaponAttributes[currentWeapon].states.ContainsKey("pick"))
+        var states = weaponAttributes[currentWeapon].states;
+        if (states.ContainsKey("pick"))
         {
-            weaponAttributes[currentWeapon].states["pick"].Enter();
-            weaponAttributes[currentWeapon].states["pick"].Exit();
+            states["pick"].Enter();
+            states["pick"].Exit();
         }
         this.currentWeapon = 0;
         this.targetWeapon = 0;

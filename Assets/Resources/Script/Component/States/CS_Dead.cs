@@ -39,7 +39,6 @@ public class CS_Dead : AvatarState {
         timer.Enter(vanishTime);
 
         attributes.isDead = true;
-        battleMgr.AddDead();
         velocity.isActive = false;
         anim.animator.enabled = false;
         attackListener.isActive = false;
@@ -48,6 +47,8 @@ public class CS_Dead : AvatarState {
         iKManager.SetDead(true);
         weaponHandle.Reset();
         weaponHandle.active = false;
+
+        Debug.Log("enter dead state");
     }
 
     public override void OnUpdate()

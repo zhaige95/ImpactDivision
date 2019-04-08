@@ -30,6 +30,7 @@ public class NetworkCreator : Photon.PunBehaviour {
 
         var battleMgr = avatar.GetComponent<C_BattleMgr>();
         battleMgr.nickName = nName;
+        battleMgr.roomID = roomID;
 
         Battle.PlayerJoin(team, roomID, battleMgr);
 

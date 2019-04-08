@@ -30,6 +30,8 @@ public class GameStartCheck : MonoBehaviour {
             LoadLoginStage();
         }
 
+        Battle.relativeRate = Screen.height / 1080f;
+
     }
 
     // Update is called once per frame

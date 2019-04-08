@@ -5,7 +5,9 @@ using UnityEngine;
 public class C_BattleMgr : MonoBehaviour {
     public C_Attributes attributes;
     public C_Velocity velocity;
+    public PhotonView photonView;
     public GameObject friendlyMark;
+    public int roomID = 0;
     public string nickName = "";
     public int kill = 0;
     public int dead = 0;
@@ -22,21 +24,22 @@ public class C_BattleMgr : MonoBehaviour {
 
     private void Awake()
     {
-    //    attributes.OnDead = AddDead;
-    //    attributes.OnRecover = Recover;
+
     }
 
+    [PunRPC]
     public void AddKill()
     {
-        kill += 1;
-        tempMultikill += 1;
+        kill ++;
+        tempMultikill ++;
         score += 100;
 
     }
 
+
     public void AddDead()
     {
-        dead += 1;
+        dead ++;
         if (tempMultikill > miltikill)
         {
             miltikill = tempMultikill;
@@ -45,12 +48,14 @@ public class C_BattleMgr : MonoBehaviour {
 
     }
 
+    [PunRPC]
     public void AddAssists()
     {
-        assists += 1;
-        score += 50;
+        assists ++;
+        score += 25;
     }
 
+    [PunRPC]
     public void AddDemage(float demage)
     {
         demageCount += demage;

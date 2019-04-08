@@ -4,7 +4,7 @@ using Unity.Entities;
 
 public class Attack
 {
-    public GameObject source;
+    public C_BattleMgr source;
     public float demage = 0;
     public Vector3 sourcePosition;
     public bool headShot = false;

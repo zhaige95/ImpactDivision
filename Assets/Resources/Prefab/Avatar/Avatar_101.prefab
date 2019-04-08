@@ -4645,6 +4645,7 @@ MonoBehaviour:
   photonView: {fileID: 114528926027309116}
   audioSource: {fileID: 82076460438832134}
   velocity: {fileID: 114941734476039396}
+  attributes: {fileID: 114868711761955298}
   isActive: 1
   killSound: {fileID: 8300000, guid: a0fea9fa820519c4aa8fca0e36573372, type: 3}
   beAttackedSounds:
@@ -4963,7 +4964,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributes: {fileID: 114868711761955298}
   velocity: {fileID: 114941734476039396}
+  photonView: {fileID: 114528926027309116}
   friendlyMark: {fileID: 1743003562400024}
+  roomID: 0
   nickName: 
   kill: 0
   dead: 0

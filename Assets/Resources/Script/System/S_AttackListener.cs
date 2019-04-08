@@ -8,9 +8,11 @@ public class S_AttackListener : ComponentSystem {
 		public C_AttackListener _AttackListener;
         public C_Velocity _Velocity;
         public C_Attributes _Attributes;
-        public C_Animator _Animator;
+        public C_BattleMgr _BattleMgr;
         public AudioSource _Audio;
     }
+
+    int killerRoomID = 0;
 
 	protected override void OnUpdate()
 	{
@@ -24,15 +26,14 @@ public class S_AttackListener : ComponentSystem {
             {
                 foreach (Attack attack in _attackList)
                 {
-                    
                     _attackListener.photonView.RPC("Demaged", PhotonTargets.All, attack.demage);
                     
                     var source = attack.source;
                     var sourceAudio = source.GetComponent<AudioSource>();
-                    var sourceIsLocalPlayer = source.GetComponent<C_Velocity>().isLocalPlayer;
                     var sourceBattleMgr = source.GetComponent<C_BattleMgr>();
 
-                    sourceBattleMgr.AddDemage(attack.demage);
+                    sourceBattleMgr.photonView.RPC("AddDemage", PhotonTargets.All, attack.demage);
+
                     var hitMsg = new UiEvent.UiMsgs.Hit()
                     {
                         HeadShot = attack.headShot
@@ -42,12 +43,24 @@ public class S_AttackListener : ComponentSystem {
 
                     if (_attribute.HP <= 0)
                     {
-                        sourceBattleMgr.AddKill();
+                        sourceBattleMgr.photonView.RPC("AddKill", PhotonTargets.All);
                         Sound.PlayOneShot(sourceAudio, _attackListener.killSound);
+                        
+                        foreach (var item in _attackListener.sourceList.Values)
+                        {
+                            if (sourceBattleMgr.roomID != item.roomID)
+                            {
+                                item.photonView.RPC("AddAssists", PhotonTargets.All);
+                            }
+                        }
+
+                        break;
                     }
-                    
+
+                    _attackListener.photonView.RPC("AddAttackSource", PhotonTargets.All, attack.source.roomID);
                 }
-                _attackList.Clear();
+                
+                _attackListener.attackList.Clear();
             }
         }
     }

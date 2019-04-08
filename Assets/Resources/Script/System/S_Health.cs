@@ -7,6 +7,7 @@ public class S_Health : ComponentSystem {
         public C_AttackListener _AttackListener;
         public C_Attributes _Attributes;
         public CS_StateMgr _StateMgr;
+        public C_BattleMgr _BattleMgr;
     }
 
     protected override void OnUpdate()
@@ -20,6 +21,7 @@ public class S_Health : ComponentSystem {
                 if (e._Attributes.HP <= 0 && e._AttackListener.isActive)
                 {
                     e._StateMgr.EnterState("dead");
+                    e._BattleMgr.AddDead();
                 }
             }
         }

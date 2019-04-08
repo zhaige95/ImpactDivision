@@ -14,6 +14,7 @@ public class Fire : WeaponState
     C_UiEventMgr _uiMgr;
     C_Attributes _attributes;
     C_WeaponHandle _weaponHandle;
+    C_BattleMgr _battleMgr;
     WeaponAttribute _weaponAttribute;
     AudioSource _audio;
 
@@ -45,6 +46,7 @@ public class Fire : WeaponState
         _photonView = obj.GetComponent<PhotonView>();
         _attributes = obj.GetComponent<C_Attributes>();
         _weaponHandle = obj.GetComponent<C_WeaponHandle>();
+        _battleMgr = obj.GetComponent<C_BattleMgr>();
 
         _audio = GetComponent<AudioSource>();
         _weaponAttribute = GetComponent<WeaponAttribute>();
@@ -123,7 +125,7 @@ public class Fire : WeaponState
                     // 弹道后坐力，扩散
                     if (_velocity.aiming)
                     {
-                        float range = _weaponAttribute.aimSpread * 0.5f;
+                        float range = _weaponAttribute.aimSpread * 0.5f * Battle.relativeRate;
                         Vector2 offset = new Vector2(Random.Range(-range, range), Random.Range(-range, range));
 
                         startPoint = _weaponHandle.shootPoint.position;
@@ -133,7 +135,7 @@ public class Fire : WeaponState
                     }
                     else
                     {
-                        float range = _weaponAttribute.spread * 0.5f;
+                        float range = _weaponAttribute.spread * 0.5f * Battle.relativeRate;
                         Vector2 offset = new Vector2(Random.Range(-range, range), Random.Range(-range, range));
 
                         startPoint = _weaponHandle.shootPoint.position;
@@ -147,7 +149,7 @@ public class Fire : WeaponState
                 Effect.AddBullet(
                     bullet, new Attack()
                     {
-                        source = _velocity.gameObject,
+                        source = _battleMgr,
                         demage = _weaponAttribute.damage,
                         sourcePosition = startPoint,
                     },
@@ -178,6 +180,9 @@ public class Fire : WeaponState
                 mag = _weaponAttribute.mag
             };
             _uiMgr.SendEvent(ammoMsg);
+
+            _camera.mainCamera.fieldOfView += 0.3f;
+
         }
         else
         {
@@ -201,7 +206,7 @@ public class Fire : WeaponState
             Effect.AddBullet(
                 bullet, new Attack()
                 {
-                    source = _velocity.gameObject,
+                    source = _battleMgr,
                     demage = 0,
                     sourcePosition = startPoint,
                 },
