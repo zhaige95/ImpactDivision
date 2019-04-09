@@ -4,8 +4,9 @@ using System;
 
 public class Timer {
     public bool isRunning;
-    public float time = 0;
-    public float rate = 0;
+    float time = 0;
+    float run = 0;
+    public float rate = 0f;
     public Action OnComplet;
 
     public Timer(){}
@@ -16,15 +17,13 @@ public class Timer {
     public void Update(float dt){
         if (this.isRunning)
         {
-            //if (Time.time - this.rate >= this.time)
-            //{
-            //    Stop();
-            //}
-            if (this.rate >= this.time)
+            if (this.run >= this.time)
             {
                 Stop();
+                OnComplet?.Invoke();
             }
-            this.rate += dt;
+            this.run += dt;
+            this.rate = this.run / this.time;
         }
     }
 
@@ -40,7 +39,7 @@ public class Timer {
     public void Enter(float t){
         this.time = t;
         //this.rate = Time.time;
-        this.rate = 0;
+        this.run = 0;
         this.isRunning = true;
     }
     public void Enter(){
@@ -48,8 +47,7 @@ public class Timer {
         {
             return;
         }
-        //this.rate = Time.time;
-        this.rate = 0;
+        this.run = 0;
         this.isRunning = true;
     }
 
@@ -59,6 +57,6 @@ public class Timer {
     }
     void Stop(){
         this.isRunning = false;
-        this.rate -= this.time;
+        this.run -= this.time;
     }
 }

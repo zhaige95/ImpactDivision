@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UiEvent;
 
 public class C_BattleMgr : MonoBehaviour {
-    public C_Attributes attributes;
+    C_Attributes attributes;
+    [HideInInspector]
     public C_Velocity velocity;
+    C_UiEventMgr uiMgr;
+    [HideInInspector]
     public PhotonView photonView;
     public GameObject friendlyMark;
     public int roomID = 0;
@@ -24,16 +28,25 @@ public class C_BattleMgr : MonoBehaviour {
 
     private void Awake()
     {
-
+        attributes = GetComponent<C_Attributes>();
+        velocity = GetComponent<C_Velocity>();
+        uiMgr = GetComponent<C_UiEventMgr>();
+        photonView = GetComponent<PhotonView>();
     }
 
     [PunRPC]
-    public void AddKill()
+    public void AddKill(bool isHeadShot = false)
     {
         kill ++;
         tempMultikill ++;
         score += 100;
 
+        if (isHeadShot)
+        {
+            this.headShot++;
+        }
+
+        uiMgr.SendEvent(new UiEvent.UiMsgs.Kill());
     }
 
 
@@ -53,6 +66,7 @@ public class C_BattleMgr : MonoBehaviour {
     {
         assists ++;
         score += 25;
+        uiMgr.SendEvent(new UiEvent.UiMsgs.Assists());
     }
 
     [PunRPC]
@@ -61,10 +75,14 @@ public class C_BattleMgr : MonoBehaviour {
         demageCount += demage;
     }
 
-    public void Recover()
+    public void AddFire()
     {
-        var t = Battle.bornMgr.GetPoint(attributes.camp);
-        this.transform.SetPositionAndRotation(t.position, t.rotation);
+        this.fireCount++;
+    }
+
+    public void AddHit()
+    {
+        this.hitCount++;
     }
 
     public void SetFirendlyMark()
@@ -76,5 +94,6 @@ public class C_BattleMgr : MonoBehaviour {
     {
         velocity.isActive = isEnable;
     }
+
 
 }

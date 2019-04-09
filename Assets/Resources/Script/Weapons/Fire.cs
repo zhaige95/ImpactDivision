@@ -15,6 +15,7 @@ public class Fire : WeaponState
     C_Attributes _attributes;
     C_WeaponHandle _weaponHandle;
     C_BattleMgr _battleMgr;
+
     WeaponAttribute _weaponAttribute;
     AudioSource _audio;
 
@@ -180,6 +181,8 @@ public class Fire : WeaponState
                 mag = _weaponAttribute.mag
             };
             _uiMgr.SendEvent(ammoMsg);
+
+            _battleMgr.AddFire();
 
             _camera.mainCamera.fieldOfView += 0.3f;
 

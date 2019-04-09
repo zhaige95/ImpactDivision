@@ -35,5 +35,9 @@ namespace UiEvent
             public float value;
         }
 
+        public class Kill : UiMsg { }
+
+        public class Assists : UiMsg { }
+
     }
 }

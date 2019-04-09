@@ -33,6 +33,7 @@ public class S_AttackListener : ComponentSystem {
                     var sourceBattleMgr = source.GetComponent<C_BattleMgr>();
 
                     sourceBattleMgr.photonView.RPC("AddDemage", PhotonTargets.All, attack.demage);
+                    sourceBattleMgr.AddHit();
 
                     var hitMsg = new UiEvent.UiMsgs.Hit()
                     {
@@ -43,7 +44,7 @@ public class S_AttackListener : ComponentSystem {
 
                     if (_attribute.HP <= 0)
                     {
-                        sourceBattleMgr.photonView.RPC("AddKill", PhotonTargets.All);
+                        sourceBattleMgr.photonView.RPC("AddKill", PhotonTargets.All, attack.headShot);
                         Sound.PlayOneShot(sourceAudio, _attackListener.killSound);
                         
                         foreach (var item in _attackListener.sourceList.Values)
