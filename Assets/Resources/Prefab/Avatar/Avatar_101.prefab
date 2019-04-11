@@ -5825,6 +5825,7 @@ MonoBehaviour:
   hitPoint: {fileID: 4940544083850538}
   cameraHandle: {fileID: 4854905547047354}
   cameraObj: {fileID: 4129746331296254}
+  constraint: {fileID: 7973541677948591040}
   c_speed_x: 2
   c_speed_y: 2
   aimRate: 0.4
@@ -5945,6 +5946,7 @@ MonoBehaviour:
   _enterTick: 0
   _exitTick: 0
   anim: {fileID: 0}
+  myCamera: {fileID: 0}
   velocity: {fileID: 0}
   iKManager: {fileID: 0}
   battleMgr: {fileID: 0}

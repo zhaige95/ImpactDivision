@@ -6,6 +6,7 @@ using UiEvent;
 public class CS_Dead : AvatarState {
 
     public C_Animator anim;
+    public C_Camera myCamera;
     public C_Velocity velocity;
     public C_IKManager iKManager;
     public C_BattleMgr battleMgr;
@@ -22,6 +23,7 @@ public class CS_Dead : AvatarState {
     {
         anim = GetComponent<C_Animator>();
         uiMgr = GetComponent<C_UiEventMgr>();
+        myCamera = GetComponent<C_Camera>();
         velocity = GetComponent<C_Velocity>();
         iKManager = GetComponent<C_IKManager>();
         battleMgr = GetComponent<C_BattleMgr>();
@@ -50,7 +52,7 @@ public class CS_Dead : AvatarState {
         iKManager.SetDead(true);
         weaponHandle.Reset();
         weaponHandle.active = false;
-        
+
     }
 
     public override void OnUpdate()
@@ -60,6 +62,7 @@ public class CS_Dead : AvatarState {
         {
             if (process == 1)
             {
+                myCamera.SetFollowPlayer(false);
                 iKManager.ragdollMgr.SetRagdollActive(false);
                 this.transform.position = Battle.bornMgr.interimPoint.position;
                 timer.Enter(recoverTime);
@@ -94,5 +97,6 @@ public class CS_Dead : AvatarState {
         attackListener.isActive = true;
         attributes.isDead = false;
         weaponHandle.active = true;
+        myCamera.SetFollowPlayer(true);
     }
 }
