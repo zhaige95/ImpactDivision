@@ -141,7 +141,6 @@ public class Fire : WeaponState
 
                         startPoint = _weaponHandle.shootPoint.position;
                         targetPoint = _camera.GetAimPoint(offset);
-
                         SendSpreadMsg(_weaponAttribute.spread + 10f);
                     }
                     visable = Vector3.Distance(startPoint, targetPoint) >= bulletVisibleDistence;
@@ -184,7 +183,7 @@ public class Fire : WeaponState
 
             _battleMgr.AddFire();
 
-            _camera.mainCamera.fieldOfView += 0.3f;
+            _camera.mainCamera.fieldOfView += 0.2f;
 
         }
         else
@@ -248,7 +247,7 @@ public class Fire : WeaponState
 
     void SendSpreadMsg()
     {
-        SendSpreadMsg(_velocity.Daim ? 10f : _weaponAttribute.spread);
+        SendSpreadMsg(_velocity.Daim ? _weaponAttribute.aimSpread : _weaponAttribute.spread);
     }
 
     void SendSpreadMsg(float v)

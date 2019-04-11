@@ -134,19 +134,36 @@ public class Battle : MonoBehaviour
 
     public static void ReflashScoreboard()
     {
-        Debug.Log("ReflashScoreboard");
-        var index = 0;
-        foreach (var item in playerListCamp1.Values)
+        int index1 = 0;
+        int index2 = 0;
+        foreach (var item in PhotonNetwork.playerList)
         {
-            scoreboardMgr.topPanel[index].Init(item);
-            index++;
+            var camp = int.Parse(item.CustomProperties["team"].ToString());
+            var battleInfo = (item.CustomProperties["battle"].ToString()).Split('#');
+            var playerName = item.IsLocal ? ("<color=#ffcf69>" + item.NickName + "</color>") : item.NickName;
+            if (camp == 1)
+            {
+                scoreboardMgr.topPanel[index1].Init(playerName, battleInfo[0], battleInfo[1], battleInfo[2], battleInfo[3]);
+                index1++;
+            }
+            else if (camp == 2)
+            {
+                scoreboardMgr.bottomPanel[index2].Init(playerName, battleInfo[0], battleInfo[1], battleInfo[2], battleInfo[3]);
+                index2++;
+            }
         }
-        index = 0;
-        foreach (var item in playerListCamp2.Values)
-        {
-            scoreboardMgr.bottomPanel[index].Init(item);
-            index++;
-        }
+        //var index = 0;
+        //foreach (var item in playerListCamp1.Values)
+        //{
+        //    scoreboardMgr.topPanel[index].Init(item);
+        //    index++;
+        //}
+        //index = 0;
+        //foreach (var item in playerListCamp2.Values)
+        //{
+        //    scoreboardMgr.bottomPanel[index].Init(item);
+        //    index++;
+        //}
     }
 
 }

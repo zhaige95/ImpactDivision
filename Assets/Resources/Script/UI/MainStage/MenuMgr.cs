@@ -8,8 +8,8 @@ public class MenuMgr : Photon.PunBehaviour
     public List<GameObject> menus;
     public List<WindowBasic> windows;
     [Header("Lobby Event")]
-    public OnJoinedLobby onJoinedLobby;
-    public OnDisconnFromPhoton onDisconnFromPhoton;
+    public NetworkEvent onJoinedLobby;
+    public NetworkEvent onDisconnFromPhoton;
     // Use this for initialization
     void Start () {
         foreach (var item in windows)

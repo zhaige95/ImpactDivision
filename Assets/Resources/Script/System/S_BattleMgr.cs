@@ -10,11 +10,7 @@ public class S_BattleMgr : ComponentSystem {
 
 	protected override void OnUpdate()
 	{
-		foreach (var e in GetEntities<Group>())
-		{
-            
-
-        }
+		
     }
 	
 

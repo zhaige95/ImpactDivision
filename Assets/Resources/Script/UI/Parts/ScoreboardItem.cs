@@ -10,7 +10,7 @@ public class ScoreboardItem : MonoBehaviour {
     public Text assists;
     public Text point;
 
-    public void Init(string pName, string kill = "", string dead = "", string assists = "", string score = "")
+    public void Init(string pName, string kill = "0", string dead = "0", string assists = "0", string score = "0")
     {
         this.playerName.text = pName;
         this.kill.text = kill;

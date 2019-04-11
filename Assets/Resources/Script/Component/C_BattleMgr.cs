@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UiEvent;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
-public class C_BattleMgr : MonoBehaviour {
+public class C_BattleMgr : Photon.PunBehaviour {
     C_Attributes attributes;
     [HideInInspector]
     public C_Velocity velocity;
@@ -34,6 +35,23 @@ public class C_BattleMgr : MonoBehaviour {
         photonView = GetComponent<PhotonView>();
     }
 
+    private void Start()
+    {
+        SyncData();
+    }
+    
+    void SyncData()
+    {
+        if (this.photonView.isMine)
+        {
+            var p = new Hashtable()
+            {
+                { "battle", kill + "#" + dead + "#" + assists + "#" + score}
+            };
+            PhotonNetwork.player.SetCustomProperties(p);
+        }
+    }
+
     [PunRPC]
     public void AddKill(bool isHeadShot = false)
     {
@@ -47,6 +65,7 @@ public class C_BattleMgr : MonoBehaviour {
         }
 
         uiMgr.SendEvent(new UiEvent.UiMsgs.Kill());
+        SyncData();
     }
 
 
@@ -59,6 +78,17 @@ public class C_BattleMgr : MonoBehaviour {
         }
         tempMultikill = 0;
 
+        SyncData();
+    }
+
+    [PunRPC]
+    public void AddKillerMsg(string killer)
+    {
+        var killerMsg = new UiEvent.UiMsgs.Killer()
+        {
+            value = killer.Split('#')[0]
+        };
+        uiMgr.SendEvent(killerMsg);
     }
 
     [PunRPC]
@@ -67,6 +97,7 @@ public class C_BattleMgr : MonoBehaviour {
         assists ++;
         score += 25;
         uiMgr.SendEvent(new UiEvent.UiMsgs.Assists());
+        SyncData();
     }
 
     [PunRPC]

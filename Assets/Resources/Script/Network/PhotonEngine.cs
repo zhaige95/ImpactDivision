@@ -16,18 +16,18 @@ public class PhotonEngine : Photon.PunBehaviour {
     public StringData version;
     public StringData versionAddress;
     [Header("Connect Event------------")]
-    public OnVersionOld onVersionOld;
-    public OnConnStart onConnStart;
-    public OnConnToMaster onConnToMaster;
-    public OnConnToMasterFiled onConnToMasterFiled;
-    public OnConnToPhoton onConnToPhoton;
-    public OnConnToPhotonFiled onConnToPhotonFiled;
-    public OnDisconnFromPhoton onDisconnFromPhoton;
+    public NetworkEvent onVersionOld;
+    public NetworkEvent onConnStart;
+    public NetworkEvent onConnToMaster;
+    public NetworkEvent onConnToMasterFiled;
+    public NetworkEvent onConnToPhoton;
+    public NetworkEvent onConnToPhotonFiled;
+    public NetworkEvent onDisconnFromPhoton;
 
     [Header("Lobby Event------------")]
-    public OnStartJoinLobby onStartJoinLobby;
-    public OnJoinedLobby onJoinedLobby;
-    public OnLeftLobby onLeftLobby;
+    public NetworkEvent onStartJoinLobby;
+    public NetworkEvent onJoinedLobby;
+    public NetworkEvent onLeftLobby;
 
     // Use this for initialization
     private void Start()
@@ -57,14 +57,8 @@ public class PhotonEngine : Photon.PunBehaviour {
             onVersionOld.Invoke();
             Debug.Log("游戏版本旧");
         }
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void StartConnect()
     {
@@ -101,6 +95,7 @@ public class PhotonEngine : Photon.PunBehaviour {
     public override void OnFailedToConnectToPhoton(DisconnectCause cause)
     {
         onConnToPhotonFiled.Invoke();
+        PhotonNetwork.player.SetCustomProperties(new Hashtable() { { "battle", "0#0#0#0"} });
     }
 
     // 连接断开
@@ -150,7 +145,7 @@ public class PhotonEngine : Photon.PunBehaviour {
     {
         PhotonNetwork.CreateRoom("Impact", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
     }
-
+    
     public override void OnLeftRoom()
     {
         Battle.inRoom = false;
@@ -180,31 +175,6 @@ public class PhotonEngine : Photon.PunBehaviour {
     }
     
 }
+
 [Serializable]
-public class OnVersionOld : UnityEvent { }
-[Serializable]
-public class OnConnStart : UnityEvent { }
-[Serializable]
-public class OnConnToPhoton : UnityEvent { }
-[Serializable]
-public class OnConnToPhotonFiled : UnityEvent { }
-[Serializable]
-public class OnConnToMaster : UnityEvent { }
-[Serializable]
-public class OnConnToMasterFiled : UnityEvent { }
-[Serializable]
-public class OnDisconnFromPhoton : UnityEvent { }
-[Serializable]
-public class OnStartJoinLobby : UnityEvent { }
-[Serializable]
-public class OnJoinedLobby : UnityEvent { }
-[Serializable]
-public class OnLeftLobby : UnityEvent { }
-[Serializable]
-public class OnJoinedRoom : UnityEvent { }
-[Serializable]
-public class OnLeftRoom : UnityEvent { }
-[Serializable]
-public class OnPlayerConnected : UnityEvent { }
-[Serializable]
-public class OnPlayStart : UnityEvent { }
+public class NetworkEvent : UnityEvent { }

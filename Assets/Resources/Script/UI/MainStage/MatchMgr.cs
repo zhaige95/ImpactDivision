@@ -21,9 +21,9 @@ public class MatchMgr : Photon.PunBehaviour
 
 
     [Header("Photon Event")]
-    public OnJoinedRoom onJoinedRoom;
-    public OnPlayStart onPlayStart;
-    public OnDisconnFromPhoton onDisconnFromPhoton;
+    public NetworkEvent onJoinedRoom;
+    public NetworkEvent onPlayStart;
+    public NetworkEvent onDisconnFromPhoton;
 
     //public OnPlayerConnected onPlayerConnected;
 
@@ -120,7 +120,6 @@ public class MatchMgr : Photon.PunBehaviour
         // test code 
         if (this.single)
         {
-
             onPlayStart.Invoke();
             async = PhotonNetwork.LoadLevelAsync("Battle001");
             async.allowSceneActivation = true;

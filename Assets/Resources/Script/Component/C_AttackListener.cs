@@ -19,7 +19,6 @@ public class C_AttackListener : MonoBehaviour {
     public Dictionary<int, C_BattleMgr> sourceList = new Dictionary<int, C_BattleMgr>(); 
     public int injuredAnimLayer = 8;
     
-    
     public void Reset()
     {
         attackList.Clear();

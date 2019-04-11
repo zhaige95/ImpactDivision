@@ -11,6 +11,7 @@ public class PlaneHUDMgr : MonoBehaviour
     public float aimDrawTargetSize = 38f;
     public float sizeVelocity = 0f;
     public KillMsgMgr killMsgMgr;
+    public KillerNamePanel killerNamePanel;
     private void Awake()
     {
         Battle.planeHUDMgr = this;
@@ -28,6 +29,7 @@ public class PlaneHUDMgr : MonoBehaviour
         eventMgr.BindEvent(typeof(UiMsgs.Spread), Spread);
         eventMgr.BindEvent(typeof(UiMsgs.Kill), Kill);
         eventMgr.BindEvent(typeof(UiMsgs.Assists), Assists);
+        eventMgr.BindEvent(typeof(UiMsgs.Killer), Killer);
     }
 
     public void Hit(UiMsg msg)
@@ -39,8 +41,10 @@ public class PlaneHUDMgr : MonoBehaviour
     public void Spread(UiMsg msg)
     {
         var spreadMsg = msg as UiMsgs.Spread;
+
         this.aimDrawTargetSize = this.aimDrawDefaultSize + spreadMsg.value;
         this.sizeVelocity = this.aimDrawTrans.sizeDelta.x;
+        
     }
 
     public void Kill(UiMsg msg)
@@ -51,6 +55,12 @@ public class PlaneHUDMgr : MonoBehaviour
     public void Assists(UiMsg msg)
     {
         killMsgMgr.AddAssMsg();
+    }
+
+    public void Killer(UiMsg msg)
+    {
+        var killerMsg = msg as UiMsgs.Killer;
+        killerNamePanel.Active(killerMsg.value);
     }
 
 }

@@ -39,5 +39,9 @@ namespace UiEvent
 
         public class Assists : UiMsg { }
 
+        public class Killer : UiMsg {
+            public string value;
+        }
+        
     }
 }

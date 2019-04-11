@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UiEvent;
 
 public class CS_Dead : AvatarState {
 
-    public C_Attributes attributes;
-    public C_Velocity velocity;
     public C_Animator anim;
-    public C_AttackListener attackListener;
+    public C_Velocity velocity;
     public C_IKManager iKManager;
-    public C_WeaponHandle weaponHandle;
     public C_BattleMgr battleMgr;
+    public C_UiEventMgr uiMgr;
+    public C_Attributes attributes;
+    public C_WeaponHandle weaponHandle;
+    public C_AttackListener attackListener;
     Timer timer = new Timer();
     public float recoverTime = 1f;
     public float vanishTime = 2;
@@ -18,13 +20,14 @@ public class CS_Dead : AvatarState {
 
     private void OnEnable()
     {
-        attributes = GetComponent<C_Attributes>();
-        velocity = GetComponent<C_Velocity>();
         anim = GetComponent<C_Animator>();
-        attackListener = GetComponent<C_AttackListener>();
+        uiMgr = GetComponent<C_UiEventMgr>();
+        velocity = GetComponent<C_Velocity>();
         iKManager = GetComponent<C_IKManager>();
-        weaponHandle = GetComponent<C_WeaponHandle>();
         battleMgr = GetComponent<C_BattleMgr>();
+        attributes = GetComponent<C_Attributes>();
+        weaponHandle = GetComponent<C_WeaponHandle>();
+        attackListener = GetComponent<C_AttackListener>();
 
         var stateMgr = GetComponent<CS_StateMgr>();
         //_name = "aim";
@@ -47,8 +50,7 @@ public class CS_Dead : AvatarState {
         iKManager.SetDead(true);
         weaponHandle.Reset();
         weaponHandle.active = false;
-
-        Debug.Log("enter dead state");
+        
     }
 
     public override void OnUpdate()

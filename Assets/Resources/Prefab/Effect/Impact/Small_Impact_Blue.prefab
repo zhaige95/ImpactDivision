@@ -210,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 1159917142244546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4401475870957450}
   - {fileID: 4176162878162168}
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectTag: Small_Impact_Blue
   isActive: 1
-  time: 2
+  time: 0.3
   useModel: normal
 --- !u!114 &114962561587390890
 MonoBehaviour:
