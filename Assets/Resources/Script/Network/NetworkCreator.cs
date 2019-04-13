@@ -38,10 +38,10 @@ public class NetworkCreator : Photon.PunBehaviour {
         {
             var uiMgr = avatar.GetComponent<C_UiEventMgr>();
             Battle.hudMgr.Init(uiMgr);
-            Battle.planeHUDMgr.Init(uiMgr); 
+            Battle.planeHUDMgr.Init(uiMgr);
+            Battle.localPlayerBattleInfo = battleMgr;
         }
         
-
     }
 
 }

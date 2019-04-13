@@ -13,6 +13,8 @@ public class Battle : MonoBehaviour
     public static Dictionary<int, C_BattleMgr> playerListCamp1 = new Dictionary<int, C_BattleMgr>();
     public static Dictionary<int, C_BattleMgr> playerListCamp2 = new Dictionary<int, C_BattleMgr>();
 
+    public static C_BattleMgr localPlayerBattleInfo;
+
     public static Transform localPlayerCameraTrans;
     public static Camera localPlayerCamera;
     public static int localPlayerCamp;
@@ -140,7 +142,7 @@ public class Battle : MonoBehaviour
         {
             var camp = int.Parse(item.CustomProperties["team"].ToString());
             var battleInfo = (item.CustomProperties["battle"].ToString()).Split('#');
-            var playerName = item.IsLocal ? ("<color=#ffcf69>" + item.NickName + "</color>") : item.NickName;
+            var playerName = item.IsLocal ? ("<color=#ffcf69>" + item.NickName.Split('#')[0] + "</color>") : item.NickName;
             if (camp == 1)
             {
                 scoreboardMgr.topPanel[index1].Init(playerName, battleInfo[0], battleInfo[1], battleInfo[2], battleInfo[3]);
