@@ -20,7 +20,6 @@ public class KillerNamePanel : MonoBehaviour {
 
     public void Active(string kName)
     {
-        Debug.Log(kName);
         killerName.text = kName;
         this.transform.localScale = Vector3.one;
         timer.Enter();

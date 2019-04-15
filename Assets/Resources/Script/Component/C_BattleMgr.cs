@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UiEvent;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
+using System;
 
 public class C_BattleMgr : Photon.PunBehaviour {
     C_Attributes attributes;
@@ -23,7 +24,7 @@ public class C_BattleMgr : Photon.PunBehaviour {
     public int hitCount = 0;
     public int headShot = 0;
     public float demageCount = 0f;
-    
+    public Action<int> OnKill;
     [Header("Temp Params")]
     public int tempMultikill = 0;
 
@@ -65,6 +66,7 @@ public class C_BattleMgr : Photon.PunBehaviour {
         }
 
         uiMgr.SendEvent(new UiEvent.UiMsgs.Kill());
+        OnKill?.Invoke(attributes.camp);
         SyncData();
     }
 
@@ -124,6 +126,7 @@ public class C_BattleMgr : Photon.PunBehaviour {
     public void SetPlayerEnable(bool isEnable)
     {
         velocity.isActive = isEnable;
+        velocity.Reset();
     }
 
 

@@ -363,8 +363,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1567949783029996}
-  m_LocalRotation: {x: -0.04027691, y: 0.2304783, z: -0.009547786, w: -0.9721967}
-  m_LocalPosition: {x: -18.87188, y: 40.362396, z: -364.8018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224468250236994372}
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224209548675232942}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999998
+  m_Size: 1
   m_NumberOfSteps: 1
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1140,7 +1140,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: OnVersionOld, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: NetworkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onConnStart:
     m_PersistentCalls:
       m_Calls:
@@ -1177,7 +1177,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: OnConnStart, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: NetworkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onConnToMaster:
     m_PersistentCalls:
       m_Calls:
@@ -1203,8 +1203,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: OnConnToMaster, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: NetworkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onConnToMasterFiled:
     m_PersistentCalls:
       m_Calls:
@@ -1252,8 +1251,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-    m_TypeName: OnConnToMasterFiled, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: NetworkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onConnToPhoton:
     m_PersistentCalls:
       m_Calls:
@@ -1268,8 +1266,7 @@ MonoBehaviour:
           m_StringArgument: "\u5929\u547D\u6218\u533A\u670D\u52A1\u5668\u8FDE\u63A5\u6210\u529F"
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: OnConnToPhoton, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: NetworkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onConnToPhotonFiled:
     m_PersistentCalls:
       m_Calls:
@@ -1317,8 +1314,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-    m_TypeName: OnConnToPhotonFiled, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: NetworkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onDisconnFromPhoton:
     m_PersistentCalls:
       m_Calls:
@@ -1366,8 +1362,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-    m_TypeName: OnDisconnFromPhoton, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: NetworkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onStartJoinLobby:
     m_PersistentCalls:
       m_Calls:
@@ -1382,8 +1377,7 @@ MonoBehaviour:
           m_StringArgument: "\u6B63\u5728\u8FDB\u5165\u6218\u533A..."
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: OnStartJoinLobby, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: NetworkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onJoinedLobby:
     m_PersistentCalls:
       m_Calls:
@@ -1420,8 +1414,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: OnJoinedLobby, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: NetworkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onLeftLobby:
     m_PersistentCalls:
       m_Calls:
@@ -1436,7 +1429,7 @@ MonoBehaviour:
           m_StringArgument: "\u64A4\u79BB\u6218\u533A"
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: OnLeftLobby, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: NetworkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &114593540776090444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2083,7 +2076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00012207031, y: 0.000015258789}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0.0000076293945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224760518385476662

@@ -24,6 +24,7 @@ public class Battle : MonoBehaviour
     public static HUDMgr hudMgr;
     public static ScoreboardMgr scoreboardMgr;
     public static BornPointsMgr bornMgr;
+    public static NetworkBattleMgr battleMgr;
     
     // temp setting
     public static float relativeRate = 1f;
@@ -117,13 +118,7 @@ public class Battle : MonoBehaviour
                 }
             };
         }
-
-        //var str = "";
-        //foreach (var item in campNumber)
-        //{
-        //    str += "camp" + item.Key + " = " + item.Value + " || ";
-        //}
-        //Debug.Log(str);
+        
     }
 
     // 玩家中途加入时获取人数较少的一方的阵营id
@@ -154,18 +149,24 @@ public class Battle : MonoBehaviour
                 index2++;
             }
         }
-        //var index = 0;
-        //foreach (var item in playerListCamp1.Values)
-        //{
-        //    scoreboardMgr.topPanel[index].Init(item);
-        //    index++;
-        //}
-        //index = 0;
-        //foreach (var item in playerListCamp2.Values)
-        //{
-        //    scoreboardMgr.bottomPanel[index].Init(item);
-        //    index++;
-        //}
+    }
+
+    public static void ClearBattlefield()
+    {
+        foreach (var item in playerListCamp1.Values)
+        {
+            UnityEngine.Object.Destroy(item.gameObject);
+        }
+        playerListCamp1.Clear();
+
+        foreach (var item in playerListCamp2.Values)
+        {
+            UnityEngine.Object.Destroy(item.gameObject);
+        }
+        playerListCamp2.Clear();
+
+        Effect.Clear();
+
     }
 
 }

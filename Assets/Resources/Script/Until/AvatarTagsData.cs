@@ -15,7 +15,7 @@ public static class AvatarTagsData
     {
         {
             "hit_Head",
-            2f
+            1.5f
         },
         {
             "hit_Body",
@@ -23,7 +23,7 @@ public static class AvatarTagsData
         },
         {
             "hit_Limbs",
-            0.7f
+            0.6f
         },
     };
 

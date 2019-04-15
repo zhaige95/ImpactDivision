@@ -16,7 +16,16 @@ public class MenuMgr : Photon.PunBehaviour
         {
             item.Init();
         }
-        
+
+        if (PhotonNetwork.isMasterClient)
+        {
+            PhotonNetwork.automaticallySyncScene = false;
+        }
+
+        if (Battle.inRoom)
+        {
+            OpenMenu(3);
+        }
 	}
 	
 	// Update is called once per frame

@@ -15,7 +15,6 @@ public class SettleScorePanel : Photon.PunBehaviour {
     public Text score;
     [Header("--------------------------------")]
     public Image matchTimerCicle;
-    public DOTweenAnimation tweenAnimation;
     public Text PlayerCount;
     public float waitTime = 5f;
     Timer timer = new Timer();
@@ -24,7 +23,6 @@ public class SettleScorePanel : Photon.PunBehaviour {
 
     // Use this for initialization
     void Start () {
-        //this.timer.Enter(waitTime);
         timer.OnComplet = OnTimerComplate;
     }
 	
@@ -36,7 +34,14 @@ public class SettleScorePanel : Photon.PunBehaviour {
         this.kill.text = playerInfo.kill.ToString();
         this.assists.text = playerInfo.assists.ToString();
         this.miltikill.text = playerInfo.miltikill.ToString();
-        this.hitRate.text = (playerInfo.fireCount / playerInfo.hitCount).ToString();
+        if (playerInfo.fireCount != 0 && playerInfo.hitCount != 0)
+        {
+            this.hitRate.text = (playerInfo.fireCount / playerInfo.hitCount).ToString();
+        }
+        else
+        {
+            this.hitRate.text = "0";
+        }
         this.demageCount.text = playerInfo.demageCount.ToString();
         this.score.text = playerInfo.score.ToString();
 
@@ -65,4 +70,5 @@ public class SettleScorePanel : Photon.PunBehaviour {
     {
         PlayerCount.text = PhotonNetwork.playerList.Length.ToString();
     }
+
 }

@@ -96,6 +96,7 @@ public class C_WeaponHandle : MonoBehaviour
         
         weaponAtt.runtimeMag = weaponAtt.mag - 1;
         weaponAtt.bore = true;
+        weaponAtt.index = index;
 
         weaponAtt.constraint.SetSource(0, new ConstraintSource()
         {
@@ -129,11 +130,14 @@ public class C_WeaponHandle : MonoBehaviour
             att.runtimeMag = att.mag - 1;
             att.bore = true;
         }
-        var states = weaponAttributes[currentWeapon].states;
-        if (states.ContainsKey("pick"))
+        if (currentWeapon != 0)
         {
-            states["pick"].Enter();
-            states["pick"].Exit();
+            var states = weaponAttributes[currentWeapon].states;
+            if (states.ContainsKey("pick"))
+            {
+                states["pick"].Enter();
+                states["pick"].Exit();
+            }
         }
         this.currentWeapon = 0;
         this.targetWeapon = 0;
@@ -141,30 +145,36 @@ public class C_WeaponHandle : MonoBehaviour
     }
 
     [PunRPC]
-    public void NetworkFire(Vector3 targetPoint)
+    public void NetworkFire(int index, Vector3 targetPoint)
     {
-        Fire state = (Fire)weaponAttributes[this.currentWeapon].states["fire"];
-        state.targetPoint = targetPoint;
-        state.Enter();
+        if (weaponAttributes[index].active)
+        {
+            Fire state = (Fire)weaponAttributes[index].states["fire"];
+            state.targetPoint = targetPoint;
+            state.Enter();
+        }
     }
     
     [PunRPC]
     public void EnterState(string sName)
     {
-        if (weaponAttributes[this.currentWeapon].states.ContainsKey(sName))
+        if (this.currentWeapon != 0)
         {
-            var attr = weaponAttributes[this.currentWeapon];
-            var state = attr.states[sName];
-            var runningState = attr.states[attr.runningState];
-            
-            if (state.layer == runningState.layer && runningState._active)
+            if (weaponAttributes[this.currentWeapon].states.ContainsKey(sName))
             {
-                runningState.Exit();
-            }
+                var attr = weaponAttributes[this.currentWeapon];
+                var state = attr.states[sName];
+                var runningState = attr.states[attr.runningState];
 
-            state.Enter();
-            attr.lastState = attr.runningState;
-            attr.runningState = sName;
+                if (state.layer == runningState.layer && runningState._active)
+                {
+                    runningState.Exit();
+                }
+
+                state.Enter();
+                attr.lastState = attr.runningState;
+                attr.runningState = sName;
+            }
         }
     }
     

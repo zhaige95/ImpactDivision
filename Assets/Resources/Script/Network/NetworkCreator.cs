@@ -31,6 +31,7 @@ public class NetworkCreator : Photon.PunBehaviour {
         var battleMgr = avatar.GetComponent<C_BattleMgr>();
         battleMgr.nickName = nName;
         battleMgr.roomID = roomID;
+        battleMgr.OnKill = Battle.battleMgr.AddScore;
 
         Battle.PlayerJoin(team, roomID, battleMgr);
 
@@ -40,6 +41,8 @@ public class NetworkCreator : Photon.PunBehaviour {
             Battle.hudMgr.Init(uiMgr);
             Battle.planeHUDMgr.Init(uiMgr);
             Battle.localPlayerBattleInfo = battleMgr;
+
+            battleMgr.SetPlayerEnable(false);
         }
         
     }

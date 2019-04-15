@@ -25,9 +25,11 @@ public class MatchMgr : Photon.PunBehaviour
     public NetworkEvent onPlayStart;
     public NetworkEvent onDisconnFromPhoton;
 
-    //public OnPlayerConnected onPlayerConnected;
+    private void OnEnable()
+    {
+        this.UpdatePlayerNumber();
+    }
 
-    // Update is called once per frame
     void FixedUpdate () {
         if (matching)
         {
@@ -109,13 +111,13 @@ public class MatchMgr : Photon.PunBehaviour
 
     public override void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
     {
-        ringText.text = PhotonNetwork.playerList.Length + "";
+        this.UpdatePlayerNumber();
     }
 
     public override void OnJoinedRoom()
     {
         onJoinedRoom.Invoke();
-        ringText.text = PhotonNetwork.playerList.Length + "";
+        this.UpdatePlayerNumber();
 
         // test code 
         if (this.single)
@@ -130,7 +132,10 @@ public class MatchMgr : Photon.PunBehaviour
 
     }
 
-
+    void UpdatePlayerNumber()
+    {
+        ringText.text = PhotonNetwork.playerList.Length + "";
+    }
 
 
 

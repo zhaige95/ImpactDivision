@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreboardMgr : MonoBehaviour {
+public class ScoreboardMgr : PanelSwitch
+{
     public List<ScoreboardItem> topPanel;
     public List<ScoreboardItem> bottomPanel;
 
@@ -12,22 +13,20 @@ public class ScoreboardMgr : MonoBehaviour {
         Battle.scoreboardMgr = this;
     }
 
-    private void Update()
+    public override void SwitchPanel(bool isOpen)
     {
-        if (Input.GetKeyDown("tab"))
+        base.SwitchPanel(isOpen);
+        if (isOpen)
         {
             active = true;
             Battle.ReflashScoreboard();
-            this.transform.localScale =  Vector3.one;
-
+            this.transform.localScale = Vector3.one;
         }
-        else if(Input.GetKeyUp("tab"))
+        else
         {
             active = false;
             this.transform.localScale = Vector3.zero;
         }
-
-
     }
 
 }

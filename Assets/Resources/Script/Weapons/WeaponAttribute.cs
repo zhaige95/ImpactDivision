@@ -7,7 +7,7 @@ using Data;
 public class WeaponAttribute : MonoBehaviour
 {
     public bool active = false;
-    public int id;
+    public int index;
     public string wname;
     public WeaponType type;
     public MagType magType;

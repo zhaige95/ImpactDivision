@@ -159,7 +159,7 @@ public class Fire : WeaponState
                     visable
                  );
 
-                _photonView.RPC("NetworkFire", PhotonTargets.Others, targetPoint);
+                _photonView.RPC("NetworkFire", PhotonTargets.Others, _weaponAttribute.index, targetPoint);
 
                 if (_weaponAttribute.runtimeMag > 0)
                 {

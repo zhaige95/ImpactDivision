@@ -36,14 +36,14 @@ public class PhotonEngine : Photon.PunBehaviour {
         DontDestroyOnLoad(this.gameObject);
 
         // check game version
-        //StartCoroutine(GetPhotos());
+        //StartCoroutine(CheckVersion());
 
         StartConnect();
 
     }
 
     // 从网络获取版本设置，旧版本不进行网络连接
-    IEnumerator GetPhotos()
+    IEnumerator CheckVersion()
     {
         WWW w = new WWW(versionAddress.value);
         while (!w.isDone) { yield return new WaitForEndOfFrame(); }
@@ -95,7 +95,6 @@ public class PhotonEngine : Photon.PunBehaviour {
     public override void OnFailedToConnectToPhoton(DisconnectCause cause)
     {
         onConnToPhotonFiled.Invoke();
-        PhotonNetwork.player.SetCustomProperties(new Hashtable() { { "battle", "0#0#0#0"} });
     }
 
     // 连接断开
@@ -109,7 +108,8 @@ public class PhotonEngine : Photon.PunBehaviour {
     public override void OnJoinedLobby()
     {
         PhotonNetwork.player.NickName = Battle.playerBasicSave.playerName + "#" + DateTime.Now.GetHashCode().ToString().Substring(0,5);
-        Debug.Log(PhotonNetwork.player.NickName);
+        PhotonNetwork.player.SetCustomProperties(new Hashtable() { { "battle", "0#0#0#0" } });
+
         onJoinedLobby.Invoke();
     }
 
@@ -138,12 +138,24 @@ public class PhotonEngine : Photon.PunBehaviour {
     public override void OnJoinedRoom()
     {
         Battle.inRoom = true;
+
+        if (PhotonNetwork.isMasterClient)
+        {
+            var p = new Hashtable() {
+                { "score", "0#0"},
+                { "time", "1" },
+                { "prepare", "1"}
+            };
+            PhotonNetwork.room.SetCustomProperties(p);
+        }
+
         PhotonNetwork.automaticallySyncScene = true;
     }
 
     public override void OnPhotonJoinRoomFailed(object[] codeAndMsg)
     {
         PhotonNetwork.CreateRoom("Impact", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
+
     }
     
     public override void OnLeftRoom()
