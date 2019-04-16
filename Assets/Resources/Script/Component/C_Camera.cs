@@ -14,9 +14,8 @@ public class C_Camera : MonoBehaviour, IPunObservable
     public Transform cameraHandle;
     public Transform cameraObj;
     public ParentConstraint constraint;
-    public float c_speed_x = 5f;
-    public float c_speed_y = 5f;
-    public float aimRate = 0.4f;
+    public FloatData speedPrimary;
+    public FloatData speedAiming;
     public float FOVdefault;
     public float FOVtarget;
     public float radius;

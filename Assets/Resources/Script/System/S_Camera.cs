@@ -30,13 +30,13 @@ public class S_Camera : ComponentSystem {
 
                     if (_velocity.aiming)
                     {
-                        x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * _camera.c_speed_x * _camera.aimRate;
-                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * _camera.c_speed_y * _camera.aimRate + _camera.correct;
+                        x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * _camera.speedAiming.value * 0.4f;
+                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * _camera.speedAiming.value * 0.4f + _camera.correct;
                     }
                     else
                     {
-                        x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * _camera.c_speed_x;
-                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * _camera.c_speed_y + _camera.correct;
+                        x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * _camera.speedPrimary.value;
+                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * _camera.speedPrimary.value + _camera.correct;
                     }
                     _camera.correct = 0f;
                     if (x >= 260f && x <= 360f)

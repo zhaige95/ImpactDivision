@@ -9,11 +9,13 @@ public class SettingMgr : WindowBasic
     public List<GameObject> settingList;
     public GameObject confirmWindow;
     public SoundMgr soundMgr;
+    public ControlSettingMgr controlMgr;
     // Use this for initialization
     public override void Init () {
         soundMgr.OnChanged = ActableApplyBtn;
-
+        
         soundMgr.Init();
+        controlMgr.Init();
     }
 	
 	// Update is called once per frame

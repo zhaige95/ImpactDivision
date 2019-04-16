@@ -5828,9 +5828,8 @@ MonoBehaviour:
   cameraHandle: {fileID: 4854905547047354}
   cameraObj: {fileID: 4129746331296254}
   constraint: {fileID: 7973541677948591040}
-  c_speed_x: 2
-  c_speed_y: 2
-  aimRate: 0.4
+  speedPrimary: {fileID: 11400000, guid: a68584d9d2dfa504ebeb29485fe7ffd7, type: 2}
+  speedAiming: {fileID: 11400000, guid: a5e9e6c57c04e314a9740bbc06dbc264, type: 2}
   FOVdefault: 60
   FOVtarget: 60
   radius: 0.05
