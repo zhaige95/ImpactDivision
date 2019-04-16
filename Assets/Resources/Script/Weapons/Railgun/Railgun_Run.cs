@@ -46,6 +46,7 @@ public class Railgun_Run : WeaponState
         base.Enter();
         _iKManager.SetAim(false);
         _iKManager.SetHold(false);
+        _iKManager.locked = true;
     }
 
     public override void OnUpdate()
@@ -62,6 +63,7 @@ public class Railgun_Run : WeaponState
     {
         base.Exit();
 
+        _iKManager.locked = false;
         if (_velocity.isLocalPlayer)
         {
             _photonView.RPC("ExitState", PhotonTargets.Others, this._name);

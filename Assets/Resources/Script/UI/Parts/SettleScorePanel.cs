@@ -9,7 +9,7 @@ public class SettleScorePanel : Photon.PunBehaviour {
     public Text kill;
     public Text dead;
     public Text assists;
-    public Text miltikill;
+    public Text multikill;
     public Text hitRate;
     public Text demageCount;
     public Text score;
@@ -30,13 +30,21 @@ public class SettleScorePanel : Photon.PunBehaviour {
     {
         this.timer.Enter(waitTime);
 
+        if (Battle.battleMgr.lastKillCamp == Battle.localPlayerCamp)
+            title.text = "胜利";
+        else
+            title.text = "失败";
+        
         var playerInfo = Battle.localPlayerBattleInfo;
         this.kill.text = playerInfo.kill.ToString();
         this.assists.text = playerInfo.assists.ToString();
-        this.miltikill.text = playerInfo.miltikill.ToString();
+        this.multikill.text = playerInfo.multikill.ToString();
+
+        float hitrate = 0;
         if (playerInfo.fireCount != 0 && playerInfo.hitCount != 0)
         {
-            this.hitRate.text = ((float)playerInfo.hitCount / (float)playerInfo.fireCount).ToString();
+            hitrate = (float)playerInfo.hitCount / (float)playerInfo.fireCount;
+            this.hitRate.text = hitrate.ToString().Substring(0,4);
         }
         else
         {
@@ -47,6 +55,32 @@ public class SettleScorePanel : Photon.PunBehaviour {
 
         this.transform.localScale = Vector3.one;
         PlayerCount.text = PhotonNetwork.playerList.Length.ToString();
+
+        // upgrade player basic data
+        Battle.playerBasicSave.exp += (playerInfo.score + playerInfo.demageCount * 0.5f);
+
+        // upgrade player battle data
+        var playerBattleSave = Battle.playerBattleSave;
+        playerBattleSave.kill += playerInfo.kill;
+        playerBattleSave.die += playerInfo.dead;
+        playerBattleSave.assists += playerInfo.assists;
+        playerBattleSave.headshotKill += playerInfo.headShot;
+
+        if (playerBattleSave.maxMultiKill < playerInfo.multikill)
+            playerBattleSave.maxMultiKill = playerInfo.multikill;
+
+        playerBattleSave.fireCount += playerInfo.fireCount;
+        playerBattleSave.hitCount += playerInfo.hitCount;
+        
+        playerBattleSave.demage += playerInfo.demageCount;
+
+        if (playerBattleSave.maxOneBattleKill < playerInfo.kill)
+            playerBattleSave.maxOneBattleKill = playerInfo.kill;
+
+        playerBattleSave.playTime += Battle.battleMgr.gameTime;
+
+        Battle.SavePlayerBasicData();
+        Battle.SavePlayerBattleData();
 
     }
 

@@ -16,6 +16,7 @@ public class PhotonEngine : Photon.PunBehaviour {
     public StringData version;
     public StringData versionAddress;
     [Header("Connect Event------------")]
+    public NetworkEvent onNoNetwork;
     public NetworkEvent onVersionOld;
     public NetworkEvent onConnStart;
     public NetworkEvent onConnToMaster;
@@ -34,12 +35,21 @@ public class PhotonEngine : Photon.PunBehaviour {
     {
         Application.targetFrameRate = 90;
         DontDestroyOnLoad(this.gameObject);
-
-        // check game version
-        //StartCoroutine(CheckVersion());
-
-        StartConnect();
         Battle.photonEngine = this;
+
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            // if no network
+            onNoNetwork.Invoke();
+        }
+        else
+        {
+            // check game version
+            StartCoroutine(CheckVersion());
+        }
+
+
+        //StartConnect();
     }
 
     // 从网络获取版本设置，旧版本不进行网络连接
@@ -48,6 +58,7 @@ public class PhotonEngine : Photon.PunBehaviour {
         WWW w = new WWW(versionAddress.value);
         while (!w.isDone) { yield return new WaitForEndOfFrame(); }
         var versionSettting = JsonConvert.DeserializeObject<VersionSetting>(w.text);
+
         if (versionSettting.version.Equals(version.value))
         {
             StartConnect();
@@ -63,7 +74,7 @@ public class PhotonEngine : Photon.PunBehaviour {
     public void StartConnect()
     {
         onConnStart.Invoke();
-        PhotonNetwork.ConnectUsingSettings("v0.1");
+        PhotonNetwork.ConnectUsingSettings(version.value);
     }
 
     public void JoinLobby()
@@ -107,7 +118,7 @@ public class PhotonEngine : Photon.PunBehaviour {
 
     public override void OnJoinedLobby()
     {
-        PhotonNetwork.player.NickName = Battle.playerBasicSave.playerName + "#" + DateTime.Now.GetHashCode().ToString().Substring(0,5);
+        PhotonNetwork.player.NickName = Battle.playerBasicSave.playerName + "#" + DateTime.Now.GetHashCode().ToString().Substring(0,4);
         PhotonNetwork.player.SetCustomProperties(new Hashtable() { { "battle", "0#0#0#0" } });
 
         onJoinedLobby.Invoke();
@@ -119,19 +130,17 @@ public class PhotonEngine : Photon.PunBehaviour {
 
     }
 
-    public override void OnLobbyStatisticsUpdate()
-    {
+    //public override void OnLobbyStatisticsUpdate()
+    //{
 
-    }
+    //}
 
     // Room Operation-----------------------------------------------------------------
 
     public override void OnPhotonRandomJoinFailed(object[] codeAndMsg)
     {
-        // 随机取一种对战模式设定
-        
         // 设置房间信息
-        //PhotonNetwork.CreateRoom("Impact", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
+        PhotonNetwork.CreateRoom(PhotonNetwork.player.NickName, new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
         Debug.Log("join random filed");
     }
 
@@ -154,7 +163,7 @@ public class PhotonEngine : Photon.PunBehaviour {
 
     public override void OnPhotonJoinRoomFailed(object[] codeAndMsg)
     {
-        PhotonNetwork.CreateRoom("Impact", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
+        //PhotonNetwork.CreateRoom("Impact", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
 
     }
     

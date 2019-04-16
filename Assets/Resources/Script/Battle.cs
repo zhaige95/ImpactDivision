@@ -138,7 +138,7 @@ public class Battle : MonoBehaviour
         {
             var camp = int.Parse(item.CustomProperties["team"].ToString());
             var battleInfo = (item.CustomProperties["battle"].ToString()).Split('#');
-            var playerName = item.IsLocal ? ("<color=#ffcf69>" + item.NickName.Split('#')[0] + "</color>") : item.NickName;
+            var playerName = item.IsLocal ? ("<color=#ffcf69>" + item.NickName.Split('#')[0] + "</color>") : item.NickName.Split('#')[0];
             if (camp == 1)
             {
                 scoreboardMgr.topPanel[index1].Init(playerName, battleInfo[0], battleInfo[1], battleInfo[2], battleInfo[3]);
@@ -167,6 +167,19 @@ public class Battle : MonoBehaviour
         playerListCamp2.Clear();
 
         Effect.Clear();
+
+    }
+
+    public static void UpdateFriendlyMark()
+    {
+        foreach (var item in playerListCamp1.Values)
+        {
+            item.SetFirendlyMark();
+        }
+        foreach (var item in playerListCamp2.Values)
+        {
+            item.SetFirendlyMark();
+        }
 
     }
 

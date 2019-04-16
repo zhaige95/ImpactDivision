@@ -49,7 +49,7 @@ public class MatchMgr : Photon.PunBehaviour
     public void StartMatch()
     {
         matching = true;
-        PhotonNetwork.JoinRoom("Impact");
+        PhotonNetwork.JoinRandomRoom();
     }
 
     public void CancleMatch()
@@ -82,6 +82,7 @@ public class MatchMgr : Photon.PunBehaviour
         {
             if (PhotonNetwork.isMasterClient)
             {
+                PhotonNetwork.room.IsVisible = false;
                 PhotonNetwork.automaticallySyncScene = true;
                 onPlayStart.Invoke();
                 async = PhotonNetwork.LoadLevelAsync("Battle001");

@@ -4686,6 +4686,7 @@ MonoBehaviour:
   _velocity: {fileID: 114941734476039396}
   _stateMgr: {fileID: 114576564685032682}
   _attributes: {fileID: 114868711761955298}
+  _iKManager: {fileID: 0}
   _audioSource: {fileID: 82076460438832134}
   _characterController: {fileID: 143902589011073922}
   speed: 4
@@ -4969,7 +4970,7 @@ MonoBehaviour:
   nickName: 
   kill: 0
   dead: 0
-  miltikill: 0
+  multikill: 0
   assists: 0
   score: 0
   fireCount: 0
@@ -4994,6 +4995,7 @@ MonoBehaviour:
   LeftHandIKHandle: {fileID: 114235272468066960}
   isAim: 0
   isHold: 0
+  locked: 0
   targetAimWidth: 0
   targetBodyWeight: 0
   targetHold: 0
@@ -5322,9 +5324,9 @@ MonoBehaviour:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 4
+    InterpolateOption: 2
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 10
+    InterpolateLerpSpeed: 5
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:

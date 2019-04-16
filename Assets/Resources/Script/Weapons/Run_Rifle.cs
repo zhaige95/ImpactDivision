@@ -48,25 +48,30 @@ public class Run_Rifle : WeaponState
         _weaponHandle.handPoint.localPosition = runOffset._position;
         _weaponHandle.handPoint.localEulerAngles = runOffset._rotation;
 
+        _iKManager.locked = true;
     }
 
     public override void OnUpdate()
     {
-        if (_velocity.isLocalPlayer)
+       
+        if (!_velocity.Drun || _velocity.jumping)
         {
-            if (!_velocity.Drun || _velocity.jumping)
+            this._exitTick = true;
+            if (!_velocity.isLocalPlayer)
             {
-                this._exitTick = true;
+                Exit();
             }
         }
+
     }
     public override void Exit()
     {
         base.Exit();
-        if (_velocity.isLocalPlayer)
-        {
-            _photonView.RPC("ExitState", PhotonTargets.Others, this._name);
-        }
+        _iKManager.locked = false;
+        //if (_velocity.isLocalPlayer)
+        //{
+        //    _photonView.RPC("ExitState", PhotonTargets.Others, this._name);
+        //}
         if (!_weaponHandle.locked)
         {
             _iKManager.SetAim(true);

@@ -17,7 +17,7 @@ public class C_BattleMgr : Photon.PunBehaviour {
     public string nickName = "";
     public int kill = 0;
     public int dead = 0;
-    public int miltikill = 0;
+    public int multikill = 0;
     public int assists = 0;
     public int score = 0;
     public int fireCount = 0;
@@ -74,9 +74,9 @@ public class C_BattleMgr : Photon.PunBehaviour {
     public void AddDead()
     {
         dead ++;
-        if (tempMultikill > miltikill)
+        if (tempMultikill > multikill)
         {
-            miltikill = tempMultikill;
+            multikill = tempMultikill;
         }
         tempMultikill = 0;
 

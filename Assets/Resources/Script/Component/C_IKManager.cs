@@ -13,6 +13,7 @@ public class C_IKManager : MonoBehaviour {
 
     public bool isAim;      //是否是瞄准
     public bool isHold;     // 是否持枪，使左手IK生效
+    public bool locked = false;
 
     public float targetAimWidth = 0;
     public float targetBodyWeight = 0.2f;
@@ -21,15 +22,21 @@ public class C_IKManager : MonoBehaviour {
 
     public void SetAim(bool aim)
     {
-        isAim = aim;
-        targetAimWidth = aim ? 1f : 0;
-        targetBodyWeight = aim ? 0 : 0.2f;
+        if (!locked)
+        {
+            isAim = aim;
+            targetAimWidth = aim ? 1f : 0;
+            targetBodyWeight = aim ? 0 : 0.2f;
+        }
     }
 
     public void SetHold(bool hold)
     {
-        isHold = hold;
-        targetHold = hold ? 1 : 0;
+        if (!locked)
+        {
+            isHold = hold;
+            targetHold = hold ? 1 : 0;
+        }
     }
 
     public void SetHoldTarget(Transform t)

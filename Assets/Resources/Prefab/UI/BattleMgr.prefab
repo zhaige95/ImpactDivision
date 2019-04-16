@@ -2725,7 +2725,7 @@ GameObject:
   - component: {fileID: 114747390847499542}
   - component: {fileID: 114217667069434484}
   m_Layer: 5
-  m_Name: Miltikill Value
+  m_Name: Multikill Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7189,6 +7189,7 @@ MonoBehaviour:
   configBattle: {fileID: 11400000, guid: 657d40e3232f6b849b880b86dd85714f, type: 2}
   preparing: 1
   gameTime: 0
+  lastKillCamp: 0
   battleInfo: {fileID: 114222135709223402}
   menuPanel: {fileID: 114110736047197732}
   scoreboard: {fileID: 114830754443503914}
@@ -8429,13 +8430,13 @@ MonoBehaviour:
   kill: {fileID: 114368885115494434}
   dead: {fileID: 114971665871838572}
   assists: {fileID: 114953119134895530}
-  miltikill: {fileID: 114747390847499542}
+  multikill: {fileID: 114747390847499542}
   hitRate: {fileID: 114136068842094160}
   demageCount: {fileID: 114399623948853278}
   score: {fileID: 114853791827012472}
   matchTimerCicle: {fileID: 114389923207513048}
   PlayerCount: {fileID: 114637869113215104}
-  waitTime: 5
+  waitTime: 10
   OnOpenPanel:
     m_PersistentCalls:
       m_Calls:

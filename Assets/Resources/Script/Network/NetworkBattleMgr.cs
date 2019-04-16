@@ -10,6 +10,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
     public ConfigBattle configBattle;
     public bool preparing = true;
     public float gameTime = 0f;
+    public int lastKillCamp = 0;
     public Dictionary<int, int> score = new Dictionary<int, int>();
     Timer timer = new Timer();
     public BattleInfoMgr battleInfo;
@@ -42,7 +43,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         else
         {
             preparing = PhotonNetwork.room.CustomProperties["prepare"].ToString().Equals("1")? true : false;
-            Debug.Log(preparing);
+
             var time = float.Parse(PhotonNetwork.room.CustomProperties["time"].ToString());
             if (preparing)
             {
@@ -136,7 +137,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
     {
         score[camp]++;
         battleInfo.SetScore(camp, score[camp]);
-
+        lastKillCamp = camp;
         PhotonNetwork.room.SetCustomProperties(new Hashtable() { { "score", score[1] + "#" + score[2] } });
         this.CheckFinishCondition();
     }
@@ -150,6 +151,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         if (PhotonNetwork.isMasterClient)
         {
             PhotonNetwork.room.SetCustomProperties(new Hashtable() { { "prepare", "0" } });
+            PhotonNetwork.room.IsVisible = true;
         }
         OnPrepareEnd.Invoke();
         preparing = false;
@@ -157,6 +159,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         {
             Battle.localPlayerBattleInfo.SetPlayerEnable(true);
         }
+        Battle.UpdateFriendlyMark();
     }
 
     public void GameEnd()
@@ -170,6 +173,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         Battle.localPlayerBattleInfo.SetPlayerEnable(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        
         OnGameOver.Invoke();
     }
 

@@ -8,9 +8,8 @@ public class BattleInfoMgr : Photon.PunBehaviour {
     public Text score2;
     public Text target;
     public Text timer;
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

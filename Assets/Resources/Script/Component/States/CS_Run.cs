@@ -12,6 +12,7 @@ public class CS_Run : AvatarState {
     public C_Velocity _velocity;
     public CS_StateMgr _stateMgr;
     public C_Attributes _attributes;
+    public C_IKManager _iKManager;
     public AudioSource _audioSource;
     public CharacterController _characterController;
 
@@ -21,6 +22,17 @@ public class CS_Run : AvatarState {
     Vector3 targetAngles = new Vector3();
     int directionIndex = 0;
 
+    private void Awake()
+    {
+        _camera = GetComponent<C_Camera>();
+        _animator = GetComponent<C_Animator>();
+        _velocity = GetComponent<C_Velocity>();
+        _stateMgr = GetComponent<CS_StateMgr>();
+        _attributes = GetComponent<C_Attributes>();
+        _iKManager = GetComponent<C_IKManager>();
+        _audioSource = GetComponent<AudioSource>();
+        _characterController = GetComponent<CharacterController>();
+    }
 
     private void OnEnable()
     {
@@ -47,6 +59,11 @@ public class CS_Run : AvatarState {
         {
             _velocity.currentSpeed = speed;
             _animator.animator.SetBool("run", true);
+            if (!_velocity.isLocalPlayer)
+            {
+                _iKManager.SetAim(false);
+                _velocity.Drun = true;
+            }
         }
     }
 
@@ -86,6 +103,12 @@ public class CS_Run : AvatarState {
         base.Exit();
         //_velocity.Drun = false;
         _animator.animator.SetBool("run", false);
+        if (!_velocity.isLocalPlayer)
+        {
+            _velocity.Drun = false;
+            _iKManager.SetAim(true);
+            _iKManager.SetHold(true);
+        }
     }
 
 

@@ -64,6 +64,8 @@ public class Reload_Pistol : WeaponState
         _iKManager.SetAim(false);
         _iKManager.SetHold(false);
 
+        _iKManager.locked = true;
+
         _animator.animator.SetTrigger("reload");
 
         _audioSource.PlayOneShot(sound);
@@ -108,6 +110,7 @@ public class Reload_Pistol : WeaponState
     public override void Exit() {
 
         base.Exit();
+        _iKManager.locked = false;
         _iKManager.SetAim(true);
         _iKManager.SetHold(true);
         _weaponAttribute.reload = false;

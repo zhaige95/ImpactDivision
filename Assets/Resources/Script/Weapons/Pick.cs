@@ -52,7 +52,7 @@ public class Pick : WeaponState
     public override void Enter()
     {
         base.Enter();
-
+        
         process = 1;
         if (_weaponAttribute.active)
         {
@@ -60,6 +60,10 @@ public class Pick : WeaponState
             _animator.animator.SetInteger("weaponTarget", (int)_weaponAttribute.type);
             _animator.AddEvent("weaponType", (int)_weaponAttribute.type);
             _iKManager.SetHoldTarget(_weaponAttribute.holdPoint);
+            _iKManager.SetAim(false);
+            _iKManager.SetHold(false);
+            _iKManager.locked = true;
+
             endTimer.Enter(endTime);
             pickTimer.Enter(pickTime);
 
@@ -100,6 +104,7 @@ public class Pick : WeaponState
             _weaponAttribute.ready = false;
             this._exitTick = true;
         }
+
         _iKManager.SetAim(false);
         _iKManager.SetHold(false);
 
@@ -142,6 +147,7 @@ public class Pick : WeaponState
 
             if (!endTimer.isRunning)
             {
+                _iKManager.locked = false;
                 if (_velocity.Drun)
                 {
                     _iKManager.SetAim(false);
@@ -170,7 +176,7 @@ public class Pick : WeaponState
     {
         base.Exit();
         _isPicked = _weaponAttribute.active;
-        
+
     }
 }
  

@@ -32,7 +32,7 @@ public class EquipMgr : WindowBasic
             {
                 var wItem = GameObject.Instantiate(weaponItemPrefab, secondContent);
                 var itemData = wItem.GetComponent<WeaponListItem>();
-                itemData.Init(mainWeaponList[i], 2);
+                itemData.Init(secondWeaponList[i], 2);
                 itemData.OnClickCall = OnWeaponItemClick;
             }
 
