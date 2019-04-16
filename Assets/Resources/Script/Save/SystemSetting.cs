@@ -16,7 +16,7 @@ public class SystemSetting {
     public int frameRate = 2;
 
     // control setting
-    public float mouseSpeed = 50;
-    public float aimSpeed = 50;
+    public float mouseSpeed = 30;
+    public float aimSpeed = 30;
 
 }

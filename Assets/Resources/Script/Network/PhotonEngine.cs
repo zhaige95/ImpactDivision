@@ -37,18 +37,8 @@ public class PhotonEngine : Photon.PunBehaviour {
         DontDestroyOnLoad(this.gameObject);
         Battle.photonEngine = this;
 
-        if (Application.internetReachability == NetworkReachability.NotReachable)
-        {
-            // if no network
-            onNoNetwork.Invoke();
-        }
-        else
-        {
-            // check game version
-            StartCoroutine(CheckVersion());
-        }
-
-
+        CheckInternet();
+        
         //StartConnect();
     }
 
@@ -69,7 +59,20 @@ public class PhotonEngine : Photon.PunBehaviour {
             Debug.Log("游戏版本旧");
         }
     }
-
+    
+    public void CheckInternet()
+    {
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            // if no network
+            onNoNetwork.Invoke();
+        }
+        else
+        {
+            // check game version
+            StartCoroutine(CheckVersion());
+        }
+    }
 
     public void StartConnect()
     {

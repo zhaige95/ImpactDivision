@@ -23,13 +23,13 @@ public class ControlSettingMgr : MonoBehaviour
     
     public void SetPrimarySpeed(float val)
     {
-        mouseSpeedPrimary.value = val * 0.1f;
+        mouseSpeedPrimary.value = val * 0.05f;
         Battle.systemSettingSave.mouseSpeed = val;
     }
 
     public void SetAimingSpeed(float val)
     {
-        mouseSpeedAiming.value = val * 0.1f;
+        mouseSpeedAiming.value = val * 0.05f;
         Battle.systemSettingSave.aimSpeed = val;
     }
 
