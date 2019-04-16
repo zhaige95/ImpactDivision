@@ -25,6 +25,7 @@ public class Battle : MonoBehaviour
     public static ScoreboardMgr scoreboardMgr;
     public static BornPointsMgr bornMgr;
     public static NetworkBattleMgr battleMgr;
+    public static PhotonEngine photonEngine;
     
     // temp setting
     public static float relativeRate = 1f;

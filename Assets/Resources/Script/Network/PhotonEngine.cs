@@ -39,7 +39,7 @@ public class PhotonEngine : Photon.PunBehaviour {
         //StartCoroutine(CheckVersion());
 
         StartConnect();
-
+        Battle.photonEngine = this;
     }
 
     // 从网络获取版本设置，旧版本不进行网络连接

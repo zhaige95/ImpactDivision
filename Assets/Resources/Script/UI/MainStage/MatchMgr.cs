@@ -82,6 +82,7 @@ public class MatchMgr : Photon.PunBehaviour
         {
             if (PhotonNetwork.isMasterClient)
             {
+                PhotonNetwork.automaticallySyncScene = true;
                 onPlayStart.Invoke();
                 async = PhotonNetwork.LoadLevelAsync("Battle001");
                 async.allowSceneActivation = true;

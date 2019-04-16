@@ -7,7 +7,6 @@ using Newtonsoft.Json.Bson;
 using UnityEngine.SceneManagement;
 
 public class GameStartCheck : MonoBehaviour {
-    
 	// Use this for initialization
 	void Start () {
         string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/My Games/Impact Division";

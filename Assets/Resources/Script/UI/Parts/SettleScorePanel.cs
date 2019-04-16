@@ -36,7 +36,7 @@ public class SettleScorePanel : Photon.PunBehaviour {
         this.miltikill.text = playerInfo.miltikill.ToString();
         if (playerInfo.fireCount != 0 && playerInfo.hitCount != 0)
         {
-            this.hitRate.text = (playerInfo.fireCount / playerInfo.hitCount).ToString();
+            this.hitRate.text = ((float)playerInfo.hitCount / (float)playerInfo.fireCount).ToString();
         }
         else
         {

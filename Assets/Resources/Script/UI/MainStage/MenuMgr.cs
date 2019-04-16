@@ -7,6 +7,7 @@ public class MenuMgr : Photon.PunBehaviour
 {
     public List<GameObject> menus;
     public List<WindowBasic> windows;
+    public GameObject photonEngine;
     [Header("Lobby Event")]
     public NetworkEvent onJoinedLobby;
     public NetworkEvent onDisconnFromPhoton;
@@ -15,6 +16,10 @@ public class MenuMgr : Photon.PunBehaviour
         foreach (var item in windows)
         {
             item.Init();
+        }
+        if (Battle.photonEngine == null)
+        {
+            GameObject.Instantiate(photonEngine);
         }
 
         if (PhotonNetwork.isMasterClient)

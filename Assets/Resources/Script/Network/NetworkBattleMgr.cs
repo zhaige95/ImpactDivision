@@ -185,10 +185,10 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
     public void BackToMainStage(bool isLeave)
     {
         Battle.ClearBattlefield();
+        Battle.started = false;
         if (isLeave)
         {
             PhotonNetwork.LeaveRoom();
-            Battle.started = false;
         }
         else
         {
