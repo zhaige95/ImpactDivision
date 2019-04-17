@@ -4628,9 +4628,6 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  _velocity: {fileID: 114941734476039396}
-  _characterController: {fileID: 143902589011073922}
-  _camera: {fileID: 114798856965775900}
 --- !u!114 &114116530804715592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4643,9 +4640,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   photonView: {fileID: 114528926027309116}
-  audioSource: {fileID: 82076460438832134}
-  velocity: {fileID: 114941734476039396}
-  attributes: {fileID: 114868711761955298}
   isActive: 1
   killSound: {fileID: 8300000, guid: a0fea9fa820519c4aa8fca0e36573372, type: 3}
   beAttackedSounds:
@@ -4681,15 +4675,13 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  _camera: {fileID: 114798856965775900}
-  _animator: {fileID: 114343338998794126}
-  _velocity: {fileID: 114941734476039396}
-  _stateMgr: {fileID: 114576564685032682}
-  _attributes: {fileID: 114868711761955298}
-  _iKManager: {fileID: 0}
-  _audioSource: {fileID: 82076460438832134}
-  _characterController: {fileID: 143902589011073922}
   speed: 4
+  sounds:
+  - {fileID: 8300000, guid: 06a9eb540ef5a76489571f51edd7d073, type: 3}
+  - {fileID: 8300000, guid: 8f47fc7e860c66f4e8c56d7c18b6e049, type: 3}
+  - {fileID: 8300000, guid: f52a600946027924caf292ed5bb2ffed, type: 3}
+  - {fileID: 8300000, guid: aad128db463594b4bae9be12578bf758, type: 3}
+  runStepTime: 0.3
 --- !u!114 &114175405923590462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4708,13 +4700,6 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  _camera: {fileID: 114798856965775900}
-  _animator: {fileID: 114343338998794126}
-  _velocity: {fileID: 114941734476039396}
-  _stateMgr: {fileID: 114576564685032682}
-  _attributes: {fileID: 114868711761955298}
-  _audioSource: {fileID: 82076460438832134}
-  _characterController: {fileID: 143902589011073922}
   jogSpeed: 3
   walkSpeed: 1.5
   sounds:
@@ -4930,20 +4915,15 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  _camera: {fileID: 114798856965775900}
-  _velocity: {fileID: 114941734476039396}
-  _animator: {fileID: 114343338998794126}
-  _attributes: {fileID: 114868711761955298}
-  _onGroundSensor: {fileID: 114567977899816288}
-  _audioSource: {fileID: 82076460438832134}
-  _characterController: {fileID: 143902589011073922}
-  pView: {fileID: 0}
   activeTime: 0.4
   part: 1
   gravity: 20
   force: 5
   process: 1
-  sounds: []
+  sounds:
+  - {fileID: 8300000, guid: 279e8f586356c5746a13abe8052d55f3, type: 3}
+  - {fileID: 8300000, guid: 317bbc3e0ec9c254087f4fe90e9d0502, type: 3}
+  - {fileID: 8300000, guid: c10bae2e45a8ad843b0e96efbe208c03, type: 3}
 --- !u!114 &114468130865209838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5158,15 +5138,13 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  _camera: {fileID: 114798856965775900}
-  _animator: {fileID: 114343338998794126}
-  _velocity: {fileID: 114941734476039396}
-  _stateMgr: {fileID: 114576564685032682}
-  _attributes: {fileID: 114868711761955298}
-  _audioSource: {fileID: 82076460438832134}
-  _characterController: {fileID: 143902589011073922}
   speed: 2.2
-  sounds: []
+  sounds:
+  - {fileID: 8300000, guid: 7e5cb6b012103c249908adcfd4c002a9, type: 3}
+  - {fileID: 8300000, guid: 9da6bb34588bc0449a905bdf3c5ebdd7, type: 3}
+  - {fileID: 8300000, guid: dc7595278f98ad6459325f932534631e, type: 3}
+  - {fileID: 8300000, guid: ee3072a65a20bad4ba03570544c4442f, type: 3}
+  - {fileID: 8300000, guid: 7b580a423fbf15e43b4b5b16b3823242, type: 3}
 --- !u!114 &114576564685032682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5950,15 +5928,6 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  anim: {fileID: 0}
-  myCamera: {fileID: 0}
-  velocity: {fileID: 0}
-  iKManager: {fileID: 0}
-  battleMgr: {fileID: 0}
-  uiMgr: {fileID: 0}
-  attributes: {fileID: 0}
-  weaponHandle: {fileID: 0}
-  attackListener: {fileID: 0}
   recoverTime: 1
   vanishTime: 2
 --- !u!114 &114917177932166678

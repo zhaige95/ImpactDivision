@@ -33,7 +33,7 @@ public class PhotonEngine : Photon.PunBehaviour {
     // Use this for initialization
     private void Start()
     {
-        Application.targetFrameRate = 90;
+        Application.targetFrameRate = 60;
         DontDestroyOnLoad(this.gameObject);
         Battle.photonEngine = this;
 
@@ -48,7 +48,7 @@ public class PhotonEngine : Photon.PunBehaviour {
         WWW w = new WWW(versionAddress.value);
         while (!w.isDone) { yield return new WaitForEndOfFrame(); }
         var versionSettting = JsonConvert.DeserializeObject<VersionSetting>(w.text);
-
+        Debug.Log("version -  "  + versionSettting.version);
         if (versionSettting.version.Equals(version.value))
         {
             StartConnect();
@@ -143,8 +143,7 @@ public class PhotonEngine : Photon.PunBehaviour {
     public override void OnPhotonRandomJoinFailed(object[] codeAndMsg)
     {
         // 设置房间信息
-        PhotonNetwork.CreateRoom(PhotonNetwork.player.NickName, new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
-        Debug.Log("join random filed");
+        //PhotonNetwork.CreateRoom(PhotonNetwork.player.NickName, new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
     }
 
     public override void OnJoinedRoom()
@@ -166,14 +165,14 @@ public class PhotonEngine : Photon.PunBehaviour {
 
     public override void OnPhotonJoinRoomFailed(object[] codeAndMsg)
     {
-        //PhotonNetwork.CreateRoom("Impact", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
-
+        // test
+        PhotonNetwork.CreateRoom("Impact", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
     }
-    
+
     public override void OnLeftRoom()
     {
         Battle.inRoom = false;
-        PhotonNetwork.automaticallySyncScene = false;
+
     }
 
     public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)

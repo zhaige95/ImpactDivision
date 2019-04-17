@@ -129,5 +129,10 @@ public class C_BattleMgr : Photon.PunBehaviour {
         velocity.Reset();
     }
 
+    [PunRPC]
+    public void SyncBattleMgr(float time, bool prepare, int score1, int score2)
+    {
+        Battle.battleMgr.SetSync(time, prepare, score1, score2);
+    }
 
 }

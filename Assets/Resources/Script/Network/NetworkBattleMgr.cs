@@ -33,71 +33,42 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         Battle.started = true;
 
         battleInfo.SetTarget(configBattle.targetKill);
+        battleInfo.SetTimer(configBattle.prepareTime);
 
-        if (PhotonNetwork.isMasterClient)
-        {
-            PhotonNetwork.room.SetCustomProperties(new Hashtable() { { "time", configBattle.prepareTime.ToString() } });
-            battleInfo.SetTimer(configBattle.prepareTime);
-            timer.Enter(configBattle.prepareTime);
-        }
-        else
-        {
-            preparing = PhotonNetwork.room.CustomProperties["prepare"].ToString().Equals("1")? true : false;
-
-            var time = float.Parse(PhotonNetwork.room.CustomProperties["time"].ToString());
-            if (preparing)
-            {
-                var temp = configBattle.prepareTime * time;
-                battleInfo.SetTimer(temp);
-                timer.Enter(temp);
-            }
-            else
-            {
-                string[] syncScore = PhotonNetwork.room.CustomProperties["score"].ToString().Split('#');
-                score[1] = int.Parse(syncScore[0]);
-                score[2] = int.Parse(syncScore[1]);
-                
-                battleInfo.SetScore(1, syncScore[0]);
-                battleInfo.SetScore(2, syncScore[1]);
-
-                PrepareEnd(true);
-                StartCoroutine(Minwayjoin());
-                gameTime = time;
-            }
-        }
+        timer.Enter(configBattle.prepareTime);
 
         timer.OnComplet = PrepareEnd;
     }
 
     private void Update()
     {
+        if (!this.preparing)
+        {
+            if (Input.GetKeyDown("tab"))
+            {
+                scoreboard.SwitchPanel(true);
+            }
+            else if (Input.GetKeyUp("tab"))
+            {
+                scoreboard.SwitchPanel(false);
+            }
 
-        if (Input.GetKeyDown("tab"))
-        {
-            scoreboard.SwitchPanel(true);
-        }
-        else if (Input.GetKeyUp("tab"))
-        {
-            scoreboard.SwitchPanel(false);
+            if (Input.GetKeyDown("escape"))
+            {
+                menuPanel.SwitchPanel();
+            }
         }
 
-        if (Input.GetKeyDown("escape"))
+        if (timer.isRunning && this.preparing)
         {
-            menuPanel.SwitchPanel();
+            battleInfo.SetTimer(configBattle.prepareTime * (1 - timer.rate));
         }
     }
 
     void FixedUpdate()
     {
         timer.FixedUpdate();
-        if (timer.isRunning && preparing)
-        {
-            battleInfo.SetTimer(configBattle.prepareTime * (1 - timer.rate));
-            if (PhotonNetwork.isMasterClient)
-            {
-                PhotonNetwork.room.SetCustomProperties(new Hashtable() { { "time", timer.rate.ToString() } });
-            }
-        }
+
         if (!preparing)
         {
             gameTime += Time.fixedDeltaTime;
@@ -105,11 +76,6 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
             if (gameTime >= configBattle.outTime)
             {
                 GameEnd();
-            }
-            
-            if (PhotonNetwork.isMasterClient)
-            {
-                PhotonNetwork.room.SetCustomProperties(new Hashtable() { { "time", gameTime.ToString() } });
             }
         }
 
@@ -138,7 +104,6 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         score[camp]++;
         battleInfo.SetScore(camp, score[camp]);
         lastKillCamp = camp;
-        PhotonNetwork.room.SetCustomProperties(new Hashtable() { { "score", score[1] + "#" + score[2] } });
         this.CheckFinishCondition();
     }
 
@@ -146,13 +111,9 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
     {
         PrepareEnd(false);
     }
+
     public void PrepareEnd(bool midway)
     {
-        if (PhotonNetwork.isMasterClient)
-        {
-            PhotonNetwork.room.SetCustomProperties(new Hashtable() { { "prepare", "0" } });
-            PhotonNetwork.room.IsVisible = true;
-        }
         OnPrepareEnd.Invoke();
         preparing = false;
         if (!midway)
@@ -164,10 +125,6 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
 
     public void GameEnd()
     {
-        if (PhotonNetwork.isMasterClient)
-        {
-            PhotonNetwork.room.IsVisible = true;
-        }
 
         this.preparing = true;
         Battle.localPlayerBattleInfo.SetPlayerEnable(false);
@@ -199,16 +156,32 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
             if (PhotonNetwork.isMasterClient)
             {
                 PhotonNetwork.LoadLevelAsync("MainStage");
-                var p = new Hashtable() {
-                    { "score", "0#0"},
-                    { "time", "1" },
-                    { "prepare", "1"}
-                };
-                PhotonNetwork.room.SetCustomProperties(p);
             }
         }
-        
+    }
 
+    public void SetSync(float time, bool prepare, int score1, int score2)
+    {
+        this.preparing = prepare;
+        
+        if (prepare)
+        {
+            var temp = configBattle.prepareTime * time;
+            battleInfo.SetTimer(temp);
+            timer.Enter(temp);
+        }
+        else
+        {
+            score[1] = score1;
+            score[2] = score2;
+
+            battleInfo.SetScore(1, score1);
+            battleInfo.SetScore(2, score2);
+
+            PrepareEnd(true);
+            StartCoroutine(Minwayjoin());
+            gameTime = time;
+        }
     }
 
     public override void OnLeftRoom()
@@ -216,6 +189,14 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         SceneManager.LoadScene("MainStage");
         Battle.inRoom = false;
         Battle.started = false;
+    }
+
+    public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
+    {
+        if (PhotonNetwork.isMasterClient)
+        {
+            Battle.localPlayerBattleInfo.photonView.RPC("SyncBattleMgr", PhotonTargets.Others, this.preparing ? timer.rate : gameTime, this.preparing, score[1], score[2]);
+        }
     }
 
 }

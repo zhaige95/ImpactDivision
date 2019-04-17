@@ -18,7 +18,7 @@ MonoBehaviour:
   PreferredRegion: 3
   EnabledRegions: -1
   Protocol: 0
-  ServerAddress: 127.0.0.1
+  ServerAddress: 47.106.155.42
   ServerPort: 5055
   VoiceServerPort: 5055
   JoinLobby: 0
@@ -55,4 +55,5 @@ MonoBehaviour:
   - AddAttackSource
   - AddKillerMsg
   - SetData
+  - SyncBattleMgr
   DisableAutoOpenWizard: 1

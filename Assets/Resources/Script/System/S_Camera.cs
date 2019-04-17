@@ -30,8 +30,8 @@ public class S_Camera : ComponentSystem {
 
                     if (_velocity.aiming)
                     {
-                        x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * _camera.speedAiming.value * 0.4f;
-                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * _camera.speedAiming.value * 0.4f + _camera.correct;
+                        x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * _camera.speedAiming.value * 0.5f;
+                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * _camera.speedAiming.value * 0.5f + _camera.correct;
                     }
                     else
                     {

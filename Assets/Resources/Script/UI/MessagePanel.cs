@@ -55,12 +55,12 @@ public class MessagePanel : Photon.PunBehaviour, IPointerEnterHandler, IPointerE
     
     public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {
-        this.AddMsg("特工 <color=#ffcf69>[" + newPlayer.NickName + "]</color> 加入战场");
+        this.AddMsg("特工 <color=#ffcf69>[" + newPlayer.NickName.Split('#')[0] + "]</color> 加入战场");
     }
 
     public override void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
     {
-        this.AddMsg("特工 <color=#ffcf69>[" + otherPlayer.NickName + "]</color> 离开了战场");
+        this.AddMsg("特工 <color=#ffcf69>[" + otherPlayer.NickName.Split('#')[0] + "]</color> 离开了战场");
     }
 
     public override void OnConnectedToPhoton()

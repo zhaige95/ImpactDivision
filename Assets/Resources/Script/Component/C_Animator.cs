@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class C_Animator : MonoBehaviour, IPunObservable {
 	public Animator animator;
+    C_Velocity velocity;
     public Dictionary<string, float> targetFloat;
     public Dictionary<int, float> layerTransform;
 
     void Awake()
     {
+        velocity = GetComponent<C_Velocity>();
         targetFloat = new Dictionary<string, float>();
         layerTransform = new Dictionary<int, float>();
     }
@@ -51,7 +53,10 @@ public class C_Animator : MonoBehaviour, IPunObservable {
         }
         else if (stream.isReading)
         {
-            this.animator.SetFloat("aim", (float)stream.ReceiveNext());
+            var aimVal = (float)stream.ReceiveNext();
+            this.animator.SetFloat("aim", aimVal);
+            velocity.aiming = aimVal >= 0 ? true : false;
+
         }
     }
 }

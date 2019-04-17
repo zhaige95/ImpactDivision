@@ -4593,7 +4593,7 @@ MonoBehaviour:
   backBtn: {fileID: 1613213800}
   ringText: {fileID: 21100862}
   matching: 0
-  single: 1
+  single: 0
   matchTimeText: {fileID: 1169497338}
   matchTimeSecond: 0
   matchTimeMinute: 0
@@ -9043,7 +9043,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1283478835}
   m_OnClick:
     m_PersistentCalls:
@@ -9738,10 +9738,21 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114920553238532710, guid: f6375b25c74ea1a48b3892de9533d6fe,
+        type: 2}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114291309599028336, guid: f6375b25c74ea1a48b3892de9533d6fe, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f6375b25c74ea1a48b3892de9533d6fe, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1341857897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114920553238532710, guid: f6375b25c74ea1a48b3892de9533d6fe,
+    type: 2}
+  m_PrefabInternal: {fileID: 1341857896}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1353898606
 GameObject:
   m_ObjectHideFlags: 0
@@ -14227,11 +14238,44 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1283478834}
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: NetworkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onDisconnFromPhoton:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 436215038}
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1283478834}
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1341857897}
         m_MethodName: set_interactable
         m_Mode: 6
         m_Arguments:

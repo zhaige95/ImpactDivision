@@ -49,7 +49,10 @@ public class MatchMgr : Photon.PunBehaviour
     public void StartMatch()
     {
         matching = true;
-        PhotonNetwork.JoinRandomRoom();
+        //PhotonNetwork.JoinRandomRoom();
+
+        // test 
+        PhotonNetwork.JoinRoom("Impact");
     }
 
     public void CancleMatch()
@@ -106,7 +109,7 @@ public class MatchMgr : Photon.PunBehaviour
                     PhotonNetwork.playerList[i].SetCustomProperties(p, null, false);
                 }
 
-                PhotonNetwork.room.IsVisible = false;
+                //PhotonNetwork.room.IsVisible = false;
             }
         }
     }
