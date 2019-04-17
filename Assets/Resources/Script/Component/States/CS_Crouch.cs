@@ -7,13 +7,13 @@ using UnityEngine;
 public class CS_Crouch : AvatarState {
 
     [Header("[Components]")]
-    public C_Camera _camera;
-    public C_Animator _animator;
-    public C_Velocity _velocity;
-    public CS_StateMgr _stateMgr;
-    public C_Attributes _attributes;
-    public AudioSource _audioSource;
-    public CharacterController _characterController;
+    C_Camera _camera;
+    C_Animator _animator;
+    C_Velocity _velocity;
+    CS_StateMgr _stateMgr;
+    C_Attributes _attributes;
+    AudioSource _audioSource;
+    CharacterController _characterController;
 
     [Header("[Extra Properties]")]
     public float speed;
@@ -21,6 +21,14 @@ public class CS_Crouch : AvatarState {
     
     private void OnEnable()
     {
+        _camera = GetComponent<C_Camera>();
+        _animator = GetComponent<C_Animator>();
+        _velocity = GetComponent<C_Velocity>();
+        _attributes = GetComponent<C_Attributes>();
+        _stateMgr = GetComponent<CS_StateMgr>();
+        _audioSource = GetComponent<AudioSource>();
+        _characterController = GetComponent<CharacterController>();
+
         var stateMgr = GetComponent<CS_StateMgr>();
         //_name = "aim";
         stateMgr.RegState(_name, this);
@@ -44,6 +52,7 @@ public class CS_Crouch : AvatarState {
         _animator.AddEvent("crouch", 1f);
         _velocity.crouch = true;
         _velocity.Dcrouch = false;
+        Sound.PlayOneShot(_audioSource, sounds);
     }
 
     public override void OnUpdate() {
@@ -69,6 +78,7 @@ public class CS_Crouch : AvatarState {
     public override void Exit()
     {
         base.Exit();
+        Sound.PlayOneShot(_audioSource, sounds);
         _velocity.crouch = false;
         _animator.AddEvent("Dfwd", 0);
         _animator.AddEvent("Dright", 0);

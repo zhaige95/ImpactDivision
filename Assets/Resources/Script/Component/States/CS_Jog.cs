@@ -7,14 +7,13 @@ using UnityEngine;
 public class CS_Jog : AvatarState {
 
     [Header("[Components]")]
-    public C_Camera _camera;
-    public C_Animator _animator;
-    public C_Velocity _velocity;
-    public CS_StateMgr _stateMgr;
-    public C_Attributes _attributes;
-    public AudioSource _audioSource;
-    public CharacterController _characterController;
-
+    C_Camera _camera;
+    C_Animator _animator;
+    C_Velocity _velocity;
+    CS_StateMgr _stateMgr;
+    C_Attributes _attributes;
+    AudioSource _audioSource;
+    CharacterController _characterController;
 
     [Header("[Extra Properties]")]
     public float jogSpeed;
@@ -29,6 +28,14 @@ public class CS_Jog : AvatarState {
 
     private void OnEnable()
     {
+        _camera = GetComponent<C_Camera>();
+        _animator = GetComponent<C_Animator>();
+        _velocity = GetComponent<C_Velocity>();
+        _stateMgr = GetComponent<CS_StateMgr>();
+        _attributes = GetComponent<C_Attributes>();
+        _audioSource = GetComponent<AudioSource>();
+        _characterController = GetComponent<CharacterController>();
+
         var stateMgr = GetComponent<CS_StateMgr>();
         //_name = "aim";
         stateMgr.RegState(_name, this);
@@ -54,6 +61,9 @@ public class CS_Jog : AvatarState {
         {
             _velocity.currentSpeed = _velocity.aiming ? walkSpeed : jogSpeed;
             _animator.animator.SetBool("idle", _velocity.idle);
+
+            timer.Enter(_velocity.aiming?walkSteptime: runSteptime);
+            
         }
     }
 
@@ -63,7 +73,15 @@ public class CS_Jog : AvatarState {
         if (!_attributes.isDead)
         {
             var _anim = _animator.animator;
-            
+
+            timer.Update();
+
+            if (!timer.isRunning)
+            {
+                Sound.PlayOneShot(_audioSource, sounds);
+                timer.Enter(_velocity.aiming ? walkSteptime : runSteptime);
+            }
+
             if (_velocity.armed)
             {
                 _animator.AddEvent("Dfwd", _velocity.fwd);
@@ -107,6 +125,7 @@ public class CS_Jog : AvatarState {
     public override void Exit()
     {
         base.Exit();
+        timer.Exit();
         _animator.animator.SetBool("idle", _velocity.idle);
         _animator.AddEvent("Dfwd", 0);
         _animator.AddEvent("Dright", 0);

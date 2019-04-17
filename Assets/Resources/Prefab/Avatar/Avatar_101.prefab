@@ -4717,9 +4717,13 @@ MonoBehaviour:
   _characterController: {fileID: 143902589011073922}
   jogSpeed: 3
   walkSpeed: 1.5
-  sounds: []
-  runSteptime: 0
-  walkSteptime: 0
+  sounds:
+  - {fileID: 8300000, guid: 06a9eb540ef5a76489571f51edd7d073, type: 3}
+  - {fileID: 8300000, guid: 8f47fc7e860c66f4e8c56d7c18b6e049, type: 3}
+  - {fileID: 8300000, guid: f52a600946027924caf292ed5bb2ffed, type: 3}
+  - {fileID: 8300000, guid: aad128db463594b4bae9be12578bf758, type: 3}
+  runSteptime: 0.35
+  walkSteptime: 0.6
 --- !u!114 &114214178302828498
 MonoBehaviour:
   m_ObjectHideFlags: 1

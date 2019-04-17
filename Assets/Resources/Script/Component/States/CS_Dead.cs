@@ -5,15 +5,15 @@ using UiEvent;
 
 public class CS_Dead : AvatarState {
 
-    public C_Animator anim;
-    public C_Camera myCamera;
-    public C_Velocity velocity;
-    public C_IKManager iKManager;
-    public C_BattleMgr battleMgr;
-    public C_UiEventMgr uiMgr;
-    public C_Attributes attributes;
-    public C_WeaponHandle weaponHandle;
-    public C_AttackListener attackListener;
+     C_Animator anim;
+     C_Camera myCamera;
+     C_Velocity velocity;
+     C_IKManager iKManager;
+     C_BattleMgr battleMgr;
+     C_UiEventMgr uiMgr;
+     C_Attributes attributes;
+     C_WeaponHandle weaponHandle;
+     C_AttackListener attackListener;
     Timer timer = new Timer();
     public float recoverTime = 1f;
     public float vanishTime = 2;

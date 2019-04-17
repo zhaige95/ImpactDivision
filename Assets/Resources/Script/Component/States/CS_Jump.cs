@@ -7,14 +7,14 @@ using UnityEngine;
 public class CS_Jump : AvatarState {
 
     [Header("[Components]")]
-    public C_Camera _camera;
-    public C_Velocity _velocity;
-    public C_Animator _animator;
-    public C_Attributes _attributes;
-    public C_OnGroundSensor _onGroundSensor;
-    public AudioSource _audioSource;
-    public CharacterController _characterController;
-    public PhotonView pView;
+    C_Camera _camera;
+    C_Velocity _velocity;
+    C_Animator _animator;
+    C_Attributes _attributes;
+    C_OnGroundSensor _onGroundSensor;
+    AudioSource _audioSource;
+    CharacterController _characterController;
+    PhotonView pView;
 
     [Header("[Extra Properties]")]
     public Timer timer = new Timer();
@@ -28,6 +28,16 @@ public class CS_Jump : AvatarState {
 
     private void OnEnable()
     {
+
+        _camera = GetComponent<C_Camera>();
+        _velocity = GetComponent<C_Velocity>();
+        _animator = GetComponent<C_Animator>();
+        _attributes = GetComponent<C_Attributes>();
+        _onGroundSensor = GetComponent<C_OnGroundSensor>();
+        _audioSource = GetComponent<AudioSource>();
+        _characterController = GetComponent<CharacterController>();
+        pView = GetComponent<PhotonView>();
+
         this.pView = GetComponent<PhotonView>();
         var stateMgr = GetComponent<CS_StateMgr>();
         //_name = "aim";
@@ -39,7 +49,7 @@ public class CS_Jump : AvatarState {
 
         if (_velocity.Djump)
         {
-            return true;
+            return _onGroundSensor.isGrounded;
         }
 
         return false;
@@ -56,6 +66,7 @@ public class CS_Jump : AvatarState {
         }
         else
         {
+            Sound.PlayOneShot(_audioSource, sounds);
             if (_velocity.isLocalPlayer)
             {
                 timer.Enter(activeTime);
@@ -87,6 +98,7 @@ public class CS_Jump : AvatarState {
 
                 force -= (gravity * Time.deltaTime);
 
+                // 二段跳 （弃用）
                 //if (process == 1 && _velocity.Djump && !timer.isRunning)
                 //{
                 //    process = 2;
@@ -104,6 +116,7 @@ public class CS_Jump : AvatarState {
                 if (force < 0 && _onGroundSensor.isGrounded)
                 {
                     this._exitTick = true;
+                    Sound.PlayOneShot(_audioSource, sounds);
                 }
             }
         }

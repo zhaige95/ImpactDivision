@@ -7,18 +7,21 @@ using UnityEngine;
 public class CS_Run : AvatarState {
 
     [Header("[Components]")]
-    public C_Camera _camera;
-    public C_Animator _animator;
-    public C_Velocity _velocity;
-    public CS_StateMgr _stateMgr;
-    public C_Attributes _attributes;
-    public C_IKManager _iKManager;
-    public AudioSource _audioSource;
-    public CharacterController _characterController;
+    C_Camera _camera;
+    C_Animator _animator;
+    C_Velocity _velocity;
+    CS_StateMgr _stateMgr;
+    C_Attributes _attributes;
+    C_IKManager _iKManager;
+    AudioSource _audioSource;
+    CharacterController _characterController;
 
     [Header("[Extra Properties]")]
     public float speed;
-    
+    public AudioClip[] sounds;
+    public float runStepTime = 0.3f;
+    Timer timer = new Timer();
+
     Vector3 targetAngles = new Vector3();
     int directionIndex = 0;
 
@@ -64,6 +67,7 @@ public class CS_Run : AvatarState {
                 _iKManager.SetAim(false);
                 _velocity.Drun = true;
             }
+            timer.Enter(runStepTime);
         }
     }
 
@@ -72,6 +76,12 @@ public class CS_Run : AvatarState {
 
         if (!_attributes.isDead)
         {
+            timer.Update();
+            if (!timer.isRunning)
+            {
+                Sound.PlayOneShot(_audioSource, sounds);
+                timer.Enter(runStepTime);
+            }
             var _anim = _animator.animator;
             if (_velocity.isLocalPlayer)
             {
@@ -102,6 +112,7 @@ public class CS_Run : AvatarState {
     {
         base.Exit();
         //_velocity.Drun = false;
+        timer.Exit();
         _animator.animator.SetBool("run", false);
         if (!_velocity.isLocalPlayer)
         {

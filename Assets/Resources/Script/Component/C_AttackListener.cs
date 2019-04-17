@@ -5,10 +5,11 @@ using UnityEngine;
 public class C_AttackListener : MonoBehaviour {
 
     [Header("Components")]
+    [HideInInspector]
     public PhotonView photonView;
-    public AudioSource audioSource;
-    public C_Velocity velocity;
-    public C_Attributes attributes;
+    AudioSource audioSource;
+    C_Velocity velocity;
+    C_Attributes attributes;
     [Header("Properties")]
     public bool isActive = true;
     public AudioClip killSound;
@@ -18,7 +19,15 @@ public class C_AttackListener : MonoBehaviour {
     public List<Attack> attackList = new List<Attack>();
     public Dictionary<int, C_BattleMgr> sourceList = new Dictionary<int, C_BattleMgr>(); 
     public int injuredAnimLayer = 8;
-    
+
+    private void Awake()
+    {
+        photonView = GetComponent<PhotonView>();
+        audioSource = GetComponent<AudioSource>();
+        velocity = GetComponent<C_Velocity>();
+        attributes = GetComponent<C_Attributes>();
+    }
+
     public void Reset()
     {
         attackList.Clear();

@@ -6,21 +6,23 @@ using UnityEngine;
 [RequireComponent(typeof(CS_StateMgr))]
 public class CS_Idle : AvatarState {
 
-    [Header("[Extra Properties]")]
-    public C_Velocity _velocity;
-    public CharacterController _characterController;
-    public C_Camera _camera;
+    [Header("[Components]")]
+    C_Velocity _velocity;
+    CharacterController _characterController;
+    C_Camera _camera;
 
     private void OnEnable()
     {
+        _velocity = GetComponent<C_Velocity>();
+        _characterController = GetComponent<CharacterController>();
+        _camera = GetComponent<C_Camera>();
+
         var stateMgr = GetComponent<CS_StateMgr>();
-        //_name = "aim";
         stateMgr.RegState(_name, this);
         
     }
     
     public override bool Listener() {
-        
         return _velocity.idle;
     }
 
