@@ -26,6 +26,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         Battle.battleMgr = this;
         score.Add(1, 0);
         score.Add(2, 0);
+        Battle.freezing = true;
     }
 
     void Start () {
@@ -85,7 +86,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
     IEnumerator Minwayjoin()
     {
         yield return new WaitForSeconds(2);
-        Battle.localPlayerBattleInfo.SetPlayerEnable(true);
+        PrepareEnd(true);
     }
 
     IEnumerator ShowPlayer()
@@ -104,7 +105,10 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         score[camp]++;
         battleInfo.SetScore(camp, score[camp]);
         lastKillCamp = camp;
-        this.CheckFinishCondition();
+        if (PhotonNetwork.isMasterClient)
+        {
+            this.CheckFinishCondition();
+        }
     }
 
     public void PrepareEnd()
@@ -121,6 +125,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
             Battle.localPlayerBattleInfo.SetPlayerEnable(true);
         }
         Battle.UpdateFriendlyMark();
+        Battle.freezing = false ;
     }
 
     public void GameEnd()
@@ -128,10 +133,19 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
 
         this.preparing = true;
         Battle.localPlayerBattleInfo.SetPlayerEnable(false);
+        Battle.freezing = true;
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        
+
         OnGameOver.Invoke();
+
+        if (PhotonNetwork.isMasterClient)
+        {
+            PhotonNetwork.room.IsVisible = false;
+            Battle.localPlayerBattleInfo.photonView.RPC("SyncGameOver", PhotonTargets.Others, this.lastKillCamp);
+        }
+
     }
 
     private void CheckFinishCondition()
@@ -145,7 +159,6 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
     
     public void BackToMainStage(bool isLeave)
     {
-        Battle.ClearBattlefield();
         Battle.started = false;
         if (isLeave)
         {
@@ -158,6 +171,8 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
                 PhotonNetwork.LoadLevelAsync("MainStage");
             }
         }
+
+        Battle.ClearBattlefield();
     }
 
     public void SetSync(float time, bool prepare, int score1, int score2)
@@ -177,11 +192,18 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
 
             battleInfo.SetScore(1, score1);
             battleInfo.SetScore(2, score2);
-
-            PrepareEnd(true);
+            
             StartCoroutine(Minwayjoin());
             gameTime = time;
         }
+    }
+
+    // sync game over action
+    public void SetSync(int winner)
+    {
+        this.lastKillCamp = winner;
+
+        GameEnd();
     }
 
     public override void OnLeftRoom()

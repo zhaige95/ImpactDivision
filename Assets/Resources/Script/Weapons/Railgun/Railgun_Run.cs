@@ -51,12 +51,9 @@ public class Railgun_Run : WeaponState
 
     public override void OnUpdate()
     {
-        if (_velocity.isLocalPlayer)
+        if (!_velocity.Drun || _velocity.jumping)
         {
-            if (!_velocity.Drun || _velocity.jumping)
-            {
-                this._exitTick = true;
-            }
+            this._exitTick = true;
         }
     }
     public override void Exit()
@@ -64,10 +61,10 @@ public class Railgun_Run : WeaponState
         base.Exit();
 
         _iKManager.locked = false;
-        if (_velocity.isLocalPlayer)
-        {
-            _photonView.RPC("ExitState", PhotonTargets.Others, this._name);
-        }
+        //if (_velocity.isLocalPlayer)
+        //{
+        //    _photonView.RPC("ExitState", PhotonTargets.Others, this._name);
+        //}
         if (!_weaponHandle.locked)
         {
             _iKManager.SetAim(true);

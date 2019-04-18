@@ -40,11 +40,18 @@ public class SettleScorePanel : Photon.PunBehaviour {
         this.assists.text = playerInfo.assists.ToString();
         this.multikill.text = playerInfo.multikill.ToString();
 
-        float hitrate = 0;
+        string hit;
         if (playerInfo.fireCount != 0 && playerInfo.hitCount != 0)
         {
-            hitrate = (float)playerInfo.hitCount / (float)playerInfo.fireCount;
-            this.hitRate.text = hitrate.ToString().Substring(0,4);
+            hit = (((float)playerInfo.hitCount / (float)playerInfo.fireCount) * 100f).ToString();
+            if (hit.Length > 4)
+            {
+                this.hitRate.text = hit.Substring(0, 4) + " %";
+            }
+            else
+            {
+                this.hitRate.text = hit + " %";
+            }
         }
         else
         {

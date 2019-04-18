@@ -176,7 +176,10 @@ public class Pick : WeaponState
     {
         base.Exit();
         _isPicked = _weaponAttribute.active;
-
+        if (_velocity.Drun)
+        {
+            _weaponAttribute.states["run"].Enter();
+        }
     }
 }
  

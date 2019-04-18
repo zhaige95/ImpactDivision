@@ -12,10 +12,11 @@ public class SettingMgr : WindowBasic
     public ControlSettingMgr controlMgr;
     // Use this for initialization
     public override void Init () {
-        soundMgr.OnChanged = ActableApplyBtn;
         
         soundMgr.Init();
         controlMgr.Init();
+
+        applyBtn.interactable = false;
     }
 	
 	// Update is called once per frame
@@ -32,11 +33,6 @@ public class SettingMgr : WindowBasic
             else
                 settingList[i].SetActive(false);
         }
-    }
-
-    public void ActableApplyBtn()
-    {
-        applyBtn.interactable = true;
     }
 
     public void ApplyChanges()

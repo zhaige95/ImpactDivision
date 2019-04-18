@@ -156,6 +156,7 @@ public class Effect
             }
         }
         _effectPool.Clear();
+        _effectPool = new Dictionary<string, List<GameObject>>();
     }
 
 

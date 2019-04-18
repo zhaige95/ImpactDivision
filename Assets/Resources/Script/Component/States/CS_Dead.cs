@@ -91,7 +91,10 @@ public class CS_Dead : AvatarState {
         
         var t = Battle.bornMgr.GetPoint(attributes.camp);
         this.transform.SetPositionAndRotation(t.position, t.rotation);
-        velocity.isActive = true;
+        if (!Battle.freezing)
+        {
+            velocity.isActive = true;
+        }
         anim.animator.enabled = true;
         attackListener.Reset();
         attackListener.isActive = true;

@@ -12,7 +12,6 @@ public class SoundMgr : MonoBehaviour {
     public SliderOption soundVolume;
     public SliderOption musicVolume;
     public SliderOption talkVolume;
-    public Action OnChanged;
     public bool initialized = false;
     // Use this for initialization
     public void Init()
@@ -51,22 +50,18 @@ public class SoundMgr : MonoBehaviour {
     public void SetMasterVolume(float val)
     {
         audioMixer.SetFloat("MasterVolume", val);
-        OnChanged();
     }
     public void SetSoundVolume(float val)
     {
         audioMixer.SetFloat("SoundVolume", val);
-        OnChanged();
     }
     public void SetMusicVolume(float val)
     {
         audioMixer.SetFloat("MusicVolume", val);
-        OnChanged();
     }
     public void SetTalkVolume(float val)
     {
         audioMixer.SetFloat("TalkVolume", val);
-        OnChanged();
     }
 
 

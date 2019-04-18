@@ -6,8 +6,6 @@ public class ControlSettingMgr : MonoBehaviour
 {
     public SliderOption mouseSpeedPri;
     public SliderOption mouseSpeedAim;
-    public FloatData mouseSpeedPrimary;
-    public FloatData mouseSpeedAiming;
     public void Init()
     {
         var setting = Battle.systemSettingSave;
@@ -17,19 +15,19 @@ public class ControlSettingMgr : MonoBehaviour
         mouseSpeedPri.OnChanged = SetPrimarySpeed;
         mouseSpeedAim.OnChanged = SetAimingSpeed;
 
-        mouseSpeedPrimary.value = setting.mouseSpeed * 0.1f;
-        mouseSpeedAiming.value = setting.aimSpeed * 0.1f;
+        SetPrimarySpeed(setting.mouseSpeed);
+        SetAimingSpeed(setting.aimSpeed);
     }
     
     public void SetPrimarySpeed(float val)
     {
-        mouseSpeedPrimary.value = val * 0.05f;
+        Battle.mouseSpeedPrimary = val * 0.05f;
         Battle.systemSettingSave.mouseSpeed = val;
     }
 
     public void SetAimingSpeed(float val)
     {
-        mouseSpeedAiming.value = val * 0.05f;
+        Battle.mouseSpeedAiming = val * 0.05f;
         Battle.systemSettingSave.aimSpeed = val;
     }
 

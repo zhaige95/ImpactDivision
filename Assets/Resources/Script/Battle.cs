@@ -18,17 +18,24 @@ public class Battle : MonoBehaviour
     public static Transform localPlayerCameraTrans;
     public static Camera localPlayerCamera;
     public static int localPlayerCamp;
+
+    // battle state
     public static bool started = false;
     public static bool inRoom = false;
+    public static bool freezing = false;
+
     public static PlaneHUDMgr planeHUDMgr;
     public static HUDMgr hudMgr;
     public static ScoreboardMgr scoreboardMgr;
     public static BornPointsMgr bornMgr;
     public static NetworkBattleMgr battleMgr;
     public static PhotonEngine photonEngine;
+
     
     // temp setting
     public static float relativeRate = 1f;
+    public static float mouseSpeedPrimary = 1f;
+    public static float mouseSpeedAiming = 1f;
 
     // save
     public static bool login = false;
@@ -154,15 +161,22 @@ public class Battle : MonoBehaviour
 
     public static void ClearBattlefield()
     {
+
         foreach (var item in playerListCamp1.Values)
         {
-            UnityEngine.Object.Destroy(item.gameObject);
+            if (item != null)
+            {
+                UnityEngine.Object.Destroy(item.gameObject);
+            }
         }
         playerListCamp1.Clear();
-
+        
         foreach (var item in playerListCamp2.Values)
         {
-            UnityEngine.Object.Destroy(item.gameObject);
+            if (item != null)
+            {
+                UnityEngine.Object.Destroy(item.gameObject);
+            }
         }
         playerListCamp2.Clear();
 

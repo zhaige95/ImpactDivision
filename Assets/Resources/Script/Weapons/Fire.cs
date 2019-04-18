@@ -136,7 +136,7 @@ public class Fire : WeaponState
                     }
                     else
                     {
-                        float range = _weaponAttribute.spread * 0.5f * Battle.relativeRate;
+                        float range = _weaponAttribute.spread * 0.35f * Battle.relativeRate;
                         Vector2 offset = new Vector2(Random.Range(-range, range), Random.Range(-range, range));
 
                         startPoint = _weaponHandle.shootPoint.position;

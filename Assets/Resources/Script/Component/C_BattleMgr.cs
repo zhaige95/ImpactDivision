@@ -12,7 +12,8 @@ public class C_BattleMgr : Photon.PunBehaviour {
     C_UiEventMgr uiMgr;
     [HideInInspector]
     public PhotonView photonView;
-    public GameObject friendlyMark;
+    public MeshRenderer friendlyMark;
+
     public int roomID = 0;
     public string nickName = "";
     public int kill = 0;
@@ -120,7 +121,7 @@ public class C_BattleMgr : Photon.PunBehaviour {
 
     public void SetFirendlyMark()
     {
-        friendlyMark.SetActive(Battle.localPlayerCamp == attributes.camp);
+        friendlyMark.enabled = Battle.localPlayerCamp == attributes.camp;
     }
 
     public void SetPlayerEnable(bool isEnable)
@@ -134,5 +135,12 @@ public class C_BattleMgr : Photon.PunBehaviour {
     {
         Battle.battleMgr.SetSync(time, prepare, score1, score2);
     }
+
+    [PunRPC]
+    public void SyncGameOver(int winnerCamp)
+    {
+        Battle.battleMgr.SetSync(winnerCamp);
+    }
+
 
 }
