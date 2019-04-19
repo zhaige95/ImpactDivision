@@ -23,7 +23,7 @@ public class MainMgr : WindowBasic
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+    }
 
 }

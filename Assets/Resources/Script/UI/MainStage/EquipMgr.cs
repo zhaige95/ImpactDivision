@@ -9,6 +9,7 @@ public class EquipMgr : WindowBasic
     public WeaponSelectItem mainSelect;
     public WeaponSelectItem secondSelect;
     public StringData configPath;
+    public Button backBtn;
     [Header("-----------------------------------")]
     public bool initialized = false;
     public List<GameObject> weaponList;
@@ -45,7 +46,10 @@ public class EquipMgr : WindowBasic
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            backBtn.onClick.Invoke();
+        }
 	}
 
     public void SelectWeapon(int index)

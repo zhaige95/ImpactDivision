@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SettingMgr : WindowBasic
 {
     public Button applyBtn;
+    public Button backBtn;
     public List<GameObject> settingList;
     public GameObject confirmWindow;
     public SoundMgr soundMgr;
@@ -21,8 +22,11 @@ public class SettingMgr : WindowBasic
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            backBtn.onClick.Invoke();
+        }
+    }
 
     public void OpenSetting(int index)
     {

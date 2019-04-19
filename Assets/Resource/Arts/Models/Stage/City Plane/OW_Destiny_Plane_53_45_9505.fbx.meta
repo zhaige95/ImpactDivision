@@ -1,42 +1,64 @@
 fileFormatVersion: 2
-guid: 6c3e8f8b5b4e53e4eb69ca0b46bd4899
+guid: ac4cadd0f5a63364eb6c974a19e7eb4f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: pPlane1
-    100004: pPlane2
-    100006: pPlane3
-    100008: pPlane4
-    400000: //RootNode
-    400002: pPlane1
-    400004: pPlane2
-    400006: pPlane3
-    400008: pPlane4
-    2100000: lambert1
-    2300000: pPlane1
-    2300002: pPlane2
-    2300004: pPlane3
-    2300006: pPlane4
-    3300000: pPlane1
-    3300002: pPlane2
-    3300004: pPlane3
-    3300006: pPlane4
-    4300000: pPlane1
-    4300002: pPlane2
-    4300004: pPlane3
-    4300006: pPlane4
+    100000: GameObject
+    100002: //RootNode
+    100004: Stage_City_Plane
+    100006: Stage_City_Plane_floor
+    400000: GameObject
+    400002: //RootNode
+    400004: Stage_City_Plane
+    400006: Stage_City_Plane_floor
+    2100000: Stage_City_Plane_Mat_02_Reflection
+    2100002: Stage_City_Plane_Mat_01_Reflection
+    2100004: Stage_City_Plane_Mat_03
+    2100006: Stage_City_Plane_Mat_02
+    2100008: Stage_City_Plane_Mat_04
+    2100010: Stage_City_Plane_Mat_01
+    2300000: Stage_City_Plane
+    2300002: Stage_City_Plane_floor
+    3300000: Stage_City_Plane
+    3300002: Stage_City_Plane_floor
+    4300000: Stage_City_Plane_floor
+    4300002: Stage_City_Plane
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 8ec3d435575aa7342ae507bac0883667, type: 2}
+      name: Stage_City_Plane_Mat_01
+    second: {fileID: 2100000, guid: 79bc2da440a3f86489929139aa793c3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_City_Plane_Mat_01_Reflection
+    second: {fileID: 2100000, guid: 7179ad4603fe9ef41a4280578e9e4c7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_City_Plane_Mat_02
+    second: {fileID: 2100000, guid: a39e60c371ba8884a93074c709c2e7a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_City_Plane_Mat_02_Reflection
+    second: {fileID: 2100000, guid: 5484beeacd365924b9b46e4c896c8053, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_City_Plane_Mat_03
+    second: {fileID: 2100000, guid: 5555df36199dc22469dace647ca64ecc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stage_City_Plane_Mat_04
+    second: {fileID: 2100000, guid: 79edf3ecec0461f4686e71ac047a8b7f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -62,7 +84,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 0
@@ -89,7 +111,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

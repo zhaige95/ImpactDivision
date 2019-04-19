@@ -221,4 +221,9 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         }
     }
 
+    // 连接断开
+    public override void OnDisconnectedFromPhoton()
+    {
+        this.BackToMainStage(true);
+    }
 }

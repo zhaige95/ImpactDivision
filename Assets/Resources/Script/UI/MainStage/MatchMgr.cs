@@ -8,13 +8,13 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 public class MatchMgr : Photon.PunBehaviour
 {
     public Image frontRing;
-    public GameObject backBtn;
+    public Button backBtn;
     public Text ringText;
     private AsyncOperation async = null;
     private float progressValue;
     public bool matching = false;
     public bool single;
-    // -----------------------
+    [Header("---------------------")]
     public Text matchTimeText;
     public float matchTimeSecond = 0f;
     public int matchTimeMinute = 0;
@@ -28,6 +28,14 @@ public class MatchMgr : Photon.PunBehaviour
     private void OnEnable()
     {
         this.UpdatePlayerNumber();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            backBtn.onClick.Invoke();
+        }
     }
 
     void FixedUpdate () {

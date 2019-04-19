@@ -111,8 +111,11 @@ public class Reload_Pistol : WeaponState
 
         base.Exit();
         _iKManager.locked = false;
-        _iKManager.SetAim(true);
-        _iKManager.SetHold(true);
+        if (!_velocity.Drun)
+        {
+            _iKManager.SetAim(true);
+            _iKManager.SetHold(true);
+        }
         _weaponAttribute.reload = false;
         _weaponHandle.locked = false;
     }

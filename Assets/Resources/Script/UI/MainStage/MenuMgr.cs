@@ -35,14 +35,7 @@ public class MenuMgr : Photon.PunBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            OpenMenu(0);
-            if (Battle.inRoom)
-            {
-                PhotonNetwork.LeaveRoom();
-            }
-        }
+
 	}
 
     public void OpenMenu(int index)
