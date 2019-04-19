@@ -3222,13 +3222,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 518406066}
-  m_LocalRotation: {x: -0.49650076, y: 0.17182288, z: -0.10098905, w: -0.84484625}
+  m_LocalRotation: {x: -0.4637333, y: 0.3473019, z: -0.20411463, w: -0.78909445}
   m_LocalPosition: {x: 123.71251, y: 10.615585, z: -173.75334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1304268317}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 123.621, y: -0.000015258789, z: -0.000015258789}
+  m_LocalEulerAnglesHint: {x: 60.884003, y: -47.510002, z: 0.002}
 --- !u!1001 &522751622
 Prefab:
   m_ObjectHideFlags: 0
@@ -4603,8 +4603,9 @@ MonoBehaviour:
   frontRing: {fileID: 1501010708}
   backBtn: {fileID: 627129932}
   ringText: {fileID: 21100862}
-  matching: 0
+  minMember: 4
   single: 0
+  prepareTime: 5
   matchTimeText: {fileID: 1169497338}
   matchTimeSecond: 0
   matchTimeMinute: 0
@@ -4624,6 +4625,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: "\u6B63\u5728\u8FDB\u5165\u6218\u573A..."
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 627129932}
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: NetworkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -8187,7 +8199,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Alpha Test a0.1
+  m_Text: Alpha Test a0.1.1
 --- !u!222 &1191966672
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13432,15 +13444,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4448185622484606, guid: 2884e75475656e247ae180b126004630, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 4448185622484606, guid: 2884e75475656e247ae180b126004630, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 4448185622484606, guid: 2884e75475656e247ae180b126004630, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.5
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 4448185622484606, guid: 2884e75475656e247ae180b126004630, type: 2}
       propertyPath: m_LocalRotation.x
@@ -13481,6 +13493,14 @@ Prefab:
       propertyPath: autoKill
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4448185622484606, guid: 2884e75475656e247ae180b126004630, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4448185622484606, guid: 2884e75475656e247ae180b126004630, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2884e75475656e247ae180b126004630, type: 2}
   m_IsPrefabAsset: 0
@@ -13520,7 +13540,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0

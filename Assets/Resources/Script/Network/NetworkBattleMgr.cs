@@ -32,6 +32,10 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
     void Start () {
         StartCoroutine(ShowPlayer());
         Battle.started = true;
+        if (PhotonNetwork.isMasterClient)
+        {
+            PhotonNetwork.room.IsOpen = true;
+        }
 
         battleInfo.SetTarget(configBattle.targetKill);
         battleInfo.SetTimer(configBattle.prepareTime);
@@ -120,10 +124,8 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
     {
         OnPrepareEnd.Invoke();
         preparing = false;
-        if (!midway)
-        {
-            Battle.localPlayerBattleInfo.SetPlayerEnable(true);
-        }
+
+        Battle.localPlayerBattleInfo.SetPlayerEnable(true);
         Battle.UpdateFriendlyMark();
         Battle.freezing = false ;
     }
@@ -142,7 +144,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
 
         if (PhotonNetwork.isMasterClient)
         {
-            PhotonNetwork.room.IsVisible = false;
+            PhotonNetwork.room.IsOpen = false;
             Battle.localPlayerBattleInfo.photonView.RPC("SyncGameOver", PhotonTargets.Others, this.lastKillCamp);
         }
 

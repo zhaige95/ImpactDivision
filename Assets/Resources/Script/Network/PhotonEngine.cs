@@ -39,7 +39,7 @@ public class PhotonEngine : Photon.PunBehaviour {
 
         CheckInternet();
 
-        // test
+        // test 
         //StartConnect();
     }
 
@@ -143,36 +143,26 @@ public class PhotonEngine : Photon.PunBehaviour {
 
     public override void OnPhotonRandomJoinFailed(object[] codeAndMsg)
     {
-        // 设置房间信息
-        //PhotonNetwork.CreateRoom(PhotonNetwork.player.NickName, new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
+        // 随机加入失败则创建以玩家名字命名的房间
+        PhotonNetwork.CreateRoom(PhotonNetwork.player.NickName, new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
     }
 
     public override void OnJoinedRoom()
     {
         Battle.inRoom = true;
-
-        if (PhotonNetwork.isMasterClient)
-        {
-            var p = new Hashtable() {
-                { "score", "0#0"},
-                { "time", "1" },
-                { "prepare", "1"}
-            };
-            PhotonNetwork.room.SetCustomProperties(p);
-        }
-
         PhotonNetwork.automaticallySyncScene = true;
     }
 
     public override void OnPhotonJoinRoomFailed(object[] codeAndMsg)
     {
         // test
-        PhotonNetwork.CreateRoom("Impact", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
+        //PhotonNetwork.CreateRoom("Impact", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
     }
 
     public override void OnLeftRoom()
     {
         Battle.inRoom = false;
+        PhotonNetwork.automaticallySyncScene = false;
 
     }
 

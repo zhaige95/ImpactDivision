@@ -78,11 +78,25 @@ public class Battle : MonoBehaviour
     {
         if (camp == 1)
         {
-            playerListCamp1.Add(roomID, battleMgr);
+            if (playerListCamp1.ContainsKey(roomID))
+            {
+                playerListCamp1[roomID] = battleMgr;
+            }
+            else
+            {
+                playerListCamp1.Add(roomID, battleMgr);
+            }
         }
         else if (camp == 2)
         {
-            playerListCamp2.Add(roomID, battleMgr);
+            if (playerListCamp2.ContainsKey(roomID))
+            {
+                playerListCamp2[roomID] = battleMgr;
+            }
+            else
+            {
+                playerListCamp2.Add(roomID, battleMgr);
+            }
         }
         if (campNumber.ContainsKey(camp))
         {
@@ -148,11 +162,13 @@ public class Battle : MonoBehaviour
             var playerName = item.IsLocal ? ("<color=#ffcf69>" + item.NickName.Split('#')[0] + "</color>") : item.NickName.Split('#')[0];
             if (camp == 1)
             {
+                // bug ******Index was out of range.
                 scoreboardMgr.topPanel[index1].Init(playerName, battleInfo[0], battleInfo[1], battleInfo[2], battleInfo[3]);
                 index1++;
             }
             else if (camp == 2)
             {
+                // bug ******Index was out of range.
                 scoreboardMgr.bottomPanel[index2].Init(playerName, battleInfo[0], battleInfo[1], battleInfo[2], battleInfo[3]);
                 index2++;
             }
