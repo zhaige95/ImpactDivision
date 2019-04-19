@@ -1299,6 +1299,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114284952903954944, guid: cce65c335b916994681314db37794f8f,
+        type: 2}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cce65c335b916994681314db37794f8f, type: 2}
   m_IsPrefabAsset: 0
@@ -4599,7 +4604,7 @@ MonoBehaviour:
   backBtn: {fileID: 627129932}
   ringText: {fileID: 21100862}
   matching: 0
-  single: 1
+  single: 0
   matchTimeText: {fileID: 1169497338}
   matchTimeSecond: 0
   matchTimeMinute: 0
@@ -6105,6 +6110,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114284952903954944, guid: cce65c335b916994681314db37794f8f,
+        type: 2}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cce65c335b916994681314db37794f8f, type: 2}
   m_IsPrefabAsset: 0
@@ -6867,8 +6877,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -50, y: -30}
+  m_AnchoredPosition: {x: 5, y: -5}
+  m_SizeDelta: {x: -70, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &982153092
 MonoBehaviour:
@@ -6891,19 +6901,19 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: a458bfc026328e348a8812c5a95dc588, type: 3}
-    m_FontSize: 25
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5E2E\u52A9\u4FE1\u606F\uFF1A\n\n\u79FB\u52A8\uFF1A W.A.S.D         \u8E72\u4E0B\uFF1A\u5DE6Ctrl\n\n\u5207\u6362\u89C6\u89D2\uFF1A
-    C          \u5954\u8DD1\uFF1A\u5DE6Shift\n\n\u66F4\u6362\u5F39\u5323\uFF1AR           \u7784\u51C6\uFF1A\u6309\u4F4F\u9F20\u6807\u53F3\u952E"
+  m_Text: "\u5E2E\u52A9\u4FE1\u606F\uFF1A\n\n\u79FB\u52A8\uFF1AW.A.S.D.         \u8E72\u4E0B\uFF1A\u5DE6Ctrl\n\u5207\u6362\u89C6\u89D2\uFF1AC
+    \          \u5954\u8DD1\uFF1A\u5DE6Shift\n\u66F4\u6362\u5F39\u5323\uFF1AR           \u7784\u51C6\uFF1A\u6309\u4F4F\u9F20\u6807\u53F3\u952E\n\n\u63A8\u8350\u5206\u8FA8\u7387\uFF1A1920x1080"
 --- !u!222 &982153093
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11661,6 +11671,7 @@ GameObject:
   - component: {fileID: 1584448112}
   - component: {fileID: 1584448111}
   - component: {fileID: 1584448114}
+  - component: {fileID: 1584448115}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11744,10 +11755,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243965779712374900, guid: 5fedc24a7bf673c47ba5580df3c5e018,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 798f5a15a20e4704f9ce160fb00a2f0d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_PlayOnAwake: 1
+  m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -11829,6 +11840,44 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1584448115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1584448110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc817e1c274823499f5b5333418f1a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  animTime: 2
+  active: 1
 --- !u!1001 &1588263966
 Prefab:
   m_ObjectHideFlags: 0
@@ -13816,6 +13865,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114284952903954944, guid: cce65c335b916994681314db37794f8f,
+        type: 2}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cce65c335b916994681314db37794f8f, type: 2}
   m_IsPrefabAsset: 0
@@ -14052,6 +14106,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1161304561034212, guid: cce65c335b916994681314db37794f8f, type: 2}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114284952903954944, guid: cce65c335b916994681314db37794f8f,
+        type: 2}
+      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

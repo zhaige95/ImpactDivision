@@ -17,13 +17,13 @@ public class Timer {
     public void Update(float dt){
         if (this.isRunning)
         {
+            this.run += dt;
+            this.rate = this.run / this.time;
             if (this.run >= this.time)
             {
                 Stop();
                 OnComplet?.Invoke();
             }
-            this.run += dt;
-            this.rate = this.run / this.time;
         }
     }
 
@@ -38,7 +38,7 @@ public class Timer {
 
     public void Enter(float t){
         this.time = t;
-        //this.rate = Time.time;
+        this.rate = 0;
         this.run = 0;
         this.isRunning = true;
     }

@@ -34,7 +34,7 @@ public class LoginStageMgr : MonoBehaviour {
             
                 Battle.playerBasicSave.playerName = pName;
 
-                string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/My Games/Impact Division";
+                string path = Battle.savePath;
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);

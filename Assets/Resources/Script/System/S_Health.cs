@@ -18,6 +18,15 @@ public class S_Health : ComponentSystem {
 
             if (!_attribute.isDead) {
 
+                if (e._Attributes.HP > 300f)
+                {
+                    e._Attributes.HP = 1;
+                }
+                if (e._Attributes.HP > 320f)
+                {
+                    e._Attributes.HP = 1;
+                }
+
                 if (e._Attributes.HP <= 0 && e._AttackListener.isActive)
                 {
                     e._StateMgr.EnterState("dead");

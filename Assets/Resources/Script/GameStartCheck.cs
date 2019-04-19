@@ -9,7 +9,8 @@ using UnityEngine.SceneManagement;
 public class GameStartCheck : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
-        string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/My Games/Impact Division";
+        //string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/My Games/Impact Division";
+        string path = Application.dataPath + "/My Games/Impact Division";
 
         Battle.savePath = path;
         // 判断是否有存档
