@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 1
-  id: 111
+  index: 0
   wname: RailGun
   type: 2
   magType: 2
@@ -569,6 +569,7 @@ MonoBehaviour:
   _exitTick: 0
   _velocity: {fileID: 0}
   _iKManager: {fileID: 0}
+  _weaponHandle: {fileID: 0}
   _weaponAttribute: {fileID: 0}
   _photonView: {fileID: 0}
 --- !u!114 &114725706586063820
@@ -646,7 +647,7 @@ MonoBehaviour:
   _exitTick: 0
   triggerType: 1
   fireAxis: {x: -1, y: 0.1, z: 0}
-  sound: {fileID: 8300000, guid: 03e0bd962b56a104e9dd60c06204923c, type: 3}
+  sound: {fileID: 8300000, guid: e44fa7c0adcbf154fb0c412a8258bae5, type: 3}
   bulletVisibleDistence: 2
   bullet: {fileID: 1239038810545592, guid: a5b0a5b5457cc9340ba6c3fa983eebe9, type: 2}
   muzzleFlash: {fileID: 1335894919920174}

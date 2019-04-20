@@ -15,9 +15,9 @@ public class MainMgr : WindowBasic
 
         playerNameText.text = Battle.playerBasicSave.playerName;
 
-        int playerLevel = (int)(Battle.playerBasicSave.exp / 1550) + 1;
+        int playerLevel = (int)(Battle.playerBasicSave.exp / 8000) + 1;
         playerLevelText.text = playerLevel.ToString();
-        expSlider.value = (Battle.playerBasicSave.exp % 1550) / 1550;
+        expSlider.value = (Battle.playerBasicSave.exp % 8000) / 8000;
 
     }
 	
