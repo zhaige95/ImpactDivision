@@ -19,7 +19,7 @@ public class S_Cursor : ComponentSystem {
                 var _cursor = e._Cursor;
                 if (_velocity.Dback)
                 {
-                    _cursor.isLocked = !_cursor.isLocked;
+                    _cursor.isLocked = !(Cursor.lockState == CursorLockMode.Locked);
                     Cursor.lockState = _cursor.isLocked ? CursorLockMode.Locked : CursorLockMode.None;
                     Cursor.visible = !_cursor.isLocked;
                 }

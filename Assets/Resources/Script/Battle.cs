@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
-using System;
 
 public class Battle : MonoBehaviour
 {
@@ -177,21 +177,22 @@ public class Battle : MonoBehaviour
 
     public static void ClearBattlefield()
     {
-
-        foreach (var item in playerListCamp1.Values)
+        var list = playerListCamp1.Values.ToArray();
+        foreach (var item in list)
         {
             if (item != null)
             {
-                UnityEngine.Object.Destroy(item.gameObject);
+                Object.Destroy(item.gameObject);
             }
         }
         playerListCamp1.Clear();
-        
-        foreach (var item in playerListCamp2.Values)
+
+        list = playerListCamp2.Values.ToArray();
+        foreach (var item in list)
         {
             if (item != null)
             {
-                UnityEngine.Object.Destroy(item.gameObject);
+                Object.Destroy(item.gameObject);
             }
         }
         playerListCamp2.Clear();

@@ -20,12 +20,10 @@ public class ScoreboardMgr : PanelSwitch
         {
             active = true;
             Battle.ReflashScoreboard();
-            this.transform.localScale = Vector3.one;
         }
         else
         {
             active = false;
-            this.transform.localScale = Vector3.zero;
         }
     }
 

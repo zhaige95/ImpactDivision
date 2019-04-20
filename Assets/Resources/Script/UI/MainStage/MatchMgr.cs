@@ -43,7 +43,10 @@ public class MatchMgr : Photon.PunBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            backBtn.onClick.Invoke();
+            if (backBtn.interactable)
+            {
+                backBtn.onClick.Invoke();
+            }
         }
     }
 
@@ -140,8 +143,7 @@ public class MatchMgr : Photon.PunBehaviour
             matchTimeSecond = this.prepareTime;
             if (PhotonNetwork.isMasterClient)
             {
-                PhotonNetwork.room.IsOpen = false;
-
+                //PhotonNetwork.room.IsOpen = false;
                 StartCoroutine(StartBattleCoroutines());
             }
         }

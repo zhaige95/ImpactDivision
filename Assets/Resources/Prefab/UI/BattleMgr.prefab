@@ -7186,7 +7186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604172b8f903b6f4cbc028fab8e5cdb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  configBattle: {fileID: 11400000, guid: 657d40e3232f6b849b880b86dd85714f, type: 2}
+  configBattle: {fileID: 11400000, guid: fecceb7f00648f44caa200952952b09d, type: 2}
   preparing: 1
   gameTime: 0
   lastKillCamp: 0
@@ -8442,6 +8442,28 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1593746250266494}
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114830754443503914}
+        m_MethodName: SwitchPanel
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114110736047197732}
+        m_MethodName: SwitchPanel
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

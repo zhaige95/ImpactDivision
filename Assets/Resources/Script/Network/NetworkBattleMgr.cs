@@ -165,11 +165,13 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         if (isLeave)
         {
             PhotonNetwork.LeaveRoom();
+            PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.player);
         }
         else
         {
             if (PhotonNetwork.isMasterClient)
             {
+                PhotonNetwork.DestroyAll();
                 PhotonNetwork.LoadLevelAsync("MainStage");
             }
         }
@@ -210,7 +212,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
 
     public override void OnLeftRoom()
     {
-        SceneManager.LoadScene("MainStage");
+        //SceneManager.LoadScene("MainStage");
         Battle.inRoom = false;
         Battle.started = false;
     }

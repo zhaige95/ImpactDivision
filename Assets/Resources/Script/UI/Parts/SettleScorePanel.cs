@@ -25,8 +25,21 @@ public class SettleScorePanel : Photon.PunBehaviour {
     void Start () {
         timer.OnComplet = OnTimerComplate;
     }
-	
-    public void OpenPanel()
+
+
+    public void OpenPanel() {
+        StartCoroutine(WaitProcess());
+        OnOpenPanel.Invoke();
+    }
+
+
+    IEnumerator WaitProcess()
+    {
+        yield return new WaitForSeconds(2);
+        OpenPanelProcess();
+    }
+
+    public void OpenPanelProcess()
     {
         this.timer.Enter(waitTime);
 
@@ -37,6 +50,7 @@ public class SettleScorePanel : Photon.PunBehaviour {
         
         var playerInfo = Battle.localPlayerBattleInfo;
         this.kill.text = playerInfo.kill.ToString();
+        this.dead.text = playerInfo.dead.ToString();
         this.assists.text = playerInfo.assists.ToString();
         this.multikill.text = playerInfo.multikill.ToString();
 
