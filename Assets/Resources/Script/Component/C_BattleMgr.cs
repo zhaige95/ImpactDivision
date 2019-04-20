@@ -12,7 +12,7 @@ public class C_BattleMgr : Photon.PunBehaviour {
     C_UiEventMgr uiMgr;
     [HideInInspector]
     public PhotonView photonView;
-    public MeshRenderer friendlyMark;
+    public MeshRenderer[] friendlyMark;
 
     public int roomID = 0;
     public string nickName = "";
@@ -121,7 +121,10 @@ public class C_BattleMgr : Photon.PunBehaviour {
 
     public void SetFirendlyMark()
     {
-        friendlyMark.enabled = Battle.localPlayerCamp == attributes.camp;
+        foreach (var item in friendlyMark)
+        {
+            item.enabled = Battle.localPlayerCamp == attributes.camp;
+        }
     }
 
     public void SetPlayerEnable(bool isEnable)

@@ -58,6 +58,12 @@ public class C_Camera : MonoBehaviour, IPunObservable
         this.constraint.constraintActive = b;
     }
 
+    public void Reset()
+    {
+        this.camera_x.localRotation = Quaternion.identity;
+        this.camera_y.localRotation = Quaternion.identity;
+    }
+
     public RaycastHit GetAimInfo()
     {
         GetAimPoint(0, 0);

@@ -212,7 +212,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
 
     public override void OnLeftRoom()
     {
-        //SceneManager.LoadScene("MainStage");
+        SceneManager.LoadScene("MainStage");
         Battle.inRoom = false;
         Battle.started = false;
     }
@@ -223,6 +223,14 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         {
             Battle.localPlayerBattleInfo.photonView.RPC("SyncBattleMgr", PhotonTargets.Others, this.preparing ? timer.rate : gameTime, this.preparing, score[1], score[2]);
         }
+        StartCoroutine(WaitUpdateFriendlyMark());
+    }
+
+    IEnumerator WaitUpdateFriendlyMark()
+    {
+        yield return new WaitForSeconds(2);
+        Battle.UpdateFriendlyMark();
+        Debug.Log("update friendly mark for midway join player");
     }
 
     // 连接断开
