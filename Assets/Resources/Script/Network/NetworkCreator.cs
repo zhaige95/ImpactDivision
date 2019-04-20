@@ -37,6 +37,8 @@ public class NetworkCreator : Photon.PunBehaviour {
 
         if (this.isLocal)
         {
+
+            Battle.localPlayerCamera = avatar.GetComponent<C_Camera>().mainCamera;
             var uiMgr = avatar.GetComponent<C_UiEventMgr>();
             Battle.hudMgr.Init(uiMgr);
             Battle.planeHUDMgr.Init(uiMgr);

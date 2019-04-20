@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 95224308359473894}
   - component: {fileID: 7973541677760985962}
   - component: {fileID: 114163920362603476}
+  - component: {fileID: 114219812306155240}
   - component: {fileID: 114349046755306546}
   - component: {fileID: 114028212645467236}
   - component: {fileID: 114094653580044430}
@@ -1461,13 +1462,6 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  _audio: {fileID: 0}
-  _uiMgr: {fileID: 0}
-  _velocity: {fileID: 0}
-  _animator: {fileID: 0}
-  _iKManager: {fileID: 0}
-  _weaponHandle: {fileID: 0}
-  _weaponAttribute: {fileID: 0}
   _isPicked: 0
   sounds:
   - {fileID: 8300000, guid: f22f751eb06ea7a45bf4bef7d6fb3415, type: 3}
@@ -1601,6 +1595,19 @@ MonoBehaviour:
   defaultState: pick
   lastState: 
   runningState: pick
+--- !u!114 &114219812306155240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1633922143633922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9b62ffe3071244bad0d8f2b861c769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OcclusionSensorDistance: 1
+  occlusionLayer: {fileID: 11400000, guid: 29b833a17bee51642a7c8085006ca7f4, type: 2}
 --- !u!114 &114349046755306546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1625,7 +1632,7 @@ MonoBehaviour:
   bulletVisibleDistence: 5
   bullet: {fileID: 1239038810545592, guid: 20df5b9577521c343b3e540a76a2454d, type: 2}
   muzzleFlash: {fileID: 1692854838645264}
-  OcclusionSensorDistance: 0.9
+  OcclusionSensorDistance: 0.8
   occlusionLayer: {fileID: 11400000, guid: 29b833a17bee51642a7c8085006ca7f4, type: 2}
   targetPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &114433337746765080

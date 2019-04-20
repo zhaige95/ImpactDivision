@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 114449321584270744}
   - component: {fileID: 82267040143237320}
   - component: {fileID: 114091100430080164}
+  - component: {fileID: 114204571090889404}
   - component: {fileID: 114994766649282166}
   - component: {fileID: 114714607737536574}
   - component: {fileID: 114725706586063820}
@@ -490,13 +491,6 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  _audio: {fileID: 0}
-  _uiMgr: {fileID: 0}
-  _velocity: {fileID: 0}
-  _animator: {fileID: 0}
-  _iKManager: {fileID: 0}
-  _weaponHandle: {fileID: 0}
-  _weaponAttribute: {fileID: 0}
   _isPicked: 0
   sounds:
   - {fileID: 8300000, guid: f22f751eb06ea7a45bf4bef7d6fb3415, type: 3}
@@ -508,6 +502,19 @@ MonoBehaviour:
     _position: {x: -0.0915, y: 0.0348, z: 0.0096}
     _rotation: {x: -104.924, y: -75.43701, z: 80.45899}
   axis: {x: -1, y: 0, z: 0}
+--- !u!114 &114204571090889404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1781585601660492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9b62ffe3071244bad0d8f2b861c769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OcclusionSensorDistance: 0.7
+  occlusionLayer: {fileID: 11400000, guid: 29b833a17bee51642a7c8085006ca7f4, type: 2}
 --- !u!114 &114449321584270744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -651,7 +658,7 @@ MonoBehaviour:
   bulletVisibleDistence: 2
   bullet: {fileID: 1239038810545592, guid: a5b0a5b5457cc9340ba6c3fa983eebe9, type: 2}
   muzzleFlash: {fileID: 1335894919920174}
-  OcclusionSensorDistance: 0.8
+  OcclusionSensorDistance: 0.5
   occlusionLayer: {fileID: 11400000, guid: 29b833a17bee51642a7c8085006ca7f4, type: 2}
   targetPoint: {x: 0, y: 0, z: 0}
 --- !u!198 &198277985135669556

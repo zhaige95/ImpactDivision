@@ -12,6 +12,10 @@ public class PlaneHUDMgr : MonoBehaviour
     public float sizeVelocity = 0f;
     public KillMsgMgr killMsgMgr;
     public KillerNamePanel killerNamePanel;
+
+    // aim point 
+    public RectTransform dotTrans;
+
     private void Awake()
     {
         Battle.planeHUDMgr = this;
@@ -30,6 +34,7 @@ public class PlaneHUDMgr : MonoBehaviour
         eventMgr.BindEvent(typeof(UiMsgs.Kill), Kill);
         eventMgr.BindEvent(typeof(UiMsgs.Assists), Assists);
         eventMgr.BindEvent(typeof(UiMsgs.Killer), Killer);
+        eventMgr.BindEvent(typeof(UiMsgs.Dot), Dot);
     }
 
     public void Hit(UiMsg msg)
@@ -61,6 +66,20 @@ public class PlaneHUDMgr : MonoBehaviour
     {
         var killerMsg = msg as UiMsgs.Killer;
         killerNamePanel.Active(killerMsg.value);
+    }
+
+    public void Dot(UiMsg msg)
+    {
+        var dotMsg = msg as UiMsgs.Dot;
+        if (dotMsg.visible)
+        {
+            dotTrans.localScale = Vector3.one;
+            dotTrans.position = Battle.localPlayerCamera.WorldToScreenPoint(dotMsg.position);
+        }
+        else
+        {
+            dotTrans.localScale = Vector3.zero;
+        }
     }
 
 }

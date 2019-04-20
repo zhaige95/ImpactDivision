@@ -7,13 +7,13 @@ using Data;
 public class Pick : WeaponState
 {
     [Header("[Components]")]
-    public AudioSource _audio;
-    public C_UiEventMgr _uiMgr;
-    public C_Velocity _velocity;
-    public C_Animator _animator;
-    public C_IKManager _iKManager;
-    public C_WeaponHandle _weaponHandle;
-    public WeaponAttribute _weaponAttribute;
+    AudioSource _audio;
+    C_UiEventMgr _uiMgr;
+    C_Velocity _velocity;
+    C_Animator _animator;
+    C_IKManager _iKManager;
+    C_WeaponHandle _weaponHandle;
+    WeaponAttribute _weaponAttribute;
     [Header("[Extra Properties]")]
     public bool _isPicked = false;
     public AudioClip[] sounds;

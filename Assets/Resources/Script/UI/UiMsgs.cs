@@ -43,5 +43,10 @@ namespace UiEvent
             public string value;
         }
         
+        public class Dot : UiMsg
+        {
+            public bool visible = false;
+            public Vector3 position = new Vector3();
+        }
     }
 }
