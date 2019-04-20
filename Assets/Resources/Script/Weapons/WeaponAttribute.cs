@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Animations;
 using Data;
+using System;
 
 public class WeaponAttribute : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class WeaponAttribute : MonoBehaviour
     public float interval = 0f;
     public float spread = 0.5f;
     public float aimSpread = 2f;
+    public float runingSpread = 0f;
     public float recoilX = 0.5f;
     public float recoilY = 0.5f;
     public bool reload = false;
@@ -34,7 +36,7 @@ public class WeaponAttribute : MonoBehaviour
     public Dictionary<string, WeaponState> states = new Dictionary<string, WeaponState>();
     public Dictionary<string, int> statesLayer = new Dictionary<string, int>();
     public Dictionary<int, List<string>> layerState = new Dictionary<int, List<string>>();
-
+    public Action OnFire;
     [Header("State Property")]
     public string defaultState = "";
     public string lastState = "";

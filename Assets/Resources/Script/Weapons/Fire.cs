@@ -22,6 +22,7 @@ public class Fire : WeaponState
     [Header("[Extra Properties]")]
     public TriggerType triggerType;
     public Timer timer;
+    public float spreadFroce = 0.2f;
     public Vector3 fireAxis;
     public AudioClip sound;
     public float bulletVisibleDistence;
@@ -123,25 +124,28 @@ public class Fire : WeaponState
                     muzzleFlash.SetActive(false);
                     muzzleFlash.SetActive(true);
 
-                    // 弹道后坐力，扩散
+                    // 弹道扩散
                     if (_velocity.aiming)
                     {
-                        float range = _weaponAttribute.aimSpread * 0.5f * Battle.relativeRate;
+                        float range = _weaponAttribute.runingSpread * 0.5f * Battle.relativeRate;
+                        _weaponAttribute.runingSpread += this.spreadFroce;
+                        _weaponAttribute.runingSpread = Mathf.Clamp(_weaponAttribute.runingSpread, 0f, _weaponAttribute.aimSpread);
+                        
                         Vector2 offset = new Vector2(Random.Range(-range, range), Random.Range(-range, range));
 
                         startPoint = _weaponHandle.shootPoint.position;
                         targetPoint = _camera.GetAimPoint(offset);
 
-                        SendSpreadMsg(_weaponAttribute.aimSpread + 10f);
+                        SendSpreadMsg();
                     }
                     else
                     {
-                        float range = _weaponAttribute.spread * 0.35f * Battle.relativeRate;
+                        float range = _weaponAttribute.spread * 0.5f * Battle.relativeRate;
                         Vector2 offset = new Vector2(Random.Range(-range, range), Random.Range(-range, range));
 
                         startPoint = _weaponHandle.shootPoint.position;
                         targetPoint = _camera.GetAimPoint(offset);
-                        SendSpreadMsg(_weaponAttribute.spread + 10f);
+                        SendSpreadMsg(_weaponAttribute.spread + 20f);
                     }
                     visable = Vector3.Distance(startPoint, targetPoint) >= bulletVisibleDistence;
                 }
@@ -159,6 +163,8 @@ public class Fire : WeaponState
                     visable
                  );
 
+                _weaponAttribute.OnFire?.Invoke();
+
                 _photonView.RPC("NetworkFire", PhotonTargets.Others, _weaponAttribute.index, targetPoint);
 
                 if (_weaponAttribute.runtimeMag > 0)
@@ -174,16 +180,12 @@ public class Fire : WeaponState
             }
             timer.Enter(_weaponAttribute.interval);
 
-            var ammoMsg = new UiEvent.UiMsgs.Ammo()
-            {
-                ammo = _weaponAttribute.runtimeMag + (_weaponAttribute.bore ? 1 : 0),
-                mag = _weaponAttribute.mag
-            };
-            _uiMgr.SendEvent(ammoMsg);
+            // 发送ui消息
+            SendUiMsgs();
 
             _battleMgr.AddFire();
 
-            _camera.mainCamera.fieldOfView += 0.2f;
+            _camera.mainCamera.fieldOfView += 0.25f;
 
         }
         else
@@ -247,7 +249,7 @@ public class Fire : WeaponState
 
     void SendSpreadMsg()
     {
-        SendSpreadMsg(_velocity.Daim ? _weaponAttribute.aimSpread : _weaponAttribute.spread);
+        SendSpreadMsg(_velocity.Daim ? _weaponAttribute.runingSpread + 5f : _weaponAttribute.spread);
     }
 
     void SendSpreadMsg(float v)
@@ -257,6 +259,16 @@ public class Fire : WeaponState
             value = v
         };
         _uiMgr.SendEvent(spreadMsg);
+    }
+
+    void SendUiMsgs()
+    {
+        var ammoMsg = new UiEvent.UiMsgs.Ammo()
+        {
+            ammo = _weaponAttribute.runtimeMag + (_weaponAttribute.bore ? 1 : 0),
+            mag = _weaponAttribute.mag
+        };
+        _uiMgr.SendEvent(ammoMsg);
     }
 }
  

@@ -51,7 +51,7 @@ public class Aim : WeaponState
 
         var spreadMsg = new UiEvent.UiMsgs.Spread()
         {
-            value = 10f
+            value = _weaponAttribute.runingSpread + 5f
         };
         _uiMgr.SendEvent(spreadMsg);
 
@@ -77,6 +77,12 @@ public class Aim : WeaponState
             value = _weaponAttribute.spread
         };
         _uiMgr.SendEvent(spreadMsg);
+
+        var dotMsg = new UiEvent.UiMsgs.Dot()
+        {
+            visible = false
+        };
+        _uiMgr.SendEvent(dotMsg);
     }
 }
  

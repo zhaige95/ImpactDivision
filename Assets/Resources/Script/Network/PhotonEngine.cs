@@ -126,6 +126,7 @@ public class PhotonEngine : Photon.PunBehaviour {
         PhotonNetwork.player.SetCustomProperties(new Hashtable() { { "battle", "0#0#0#0" } });
 
         onJoinedLobby.Invoke();
+
     }
 
     public override void OnLeftLobby()

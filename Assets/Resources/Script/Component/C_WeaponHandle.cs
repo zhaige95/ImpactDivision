@@ -147,12 +147,16 @@ public class C_WeaponHandle : MonoBehaviour
     [PunRPC]
     public void NetworkFire(int index, Vector3 targetPoint)
     {
-        if (weaponAttributes[index].active)
+        if (weaponAttributes.ContainsKey(index))
         {
-            Fire state = (Fire)weaponAttributes[index].states["fire"];
-            state.targetPoint = targetPoint;
-            state.Enter();
+            if (weaponAttributes[index].active)
+            {
+                Fire state = (Fire)weaponAttributes[index].states["fire"];
+                state.targetPoint = targetPoint;
+                state.Enter();
+            }
         }
+
     }
     
     [PunRPC]

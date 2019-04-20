@@ -31,6 +31,8 @@ public class MenuMgr : Photon.PunBehaviour
         {
             OpenMenu(3);
         }
+
+
 	}
 	
 	// Update is called once per frame
@@ -40,6 +42,13 @@ public class MenuMgr : Photon.PunBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+
+        if (Input.GetKeyDown("k"))
+        {
+            Debug.Log("player num : " + PhotonNetwork.playerList.Length);
+            Debug.Log("room num : " + PhotonNetwork.GetRoomList().Length);
+        }
+
     }
 
     public void OpenMenu(int index)

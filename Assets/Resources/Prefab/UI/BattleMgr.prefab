@@ -6943,7 +6943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.2216981, b: 0.2216981, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7187,7 +7187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604172b8f903b6f4cbc028fab8e5cdb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  configBattle: {fileID: 11400000, guid: 657d40e3232f6b849b880b86dd85714f, type: 2}
+  configBattle: {fileID: 11400000, guid: fecceb7f00648f44caa200952952b09d, type: 2}
   preparing: 1
   gameTime: 0
   lastKillCamp: 0
@@ -9950,7 +9950,7 @@ MonoBehaviour:
   m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.45490196}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.23137255}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!114 &114804439367233134
@@ -13614,7 +13614,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 15, y: 15}
+  m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224347697589028512
 RectTransform:

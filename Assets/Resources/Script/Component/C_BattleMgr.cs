@@ -5,7 +5,7 @@ using UiEvent;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using System;
 
-public class C_BattleMgr : Photon.PunBehaviour {
+public class C_BattleMgr : MonoBehaviour {
     C_Attributes attributes;
     [HideInInspector]
     public C_Velocity velocity;

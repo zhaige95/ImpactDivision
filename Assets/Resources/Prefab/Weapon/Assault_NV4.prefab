@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 7973541677760985962}
   - component: {fileID: 114163920362603476}
   - component: {fileID: 114219812306155240}
+  - component: {fileID: 114060141823398960}
   - component: {fileID: 114349046755306546}
   - component: {fileID: 114028212645467236}
   - component: {fileID: 114094653580044430}
@@ -1473,6 +1474,19 @@ MonoBehaviour:
     _position: {x: -0.263, y: 0.041, z: 0.07}
     _rotation: {x: -8.213, y: 0.8240001, z: -4.269}
   axis: {x: -1, y: 0, z: 0}
+--- !u!114 &114060141823398960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1633922143633922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da921ee88b7752042887ce7fbd3e908a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitTime: 0.3
+  recoverSpeed: 0.3
 --- !u!114 &114094653580044430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1579,6 +1593,7 @@ MonoBehaviour:
   interval: 0
   spread: 31
   aimSpread: 2
+  runingSpread: 0
   recoilX: 5
   recoilY: 2
   reload: 0
@@ -1606,7 +1621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9b62ffe3071244bad0d8f2b861c769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OcclusionSensorDistance: 1
+  OcclusionSensorDistance: 7
   occlusionLayer: {fileID: 11400000, guid: 29b833a17bee51642a7c8085006ca7f4, type: 2}
 --- !u!114 &114349046755306546
 MonoBehaviour:
@@ -1627,6 +1642,7 @@ MonoBehaviour:
   _enterTick: 0
   _exitTick: 0
   triggerType: 2
+  spreadFroce: 1
   fireAxis: {x: -1, y: 0, z: -0.15}
   sound: {fileID: 8300000, guid: a97fc34a1344f304e93a29387813d117, type: 3}
   bulletVisibleDistence: 5
