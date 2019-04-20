@@ -37,26 +37,29 @@ public class WeaponOcclusionDot : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (velocity.Daim)
-        {
-            if (weaponAttribute.active)
-            {
-                var aimPoint = myCamera.GetAimPoint();
-                var visi = false;
-                var posi = Vector3.zero;
-                if (Physics.Raycast(occlusionPoint.position, aimPoint - occlusionPoint.position, out hitInfo, OcclusionSensorDistance, occlusionLayer.layerMask))
-                {
-                    visi = true;
-                    posi = hitInfo.point;
-                }
 
-                var msg = new Dot()
-                {
-                    visible = visi,
-                    position = posi
-                };
-                uiMgr.SendEvent(msg);
+        
+        if (weaponAttribute.active)
+        {
+            var visi = false;
+            var posi = Vector3.zero;
+            var aimPoint = myCamera.GetAimPoint();
+
+            if (Physics.Raycast(occlusionPoint.position, aimPoint - occlusionPoint.position, out hitInfo, OcclusionSensorDistance, occlusionLayer.layerMask))
+            {
+                visi = true;
+                posi = hitInfo.point;
             }
+            if (!velocity.Daim)
+            {
+                visi = false;
+            }
+            var msg = new Dot()
+            {
+                visible = visi,
+                position = posi
+            };
+            uiMgr.SendEvent(msg);
         }
         
     }

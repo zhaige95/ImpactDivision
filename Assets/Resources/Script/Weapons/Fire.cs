@@ -249,7 +249,7 @@ public class Fire : WeaponState
 
     void SendSpreadMsg()
     {
-        SendSpreadMsg(_velocity.Daim ? _weaponAttribute.runingSpread + 5f : _weaponAttribute.spread);
+        SendSpreadMsg(_velocity.Daim ? _weaponAttribute.runingSpread + 5f : _weaponAttribute.spread + 10f);
     }
 
     void SendSpreadMsg(float v)

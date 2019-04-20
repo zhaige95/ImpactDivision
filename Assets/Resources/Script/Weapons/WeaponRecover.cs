@@ -34,7 +34,7 @@ public class WeaponRecover : MonoBehaviour
             if (!timer.isRunning)
             {
                 weaponAttribute.runingSpread = Mathf.Lerp(weaponAttribute.runingSpread, 0f, recoverSpeed);
-                if (velocity.Daim)
+                if (velocity.Daim && !velocity.jumping)
                 {
                     SendSpreadMsg(weaponAttribute.runingSpread + 5f);
                 }

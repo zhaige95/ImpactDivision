@@ -59,12 +59,9 @@ public class Aim : WeaponState
 
     public override void OnUpdate()
     {
-        if (_velocity.isLocalPlayer)
+        if (!_velocity.Daim || _velocity.jumping || _weaponHandle.locked)
         {
-            if (!_velocity.Daim || _velocity.jumping || _weaponHandle.locked)
-            {
-                this._exitTick = true;
-            }
+            this._exitTick = true;
         }
     }
     public override void Exit() {
@@ -77,12 +74,6 @@ public class Aim : WeaponState
             value = _weaponAttribute.spread
         };
         _uiMgr.SendEvent(spreadMsg);
-
-        var dotMsg = new UiEvent.UiMsgs.Dot()
-        {
-            visible = false
-        };
-        _uiMgr.SendEvent(dotMsg);
     }
 }
  
