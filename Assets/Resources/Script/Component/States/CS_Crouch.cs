@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UiEvent;
 
 [RequireComponent(typeof(CS_StateMgr))]
 public class CS_Crouch : AvatarState {
@@ -9,9 +10,11 @@ public class CS_Crouch : AvatarState {
     [Header("[Components]")]
     C_Camera _camera;
     C_Animator _animator;
+    C_UiEventMgr _uiMgr;
     C_Velocity _velocity;
     CS_StateMgr _stateMgr;
     C_Attributes _attributes;
+    C_WeaponHandle _weaponHandle;
     AudioSource _audioSource;
     CharacterController _characterController;
 
@@ -19,8 +22,10 @@ public class CS_Crouch : AvatarState {
     public float speed;
     public AudioClip[] sounds;
     
-    private void OnEnable()
+    private void Awake()
     {
+        _uiMgr = GetComponent<C_UiEventMgr>();
+        _weaponHandle = GetComponent<C_WeaponHandle>();
         _camera = GetComponent<C_Camera>();
         _animator = GetComponent<C_Animator>();
         _velocity = GetComponent<C_Velocity>();
@@ -53,6 +58,9 @@ public class CS_Crouch : AvatarState {
         _velocity.crouch = true;
         _velocity.Dcrouch = false;
         Sound.PlayOneShot(_audioSource, sounds);
+
+        SendSpreadMsg(_weaponHandle.weaponAttributes[_weaponHandle.currentWeapon].spread * 0.2f + 10f);
+       
     }
 
     public override void OnUpdate() {
@@ -83,8 +91,17 @@ public class CS_Crouch : AvatarState {
         _animator.AddEvent("Dfwd", 0);
         _animator.AddEvent("Dright", 0);
         _animator.AddEvent("crouch", 0f);
+
+        SendSpreadMsg(_weaponHandle.weaponAttributes[_weaponHandle.currentWeapon].spread + 10f);
     }
-    
-    
+
+    void SendSpreadMsg(float v)
+    {
+        var spreadMsg = new UiEvent.UiMsgs.Spread()
+        {
+            value = v
+        };
+        _uiMgr.SendEvent(spreadMsg);
+    }
 }
            

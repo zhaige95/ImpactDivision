@@ -140,12 +140,12 @@ public class Fire : WeaponState
                     }
                     else
                     {
-                        float range = _weaponAttribute.spread * 0.5f * Battle.relativeRate;
+                        float range = _weaponAttribute.spread * (_velocity.crouch ? 0.2f : 0.5f) * Battle.relativeRate;
                         Vector2 offset = new Vector2(Random.Range(-range, range), Random.Range(-range, range));
 
                         startPoint = _weaponHandle.shootPoint.position;
                         targetPoint = _camera.GetAimPoint(offset);
-                        SendSpreadMsg(_weaponAttribute.spread + 20f);
+                        SendSpreadMsg(_weaponAttribute.spread * (_velocity.crouch ? 0.2f : 1f) + 20f);
                     }
                     visable = Vector3.Distance(startPoint, targetPoint) >= bulletVisibleDistence;
                 }
@@ -249,7 +249,7 @@ public class Fire : WeaponState
 
     void SendSpreadMsg()
     {
-        SendSpreadMsg(_velocity.Daim ? _weaponAttribute.runingSpread + 5f : _weaponAttribute.spread + 10f);
+        SendSpreadMsg(_velocity.Daim ? _weaponAttribute.runingSpread + 5f : _weaponAttribute.spread * (_velocity.crouch ? 0.2f : 1f) + 10f);
     }
 
     void SendSpreadMsg(float v)
