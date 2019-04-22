@@ -19,7 +19,7 @@ public class S_BornProtector : ComponentSystem
             if (bornProtect.active)
             {
                 bornProtect.timer.Update();
-                bornProtect.tipRingTrans.Rotate(Vector3.up * 2f);
+                bornProtect.tipRingTrans.Rotate(Vector3.up * 1f);
                 if (!bornProtect.timer.isRunning) {
                     e._attackListener.isActive = true;
                     bornProtect.Exit();

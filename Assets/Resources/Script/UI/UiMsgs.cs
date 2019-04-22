@@ -48,5 +48,8 @@ namespace UiEvent
             public bool visible = false;
             public Vector3 position = new Vector3();
         }
+
+        public class Blood : UiMsg { }
+
     }
 }

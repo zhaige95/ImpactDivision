@@ -69,6 +69,10 @@ public class C_Attributes : MonoBehaviour {
 
         attackListener.PlayBeAttackedSound();
         animator.SetTrigger("hit");
+
+        var bloodMsg = new UiEvent.UiMsgs.Blood();
+        uiMgr.SendEvent(bloodMsg);
+
     }
 
     public void Recover()

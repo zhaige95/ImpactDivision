@@ -12,6 +12,7 @@ public class PlaneHUDMgr : MonoBehaviour
     public float sizeVelocity = 0f;
     public KillMsgMgr killMsgMgr;
     public KillerNamePanel killerNamePanel;
+    public BloodScreenMgr bloodScreen;
 
     // aim point 
     public RectTransform dotTrans;
@@ -35,6 +36,7 @@ public class PlaneHUDMgr : MonoBehaviour
         eventMgr.BindEvent(typeof(UiMsgs.Assists), Assists);
         eventMgr.BindEvent(typeof(UiMsgs.Killer), Killer);
         eventMgr.BindEvent(typeof(UiMsgs.Dot), Dot);
+        eventMgr.BindEvent(typeof(UiMsgs.Blood), Blood);
     }
 
     public void Hit(UiMsg msg)
@@ -80,6 +82,11 @@ public class PlaneHUDMgr : MonoBehaviour
         {
             dotTrans.localScale = Vector3.zero;
         }
+    }
+
+    public void Blood(UiMsg msg)
+    {
+        this.bloodScreen.Enter();
     }
 
 }
