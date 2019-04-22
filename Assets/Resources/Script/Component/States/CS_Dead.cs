@@ -13,6 +13,7 @@ public class CS_Dead : AvatarState {
     C_UiEventMgr uiMgr;
     C_Attributes attributes;
     C_WeaponHandle weaponHandle;
+    C_BornProtector bornProtector;
     C_AttackListener attackListener;
     Timer timer = new Timer();
     public float recoverTime = 1f;
@@ -29,6 +30,7 @@ public class CS_Dead : AvatarState {
         battleMgr = GetComponent<C_BattleMgr>();
         attributes = GetComponent<C_Attributes>();
         weaponHandle = GetComponent<C_WeaponHandle>();
+        bornProtector = GetComponent<C_BornProtector>();
         attackListener = GetComponent<C_AttackListener>();
 
         var stateMgr = GetComponent<CS_StateMgr>();
@@ -98,10 +100,13 @@ public class CS_Dead : AvatarState {
         }
         anim.animator.enabled = true;
         attackListener.Reset();
-        attackListener.isActive = true;
+        //attackListener.isActive = true;
         attributes.isDead = false;
         weaponHandle.active = true;
         myCamera.SetFollowPlayer(true);
         myCamera.Reset(t);
+
+        bornProtector.Enter();
+
     }
 }

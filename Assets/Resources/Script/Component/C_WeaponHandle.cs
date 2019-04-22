@@ -198,7 +198,7 @@ public class C_WeaponHandle : MonoBehaviour
     [PunRPC]
     public void PickWeapon()
     {
-        Debug.Log("pick weapon");
+
         if (currentWeapon == 0)
         {
             targetWeapon = 1;

@@ -28,24 +28,27 @@ public class S_Bullet : ComponentSystem {
 
                     if (_attackListener != null)
                     {
-                        // Add impact effect
-                        if (Aspect.IsAvatarTags(hitTag))
+                        if (_attackListener.isActive)
                         {
-
-                            var attack = _bullet.attack;
-                            // Modify demage by different body part
-                            attack.demage = (int)(_bullet.attack.demage * AvatarTagsData.demageRate[hitTag]);
-
-                            // Set if head shot
-                            attack.headShot = AvatarTagsData.IsHead(hitTag);
-
-                            // Add blood effect
-                            Effect.AddEffect(_attackListener.hitEffect, hitInfo);
-
-                            // Add attack info in attackListener component
-                            if (_bullet.isLocal)
+                            // Add impact effect
+                            if (Aspect.IsAvatarTags(hitTag))
                             {
-                                _attackListener.attackList.Add(_bullet.attack);
+
+                                var attack = _bullet.attack;
+                                // Modify demage by different body part
+                                attack.demage = (int)(_bullet.attack.demage * AvatarTagsData.demageRate[hitTag]);
+
+                                // Set if head shot
+                                attack.headShot = AvatarTagsData.IsHead(hitTag);
+
+                                // Add blood effect
+                                Effect.AddEffect(_attackListener.hitEffect, hitInfo);
+
+                                // Add attack info in attackListener component
+                                if (_bullet.isLocal)
+                                {
+                                    _attackListener.attackList.Add(_bullet.attack);
+                                }
                             }
                         }
                     }

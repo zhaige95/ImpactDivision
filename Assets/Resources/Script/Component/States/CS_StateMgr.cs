@@ -62,7 +62,7 @@ public class CS_StateMgr : MonoBehaviour, IPunObservable {
         {
             var nextState = (string)stream.ReceiveNext();
 
-            if (!nextState.Equals(""))
+            if (!nextState.Equals("") && !nextState.Equals("dead"))
             {
                 this.ExitState(runningState);
                 this.EnterState(nextState);
