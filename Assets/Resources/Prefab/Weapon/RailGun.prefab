@@ -555,6 +555,7 @@ MonoBehaviour:
   spread: 15
   aimSpread: 2
   runingSpread: 0
+  crouchSpreadRate: 0.5
   recoilX: 4
   recoilY: 1
   reload: 0
@@ -661,7 +662,7 @@ MonoBehaviour:
   triggerType: 1
   spreadFroce: 2
   fireAxis: {x: -1, y: 0.1, z: 0}
-  sound: {fileID: 8300000, guid: 7b9301fed74492243a5151bbc0b02edd, type: 3}
+  sound: {fileID: 8300000, guid: e44fa7c0adcbf154fb0c412a8258bae5, type: 3}
   bulletVisibleDistence: 2
   bullet: {fileID: 1239038810545592, guid: a5b0a5b5457cc9340ba6c3fa983eebe9, type: 2}
   muzzleFlash: {fileID: 1335894919920174}

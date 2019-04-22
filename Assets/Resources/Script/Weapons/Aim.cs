@@ -71,7 +71,7 @@ public class Aim : WeaponState
         _velocity.aiming = false;
         var spreadMsg = new UiEvent.UiMsgs.Spread()
         {
-            value = _weaponAttribute.spread
+            value = _weaponAttribute.spread * (_velocity.crouch ? _weaponAttribute.crouchSpreadRate : 1f) + 10f
         };
         _uiMgr.SendEvent(spreadMsg);
     }

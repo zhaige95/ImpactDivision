@@ -44,12 +44,6 @@ public class Battle : MonoBehaviour
     public static SystemSetting systemSettingSave;
     public static string savePath = "";
 
-    public static void SavePlayerBasicData()
-    {
-        string str = JsonConvert.SerializeObject(playerBasicSave);
-        File.WriteAllText(savePath + "/PlayerBasic.cfg", str);
-    }
-
     public static C_BattleMgr GetPlayerInfoByRoomID(int sourceID, int camp)
     {
         if (camp == 1)
@@ -63,6 +57,12 @@ public class Battle : MonoBehaviour
         return null;
     }
 
+    public static void SavePlayerBasicData()
+    {
+        string str = JsonConvert.SerializeObject(playerBasicSave);
+        File.WriteAllText(savePath + "/PlayerBasic.cfg", str);
+    }
+
     public static void SavePlayerBattleData()
     {
         string str = JsonConvert.SerializeObject(playerBattleSave);
@@ -72,6 +72,18 @@ public class Battle : MonoBehaviour
     {
         string str = JsonConvert.SerializeObject(systemSettingSave);
         File.WriteAllText(savePath + "/SystemSetting.cfg", str);
+    }
+
+    public static void AddPlayerNum(int camp)
+    {
+        if (campNumber.ContainsKey(camp))
+        {
+            campNumber[camp] += 1;
+        }
+        else
+        {
+            campNumber.Add(camp, 1);
+        }
     }
 
     public static void PlayerJoin(int camp, int roomID, C_BattleMgr battleMgr)
@@ -98,13 +110,16 @@ public class Battle : MonoBehaviour
                 playerListCamp2.Add(roomID, battleMgr);
             }
         }
-        if (campNumber.ContainsKey(camp))
+        if (!PhotonNetwork.isMasterClient)
         {
-            campNumber[camp] += 1;
-        }
-        else
-        {
-            campNumber.Add(camp, 1);
+            if (campNumber.ContainsKey(camp))
+            {
+                campNumber[camp] += 1;
+            }
+            else
+            {
+                campNumber.Add(camp, 1);
+            }
         }
     }
 

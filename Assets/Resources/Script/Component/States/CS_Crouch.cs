@@ -60,8 +60,8 @@ public class CS_Crouch : AvatarState {
         _velocity.crouch = true;
         _velocity.Dcrouch = false;
         Sound.PlayOneShot(_audioSource, sounds);
-
-        SendSpreadMsg(_weaponHandle.weaponAttributes[_weaponHandle.currentWeapon].spread * 0.2f + 10f);
+        var att = _weaponHandle.weaponAttributes[_weaponHandle.currentWeapon];
+        SendSpreadMsg(att.spread * att.crouchSpreadRate + 10f);
        
     }
 

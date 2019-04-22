@@ -20,12 +20,10 @@ public class MenuInBattle : PanelSwitch {
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            Debug.Log("open setting panel");
         }
         else
         {
             Back();
-            Debug.Log("close setting panel");
         }
     }
 

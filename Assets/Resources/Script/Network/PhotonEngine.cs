@@ -179,7 +179,10 @@ public class PhotonEngine : Photon.PunBehaviour {
                     { "team", tCamp }
                 };
                 newPlayer.SetCustomProperties(p, null, false);
+
+                Battle.AddPlayerNum(int.Parse(tCamp));
             }
+
         }
     }
 

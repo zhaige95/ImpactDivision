@@ -48,6 +48,12 @@ public class MatchMgr : Photon.PunBehaviour
                 backBtn.onClick.Invoke();
             }
         }
+
+        if (Input.GetKeyDown("l"))
+        {
+            this.single = !this.single;
+            Debug.Log("switch match model to single = " + this.single);
+        }
     }
 
     void FixedUpdate () {

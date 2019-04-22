@@ -22,6 +22,7 @@ public class WeaponAttribute : MonoBehaviour
     public float spread = 0.5f;
     public float aimSpread = 2f;
     public float runingSpread = 0f;
+    public float crouchSpreadRate = 0.5f;
     public float recoilX = 0.5f;
     public float recoilY = 0.5f;
     public bool reload = false;
@@ -64,18 +65,19 @@ public class WeaponAttribute : MonoBehaviour
     public void Init(GameObject obj, ConfigWeapon config)
     {
         // 安装属性
-        wname = config.wname;
-        type = config.type;
-        mag = config.mag;
-        damage = config.damage;
-        fireSpeed = config.fireSpeed;
-        spread = config.spread;
-        aimSpread = config.aimSpread;
-        recoilX = config.recoilX;
-        recoilY = config.recoilY;
-        cutPicInBattle = config.cutPicInBattle;
+        this.wname = config.wname;
+        this.type = config.type;
+        this.mag = config.mag;
+        this.damage = config.damage;
+        this.fireSpeed = config.fireSpeed;
+        this.spread = config.spread;
+        this.aimSpread = config.aimSpread;
+        this.crouchSpreadRate = config.crouchSpreadRate;
+        this.recoilX = config.recoilX;
+        this.recoilY = config.recoilY;
+        this.cutPicInBattle = config.cutPicInBattle;
 
-        interval = 60f / fireSpeed;
+        this.interval = 60f / fireSpeed;
 
         // 初始化武器状态组件，传递武器物体的组件等
         foreach (var state in states.Values)
