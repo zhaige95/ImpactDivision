@@ -22,21 +22,15 @@ public class C_IKManager : MonoBehaviour {
 
     public void SetAim(bool aim)
     {
-        if (!locked)
-        {
-            isAim = aim;
-            targetAimWidth = aim ? 1f : 0;
-            targetBodyWeight = aim ? 0 : 0.2f;
-        }
+        isAim = aim;
+        targetAimWidth = aim ? 1f : 0;
+        targetBodyWeight = aim ? 0 : 0.2f;
     }
 
     public void SetHold(bool hold)
     {
-        if (!locked)
-        {
-            isHold = hold;
-            targetHold = hold ? 1 : 0;
-        }
+        isHold = hold;
+        targetHold = hold ? 1 : 0;
     }
 
     public void SetHoldTarget(Transform t)

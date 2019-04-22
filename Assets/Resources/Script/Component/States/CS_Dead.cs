@@ -102,6 +102,6 @@ public class CS_Dead : AvatarState {
         attributes.isDead = false;
         weaponHandle.active = true;
         myCamera.SetFollowPlayer(true);
-        myCamera.Reset();
+        myCamera.Reset(t);
     }
 }

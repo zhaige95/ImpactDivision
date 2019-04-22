@@ -34,9 +34,10 @@ public class SS_StateMgr : ComponentSystem {
                     {
                         ListenerPeocess(_stateMgr);
                     }
-                    else if (!currentState._active)
+                    else
                     {
-                        ListenerPeocess(_stateMgr);
+                        if (!currentState._active)
+                            ListenerPeocess(_stateMgr);
                     }
                 }
 

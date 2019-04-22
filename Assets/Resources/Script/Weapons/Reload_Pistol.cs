@@ -6,16 +6,16 @@ using UiEvent;
 public class Reload_Pistol : WeaponState
 {
     [Header("[Components]")]
-    public C_Animator _animator;
-    public C_Velocity _velocity;
-    public C_IKManager _iKManager;
-    public CS_StateMgr _stateMgr;
-    public C_WeaponHandle _weaponHandle;
-    public C_UiEventMgr _uiMgr;
-    public PhotonView _photonView;
+    C_Animator _animator;
+    C_Velocity _velocity;
+    C_IKManager _iKManager;
+    CS_StateMgr _stateMgr;
+    C_WeaponHandle _weaponHandle;
+    C_UiEventMgr _uiMgr;
+    PhotonView _photonView;
 
-    public AudioSource _audioSource;
-    public WeaponAttribute _weaponAttribute;
+    AudioSource _audioSource;
+    WeaponAttribute _weaponAttribute;
 
     [Header("[Extra Properties]")]
     public AudioClip sound;
@@ -58,13 +58,11 @@ public class Reload_Pistol : WeaponState
     public override void Enter()
     {
         base.Enter();
-
+        
         _weaponAttribute.reload = true;
-
+        
         _iKManager.SetAim(false);
         _iKManager.SetHold(false);
-
-        _iKManager.locked = true;
 
         _animator.animator.SetTrigger("reload");
 
@@ -79,6 +77,9 @@ public class Reload_Pistol : WeaponState
         var _anim = _animator.animator;
         AnimatorStateInfo animatorInfo;
         animatorInfo = _anim.GetCurrentAnimatorStateInfo(animLayer);
+
+        _iKManager.SetAim(false);
+        _iKManager.SetHold(false);
 
         if (animatorInfo.IsTag("reload"))
         {
@@ -110,7 +111,7 @@ public class Reload_Pistol : WeaponState
     public override void Exit() {
 
         base.Exit();
-        _iKManager.locked = false;
+
         if (!_velocity.Drun)
         {
             _iKManager.SetAim(true);
@@ -118,6 +119,7 @@ public class Reload_Pistol : WeaponState
         }
         _weaponAttribute.reload = false;
         _weaponHandle.locked = false;
+        
     }
 }
  

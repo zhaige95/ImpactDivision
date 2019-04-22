@@ -52,6 +52,7 @@ public class S_Bullet : ComponentSystem {
                     else
                     {
                         Effect.AddEffect(_bullet.impactEffect, hitInfo);
+                        Sound.PlayOneShot(_bullet.audioSource, _bullet.sounds);
                     }
                     this.CloseBullet(_bullet, _transform);
                 }

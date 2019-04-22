@@ -4479,10 +4479,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.82
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -4748,13 +4748,13 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  speed: 4
+  speed: 4.7
   sounds:
   - {fileID: 8300000, guid: 06a9eb540ef5a76489571f51edd7d073, type: 3}
   - {fileID: 8300000, guid: 8f47fc7e860c66f4e8c56d7c18b6e049, type: 3}
   - {fileID: 8300000, guid: f52a600946027924caf292ed5bb2ffed, type: 3}
   - {fileID: 8300000, guid: aad128db463594b4bae9be12578bf758, type: 3}
-  runStepTime: 0.3
+  runStepTime: 0.35
 --- !u!114 &114175405923590462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4773,14 +4773,14 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  jogSpeed: 3
+  jogSpeed: 3.5
   walkSpeed: 1.5
   sounds:
   - {fileID: 8300000, guid: 06a9eb540ef5a76489571f51edd7d073, type: 3}
   - {fileID: 8300000, guid: 8f47fc7e860c66f4e8c56d7c18b6e049, type: 3}
   - {fileID: 8300000, guid: f52a600946027924caf292ed5bb2ffed, type: 3}
   - {fileID: 8300000, guid: aad128db463594b4bae9be12578bf758, type: 3}
-  runSteptime: 0.35
+  runSteptime: 0.38
   walkSteptime: 0.6
 --- !u!114 &114214178302828498
 MonoBehaviour:
@@ -5213,7 +5213,7 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  speed: 2.2
+  speed: 2.5
   sounds:
   - {fileID: 8300000, guid: 7e5cb6b012103c249908adcfd4c002a9, type: 3}
   - {fileID: 8300000, guid: 9da6bb34588bc0449a905bdf3c5ebdd7, type: 3}
@@ -5876,6 +5876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a248eb9ad4729a47a51635ffb3c4c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocity: {fileID: 0}
   Carryer: {fileID: 4588706996007058}
   mainCamera: {fileID: 20735550976406248}
   camera_y: {fileID: 4588706996007058}

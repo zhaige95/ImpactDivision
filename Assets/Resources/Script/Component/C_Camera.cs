@@ -5,6 +5,7 @@ using UnityEngine.Animations;
 
 public class C_Camera : MonoBehaviour, IPunObservable
 {
+    public C_Velocity velocity;
     public Transform Carryer;
     public Camera mainCamera;
     public Transform camera_y;
@@ -42,6 +43,11 @@ public class C_Camera : MonoBehaviour, IPunObservable
         public Vector3 LowerRight;
     }
 
+    private void Awake()
+    {
+        velocity = GetComponent<C_Velocity>();
+    }
+
     private void Start()
     {
         if (GetComponent<C_Velocity>().isLocalPlayer)
@@ -58,10 +64,13 @@ public class C_Camera : MonoBehaviour, IPunObservable
         this.constraint.constraintActive = b;
     }
 
-    public void Reset()
+    public void Reset(Transform t)
     {
-        this.camera_x.localRotation = Quaternion.identity;
-        this.camera_y.localRotation = Quaternion.identity;
+        if (velocity.isLocalPlayer)
+        {
+            this.camera_x.localEulerAngles = Vector3.zero;
+            this.camera_y.localEulerAngles = new Vector3(0, t.localEulerAngles.y, 0);
+        }
     }
 
     public RaycastHit GetAimInfo()

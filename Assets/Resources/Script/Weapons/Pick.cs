@@ -62,7 +62,6 @@ public class Pick : WeaponState
             _iKManager.SetHoldTarget(_weaponAttribute.holdPoint);
             _iKManager.SetAim(false);
             _iKManager.SetHold(false);
-            _iKManager.locked = true;
 
             endTimer.Enter(endTime);
             pickTimer.Enter(pickTime);
@@ -147,7 +146,6 @@ public class Pick : WeaponState
 
             if (!endTimer.isRunning)
             {
-                _iKManager.locked = false;
                 if (_velocity.Drun)
                 {
                     _iKManager.SetAim(false);
@@ -169,6 +167,11 @@ public class Pick : WeaponState
                 _weaponAttribute.ready = true;
                 _weaponHandle.locked = false;
                 this._exitTick = true;
+            }
+            else
+            {
+                _iKManager.SetAim(false);
+                _iKManager.SetHold(false);
             }
         }
     }

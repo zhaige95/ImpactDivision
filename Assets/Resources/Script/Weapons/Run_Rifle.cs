@@ -47,8 +47,7 @@ public class Run_Rifle : WeaponState
         _iKManager.SetAim(false);
         _weaponHandle.handPoint.localPosition = runOffset._position;
         _weaponHandle.handPoint.localEulerAngles = runOffset._rotation;
-
-        _iKManager.locked = true;
+        
     }
 
     public override void OnUpdate()
@@ -67,7 +66,7 @@ public class Run_Rifle : WeaponState
     public override void Exit()
     {
         base.Exit();
-        _iKManager.locked = false;
+
         //if (_velocity.isLocalPlayer)
         //{
         //    _photonView.RPC("ExitState", PhotonTargets.Others, this._name);

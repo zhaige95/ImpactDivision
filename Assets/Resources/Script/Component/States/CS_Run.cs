@@ -14,6 +14,7 @@ public class CS_Run : AvatarState {
     C_Attributes _attributes;
     C_IKManager _iKManager;
     AudioSource _audioSource;
+    C_WeaponHandle _weaponHandle;
     CharacterController _characterController;
 
     [Header("[Extra Properties]")]
@@ -34,6 +35,7 @@ public class CS_Run : AvatarState {
         _attributes = GetComponent<C_Attributes>();
         _iKManager = GetComponent<C_IKManager>();
         _audioSource = GetComponent<AudioSource>();
+        _weaponHandle = GetComponent<C_WeaponHandle>();
         _characterController = GetComponent<CharacterController>();
     }
 
@@ -62,9 +64,11 @@ public class CS_Run : AvatarState {
         {
             _velocity.currentSpeed = speed;
             _animator.animator.SetBool("run", true);
+
+            _iKManager.SetAim(false);
+
             if (!_velocity.isLocalPlayer)
             {
-                _iKManager.SetAim(false);
                 _velocity.Drun = true;
             }
             timer.Enter(runStepTime);
@@ -101,7 +105,7 @@ public class CS_Run : AvatarState {
             this._exitTick = true;
         }
 
-        if (!_velocity.Drun)
+        if (!_velocity.Drun || _velocity.Dcrouch)
         {
             this._exitTick = true;
         }
@@ -111,7 +115,6 @@ public class CS_Run : AvatarState {
     public override void Exit()
     {
         base.Exit();
-        //_velocity.Drun = false;
         timer.Exit();
         _animator.animator.SetBool("run", false);
         if (!_velocity.isLocalPlayer)

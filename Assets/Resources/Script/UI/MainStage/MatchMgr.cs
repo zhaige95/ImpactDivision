@@ -76,7 +76,7 @@ public class MatchMgr : Photon.PunBehaviour
         PhotonNetwork.JoinRandomRoom();
 
         // test 
-        //PhotonNetwork.JoinRoom("Impact");
+        //PhotonNetwork.JoinOrCreateRoom("Impact zibifang", new RoomOptions() { MaxPlayers = 4 }, null);
     }
 
     public void CancleMatch()
@@ -126,6 +126,11 @@ public class MatchMgr : Photon.PunBehaviour
             p.Add("team", "1");
             PhotonNetwork.playerList[0].SetCustomProperties(p, null, false);
         }
+        //if (PhotonNetwork.isMasterClient)
+        //{
+        //    PhotonNetwork.room.IsVisible = false;
+        //}
+
 
     }
 
@@ -143,7 +148,6 @@ public class MatchMgr : Photon.PunBehaviour
             matchTimeSecond = this.prepareTime;
             if (PhotonNetwork.isMasterClient)
             {
-                //PhotonNetwork.room.IsOpen = false;
                 StartCoroutine(StartBattleCoroutines());
             }
         }
@@ -177,7 +181,12 @@ public class MatchMgr : Photon.PunBehaviour
                 };
             PhotonNetwork.playerList[i].SetCustomProperties(p, null, false);
         }
-            
+
+        // test
+        //if (PhotonNetwork.isMasterClient)
+        //{
+        //    PhotonNetwork.room.IsVisible = false;
+        //}
     }
 
 }

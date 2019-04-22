@@ -19,6 +19,14 @@ public class C_Bullet : MonoBehaviour
     public float time = 2f;
     public Timer timer = new Timer();
 
+    public AudioSource audioSource;
+    public AudioClip[] sounds;
+
+    private void Awake()
+    {
+        this.audioSource = GetComponent<AudioSource>();
+    }
+
     public void SetActive(Attack attack, bool local = true)
     {
         this.timer.Enter(time);

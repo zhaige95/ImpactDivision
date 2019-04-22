@@ -41,9 +41,9 @@ public class CS_Crouch : AvatarState {
     }
     
     public override bool Listener() {
-
         if (_velocity.Dcrouch)
         {
+            Debug.Log("listener crouch");
             return true;
         }
 
@@ -52,7 +52,9 @@ public class CS_Crouch : AvatarState {
 
     public override void Enter()
     {
+        Debug.Log("enter crouch");
         base.Enter();
+        _velocity.Dcrouch = false;
         _velocity.currentSpeed = speed;
         _animator.AddEvent("crouch", 1f);
         _velocity.crouch = true;
@@ -88,6 +90,7 @@ public class CS_Crouch : AvatarState {
         base.Exit();
         Sound.PlayOneShot(_audioSource, sounds);
         _velocity.crouch = false;
+        _velocity.Dcrouch = false;
         _animator.AddEvent("Dfwd", 0);
         _animator.AddEvent("Dright", 0);
         _animator.AddEvent("crouch", 0f);

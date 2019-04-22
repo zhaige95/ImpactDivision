@@ -37,10 +37,10 @@ public class PhotonEngine : Photon.PunBehaviour {
         DontDestroyOnLoad(this.gameObject);
         Battle.photonEngine = this;
 
-        CheckInternet();
+        //CheckInternet();
 
         // test 
-        //StartConnect();
+        StartConnect();
     }
 
     // 从网络获取版本设置，旧版本不进行网络连接

@@ -1,0 +1,378 @@
+fileFormatVersion: 2
+guid: b18450baa44829645a0a4fdaa8849a04
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Avatar_Himeko_C1_VV
+    100004: Bip001
+    100006: Bip001 Head
+    100008: Bip001 L Calf
+    100010: Bip001 L Clavicle
+    100012: Bip001 L Finger0
+    100014: Bip001 L Finger01
+    100016: Bip001 L Finger02
+    100018: Bip001 L Finger1
+    100020: Bip001 L Finger11
+    100022: Bip001 L Finger12
+    100024: Bip001 L Finger2
+    100026: Bip001 L Finger21
+    100028: Bip001 L Finger22
+    100030: Bip001 L Finger3
+    100032: Bip001 L Finger31
+    100034: Bip001 L Finger32
+    100036: Bip001 L Finger4
+    100038: Bip001 L Finger41
+    100040: Bip001 L Finger42
+    100042: Bip001 L Foot
+    100044: Bip001 L Forearm
+    100046: Bip001 L Hand
+    100048: Bip001 L Thigh
+    100050: Bip001 L Toe0
+    100052: Bip001 L UpperArm
+    100054: Bip001 Neck
+    100056: Bip001 Pelvis
+    100058: Bip001 R Calf
+    100060: Bip001 R Clavicle
+    100062: Bip001 R Finger0
+    100064: Bip001 R Finger01
+    100066: Bip001 R Finger02
+    100068: Bip001 R Finger1
+    100070: Bip001 R Finger11
+    100072: Bip001 R Finger12
+    100074: Bip001 R Finger2
+    100076: Bip001 R Finger21
+    100078: Bip001 R Finger22
+    100080: Bip001 R Finger3
+    100082: Bip001 R Finger31
+    100084: Bip001 R Finger32
+    100086: Bip001 R Finger4
+    100088: Bip001 R Finger41
+    100090: Bip001 R Finger42
+    100092: Bip001 R Foot
+    100094: Bip001 R Forearm
+    100096: Bip001 R Hand
+    100098: Bip001 R Thigh
+    100100: Bip001 R Toe0
+    100102: Bip001 R UpperArm
+    100104: Bip001 Spine
+    100106: Bip001 Spine1
+    100108: Bip001 Spine2
+    100110: Body
+    100112: Body_0
+    100114: Body_1
+    100116: Body_2
+    100118: Bone001
+    100120: Bone002
+    100122: Bone003
+    100124: Bone004
+    100126: Bone025
+    100128: Bone026
+    100130: Bone027
+    100132: Bone028
+    100134: Bone029
+    100136: Bone030
+    100138: Bone031
+    100140: Bone032
+    100142: Bone033
+    100144: Bone034
+    100146: Bone035
+    100148: Bone80_C1
+    100150: Bone81_C1
+    100152: Bone82_C1
+    100154: Bone83_C1
+    100156: Bone84_C1
+    100158: Bone85_C1
+    100160: Bone86_C1
+    100162: Bone87_C1
+    100164: Bone88_C1
+    100166: Bone89_C1
+    100168: Bone90_C1
+    100170: Bone91_C1
+    100172: Bone92_C1
+    100174: Bone93_C1
+    100176: Eye_L
+    100178: Eye_L_0
+    100180: Eye_R
+    100182: Eye_R_0
+    100184: Face
+    100186: Face_0
+    100188: Hair_a
+    100190: Hair_a_0
+    100192: Himeko_C1_Hairpin
+    100194: Himeko_C1_Hairpin_0
+    100196: Mouth
+    100198: Mouth_0
+    400000: //RootNode
+    400002: Avatar_Himeko_C1_VV
+    400004: Bip001
+    400006: Bip001 Head
+    400008: Bip001 L Calf
+    400010: Bip001 L Clavicle
+    400012: Bip001 L Finger0
+    400014: Bip001 L Finger01
+    400016: Bip001 L Finger02
+    400018: Bip001 L Finger1
+    400020: Bip001 L Finger11
+    400022: Bip001 L Finger12
+    400024: Bip001 L Finger2
+    400026: Bip001 L Finger21
+    400028: Bip001 L Finger22
+    400030: Bip001 L Finger3
+    400032: Bip001 L Finger31
+    400034: Bip001 L Finger32
+    400036: Bip001 L Finger4
+    400038: Bip001 L Finger41
+    400040: Bip001 L Finger42
+    400042: Bip001 L Foot
+    400044: Bip001 L Forearm
+    400046: Bip001 L Hand
+    400048: Bip001 L Thigh
+    400050: Bip001 L Toe0
+    400052: Bip001 L UpperArm
+    400054: Bip001 Neck
+    400056: Bip001 Pelvis
+    400058: Bip001 R Calf
+    400060: Bip001 R Clavicle
+    400062: Bip001 R Finger0
+    400064: Bip001 R Finger01
+    400066: Bip001 R Finger02
+    400068: Bip001 R Finger1
+    400070: Bip001 R Finger11
+    400072: Bip001 R Finger12
+    400074: Bip001 R Finger2
+    400076: Bip001 R Finger21
+    400078: Bip001 R Finger22
+    400080: Bip001 R Finger3
+    400082: Bip001 R Finger31
+    400084: Bip001 R Finger32
+    400086: Bip001 R Finger4
+    400088: Bip001 R Finger41
+    400090: Bip001 R Finger42
+    400092: Bip001 R Foot
+    400094: Bip001 R Forearm
+    400096: Bip001 R Hand
+    400098: Bip001 R Thigh
+    400100: Bip001 R Toe0
+    400102: Bip001 R UpperArm
+    400104: Bip001 Spine
+    400106: Bip001 Spine1
+    400108: Bip001 Spine2
+    400110: Body
+    400112: Body_0
+    400114: Body_1
+    400116: Body_2
+    400118: Bone001
+    400120: Bone002
+    400122: Bone003
+    400124: Bone004
+    400126: Bone025
+    400128: Bone026
+    400130: Bone027
+    400132: Bone028
+    400134: Bone029
+    400136: Bone030
+    400138: Bone031
+    400140: Bone032
+    400142: Bone033
+    400144: Bone034
+    400146: Bone035
+    400148: Bone80_C1
+    400150: Bone81_C1
+    400152: Bone82_C1
+    400154: Bone83_C1
+    400156: Bone84_C1
+    400158: Bone85_C1
+    400160: Bone86_C1
+    400162: Bone87_C1
+    400164: Bone88_C1
+    400166: Bone89_C1
+    400168: Bone90_C1
+    400170: Bone91_C1
+    400172: Bone92_C1
+    400174: Bone93_C1
+    400176: Eye_L
+    400178: Eye_L_0
+    400180: Eye_R
+    400182: Eye_R_0
+    400184: Face
+    400186: Face_0
+    400188: Hair_a
+    400190: Hair_a_0
+    400192: Himeko_C1_Hairpin
+    400194: Himeko_C1_Hairpin_0
+    400196: Mouth
+    400198: Mouth_0
+    2100000: Avatar_Himeko_C1_Material_Skin
+    2100002: Avatar_Himeko_C1_Material_Body
+    2100004: Avatar_HimeKo_LeftEye
+    2100006: Avatar_HimeKo_RightEye
+    2100008: Avatar_HimeKo_Face_Empty
+    2100010: Avatar_Himeko_C1_Material_Hair
+    2100012: Avatar_HimeKo_Mouth
+    4300000: Body_0
+    4300002: Body_1
+    4300004: Body_2
+    4300006: Eye_L_0
+    4300008: Eye_R_0
+    4300010: Face_0
+    4300012: Hair_a_0
+    4300014: Himeko_C1_Hairpin_0
+    4300016: Mouth_0
+    7400000: Avatar_Himeko_Ani_UI_StandBy
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Body_0
+    13700002: Body_1
+    13700004: Body_2
+    13700006: Eye_L_0
+    13700008: Eye_R_0
+    13700010: Face_0
+    13700012: Hair_a_0
+    13700014: Himeko_C1_Hairpin_0
+    13700016: Mouth_0
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Avatar_HimeKo_Face_Empty
+    second: {fileID: 2100000, guid: 690babb3e0226cc49ba933969fd40d47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Avatar_HimeKo_LeftEye
+    second: {fileID: 2100000, guid: 4e2e0cc21e6b61f4ea6fca3a943daaf0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Avatar_HimeKo_Mouth
+    second: {fileID: 2100000, guid: 671c87dbe02c773458699698c7b07720, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Avatar_HimeKo_RightEye
+    second: {fileID: 2100000, guid: 4e2e0cc21e6b61f4ea6fca3a943daaf0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Avatar_Himeko_C1_Material_Body
+    second: {fileID: 2100000, guid: 90acf3800ecdbb54386cba9b64858b40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Avatar_Himeko_C1_Material_Hair
+    second: {fileID: 2100000, guid: d809703a7f97c2e4ea13c356284ac414, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Avatar_Himeko_C1_Material_Skin
+    second: {fileID: 2100000, guid: 90acf3800ecdbb54386cba9b64858b40, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Avatar_Himeko_Ani_UI_StandBy
+      takeName: Avatar_Himeko_Ani_UI_StandBy
+      firstFrame: 0
+      lastFrame: 183
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 0
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Avatar_Himeko_C1_VV
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
