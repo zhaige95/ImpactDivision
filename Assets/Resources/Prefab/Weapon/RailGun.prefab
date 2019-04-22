@@ -637,15 +637,6 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  _animator: {fileID: 0}
-  _velocity: {fileID: 0}
-  _iKManager: {fileID: 0}
-  _stateMgr: {fileID: 0}
-  _weaponHandle: {fileID: 0}
-  _uiMgr: {fileID: 0}
-  _photonView: {fileID: 0}
-  _audioSource: {fileID: 0}
-  _weaponAttribute: {fileID: 0}
   sound: {fileID: 8300000, guid: 8bc4bb67fd038634a9e68ea7a98bec08, type: 3}
   animLayer: 5
   exitTime: 0.8
@@ -670,7 +661,7 @@ MonoBehaviour:
   triggerType: 1
   spreadFroce: 2
   fireAxis: {x: -1, y: 0.1, z: 0}
-  sound: {fileID: 8300000, guid: e44fa7c0adcbf154fb0c412a8258bae5, type: 3}
+  sound: {fileID: 8300000, guid: 7b9301fed74492243a5151bbc0b02edd, type: 3}
   bulletVisibleDistence: 2
   bullet: {fileID: 1239038810545592, guid: a5b0a5b5457cc9340ba6c3fa983eebe9, type: 2}
   muzzleFlash: {fileID: 1335894919920174}

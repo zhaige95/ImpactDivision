@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class SettingMgr : WindowBasic
 {
+    public bool active = true;
     public Button applyBtn;
     public Button backBtn;
     public List<GameObject> settingList;
     public GameObject confirmWindow;
     public SoundMgr soundMgr;
     public ControlSettingMgr controlMgr;
+    
+    public NetworkEvent OnClosePanel;
+
     // Use this for initialization
     public override void Init () {
         
@@ -22,7 +26,7 @@ public class SettingMgr : WindowBasic
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && this.active)
         {
             backBtn.onClick.Invoke();
         }
@@ -55,7 +59,7 @@ public class SettingMgr : WindowBasic
         }
         else
         {
-            this.GetComponentInParent<MenuMgr>().OpenMenu(0);
+            OnClosePanel.Invoke();
         }
     }
 

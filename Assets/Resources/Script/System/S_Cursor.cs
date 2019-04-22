@@ -17,13 +17,21 @@ public class S_Cursor : ComponentSystem {
             if (_velocity.isLocalPlayer)
             {
                 var _cursor = e._Cursor;
-                if (_velocity.Dback)
+                var lockState = Cursor.lockState == CursorLockMode.Locked;
+                if (_cursor.isLocked != lockState && _cursor.isLocked)
                 {
-                    _cursor.isLocked = !(Cursor.lockState == CursorLockMode.Locked);
-                    Cursor.lockState = _cursor.isLocked ? CursorLockMode.Locked : CursorLockMode.None;
-                    Cursor.visible = !_cursor.isLocked;
+                    _velocity.Reset();
                 }
-              
+                _cursor.isLocked = lockState;
+                
+
+                // old
+                //if (_velocity.Dback)
+                //{
+                //    _cursor.isLocked = !(Cursor.lockState == CursorLockMode.Locked);
+                //    Cursor.lockState = _cursor.isLocked ? CursorLockMode.Locked : CursorLockMode.None;
+                //    Cursor.visible = !_cursor.isLocked;
+                //}
             }
         }
     }

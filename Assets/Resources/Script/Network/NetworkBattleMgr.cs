@@ -13,8 +13,8 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
     public int lastKillCamp = 0;
     public Dictionary<int, int> score = new Dictionary<int, int>();
     Timer timer = new Timer();
+    public MenuInBattle menuPanel;
     public BattleInfoMgr battleInfo;
-    public PanelSwitch menuPanel;
     public ScoreboardMgr scoreboard;
 
     [Header("Event")]
@@ -27,6 +27,9 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         score.Add(1, 0);
         score.Add(2, 0);
         Battle.freezing = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Start () {

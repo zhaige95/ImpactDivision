@@ -6859,7 +6859,7 @@ MonoBehaviour:
   backBtn: {fileID: 627129932}
   ringText: {fileID: 21100862}
   minMember: 2
-  single: 1
+  single: 0
   prepareTime: 5
   matchTimeText: {fileID: 1169497338}
   matchTimeSecond: 0
@@ -19771,6 +19771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563128f5b7364d943abc4e47256315f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
   applyBtn: {fileID: 1466580693}
   backBtn: {fileID: 1436112785}
   settingList:
@@ -19783,6 +19784,21 @@ MonoBehaviour:
   confirmWindow: {fileID: 326661581}
   soundMgr: {fileID: 517246071}
   controlMgr: {fileID: 1706411634}
+  OnClosePanel:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1951692277}
+        m_MethodName: OpenMenu
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: NetworkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1932387588
 GameObject:
   m_ObjectHideFlags: 0

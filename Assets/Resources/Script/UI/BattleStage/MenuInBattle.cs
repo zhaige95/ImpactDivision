@@ -1,26 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuInBattle : PanelSwitch {
 
+    public Button backBtn;
+    public Button applyBtn;
+    public GameObject confirmWindow;
     public NetworkEvent OnOpenSettingPanel;
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public NetworkEvent OnCloseSettingPanel;
 
     public override void SwitchPanel(bool isOpen)
     {
-        base.SwitchPanel(isOpen);
         if (isOpen)
         {
+            base.SwitchPanel(isOpen);
             OnOpenSettingPanel.Invoke();
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Debug.Log("open setting panel");
+        }
+        else
+        {
+            Back();
+            Debug.Log("close setting panel");
         }
     }
 
@@ -37,5 +42,20 @@ public class MenuInBattle : PanelSwitch {
     public void OpenItem(RectTransform trans)
     {
         SwitchItem(trans, true);
+    }
+    
+    public void Back()
+    {
+        if (applyBtn.interactable)
+        {
+            confirmWindow.SetActive(true);
+        }
+        else
+        {
+            OnCloseSettingPanel.Invoke();
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 }
