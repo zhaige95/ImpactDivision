@@ -5144,8 +5144,9 @@ MonoBehaviour:
   isHold: 0
   locked: 0
   targetAimWidth: 0
-  targetBodyWeight: 0
   targetHold: 0
+  targetLookWeight: 1
+  targetBodyWeight: 0
   targetAxis: {x: 0, y: 0, z: 0}
 --- !u!114 &114493978813828184
 MonoBehaviour:
@@ -5470,9 +5471,9 @@ MonoBehaviour:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
+    InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 5
+    InterpolateLerpSpeed: 10
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:
@@ -5837,10 +5838,10 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.3
+          value: 1
           inSlope: 0
           outSlope: 0
-          tangentMode: 0
+          tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0
@@ -5849,7 +5850,7 @@ MonoBehaviour:
           value: 1
           inSlope: 0
           outSlope: 0
-          tangentMode: 0
+          tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0

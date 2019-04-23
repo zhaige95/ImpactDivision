@@ -58,7 +58,7 @@ public class Fire : WeaponState
     }
 
     public override bool Listener() {
-        if (_weaponAttribute.ready)
+        if (_weaponAttribute.ready && !_weaponAttribute.reload)
         {
             if (!_weaponAttribute.bore)
             {

@@ -1485,7 +1485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da921ee88b7752042887ce7fbd3e908a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 0.3
+  waitTime: 0.15
   recoverSpeed: 0.3
 --- !u!114 &114094653580044430
 MonoBehaviour:
@@ -1594,6 +1594,7 @@ MonoBehaviour:
   spread: 31
   aimSpread: 2
   runingSpread: 0
+  crouchSpreadRate: 0.5
   recoilX: 5
   recoilY: 2
   reload: 0
@@ -1726,8 +1727,8 @@ MonoBehaviour:
   _weaponAttribute: {fileID: 0}
   _photonView: {fileID: 0}
   runOffset:
-    _position: {x: -0.2515, y: 0.1118, z: 0.0537}
-    _rotation: {x: 5.936, y: -7.481, z: -30.432}
+    _position: {x: -0.287, y: 0.027, z: 0.019}
+    _rotation: {x: -0.378, y: -20.025, z: -1.094}
 --- !u!198 &198157466084938424
 ParticleSystem:
   m_ObjectHideFlags: 1

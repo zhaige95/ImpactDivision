@@ -44,6 +44,7 @@ public class S_AttackListener : ComponentSystem {
 
                     if (_attribute.HP <= 0)
                     {
+                        _attackListener.isActive = false;
                         e._BattleMgr.photonView.RPC("AddKillerMsg", PhotonTargets.Others, sourceBattleMgr.nickName);
 
                         sourceBattleMgr.photonView.RPC("AddKill", PhotonTargets.All, attack.headShot);

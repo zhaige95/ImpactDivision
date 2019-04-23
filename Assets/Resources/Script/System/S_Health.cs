@@ -4,6 +4,7 @@ using UiEvent;
 
 public class S_Health : ComponentSystem {
     struct Group {
+        public C_Velocity _Velocity;
         public C_AttackListener _AttackListener;
         public C_Attributes _Attributes;
         public CS_StateMgr _StateMgr;
@@ -29,7 +30,10 @@ public class S_Health : ComponentSystem {
 
                 if (e._Attributes.HP <= 0 && e._AttackListener.isActive)
                 {
-                    e._StateMgr.EnterState("dead");
+                    if (e._Velocity.isLocalPlayer)
+                    {
+                        e._StateMgr.EnterState("dead");
+                    }
                     e._BattleMgr.AddDead();
                 }
             }

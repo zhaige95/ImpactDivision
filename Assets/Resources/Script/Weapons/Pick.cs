@@ -62,6 +62,7 @@ public class Pick : WeaponState
             _iKManager.SetHoldTarget(_weaponAttribute.holdPoint);
             _iKManager.SetAim(false);
             _iKManager.SetHold(false);
+            _iKManager.SetLook(true);
 
             endTimer.Enter(endTime);
             pickTimer.Enter(pickTime);

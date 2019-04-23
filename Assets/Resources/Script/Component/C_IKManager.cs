@@ -15,9 +15,10 @@ public class C_IKManager : MonoBehaviour {
     public bool isHold;     // 是否持枪，使左手IK生效
     public bool locked = false;
 
-    public float targetAimWidth = 0;
+    public float targetAimWidth = 0f;
+    public float targetHold = 1f;
+    public float targetLookWeight = 1f;
     public float targetBodyWeight = 0.2f;
-    public float targetHold = 1;
     public Vector3 targetAxis;
 
     public void SetAim(bool aim)
@@ -31,6 +32,11 @@ public class C_IKManager : MonoBehaviour {
     {
         isHold = hold;
         targetHold = hold ? 1 : 0;
+    }
+
+    public void SetLook(bool look)
+    {
+        bipedIK.solvers.lookAt.SetLookAtWeight(look ? 1f : 0f);
     }
 
     public void SetHoldTarget(Transform t)

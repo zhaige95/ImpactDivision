@@ -100,13 +100,13 @@ public class CS_Dead : AvatarState {
         }
         anim.animator.enabled = true;
         attackListener.Reset();
-        //attackListener.isActive = true;
+
         attributes.isDead = false;
         weaponHandle.active = true;
         myCamera.SetFollowPlayer(true);
         myCamera.Reset(t);
 
         bornProtector.Enter();
-
+        Debug.Log("exit dead state");
     }
 }

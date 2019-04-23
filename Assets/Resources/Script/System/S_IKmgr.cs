@@ -22,9 +22,7 @@ public class S_IKmgr : ComponentSystem {
             _ikBiped.solvers.leftHand.IKPositionWeight = Mathf.Lerp(_ikBiped.solvers.leftHand.IKPositionWeight, _ik.targetHold, 0.3f);
             _ikBiped.solvers.leftHand.IKRotationWeight = Mathf.Lerp(_ikBiped.solvers.leftHand.IKRotationWeight, _ik.targetHold, 0.3f);
             _ikBiped.solvers.leftHand.bendModifierWeight = Mathf.Lerp(_ikBiped.solvers.leftHand.bendModifierWeight, _ik.targetHold, 0.3f);
-
-
-
+            
         }
     }
 	

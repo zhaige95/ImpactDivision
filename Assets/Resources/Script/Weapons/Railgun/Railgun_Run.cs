@@ -46,6 +46,7 @@ public class Railgun_Run : WeaponState
         base.Enter();
         _iKManager.SetAim(false);
         _iKManager.SetHold(false);
+        _iKManager.SetLook(true);
 
     }
 
