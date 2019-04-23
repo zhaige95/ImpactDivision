@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
 
-public class C_WeaponHandle : MonoBehaviour
+public class C_WeaponHandle : MonoBehaviour, IPunObservable
 {
     public PhotonView pView;
     public C_Velocity velocity;
@@ -218,7 +218,19 @@ public class C_WeaponHandle : MonoBehaviour
             }
         }
     }
-    
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            stream.SendNext(targetWeapon);
+        }
+        else if (stream.isReading)
+        {
+            var target = (int)stream.ReceiveNext();
+            this.targetWeapon = target;
+        }
+    }
 }
 
 

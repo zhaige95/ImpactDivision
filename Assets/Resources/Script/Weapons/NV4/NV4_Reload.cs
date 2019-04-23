@@ -84,6 +84,8 @@ public class NV4_Reload : WeaponState
         AnimatorStateInfo animatorInfo;
         animatorInfo = _anim.GetCurrentAnimatorStateInfo(animLayer);
 
+        _iKManager.SetAim(false);
+
         if (process == 1)
         {
             _audioSource.PlayOneShot(sounds[0]);

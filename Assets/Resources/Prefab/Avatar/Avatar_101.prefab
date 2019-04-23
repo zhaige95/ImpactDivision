@@ -4993,6 +4993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   protectTime: {fileID: 11400000, guid: dc52d8de94983d642b1a8c69af63fa4d, type: 2}
   tipRingTrans: {fileID: 4027804696465978}
+  active: 0
 --- !u!114 &114426214959545050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5206,6 +5207,7 @@ MonoBehaviour:
   - {fileID: 114941734476039396}
   - {fileID: 114798856965775900}
   - {fileID: 114343338998794126}
+  - {fileID: 114954505005538398}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1

@@ -19,9 +19,13 @@ public class S_WeaponHandle : ComponentSystem {
 
             if (_handle.active)
             {
-                if (_velocity.DswitchWeapon && !_handle.locked)
+                if (_velocity.isLocalPlayer)
                 {
-                    _handle.pView.RPC("PickWeapon", PhotonTargets.All);
+                    if (_velocity.DswitchWeapon && !_handle.locked)
+                    {
+                        //_handle.pView.RPC("PickWeapon", PhotonTargets.All);
+                        _handle.PickWeapon();
+                    }
                 }
 
                 int currentWeapon = _handle.currentWeapon;

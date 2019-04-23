@@ -12,7 +12,6 @@ public class BloodScreenMgr : MonoBehaviour {
     
     public void Enter()
     {
-        Debug.Log("enter blood screen");
         timer.Enter(animTime);
     }
 
