@@ -29,8 +29,7 @@ public class WeaponListItem : MonoBehaviour {
 
     public void OnClick()
     {
-        if (OnClickCall != null)
-            OnClickCall(this.config, this.type);
-        
+        OnClickCall?.Invoke(this.config, this.type);
+
     }
 }
