@@ -22,19 +22,21 @@ public class C_Attributes : MonoBehaviour {
     public Timer timer = new Timer();
     public float recoverTime = 3f;
     [Header("[Component]")]
-    public C_UiEventMgr uiMgr;
-    public Animator animator;
-    public C_AttackListener attackListener;
-    [Header("[Node]")]
-    public Transform tinyHpBarNode;
-    public Transform friendMark;
+    C_UiEventMgr uiMgr;
+    Animator animator;
+    C_AttackListener attackListener;
+
     //-------------
     public Action OnDead;
     public Action OnRecover;
-    //private void Start()
-    //{
-    //    entity = GetComponent<GameObjectEntity>().Entity;
-    //}
+
+    private void Awake()
+    {
+        uiMgr = GetComponent<C_UiEventMgr>();
+        animator = GetComponent<C_Animator>().animator;
+        attackListener = GetComponent<C_AttackListener>();
+    }
+
     [PunRPC]
     public void Demaged(float demage, string operation)
     {

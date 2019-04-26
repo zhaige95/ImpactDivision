@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour {
 
             if (_attr.camp != Battle.localPlayerCamp)
             {
-                _attr.friendMark.localScale = Vector3.zero;
+
             }
 
             // 添加头顶血条

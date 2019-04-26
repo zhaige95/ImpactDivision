@@ -17,6 +17,7 @@ public class RagdollMgr : MonoBehaviour {
         {
             rigidbodys[i].useGravity = active;
             rigidbodys[i].isKinematic = !active;
+            rigidbodys[i].collisionDetectionMode = active? CollisionDetectionMode.Continuous : CollisionDetectionMode.Discrete; 
         }
         //for (int i = 0; i < capsuleColliders.Length; i++)
         //{

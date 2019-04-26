@@ -17,7 +17,6 @@ public class TinyHpBarMgr : MonoBehaviour
     {
         nameText.color = (attributes.camp == Battle.localPlayerCamp) ? friendColor : enemyColor;
         
-        tinyHpBarNode = attributes.tinyHpBarNode;
         eventMgr.BindEvent(typeof(UiMsgs.Hp), RefreshHp);
     }
 

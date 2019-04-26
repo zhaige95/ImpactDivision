@@ -107,6 +107,6 @@ public class CS_Dead : AvatarState {
         myCamera.Reset(t);
 
         bornProtector.Enter();
-        Debug.Log("exit dead state");
+
     }
 }
