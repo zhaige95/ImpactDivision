@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 144660801100144546}
   m_Layer: 14
   m_Name: Bip001 L UpperArm
-  m_TagString: Untagged
+  m_TagString: hit_Limbs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 144026559143822766}
   m_Layer: 14
   m_Name: Bip001 Spine2
-  m_TagString: Untagged
+  m_TagString: hit_Body
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 144496733963292088}
   m_Layer: 14
   m_Name: Bip001 Head
-  m_TagString: Untagged
+  m_TagString: hit_Head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -875,7 +875,7 @@ GameObject:
   - component: {fileID: 144377240344098206}
   m_Layer: 14
   m_Name: Bip001 R Forearm
-  m_TagString: Untagged
+  m_TagString: hit_Limbs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -968,7 +968,7 @@ GameObject:
   - component: {fileID: 144825192134970872}
   m_Layer: 14
   m_Name: Bip001 R Calf
-  m_TagString: Untagged
+  m_TagString: hit_Limbs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 144312942984812940}
   m_Layer: 14
   m_Name: Bip001 L Forearm
-  m_TagString: Untagged
+  m_TagString: hit_Limbs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1342,7 +1342,7 @@ GameObject:
   - component: {fileID: 144671804950571174}
   m_Layer: 14
   m_Name: Bip001 R UpperArm
-  m_TagString: Untagged
+  m_TagString: hit_Limbs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1421,7 +1421,7 @@ GameObject:
   - component: {fileID: 54619386683808732}
   m_Layer: 14
   m_Name: Bip001 Pelvis
-  m_TagString: Untagged
+  m_TagString: hit_Body
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1762,7 +1762,7 @@ GameObject:
   - component: {fileID: 144448431060563590}
   m_Layer: 14
   m_Name: Bip001 L Thigh
-  m_TagString: Untagged
+  m_TagString: hit_Limbs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1830,7 +1830,7 @@ GameObject:
   - component: {fileID: 144035170699363044}
   m_Layer: 14
   m_Name: Bip001 L Calf
-  m_TagString: Untagged
+  m_TagString: hit_Limbs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1848,7 +1848,7 @@ GameObject:
   - component: {fileID: 144256830285267686}
   m_Layer: 14
   m_Name: Bip001 R Thigh
-  m_TagString: Untagged
+  m_TagString: hit_Limbs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4061,8 +4061,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.17881633, y: 0.18837163, z: 0.23988025}
-  m_Center: {x: -0.3291981, y: -0.031753697, z: 0.00000059415373}
+  m_Size: {x: 0.17881632, y: 0.18606594, z: 0.23988053}
+  m_Center: {x: -0.32919794, y: 0.055134494, z: 0.0000006179262}
 --- !u!65 &65196702147165986
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -5589,8 +5589,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.10677836
-  m_Center: {x: -0.11697808, y: 0.0040575145, z: 0.00025631097}
+  m_Radius: 0.11506182
+  m_Center: {x: -0.11662915, y: -0.0038770877, z: 0.000256311}
 --- !u!136 &136148665334827388
 CapsuleCollider:
   m_ObjectHideFlags: 1
