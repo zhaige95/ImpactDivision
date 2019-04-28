@@ -5,12 +5,12 @@ using UnityEngine.Animations;
 public class Railgun_Run : WeaponState
 {
     [Header("[Components]")]
-    public C_Velocity _velocity;
-    public C_IKManager _iKManager;
-    public C_WeaponHandle _weaponHandle;
+    C_Velocity _velocity;
+    C_IKManager _iKManager;
+    C_WeaponHandle _weaponHandle;
 
-    public WeaponAttribute _weaponAttribute;
-    public PhotonView _photonView;
+    WeaponAttribute _weaponAttribute;
+    PhotonView _photonView;
 
     public override void Init(GameObject obj)
     {

@@ -1037,7 +1037,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 43993df200b37424aad44bb6cbe9ed0f, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -1175,9 +1175,9 @@ MonoBehaviour:
   _enterTick: 0
   _exitTick: 0
   triggerType: 2
-  spreadFroce: 2
+  spreadFroce: 0.7
   fireAxis: {x: -1, y: 0, z: -0.05}
-  sound: {fileID: 8300000, guid: e44fa7c0adcbf154fb0c412a8258bae5, type: 3}
+  sound: {fileID: 8300000, guid: 8a937472ba7f9e043b79b4a74dd4056a, type: 3}
   bulletVisibleDistence: 5
   bullet: {fileID: 1239038810545592, guid: 20df5b9577521c343b3e540a76a2454d, type: 2}
   muzzleFlash: {fileID: 1182158331631584}

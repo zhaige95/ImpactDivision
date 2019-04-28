@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 939e0ca3f988af44da55f98de90cfecb, type: 3}
+  m_Name: 1102
+  m_EditorClassIdentifier: 
+  id: 1102
+  wname: FTL Eraser
+  type: 2
+  cutPicInEquip: {fileID: 2800000, guid: b1136e56b52517c4395f0886ac265d27, type: 3}
+  cutPicInBattle: {fileID: 2800000, guid: de143faf148a55c47998985416bfc814, type: 3}
+  mag: 20
+  damage: 10
+  fireSpeed: 850
+  spread: 22
+  aimSpread: 10
+  crouchSpreadRate: 0.5
+  recoilX: 8
+  recoilY: 5
+  model: {fileID: 1880183887440390, guid: 6cf3819b4cf37d54ca33f5c440733a78, type: 2}
