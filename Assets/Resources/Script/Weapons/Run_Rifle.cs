@@ -5,11 +5,11 @@ using UnityEngine.Animations;
 public class Run_Rifle : WeaponState
 {
     [Header("[Components]")]
-    public C_Velocity _velocity;
-    public C_IKManager _iKManager;
-    public C_WeaponHandle _weaponHandle;
-    public WeaponAttribute _weaponAttribute;
-    public PhotonView _photonView;
+    C_Velocity _velocity;
+    C_IKManager _iKManager;
+    C_WeaponHandle _weaponHandle;
+    WeaponAttribute _weaponAttribute;
+    PhotonView _photonView;
 
 
     [Header("[Extra Properties]")]
@@ -78,8 +78,8 @@ public class Run_Rifle : WeaponState
             _iKManager.SetHold(true);
         }
         //_iKManager.SetLook(true);
-        _weaponHandle.handPoint.localPosition = _weaponAttribute.holdOffset._position;
-        _weaponHandle.handPoint.localEulerAngles = _weaponAttribute.holdOffset._rotation;
+        _weaponHandle.handPoint.localPosition = _weaponAttribute.pickOffset.localPosition;
+        _weaponHandle.handPoint.localRotation = _weaponAttribute.pickOffset.localRotation;
     }
 }
  

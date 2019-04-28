@@ -6,12 +6,12 @@ using UiEvent;
 public class Aim : WeaponState
 {
     [Header("[Components]")]
-    public C_Velocity _velocity;
-    public C_IKManager _iKManager;
-    public C_WeaponHandle _weaponHandle;
-    public C_Camera _camera;
-    public C_UiEventMgr _uiMgr;
-    public WeaponAttribute _weaponAttribute;
+    C_Velocity _velocity;
+    C_IKManager _iKManager;
+    C_WeaponHandle _weaponHandle;
+    C_Camera _camera;
+    C_UiEventMgr _uiMgr;
+    WeaponAttribute _weaponAttribute;
     [Header("[Extra Properties]")]
     public float FOV;
     RaycastHit hitInfo;

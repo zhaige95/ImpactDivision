@@ -28,6 +28,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1093229141139180
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4021263159482512}
+  m_Layer: 21
+  m_Name: Pick Offset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1108539266234532
 GameObject:
   m_ObjectHideFlags: 1
@@ -169,6 +184,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4021263159482512
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1093229141139180}
+  m_LocalRotation: {x: -0.71961945, y: 0.12052359, z: -0.059090056, w: 0.681271}
+  m_LocalPosition: {x: -0.0915, y: 0.0348, z: 0.0096}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4332695148370640}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -104.924, y: -75.43701, z: 80.45899}
 --- !u!4 &4022105809440286
 Transform:
   m_ObjectHideFlags: 1
@@ -234,6 +262,7 @@ Transform:
   - {fileID: 4198249403142180}
   - {fileID: 4022105809440286}
   - {fileID: 4763446472624730}
+  - {fileID: 4021263159482512}
   m_Father: {fileID: 4422222713012918}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -499,9 +528,6 @@ MonoBehaviour:
   pickTime: 0.1
   endTime: 0.35
   process: 1
-  holdOffset:
-    _position: {x: -0.0915, y: 0.0348, z: 0.0096}
-    _rotation: {x: -104.924, y: -75.43701, z: 80.45899}
   axis: {x: -1, y: 0, z: 0}
 --- !u!114 &114204571090889404
 MonoBehaviour:
@@ -564,10 +590,10 @@ MonoBehaviour:
     _position: {x: -0.0915, y: 0.0348, z: 0.0096}
     _rotation: {x: -104.924, y: -75.43701, z: 80.45899}
   cutPicInBattle: {fileID: 0}
+  pickOffset: {fileID: 4021263159482512}
   holdPoint: {fileID: 4022105809440286}
   shootPoint: {fileID: 4198249403142180}
   OcclusionPoint: {fileID: 4763446472624730}
-  magObj: {fileID: 0}
   constraint: {fileID: 7973541676911364100}
   defaultState: pick
   lastState: 

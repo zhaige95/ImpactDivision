@@ -23,10 +23,10 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
-  m_AmbientMode: 4
+  m_AmbientIntensity: 1.24
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 9b5bbce29c63f4ab5a5b63354c67d6ca, type: 2}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 0.4
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38233787, g: 0.50249827, b: 0.60363156, a: 0.4}
+  m_Sun: {fileID: 518406067}
+  m_IndirectSpecularColor: {r: 0.28474578, g: 0.31828076, b: 0.3727542, a: 0.4}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6795,7 +6795,7 @@ MonoBehaviour:
   backBtn: {fileID: 627129932}
   ringText: {fileID: 21100862}
   minMember: 2
-  single: 0
+  single: 1
   prepareTime: 5
   matchTimeText: {fileID: 1169497338}
   matchTimeSecond: 0
@@ -13189,6 +13189,7 @@ MonoBehaviour:
   secondContent: {fileID: 1014484538}
   mainWeaponList:
   - {fileID: 11400000, guid: be3668186c5489e44912f6451da03789, type: 2}
+  - {fileID: 11400000, guid: ce46bfbf5c808614da8c624fd0832456, type: 2}
   secondWeaponList:
   - {fileID: 11400000, guid: bdb2087dd9fe9334c88aa1f8fb3ae22d, type: 2}
 --- !u!1 &1266037531

@@ -22,7 +22,6 @@ public class Pick : WeaponState
     public int process = 1;
     public Timer pickTimer;
     public Timer endTimer;
-    public TransformMark holdOffset;
     public Vector3 axis;
 
     public override void Init(GameObject obj)
@@ -122,8 +121,8 @@ public class Pick : WeaponState
                 Sound.PlayOneShot(_audio, sounds);
                 _weaponAttribute.constraint.weight = 0;
 
-                _weaponHandle.handPoint.localPosition = _weaponAttribute.holdOffset._position;
-                _weaponHandle.handPoint.localEulerAngles = _weaponAttribute.holdOffset._rotation;
+                _weaponHandle.handPoint.localPosition = _weaponAttribute.pickOffset.localPosition;
+                _weaponHandle.handPoint.localRotation = _weaponAttribute.pickOffset.localRotation;
                 _weaponHandle.shootPoint.GetComponent<ParentConstraint>().SetSource(0,
                     new ConstraintSource()
                     {

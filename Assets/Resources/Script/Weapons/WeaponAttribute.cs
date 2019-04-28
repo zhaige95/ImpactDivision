@@ -27,12 +27,12 @@ public class WeaponAttribute : MonoBehaviour
     public float recoilY = 0.5f;
     public bool reload = false;
     public bool ready = false;
-    public TransformMark holdOffset;
+
     public Texture2D cutPicInBattle;
+    public Transform pickOffset;
     public Transform holdPoint;
     public Transform shootPoint;
     public Transform OcclusionPoint;
-    public GameObject magObj;
     public ParentConstraint constraint;
     public Dictionary<string, WeaponState> states = new Dictionary<string, WeaponState>();
     public Dictionary<string, int> statesLayer = new Dictionary<string, int>();
@@ -68,6 +68,7 @@ public class WeaponAttribute : MonoBehaviour
         this.wname = config.wname;
         this.type = config.type;
         this.mag = config.mag;
+        this.runtimeMag = config.mag;
         this.damage = config.damage;
         this.fireSpeed = config.fireSpeed;
         this.spread = config.spread;
