@@ -17,6 +17,7 @@ public class C_Input : MonoBehaviour{
     public string reload = "r";
     public string aim = "mouse 1";
     public string switchWeapon = "q";
+    public string switchWeapon2 = "Mouse ScrollWheel";
     public string crouch = "left ctrl";
     public string pickRifle = "1";
     public string pickPistol = "2";

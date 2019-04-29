@@ -33,6 +33,10 @@ public class S_Input : ComponentSystem {
                 _velocity.Dreload = Input.GetKey(_input.reload);
                 _velocity.Daim = Input.GetKey(_input.aim);
                 _velocity.DswitchWeapon = Input.GetKeyDown(_input.switchWeapon);
+                if (!_velocity.DswitchWeapon)
+                {
+                    _velocity.DswitchWeapon = Input.GetAxis(_input.switchWeapon2) != 0;
+                }
                 _velocity.DpickRifle = Input.GetKeyDown(_input.pickRifle);
                 _velocity.DpickPistol = Input.GetKeyDown(_input.pickPistol);
                 _velocity.Dcombat = Input.GetKeyDown(_input.combat);

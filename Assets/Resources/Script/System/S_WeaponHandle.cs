@@ -31,7 +31,7 @@ public class S_WeaponHandle : ComponentSystem {
                 int currentWeapon = _handle.currentWeapon;
                 int targetWeapon = _handle.targetWeapon;
 
-                if (currentWeapon != targetWeapon)
+                if (currentWeapon != targetWeapon && targetWeapon != 0)
                 {
                     var atts = _handle.weaponAttributes;
                     foreach (var item in atts.Values)

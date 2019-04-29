@@ -43,7 +43,6 @@ public class CS_Crouch : AvatarState {
     public override bool Listener() {
         if (_velocity.Dcrouch)
         {
-            Debug.Log("listener crouch");
             return true;
         }
 
@@ -52,7 +51,7 @@ public class CS_Crouch : AvatarState {
 
     public override void Enter()
     {
-        Debug.Log("enter crouch");
+
         base.Enter();
         _velocity.Dcrouch = false;
         _velocity.currentSpeed = speed;
