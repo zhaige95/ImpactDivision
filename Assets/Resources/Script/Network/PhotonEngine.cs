@@ -33,7 +33,6 @@ public class PhotonEngine : Photon.PunBehaviour {
     // Use this for initialization
     private void Start()
     {
-        Application.targetFrameRate = 60;
         DontDestroyOnLoad(this.gameObject);
         Battle.photonEngine = this;
 

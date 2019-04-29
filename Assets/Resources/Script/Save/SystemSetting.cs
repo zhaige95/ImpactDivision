@@ -13,7 +13,8 @@ public class SystemSetting {
     // video setting
     public int screen = 1;
     public int resolutionRatio = 6;
-    public int frameRate = 2;
+    public int sync = 1;
+    public int frameRate = 4;
 
     // control setting
     public float mouseSpeed = 30;

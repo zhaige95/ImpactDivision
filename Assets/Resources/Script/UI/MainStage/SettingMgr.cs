@@ -12,6 +12,7 @@ public class SettingMgr : WindowBasic
     public GameObject confirmWindow;
     public SoundMgr soundMgr;
     public ControlSettingMgr controlMgr;
+    public VideoMgr videoMgr;
     
     public NetworkEvent OnClosePanel;
 
@@ -20,6 +21,7 @@ public class SettingMgr : WindowBasic
         
         soundMgr.Init();
         controlMgr.Init();
+        videoMgr.Init();
 
         applyBtn.interactable = false;
     }
@@ -46,8 +48,10 @@ public class SettingMgr : WindowBasic
     public void ApplyChanges()
     {
         soundMgr.ApplyChanges();
+        videoMgr.ApplyChanges();
 
         Battle.SaveSystemSettingData();
+
         applyBtn.interactable = false;
     }
 
@@ -65,6 +69,7 @@ public class SettingMgr : WindowBasic
 
     public void ResetSetting()
     {
+        videoMgr.ResetSetting();
         soundMgr.InitSetting();
         applyBtn.interactable = false;
     }
