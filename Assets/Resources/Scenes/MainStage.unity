@@ -4171,7 +4171,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -7779,6 +7779,10 @@ Prefab:
       propertyPath: OnChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 790288979}
+    - target: {fileID: 1792605518482514, guid: f5fc8aea6fe836f408486df37c976def, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5fc8aea6fe836f408486df37c976def, type: 2}
   m_IsPrefabAsset: 0
@@ -11519,7 +11523,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1121325907
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12433,7 +12437,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Alpha Test a0.1.2
+  m_Text: Alpha Test a0.2
 --- !u!222 &1191966672
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13371,11 +13375,7 @@ MonoBehaviour:
   mainWeaponList:
   - {fileID: 11400000, guid: be3668186c5489e44912f6451da03789, type: 2}
   - {fileID: 11400000, guid: ce46bfbf5c808614da8c624fd0832456, type: 2}
-  - {fileID: 11400000, guid: bdb2087dd9fe9334c88aa1f8fb3ae22d, type: 2}
-  - {fileID: 11400000, guid: bdf723c50e40a0645afd7ec4e68fcdd4, type: 2}
   secondWeaponList:
-  - {fileID: 11400000, guid: be3668186c5489e44912f6451da03789, type: 2}
-  - {fileID: 11400000, guid: ce46bfbf5c808614da8c624fd0832456, type: 2}
   - {fileID: 11400000, guid: bdb2087dd9fe9334c88aa1f8fb3ae22d, type: 2}
   - {fileID: 11400000, guid: bdf723c50e40a0645afd7ec4e68fcdd4, type: 2}
 --- !u!1 &1258254049
@@ -17223,6 +17223,7 @@ MonoBehaviour:
   avatarListItem: {fileID: 1677592059271996, guid: fa19b7daf5c3ef44593a328bf57efab0,
     type: 2}
   ListNode: {fileID: 777677065}
+  backButton: {fileID: 1654424269}
 --- !u!222 &1637823496
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17345,7 +17346,7 @@ GameObject:
   - component: {fileID: 1654424269}
   - component: {fileID: 1654424268}
   m_Layer: 5
-  m_Name: Btn_Apply
+  m_Name: Btn_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

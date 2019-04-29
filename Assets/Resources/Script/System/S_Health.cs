@@ -19,6 +19,8 @@ public class S_Health : ComponentSystem {
 
             if (!_attribute.isDead) {
 
+                var attackListener = e._AttackListener;
+
                 if (e._Attributes.HP > 300f)
                 {
                     e._Attributes.HP = 1;
@@ -28,8 +30,9 @@ public class S_Health : ComponentSystem {
                     e._Attributes.HP = 1;
                 }
 
-                if (e._Attributes.HP <= 0 && e._AttackListener.isActive)
+                if (e._Attributes.HP <= 0 && attackListener.isActive)
                 {
+                    attackListener.isActive = false;
                     if (e._Velocity.isLocalPlayer)
                     {
                         e._StateMgr.EnterState("dead");

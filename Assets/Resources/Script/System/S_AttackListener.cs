@@ -11,9 +11,7 @@ public class S_AttackListener : ComponentSystem {
         public C_BattleMgr _BattleMgr;
         public AudioSource _Audio;
     }
-
-    int killerRoomID = 0;
-
+    
 	protected override void OnUpdate()
 	{
 		foreach (var e in GetEntities<Group>())
@@ -21,7 +19,7 @@ public class S_AttackListener : ComponentSystem {
             var _attackListener = e._AttackListener;
             var _attackList = e._AttackListener.attackList;
             var _attribute = e._Attributes;
-            var _velocity = e._Velocity;
+
             if (e._AttackListener.isActive)
             {
                 foreach (Attack attack in _attackList)
@@ -44,7 +42,6 @@ public class S_AttackListener : ComponentSystem {
 
                     if (_attribute.HP <= 0)
                     {
-                        _attackListener.isActive = false;
                         e._BattleMgr.photonView.RPC("AddKillerMsg", PhotonTargets.Others, sourceBattleMgr.nickName);
 
                         sourceBattleMgr.photonView.RPC("AddKill", PhotonTargets.All, attack.headShot);

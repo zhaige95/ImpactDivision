@@ -625,7 +625,7 @@ MonoBehaviour:
   changed: 0
   key: 
   value: 
-  interactable: 0
+  interactable: 1
   keyName: {fileID: 114532857927280060}
   leftArrow: {fileID: 114966030599416868}
   rightArrow: {fileID: 114770196946616960}
@@ -633,13 +633,13 @@ MonoBehaviour:
   currentIndex: 0
   originalIndex: 0
   options:
-  - 30
-  - 40
-  - 45
-  - 50
-  - "60 (\u63A8\u8350)"
-  - 80
-  - 120
+  - 30 FPS
+  - 40 FPS
+  - 45 FPS
+  - 50 FPS
+  - "60 FPS (\u63A8\u8350)"
+  - 80 FPS
+  - 120 FPS
   OnChange:
     m_PersistentCalls:
       m_Calls:
@@ -1164,8 +1164,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1742767298182328}
   m_LocalRotation: {x: 0.0000000074469044, y: -0, z: 2.3402838e-10, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0002145837}
-  m_LocalScale: {x: 1, y: 0.99999994, z: 0.9999997}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224058694513566382}
   - {fileID: 224645888588292918}

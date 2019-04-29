@@ -13,7 +13,7 @@ public class SystemSetting {
     // video setting
     public int screen = 1;
     public int resolutionRatio = 6;
-    public int sync = 1;
+    public int sync = 0;
     public int frameRate = 4;
 
     // control setting

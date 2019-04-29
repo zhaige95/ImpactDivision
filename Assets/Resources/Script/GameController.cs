@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour {
         {
             var avatar = item.Create();
             var _attr = avatar.GetComponent<C_Attributes>();
-            var _uiMgr = avatar.GetComponent<C_UiEventMgr>();
+
 
             if (_attr.camp != Battle.localPlayerCamp)
             {

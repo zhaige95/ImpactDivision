@@ -12,7 +12,6 @@ public class CS_Crouch : AvatarState {
     C_Animator _animator;
     C_UiEventMgr _uiMgr;
     C_Velocity _velocity;
-    CS_StateMgr _stateMgr;
     C_Attributes _attributes;
     C_WeaponHandle _weaponHandle;
     AudioSource _audioSource;
@@ -30,7 +29,6 @@ public class CS_Crouch : AvatarState {
         _animator = GetComponent<C_Animator>();
         _velocity = GetComponent<C_Velocity>();
         _attributes = GetComponent<C_Attributes>();
-        _stateMgr = GetComponent<CS_StateMgr>();
         _audioSource = GetComponent<AudioSource>();
         _characterController = GetComponent<CharacterController>();
 

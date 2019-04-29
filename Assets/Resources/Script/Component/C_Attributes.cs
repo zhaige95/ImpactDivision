@@ -22,9 +22,11 @@ public class C_Attributes : MonoBehaviour {
     public Timer timer = new Timer();
     public float recoverTime = 3f;
     [Header("[Component]")]
-    C_UiEventMgr uiMgr;
     Animator animator;
+    PhotonView photonView;
+    C_UiEventMgr uiMgr;
     C_AttackListener attackListener;
+
 
     //-------------
     public Action OnDead;
@@ -34,10 +36,10 @@ public class C_Attributes : MonoBehaviour {
     {
         uiMgr = GetComponent<C_UiEventMgr>();
         animator = GetComponent<C_Animator>().animator;
+        photonView = GetComponent<PhotonView>();
         attackListener = GetComponent<C_AttackListener>();
     }
-
-    [PunRPC]
+    
     public void Demaged(float demage, string operation)
     {
         if (operation.Equals("-"))
@@ -75,6 +77,7 @@ public class C_Attributes : MonoBehaviour {
         var bloodMsg = new UiEvent.UiMsgs.Blood();
         uiMgr.SendEvent(bloodMsg);
 
+        this.photonView.RPC("SyncHp", PhotonTargets.Others, this.HP);
     }
 
     public void Recover()
@@ -82,6 +85,12 @@ public class C_Attributes : MonoBehaviour {
         this.Demaged(HPMax, "+");
         this.isDead = false;
         OnRecover?.Invoke();
+    }
+
+    [PunRPC]
+    public void SyncHp(float hp)
+    {
+        this.HP = hp;
     }
 
 }

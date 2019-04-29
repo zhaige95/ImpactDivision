@@ -10,7 +10,6 @@ public class CS_Jog : AvatarState {
     C_Camera _camera;
     C_Animator _animator;
     C_Velocity _velocity;
-    CS_StateMgr _stateMgr;
     C_Attributes _attributes;
     AudioSource _audioSource;
     CharacterController _characterController;
@@ -22,16 +21,13 @@ public class CS_Jog : AvatarState {
     public float runSteptime;
     public float walkSteptime;
     public Timer timer = new Timer();
-
-    Vector3 targetAngles = new Vector3();
-    int directionIndex = 0;
+    
 
     private void OnEnable()
     {
         _camera = GetComponent<C_Camera>();
         _animator = GetComponent<C_Animator>();
         _velocity = GetComponent<C_Velocity>();
-        _stateMgr = GetComponent<CS_StateMgr>();
         _attributes = GetComponent<C_Attributes>();
         _audioSource = GetComponent<AudioSource>();
         _characterController = GetComponent<CharacterController>();
@@ -72,8 +68,6 @@ public class CS_Jog : AvatarState {
 
         if (!_attributes.isDead)
         {
-            var _anim = _animator.animator;
-
             timer.Update();
 
             if (!timer.isRunning)

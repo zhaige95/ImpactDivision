@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AvatarMgr : WindowBasic {
 
@@ -11,6 +12,15 @@ public class AvatarMgr : WindowBasic {
     [Header("List Parma")]
     public GameObject avatarListItem;
     public Transform ListNode;
+    public Button backButton;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            backButton.onClick.Invoke();
+        }
+    }
 
     public override void Init()
     {

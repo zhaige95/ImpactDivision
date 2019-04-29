@@ -1120,23 +1120,13 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  _animator: {fileID: 0}
-  _velocity: {fileID: 0}
-  _iKManager: {fileID: 0}
-  _weaponHandle: {fileID: 0}
-  _uiMgr: {fileID: 0}
-  _photonView: {fileID: 0}
-  _stateMgr: {fileID: 0}
-  _audioSource: {fileID: 0}
-  _weaponAttribute: {fileID: 0}
-  _ownAnimator: {fileID: 0}
   magIK: {fileID: 4077884342584000}
   sounds:
   - {fileID: 8300000, guid: 4b12f7a94e089dc4680fc9ee45c5ce4a, type: 3}
   - {fileID: 8300000, guid: 8945b7dc5f3b8b2419972632179c98e4, type: 3}
   animLayer: 5
-  reloadTime: 1
-  process: 1
+  reloadTime: 1.7
+  magInTime: 0.6
 --- !u!114 &114133021762441482
 MonoBehaviour:
   m_ObjectHideFlags: 1

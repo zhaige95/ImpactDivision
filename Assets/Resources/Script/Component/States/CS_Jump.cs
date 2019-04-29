@@ -14,7 +14,6 @@ public class CS_Jump : AvatarState {
     C_OnGroundSensor _onGroundSensor;
     AudioSource _audioSource;
     CharacterController _characterController;
-    PhotonView pView;
 
     [Header("[Extra Properties]")]
     public Timer timer = new Timer();
@@ -33,12 +32,10 @@ public class CS_Jump : AvatarState {
         _velocity = GetComponent<C_Velocity>();
         _animator = GetComponent<C_Animator>();
         _attributes = GetComponent<C_Attributes>();
-        _onGroundSensor = GetComponent<C_OnGroundSensor>();
         _audioSource = GetComponent<AudioSource>();
+        _onGroundSensor = GetComponent<C_OnGroundSensor>();
         _characterController = GetComponent<CharacterController>();
-        pView = GetComponent<PhotonView>();
 
-        this.pView = GetComponent<PhotonView>();
         var stateMgr = GetComponent<CS_StateMgr>();
         //_name = "aim";
         stateMgr.RegState(_name, this);

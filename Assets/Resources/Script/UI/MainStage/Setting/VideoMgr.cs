@@ -14,7 +14,6 @@ public class VideoMgr : WindowBasic
 
     private void OnEnable()
     {
-        Debug.Log(syncOption.currentIndex);
         UpdateFrameRateOptionInteractable();
     }
 

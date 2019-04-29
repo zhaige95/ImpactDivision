@@ -9,7 +9,6 @@ public class CS_Dead : AvatarState {
     C_Camera myCamera;
     C_Velocity velocity;
     C_IKManager iKManager;
-    C_BattleMgr battleMgr;
     C_UiEventMgr uiMgr;
     C_Attributes attributes;
     C_WeaponHandle weaponHandle;
@@ -27,7 +26,6 @@ public class CS_Dead : AvatarState {
         myCamera = GetComponent<C_Camera>();
         velocity = GetComponent<C_Velocity>();
         iKManager = GetComponent<C_IKManager>();
-        battleMgr = GetComponent<C_BattleMgr>();
         attributes = GetComponent<C_Attributes>();
         weaponHandle = GetComponent<C_WeaponHandle>();
         bornProtector = GetComponent<C_BornProtector>();

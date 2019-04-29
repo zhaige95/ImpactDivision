@@ -6,26 +6,26 @@ using UiEvent;
 public class Reload_Rifle : WeaponState
 {
     [Header("[Components]")]
-    public C_Animator _animator;
-    public C_Velocity _velocity;
-    public C_IKManager _iKManager;
-    public C_WeaponHandle _weaponHandle;
-    public C_UiEventMgr _uiMgr;
-    public PhotonView _photonView;
+    C_Animator _animator;
+    C_Velocity _velocity;
+    C_IKManager _iKManager;
+    C_WeaponHandle _weaponHandle;
+    C_UiEventMgr _uiMgr;
+    PhotonView _photonView;
 
-    public CS_StateMgr _stateMgr;
-
-    public AudioSource _audioSource;
-    public WeaponAttribute _weaponAttribute;
-    public Animator _ownAnimator;
+    AudioSource _audioSource;
+    WeaponAttribute _weaponAttribute;
+    Animator _ownAnimator;
 
     [Header("[Extra Properties]")]
     public Transform magIK;
     public AudioClip[] sounds;
     public int animLayer = 5;
-    public float reloadTime;
-    public Timer timer;
-    public int process = 1;
+    public float reloadTime = 1.5f;
+    public float magInTime = 0.5f;
+
+    Timer timer;
+    int process = 1;
 
     public override void Init(GameObject obj)
     {
@@ -34,7 +34,6 @@ public class Reload_Rifle : WeaponState
         _velocity = obj.GetComponent<C_Velocity>();
         _iKManager = obj.GetComponent<C_IKManager>();
         _weaponHandle = obj.GetComponent<C_WeaponHandle>();
-        _stateMgr = obj.GetComponent<CS_StateMgr>();
         _photonView = obj.GetComponent<PhotonView>();
 
         _ownAnimator = GetComponent<Animator>();
@@ -67,6 +66,7 @@ public class Reload_Rifle : WeaponState
 
         _weaponAttribute.reload = true;
 
+        timer.Enter(reloadTime);
         process = 1;
         
         _animator.animator.SetTrigger("reload");
@@ -79,6 +79,7 @@ public class Reload_Rifle : WeaponState
 
     public override void OnUpdate()
     {
+        this.timer.Update();
         var _anim = _animator.animator;
 
         AnimatorStateInfo animatorInfo;
@@ -96,7 +97,7 @@ public class Reload_Rifle : WeaponState
         {
             if (process == 2)
             {
-                if (animatorInfo.normalizedTime >= 0.65f)
+                if (animatorInfo.normalizedTime >= this.magInTime)
                 {
                     _audioSource.PlayOneShot(sounds[1]);
                     if (_velocity.isLocalPlayer)
@@ -123,7 +124,7 @@ public class Reload_Rifle : WeaponState
             }
             else if (process == 3)
             {
-                if (animatorInfo.normalizedTime >= 0.9f)
+                if (!this.timer.isRunning)
                 {
                     this._exitTick = true;
                     process = 4;

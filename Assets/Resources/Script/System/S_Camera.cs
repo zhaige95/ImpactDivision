@@ -11,7 +11,6 @@ public class S_Camera : ComponentSystem {
     }
 
     public RaycastHit hit;
-    bool cursorIsLocked = true;
     
     protected override void OnUpdate()
     {
@@ -30,13 +29,13 @@ public class S_Camera : ComponentSystem {
 
                     if (_velocity.aiming)
                     {
-                        x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * Battle.mouseSpeedAiming * 0.5f;
-                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * Battle.mouseSpeedAiming * 0.5f + _camera.correct;
+                        x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * Battle.mouseSpeedAiming * 50f * Time.deltaTime;
+                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * Battle.mouseSpeedAiming * 50f * Time.deltaTime + _camera.correct;
                     }
                     else
                     {
-                        x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * Battle.mouseSpeedPrimary;
-                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * Battle.mouseSpeedPrimary + _camera.correct;
+                        x = _camera.camera_x.localEulerAngles.x - _velocity.Dmouse_y * Battle.mouseSpeedPrimary * 80f * Time.deltaTime;
+                        y = _camera.camera_y.localEulerAngles.y + _velocity.Dmouse_x * Battle.mouseSpeedPrimary * 80f * Time.deltaTime + _camera.correct;
                     }
                     _camera.correct = 0f;
                     if (x >= 260f && x <= 360f)

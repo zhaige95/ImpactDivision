@@ -14,7 +14,6 @@ public class CS_Run : AvatarState {
     C_Attributes _attributes;
     C_IKManager _iKManager;
     AudioSource _audioSource;
-    C_WeaponHandle _weaponHandle;
     CharacterController _characterController;
 
     [Header("[Extra Properties]")]
@@ -35,7 +34,6 @@ public class CS_Run : AvatarState {
         _attributes = GetComponent<C_Attributes>();
         _iKManager = GetComponent<C_IKManager>();
         _audioSource = GetComponent<AudioSource>();
-        _weaponHandle = GetComponent<C_WeaponHandle>();
         _characterController = GetComponent<CharacterController>();
     }
 
@@ -86,7 +84,7 @@ public class CS_Run : AvatarState {
                 Sound.PlayOneShot(_audioSource, sounds);
                 timer.Enter(runStepTime);
             }
-            var _anim = _animator.animator;
+
             if (_velocity.isLocalPlayer)
             {
                 if (_velocity.armed)

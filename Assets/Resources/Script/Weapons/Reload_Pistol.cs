@@ -9,7 +9,6 @@ public class Reload_Pistol : WeaponState
     C_Animator _animator;
     C_Velocity _velocity;
     C_IKManager _iKManager;
-    CS_StateMgr _stateMgr;
     C_WeaponHandle _weaponHandle;
     C_UiEventMgr _uiMgr;
     PhotonView _photonView;
@@ -27,7 +26,6 @@ public class Reload_Pistol : WeaponState
         _animator = obj.GetComponent<C_Animator>();
         _velocity = obj.GetComponent<C_Velocity>();
         _iKManager = obj.GetComponent<C_IKManager>();
-        _stateMgr = obj.GetComponent<CS_StateMgr>();
         _weaponHandle = obj.GetComponent<C_WeaponHandle>();
         _uiMgr = obj.GetComponent<C_UiEventMgr>();
         _photonView = obj.GetComponent<PhotonView>();
