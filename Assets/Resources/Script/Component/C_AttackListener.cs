@@ -12,12 +12,14 @@ public class C_AttackListener : MonoBehaviour {
     C_Attributes attributes;
     [Header("Properties")]
     public bool isActive = true;
-    public AudioClip killSound;
     public AudioClip[] beAttackedSounds;
     public AudioClip[] hitFeedBackSounds;
     public GameObject hitEffect;
     public List<Attack> attackList = new List<Attack>();
-    public Dictionary<int, C_BattleMgr> sourceList = new Dictionary<int, C_BattleMgr>(); 
+    public Dictionary<int, C_BattleMgr> sourceList = new Dictionary<int, C_BattleMgr>();
+    [HideInInspector]
+    public C_BattleMgr lastHitPlayer;
+    
     public int injuredAnimLayer = 8;
 
     private void Awake()
@@ -46,11 +48,13 @@ public class C_AttackListener : MonoBehaviour {
     public void AddAttackSource(int sourceID)
     {
         var source = Battle.GetPlayerInfoByRoomID(sourceID, attributes.camp);
-        if (source != null)
+        if (source != null && attributes.HP > 0)
         {
             if (!sourceList.ContainsKey(sourceID))
             {
                 sourceList.Add(sourceID, Battle.GetPlayerInfoByRoomID(sourceID, attributes.camp));
+                this.lastHitPlayer = source;
+                Debug.Log("add source info");
             }
         }
     }

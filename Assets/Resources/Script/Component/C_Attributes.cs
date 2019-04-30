@@ -5,10 +5,8 @@ using Unity.Entities;
 using UiEvent;
 using System;
 
-public class C_Attributes : MonoBehaviour {
+public class C_Attributes : MonoBehaviour, IPunObservable {
     
-    public Entity entity;
-    public bool isLocalPlayer = false;
     public float HP = 100f;
     public float HPMax = 100f;
     public float runSpeed = 4f;
@@ -76,8 +74,7 @@ public class C_Attributes : MonoBehaviour {
 
         var bloodMsg = new UiEvent.UiMsgs.Blood();
         uiMgr.SendEvent(bloodMsg);
-
-        this.photonView.RPC("SyncHp", PhotonTargets.Others, this.HP);
+        
     }
 
     public void Recover()
@@ -87,10 +84,16 @@ public class C_Attributes : MonoBehaviour {
         OnRecover?.Invoke();
     }
 
-    [PunRPC]
-    public void SyncHp(float hp)
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        this.HP = hp;
+        if (stream.isWriting)
+        {
+            stream.SendNext(this.HP);
+        }
+        else if (stream.isReading)
+        {
+            var hp = (float)stream.ReceiveNext();
+            this.HP = hp;
+        }
     }
-
 }

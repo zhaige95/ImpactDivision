@@ -9,6 +9,7 @@ public class S_AttackListener : ComponentSystem {
         public C_Velocity _Velocity;
         public C_Attributes _Attributes;
         public C_BattleMgr _BattleMgr;
+        public CS_StateMgr _StateMgr;
         public AudioSource _Audio;
     }
     
@@ -25,12 +26,12 @@ public class S_AttackListener : ComponentSystem {
                 foreach (Attack attack in _attackList)
                 {
                     _attackListener.photonView.RPC("Demaged", PhotonTargets.All, attack.demage);
-                    
+
                     var source = attack.source;
                     var sourceAudio = source.GetComponent<AudioSource>();
                     var sourceBattleMgr = source.GetComponent<C_BattleMgr>();
 
-                    sourceBattleMgr.photonView.RPC("AddDemage", PhotonTargets.All, attack.demage);
+                    sourceBattleMgr.AddDemage(attack.demage, attack.headShot);
                     sourceBattleMgr.AddHit();
 
                     var hitMsg = new UiEvent.UiMsgs.Hit()
@@ -40,27 +41,36 @@ public class S_AttackListener : ComponentSystem {
                     source.GetComponent<C_UiEventMgr>().SendEvent(hitMsg);
                     Sound.PlayOneShot(sourceAudio, _attackListener.hitFeedBackSounds);
 
-                    if (_attribute.HP <= 0)
-                    {
-                        e._BattleMgr.photonView.RPC("AddKillerMsg", PhotonTargets.Others, sourceBattleMgr.nickName);
+                    _attackListener.photonView.RPC("AddAttackSource", PhotonTargets.Others, attack.source.roomID);
 
-                        sourceBattleMgr.photonView.RPC("AddKill", PhotonTargets.All, attack.headShot);
-                        Sound.PlayOneShot(sourceAudio, _attackListener.killSound);
-                        
+                    
+
+                }
+                if (_attribute.HP <= 0)
+                {
+                    if (e._Velocity.isLocalPlayer)
+                    {
+                        var battleMgr = e._BattleMgr;
+                        e._BattleMgr.AddKillerMsg(_attackListener.lastHitPlayer.nickName);
+                        Debug.Log("add killer msg");
+                        _attackListener.lastHitPlayer.photonView.RPC("AddKill", PhotonTargets.Others);
+
                         foreach (var item in _attackListener.sourceList.Values)
                         {
-                            if (sourceBattleMgr.roomID != item.roomID)
+                            if (item.roomID != _attackListener.lastHitPlayer.roomID)
                             {
-                                item.photonView.RPC("AddAssists", PhotonTargets.All);
+                                item.photonView.RPC("AddAssists", PhotonTargets.Others);
                             }
                         }
 
-                        break;
+                        e._StateMgr.EnterState("dead");
+                        e._BattleMgr.AddDead();
                     }
 
-                    _attackListener.photonView.RPC("AddAttackSource", PhotonTargets.All, attack.source.roomID);
+                    _attackListener.isActive = false;
+
+                    break;
                 }
-                
                 _attackListener.attackList.Clear();
             }
         }

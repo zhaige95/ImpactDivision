@@ -5839,7 +5839,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8dbfaf8f26840e489820bab8e57f6ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocalPlayer: 0
   HP: 100
   HPMax: 100
   runSpeed: 4.3
@@ -6242,7 +6241,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photonView: {fileID: 114856232755234046}
   isActive: 1
-  killSound: {fileID: 8300000, guid: a0fea9fa820519c4aa8fca0e36573372, type: 3}
   beAttackedSounds:
   - {fileID: 8300000, guid: e5d0532700449954f836895cd7a1fe5a, type: 3}
   - {fileID: 8300000, guid: 0d999ce26a6c6e845b29b3f1fd22b465, type: 3}
@@ -6257,6 +6255,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bc45b9eef5fb35e4e85ab4ea975f59a2, type: 3}
   - {fileID: 8300000, guid: f81a906f150592b4fa5d7d39514b560f, type: 3}
   hitEffect: {fileID: 1150348680127518, guid: bfa23fe988223d64db44706f6e3803ac, type: 2}
+  lastHitPlayer: {fileID: 0}
   injuredAnimLayer: 8
 --- !u!114 &114620327225856634
 MonoBehaviour:
@@ -6323,6 +6322,7 @@ MonoBehaviour:
   friendlyMark:
   - {fileID: 23705856364920232}
   - {fileID: 23564983949483884}
+  killMsgSound: {fileID: 8300000, guid: a0fea9fa820519c4aa8fca0e36573372, type: 3}
   roomID: 0
   nickName: 
   kill: 0
@@ -6417,6 +6417,7 @@ MonoBehaviour:
   - {fileID: 114109602016581248}
   - {fileID: 114796463026330456}
   - {fileID: 114267410469199622}
+  - {fileID: 114240890398443440}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1

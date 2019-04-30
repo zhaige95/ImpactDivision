@@ -10,9 +10,12 @@ public class C_BattleMgr : MonoBehaviour {
     [HideInInspector]
     public C_Velocity velocity;
     C_UiEventMgr uiMgr;
+    AudioSource audioSource;
+    
     [HideInInspector]
     public PhotonView photonView;
     public MeshRenderer[] friendlyMark;
+    public AudioClip killMsgSound;
 
     public int roomID = 0;
     public string nickName = "";
@@ -31,10 +34,11 @@ public class C_BattleMgr : MonoBehaviour {
 
     private void Awake()
     {
-        attributes = GetComponent<C_Attributes>();
-        velocity = GetComponent<C_Velocity>();
         uiMgr = GetComponent<C_UiEventMgr>();
+        velocity = GetComponent<C_Velocity>();
         photonView = GetComponent<PhotonView>();
+        attributes = GetComponent<C_Attributes>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -55,17 +59,13 @@ public class C_BattleMgr : MonoBehaviour {
     }
 
     [PunRPC]
-    public void AddKill(bool isHeadShot = false)
+    public void AddKill()
     {
         kill ++;
         tempMultikill ++;
         score += 100;
 
-        if (isHeadShot)
-        {
-            this.headShot++;
-        }
-
+        Sound.PlayOneShot(this.audioSource, this.killMsgSound);
         uiMgr.SendEvent(new UiEvent.UiMsgs.Kill());
         OnKill?.Invoke(attributes.camp);
         SyncData();
@@ -104,9 +104,13 @@ public class C_BattleMgr : MonoBehaviour {
     }
 
     [PunRPC]
-    public void AddDemage(float demage)
+    public void AddDemage(float demage, bool isHeadShot = false)
     {
         demageCount += demage;
+        if (isHeadShot)
+        {
+            this.headShot++;
+        }
     }
 
     public void AddFire()

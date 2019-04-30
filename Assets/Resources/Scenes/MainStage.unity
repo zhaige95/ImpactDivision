@@ -12366,6 +12366,7 @@ GameObject:
   - component: {fileID: 1191966672}
   - component: {fileID: 1191966671}
   - component: {fileID: 1191966670}
+  - component: {fileID: 1191966673}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -12437,7 +12438,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Alpha Test a0.2
+  m_Text: 
 --- !u!222 &1191966672
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12445,6 +12446,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1191966668}
   m_CullTransparentMesh: 0
+--- !u!114 &1191966673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1191966668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48565707100ae3643be2809a2fb044c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  versionConfig: {fileID: 11400000, guid: d65b8b6d6f0495f46b77c9edfef21699, type: 2}
+  versionText: {fileID: 1191966671}
 --- !u!1 &1195495246
 GameObject:
   m_ObjectHideFlags: 0

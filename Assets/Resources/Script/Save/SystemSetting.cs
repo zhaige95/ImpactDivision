@@ -5,9 +5,9 @@ using UnityEngine;
 public class SystemSetting {
 
     // sound setting
-    public float masterVolume = 50;
+    public float masterVolume = 100;
     public float soundVolume = 100;
-    public float musicVolume = 100;
+    public float musicVolume = 50;
     public float talkVolume = 100;
 
     // video setting
