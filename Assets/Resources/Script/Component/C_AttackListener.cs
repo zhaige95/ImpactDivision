@@ -53,9 +53,9 @@ public class C_AttackListener : MonoBehaviour {
             if (!sourceList.ContainsKey(sourceID))
             {
                 sourceList.Add(sourceID, Battle.GetPlayerInfoByRoomID(sourceID, attributes.camp));
-                this.lastHitPlayer = source;
-                Debug.Log("add source info");
             }
+
+            this.lastHitPlayer = source;
         }
     }
 }

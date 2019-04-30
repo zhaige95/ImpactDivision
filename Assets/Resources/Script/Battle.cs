@@ -88,7 +88,6 @@ public class Battle : MonoBehaviour
 
     public static void PlayerJoin(int camp, int roomID, C_BattleMgr battleMgr)
     {
-        Debug.Log("roomID = " + roomID);
         if (camp == 1)
         {
             if (playerListCamp1.ContainsKey(roomID))
