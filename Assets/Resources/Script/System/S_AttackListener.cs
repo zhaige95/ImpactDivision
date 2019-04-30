@@ -42,9 +42,7 @@ public class S_AttackListener : ComponentSystem {
                     Sound.PlayOneShot(sourceAudio, _attackListener.hitFeedBackSounds);
 
                     _attackListener.photonView.RPC("AddAttackSource", PhotonTargets.Others, attack.source.roomID);
-
                     
-
                 }
                 if (_attribute.HP <= 0)
                 {
@@ -52,8 +50,7 @@ public class S_AttackListener : ComponentSystem {
                     {
                         var battleMgr = e._BattleMgr;
                         e._BattleMgr.AddKillerMsg(_attackListener.lastHitPlayer.nickName);
-                        Debug.Log("add killer msg");
-                        _attackListener.lastHitPlayer.photonView.RPC("AddKill", PhotonTargets.Others);
+                        _attackListener.lastHitPlayer.photonView.RPC("AddKill", PhotonTargets.All);
 
                         foreach (var item in _attackListener.sourceList.Values)
                         {
