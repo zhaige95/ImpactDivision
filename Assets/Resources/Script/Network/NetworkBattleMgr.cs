@@ -115,6 +115,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         if (PhotonNetwork.isMasterClient)
         {
             this.CheckFinishCondition();
+            Battle.localPlayerBattleInfo.photonView.RPC("SyncBattleMgr", PhotonTargets.Others, this.preparing ? timer.rate : gameTime, this.preparing, score[1], score[2]);
         }
     }
 

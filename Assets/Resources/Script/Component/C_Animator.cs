@@ -8,7 +8,7 @@ public class C_Animator : MonoBehaviour, IPunObservable {
     C_Velocity velocity;
     public Dictionary<string, float> targetFloat;
     public Dictionary<int, float> layerTransform;
-
+    
     void Awake()
     {
         velocity = GetComponent<C_Velocity>();
