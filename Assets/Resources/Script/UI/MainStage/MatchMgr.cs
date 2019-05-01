@@ -126,7 +126,7 @@ public class MatchMgr : Photon.PunBehaviour
         if (this.single)
         {
             onPlayStart.Invoke();
-            async = PhotonNetwork.LoadLevelAsync("Battle001");
+            async = PhotonNetwork.LoadLevelAsync("Battle002");
             async.allowSceneActivation = true;
             Hashtable p = new Hashtable();
             p.Add("team", "1");
