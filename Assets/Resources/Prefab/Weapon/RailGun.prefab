@@ -338,7 +338,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 85b09e462cc05da4e81ee283fe314172, type: 2}
+  - {fileID: 2100000, guid: 56c3ebf5e4110c9449b409d0135b95c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -586,9 +586,6 @@ MonoBehaviour:
   recoilY: 1
   reload: 0
   ready: 0
-  holdOffset:
-    _position: {x: -0.0915, y: 0.0348, z: 0.0096}
-    _rotation: {x: -104.924, y: -75.43701, z: 80.45899}
   cutPicInBattle: {fileID: 0}
   pickOffset: {fileID: 4021263159482512}
   holdPoint: {fileID: 4022105809440286}
@@ -616,11 +613,6 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  _velocity: {fileID: 0}
-  _iKManager: {fileID: 0}
-  _weaponHandle: {fileID: 0}
-  _weaponAttribute: {fileID: 0}
-  _photonView: {fileID: 0}
 --- !u!114 &114725706586063820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -639,12 +631,6 @@ MonoBehaviour:
   _pause: 0
   _enterTick: 0
   _exitTick: 0
-  _velocity: {fileID: 0}
-  _iKManager: {fileID: 0}
-  _weaponHandle: {fileID: 0}
-  _camera: {fileID: 0}
-  _uiMgr: {fileID: 0}
-  _weaponAttribute: {fileID: 0}
   FOV: 30
 --- !u!114 &114899555629545950
 MonoBehaviour:

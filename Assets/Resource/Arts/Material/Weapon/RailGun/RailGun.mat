@@ -24,11 +24,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _1st_ShadeMap:
-        m_Texture: {fileID: 2800000, guid: ec04a5c5f1e5d1745a8b11d09b0142a0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0cc2e2555f7808e43a5953f20e5d5867, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _2nd_ShadeMap:
-        m_Texture: {fileID: 2800000, guid: ec04a5c5f1e5d1745a8b11d09b0142a0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0cc2e2555f7808e43a5953f20e5d5867, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BakedNormal:
@@ -36,7 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: ec04a5c5f1e5d1745a8b11d09b0142a0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0cc2e2555f7808e43a5953f20e5d5867, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Emissive_Tex:
-        m_Texture: {fileID: 2800000, guid: 27b9a80289197d746b25b4b461f5a29d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6f1a69e74a8f3c24c99b92e8840cb5aa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EnvMapSampler:
@@ -76,7 +76,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ec04a5c5f1e5d1745a8b11d09b0142a0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0894b47167deead4e99a64a93d3a9ea1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatCap_Sampler:
@@ -198,7 +198,7 @@ Material:
     - _Offset_X_Axis_BLD: -0.05
     - _Offset_Y_Axis_BLD: 0.09
     - _Offset_Z: 0
-    - _Outline_Width: 2.04
+    - _Outline_Width: 2
     - _Parallax: 0.02
     - _RimLight: 1
     - _RimLight_FeatherOff: 0
@@ -236,7 +236,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Emissive_Color: {r: 0, g: 1.2683709, b: 6.211765, a: 1}
+    - _Emissive_Color: {r: 0, g: 0.627451, b: 3.137255, a: 1}
     - _HighColor: {r: 1, g: 1, b: 1, a: 1}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _Outline_Color: {r: 0, g: 0, b: 0, a: 1}

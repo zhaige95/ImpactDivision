@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4068143609257692}
   - component: {fileID: 33893186640302072}
   - component: {fileID: 23609286624741808}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Stage_City_Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4630086864912334}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: OW_Destiny_Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4360577899594336}
   - component: {fileID: 33518987687108544}
   - component: {fileID: 23769672606394826}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Stage_City_Plane_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,15 +92,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1438890105887384}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.866025, z: -0, w: 0.5000008}
+  m_LocalPosition: {x: 6.7599945, y: -0.08816147, z: 5.9800034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4068143609257692}
   - {fileID: 4360577899594336}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 120.00001, z: 0}
 --- !u!23 &23609286624741808
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -154,8 +154,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 5484beeacd365924b9b46e4c896c8053, type: 2}
-  - {fileID: 2100000, guid: 7179ad4603fe9ef41a4280578e9e4c7c, type: 2}
+  - {fileID: 2100000, guid: a39e60c371ba8884a93074c709c2e7a5, type: 2}
+  - {fileID: 2100000, guid: 79bc2da440a3f86489929139aa793c3d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

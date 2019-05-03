@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4768947795972480}
   - component: {fileID: 114931319695814186}
-  - component: {fileID: 114887597766056116}
+  - component: {fileID: 114386411842314100}
   m_Layer: 0
   m_Name: NetworkCreator
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114887597766056116
+--- !u!114 &114386411842314100
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,7 +56,7 @@ MonoBehaviour:
   group: 0
   OwnerShipWasTransfered: 0
   prefixBackup: -1
-  synchronization: 0
+  synchronization: 3
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0

@@ -9,5 +9,4 @@ using System;
 /// <summary>Replacement for RPC attribute with different name. Used to flag methods as remote-callable.</summary>
 public class PunRPC : Attribute
 {
-
 }

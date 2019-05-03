@@ -82,32 +82,32 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: NV4_Accessories
-    second: {fileID: 2100000, guid: d6e2acf537ee5fb4792cb3611ad8d4a9, type: 2}
+    second: {fileID: 2100000, guid: 0095c8c9cff88864f9178cde890bb286, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: NV4_Body
-    second: {fileID: 2100000, guid: bdf13a960dfa7fb4ab98b2f01dc09fef, type: 2}
+    second: {fileID: 2100000, guid: 37e1e26d3fd014145947b759bc3a431f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: NV4_Mag
-    second: {fileID: 2100000, guid: 35aada7a164f4924e9486333e8fe14f0, type: 2}
+    second: {fileID: 2100000, guid: e2ec4717c39cf424f8d3c78124cf2554, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: NV4_Sights
-    second: {fileID: 2100000, guid: 100b5c5b70df2154d8a34521cad0291a, type: 2}
+    second: {fileID: 2100000, guid: 8d3de0e43328b2446b1650f39c0309f3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: ff51d14f5b89e08439622cf579ce7660, type: 2}
+    second: {fileID: 2100000, guid: b4b8cd66a8482274bb41a28b422db791, type: 2}
   materials:
     importMaterials: 1
     materialName: 1
     materialSearch: 0
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -174,7 +174,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
