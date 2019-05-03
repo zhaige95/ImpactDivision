@@ -32,18 +32,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Stage_City_Plane_Mat_01_Reflection
-    second: {fileID: 2100000, guid: 7179ad4603fe9ef41a4280578e9e4c7c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Stage_City_Plane_Mat_02
     second: {fileID: 2100000, guid: a39e60c371ba8884a93074c709c2e7a5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Stage_City_Plane_Mat_02_Reflection
-    second: {fileID: 2100000, guid: 5484beeacd365924b9b46e4c896c8053, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -92,7 +82,7 @@ ModelImporter:
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0

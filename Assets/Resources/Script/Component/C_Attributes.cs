@@ -19,7 +19,7 @@ public class C_Attributes : MonoBehaviour, IPunObservable {
     public bool isDead = false;
     public Timer timer = new Timer();
     public float recoverTime = 3f;
-    [Header("[Component]")]
+    [Header("[Components]")]
     Animator animator;
     PhotonView photonView;
     C_UiEventMgr uiMgr;

@@ -640,7 +640,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1413162823672526}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   _enterTick: 0
   _exitTick: 0
   triggerType: 2
-  spreadFroce: 0.7
+  spreadFroce: 3
   fireAxis: {x: -1, y: 0, z: -0.05}
   sound: {fileID: 8300000, guid: 8a937472ba7f9e043b79b4a74dd4056a, type: 3}
   bulletVisibleDistence: 5

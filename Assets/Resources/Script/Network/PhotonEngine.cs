@@ -36,10 +36,10 @@ public class PhotonEngine : Photon.PunBehaviour {
         DontDestroyOnLoad(this.gameObject);
         Battle.photonEngine = this;
 
-        //CheckInternet();
+        CheckInternet();
 
         // test 
-        StartConnect();
+        //StartConnect();
     }
 
     // 从网络获取版本设置，旧版本不进行网络连接
@@ -59,7 +59,7 @@ public class PhotonEngine : Photon.PunBehaviour {
             Debug.Log("游戏版本旧");
         }
     }
-    
+
     public void CheckInternet()
     {
         if (Application.internetReachability == NetworkReachability.NotReachable)
@@ -86,7 +86,7 @@ public class PhotonEngine : Photon.PunBehaviour {
         PhotonNetwork.JoinLobby();
     }
 
-    // Primatry Connection Operation-----------------------------------------------------------------
+    // Primatry Connection Operation-------------------------------------------------------
     public override void OnConnectedToMaster()
     {
         onConnToMaster.Invoke();
@@ -98,7 +98,7 @@ public class PhotonEngine : Photon.PunBehaviour {
     }
     
 
-    // Photon Server Connection Operation-----------------------------------------------------------------
+    // Photon Server Connection Operation--------------------------------------------------
     // 连接成功
     public override void OnConnectedToPhoton()
     {

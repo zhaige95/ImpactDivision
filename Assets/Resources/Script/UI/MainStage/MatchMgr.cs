@@ -71,8 +71,11 @@ public class MatchMgr : Photon.PunBehaviour
             matchTimeMinute += 1;
             matchTimeSecond -= 60f;
         }
-            
-        var second = (int)matchTimeSecond < 10 ? ("0" + (int)matchTimeSecond) : (int)matchTimeSecond + "";
+        var second = "00";
+        if (matchTimeSecond > 0)
+        {
+            second = (int)matchTimeSecond < 10 ? ("0" + (int)matchTimeSecond) : (int)matchTimeSecond + "";
+        }
         matchTimeText.text = "0" + matchTimeMinute + ":" + second + "";
         
     }
@@ -167,7 +170,7 @@ public class MatchMgr : Photon.PunBehaviour
     {
         yield return new WaitForSeconds(this.prepareTime);
 
-        async = PhotonNetwork.LoadLevelAsync("Battle001");
+        async = PhotonNetwork.LoadLevelAsync("Battle002");
         async.allowSceneActivation = true;
 
         for (int i = 0; i < PhotonNetwork.playerList.Length / 2; i++)

@@ -4288,9 +4288,9 @@ MonoBehaviour:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 3
+    InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 10
+    InterpolateLerpSpeed: 5
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:
@@ -4772,8 +4772,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8dbfaf8f26840e489820bab8e57f6ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
-  HPMax: 100
+  HP: 130
+  HPMax: 130
   runSpeed: 4.3
   jogSpeed: 3.5
   walkSpeed: 1.7
