@@ -5839,8 +5839,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8dbfaf8f26840e489820bab8e57f6ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 130
-  HPMax: 130
+  HP: 100
+  HPMax: 100
   runSpeed: 4.3
   jogSpeed: 3.5
   walkSpeed: 1.7
@@ -6418,6 +6418,7 @@ MonoBehaviour:
   - {fileID: 114796463026330456}
   - {fileID: 114267410469199622}
   - {fileID: 114240890398443440}
+  - {fileID: 114611608171483742}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1

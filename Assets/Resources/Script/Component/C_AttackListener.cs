@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class C_AttackListener : MonoBehaviour {
+public class C_AttackListener : MonoBehaviour, IPunObservable {
 
     [Header("Components")]
     [HideInInspector]
@@ -56,6 +56,19 @@ public class C_AttackListener : MonoBehaviour {
             }
 
             this.lastHitPlayer = source;
+        }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            stream.SendNext(this.isActive);
+        }
+        else if (stream.isReading)
+        {
+            bool ac = (bool)stream.ReceiveNext();
+            this.isActive = ac;
         }
     }
 }

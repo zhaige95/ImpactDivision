@@ -44,6 +44,8 @@ public class C_BattleMgr : MonoBehaviour {
     private void Start()
     {
         SyncData();
+        this.SetFirendlyMark();
+
     }
     
     void SyncData()
@@ -125,10 +127,14 @@ public class C_BattleMgr : MonoBehaviour {
 
     public void SetFirendlyMark()
     {
-        foreach (var item in friendlyMark)
+        if (Battle.localPlayerCamp > 0)
         {
-            item.enabled = Battle.localPlayerCamp == attributes.camp;
+            foreach (var item in friendlyMark)
+            {
+                item.enabled = Battle.localPlayerCamp == attributes.camp;
+            }
         }
+       
     }
 
     public void SetPlayerEnable(bool isEnable)

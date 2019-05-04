@@ -17,7 +17,7 @@ public class Battle : MonoBehaviour
 
     public static Transform localPlayerCameraTrans;
     public static Camera localPlayerCamera;
-    public static int localPlayerCamp;
+    public static int localPlayerCamp = -1;
 
     // battle state
     public static bool started = false;
@@ -31,7 +31,7 @@ public class Battle : MonoBehaviour
     public static NetworkBattleMgr battleMgr;
     public static PhotonEngine photonEngine;
 
-    
+
     // temp setting
     public static float relativeRate = 1f;
     public static float mouseSpeedPrimary = 1f;
@@ -125,6 +125,7 @@ public class Battle : MonoBehaviour
 
     public static void playerExit(int camp, int roomID)
     {
+        
         if (campNumber.ContainsKey(camp))
         {
             campNumber[camp] -= 1;
@@ -155,7 +156,7 @@ public class Battle : MonoBehaviour
                 }
             };
         }
-        
+
     }
 
     // 玩家中途加入时获取人数较少的一方的阵营id
@@ -218,6 +219,7 @@ public class Battle : MonoBehaviour
 
     public static void UpdateFriendlyMark()
     {
+        Debug.Log(localPlayerCamp);
         foreach (var item in playerListCamp1.Values)
         {
             item.SetFirendlyMark();
