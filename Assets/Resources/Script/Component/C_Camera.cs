@@ -90,7 +90,7 @@ public class C_Camera : MonoBehaviour, IPunObservable
 
     public Vector3 GetAimPoint(float offsetX, float offsetY)
     {
-        if (Physics.Raycast(mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2 + offsetX, Screen.height / 2 + offsetY, 0)), out hitInfo, 500f, shootLayerMask))
+        if (Physics.Raycast(mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2 + offsetX, Screen.height / 2 + offsetY, 0f)), out hitInfo, 500f, shootLayerMask))
         {
             hitPoint.transform.position = hitInfo.point;
             return hitInfo.point;
@@ -100,10 +100,10 @@ public class C_Camera : MonoBehaviour, IPunObservable
 
     public void UpdateClipPlanePoints()
     {
-        planePoints.UpperLeft = cameraHandle.position + new Vector3(-radius, radius, 0);
-        planePoints.UpperRight = cameraHandle.position + new Vector3(radius, radius, 0);
-        planePoints.LowerLeft = cameraHandle.position + new Vector3(-radius, -radius, 0);
-        planePoints.LowerRight = cameraHandle.position + new Vector3(radius, -radius, 0);
+        planePoints.UpperLeft = cameraHandle.position + new Vector3(-radius, radius, 0f);
+        planePoints.UpperRight = cameraHandle.position + new Vector3(radius, radius, 0f);
+        planePoints.LowerLeft = cameraHandle.position + new Vector3(-radius, -radius, 0f);
+        planePoints.LowerRight = cameraHandle.position + new Vector3(radius, -radius, 0f);
     }
     public void NearClipPlanePoints()
     {

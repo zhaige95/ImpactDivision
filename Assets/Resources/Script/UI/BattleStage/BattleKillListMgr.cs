@@ -1,31 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleKillListMgr : MonoBehaviour {
-    public GameObject msgFriendly;
-    public GameObject msgEnemy;
+    public GameObject msgItem;
+    public RectTransform content;
+    public ScrollRect scroll;
+    public List<BattleKillMsgItem> battleKillMsgs = new List<BattleKillMsgItem>();
 
-    public List<GameObject> msgList = new List<GameObject>();
-    public int maxMsgCount = 6;
-
-    public void AddKillMsg(string killer, string loser, bool isEnemy = false)
+    public void AddKillMsg(string killer, string loser, bool isFriendly = false)
     {
-        if (msgList.Count >= maxMsgCount)
+        foreach (var item in battleKillMsgs)
         {
-            Object.Destroy(msgList[0]);
+            if (!item.isActive)
+            {
+                item.Active(killer, loser, isFriendly);
+                return;
+            }
         }
-        var msgObj = GameObject.Instantiate(isEnemy ? msgEnemy : msgFriendly, this.transform);
-        msgObj.GetComponent<BattleKillMsgItem>().Init(killer, loser);
-        msgList.Add(msgObj);
+        var childern = this.transform.GetComponentsInChildren<Transform>();
+        var msgObj = GameObject.Instantiate(msgItem, content) as GameObject;
+        var msgMgr = msgObj.GetComponent<BattleKillMsgItem>();
+        msgMgr.Init(killer, loser, isFriendly);
+        battleKillMsgs.Add(msgMgr);
+        
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (Input.GetKeyDown("j"))
-        {
-            this.AddKillMsg("如此良人何", "靶场机器人", false);
-        }
+        this.scroll.verticalScrollbar.value = 0;
     }
+
 }

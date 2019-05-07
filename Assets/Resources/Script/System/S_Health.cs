@@ -17,29 +17,7 @@ public class S_Health : ComponentSystem {
         //{
         //    var _attribute = e._Attributes;
 
-        //    if (!_attribute.isDead) {
-
-        //        var attackListener = e._AttackListener;
-
-        //        if (e._Attributes.HP > 300f)
-        //        {
-        //            e._Attributes.HP = 1;
-        //        }
-        //        if (e._Attributes.HP > 320f)
-        //        {
-        //            e._Attributes.HP = 1;
-        //        }
-
-        //        //if (e._Attributes.HP <= 0 && attackListener.isActive)
-        //        //{
-        //        //    attackListener.isActive = false;
-        //        //    if (e._Velocity.isLocalPlayer)
-        //        //    {
-        //        //        e._StateMgr.EnterState("dead");
-        //        //    }
-        //        //    e._BattleMgr.AddDead();
-        //        //}
-        //    }
+        //    e._AttackListener.isActive = _attribute.HP > 0;
         //}
     }
     

@@ -53,14 +53,14 @@ public class S_Camera : ComponentSystem {
                         }
                     }
 
-                    _camera.camera_x.localEulerAngles = new Vector3(x, 0, 0);
-                    _camera.camera_y.localEulerAngles = new Vector3(0, y, 0);
+                    _camera.camera_x.localEulerAngles = new Vector3(x, 0f, 0f);
+                    _camera.camera_y.localEulerAngles = new Vector3(0f, y, 0f);
                 }
 
                 // 后座力
                 if (_camera.forceX != 0)
                 {
-                    _camera.camera_x.Rotate(-Time.deltaTime * _camera.forceX, 0, 0);
+                    _camera.camera_x.Rotate(-Time.deltaTime * _camera.forceX, 0f, 0f);
                     _camera.forceX -= Time.deltaTime * 100f;
 
                     if (_camera.forceX < 0.001f)

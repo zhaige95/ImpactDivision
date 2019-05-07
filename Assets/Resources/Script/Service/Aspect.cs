@@ -15,11 +15,11 @@ public class Aspect{
 
         if (range == -1)
         {
-            _transform.rotation = Quaternion.Euler(new Vector3(0, targetY, 0));
+            _transform.rotation = Quaternion.Euler(new Vector3(0f, targetY, 0f));
         }
         else
         {
-            var targetRotation = Quaternion.Euler(new Vector3(0, targetY, 0));
+            var targetRotation = Quaternion.Euler(new Vector3(0f, targetY, 0f));
             _transform.rotation = Quaternion.Slerp(_transform.rotation, targetRotation, range);
         }
 
@@ -31,11 +31,11 @@ public class Aspect{
 
         if (range == -1)
         {
-            _transform.rotation = Quaternion.Euler(new Vector3(0, targetY, 0));
+            _transform.rotation = Quaternion.Euler(new Vector3(0f, targetY, 0f));
         }
         else
         {
-            var targetRotation = Quaternion.Euler(new Vector3(0, targetY, 0));
+            var targetRotation = Quaternion.Euler(new Vector3(0f, targetY, 0f));
             _transform.rotation = Quaternion.Slerp(_transform.rotation, targetRotation, range);
         }
 

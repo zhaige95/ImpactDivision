@@ -39,7 +39,7 @@ public class CameraAct : MonoBehaviour
     //    var _camera = Tools._entityManager.GetComponentObject<C_Camera>(Config._camera);
     //    var _cameraTransform = _camera.GetComponent<Camera>().gameObject.transform;
     //    RaycastHit hit;
-    //    if (Physics.Raycast(_camera.GetComponent<Camera>().ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)), out hit, 500f, _camera.layerMask))
+    //    if (Physics.Raycast(_camera.GetComponent<Camera>().ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0f)), out hit, 500f, _camera.layerMask))
     //    {
     //        return hit.point;
     //    }

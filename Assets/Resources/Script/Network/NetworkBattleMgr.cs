@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class NetworkBattleMgr : Photon.PunBehaviour {
 
     public ConfigBattle configBattle;
+    public Camera battleCamera;
     public bool preparing = true;
     public float gameTime = 0f;
     public int lastKillCamp = 0;
@@ -16,6 +16,7 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
     public MenuInBattle menuPanel;
     public BattleInfoMgr battleInfo;
     public ScoreboardMgr scoreboard;
+    public BattleKillListMgr battleKillList;
 
     [Header("Event")]
     public NetworkEvent OnPrepareEnd;

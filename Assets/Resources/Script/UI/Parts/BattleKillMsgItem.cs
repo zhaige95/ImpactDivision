@@ -5,24 +5,36 @@ using UnityEngine.UI;
 
 public class BattleKillMsgItem : MonoBehaviour {
 
-    public Text killerText;
-    public Text LoserText;
-    public List<ContentSizeFitter> sizeFitters;
+    public bool isActive = true;
+    public Text msgText;
+    public Timer timer = new Timer();
     public float dieTime = 5f;
+    public float originalHeight = 40f;
+    public Color friendlyColor;
+    public Color EnemyColor;
+    RectTransform rectTransform;
 
-    public void Init(string killer, string loser)
+    private void Awake()
     {
-        this.killerText.text = killer;
-        this.LoserText.text = loser;
+        this.rectTransform = GetComponent<RectTransform>();
+    }
 
-        foreach (var item in sizeFitters)
-        {
-            killerText.rectTransform.sizeDelta = new Vector2(20, killerText.rectTransform.sizeDelta.y);
-            LoserText.rectTransform.sizeDelta = new Vector2(20, LoserText.rectTransform.sizeDelta.y);
-            item.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
-        }
+    public void Init(string killer, string loser, bool isFriendly)
+    {
+        this.msgText.text = killer.Split('#')[0] + "→" + loser.Split('#')[0];
+        this.msgText.color = isFriendly ? this.friendlyColor : this.EnemyColor;
+        this.timer.Enter(dieTime);
+    }
 
-        Object.Destroy(this.gameObject, dieTime);
-
+    public void Active(bool ac)
+    {
+        this.rectTransform.sizeDelta = new Vector2(this.rectTransform.rect.width, ac ? originalHeight : 0);
+        this.isActive = ac;
+    }
+    public void Active(string killer, string loser, bool isFriendly)
+    {
+        this.Active(true);
+        this.Init(killer, loser, isFriendly);
+        this.transform.SetAsLastSibling();
     }
 }

@@ -9,6 +9,7 @@ public class S_BornProtector : ComponentSystem
     {
         public C_BornProtector _bornProtect;
         public C_AttackListener _attackListener;
+        public C_Attributes _attributes;
     }
     
     protected override void OnUpdate()
@@ -19,7 +20,7 @@ public class S_BornProtector : ComponentSystem
             if (bornProtect.active)
             {
                 bornProtect.timer.Update();
-                bornProtect.tipRingTrans.Rotate(Vector3.up * 1f);
+                bornProtect.tipRingTrans.Rotate(Vector3.up);
                 if (!bornProtect.timer.isRunning) {
                     e._attackListener.isActive = true;
                     bornProtect.Exit();

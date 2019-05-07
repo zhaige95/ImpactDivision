@@ -48,6 +48,7 @@ public class CS_Dead : AvatarState {
         velocity.Reset();
         anim.animator.enabled = false;
         attackListener.isActive = false;
+        attackListener.Reset();
         iKManager.SetAim(false);
         iKManager.SetHold(false);
         iKManager.SetDead(true);
@@ -98,7 +99,6 @@ public class CS_Dead : AvatarState {
         }
         anim.animator.enabled = true;
         attackListener.Reset();
-
         attributes.isDead = false;
         weaponHandle.active = true;
         myCamera.SetFollowPlayer(true);

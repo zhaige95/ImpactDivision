@@ -39,6 +39,7 @@ public class C_BattleMgr : MonoBehaviour {
         photonView = GetComponent<PhotonView>();
         attributes = GetComponent<C_Attributes>();
         audioSource = GetComponent<AudioSource>();
+
     }
 
     private void Start()
@@ -61,7 +62,7 @@ public class C_BattleMgr : MonoBehaviour {
     }
 
     [PunRPC]
-    public void AddKill()
+    public void AddKill(string loser = "")
     {
         kill ++;
         tempMultikill ++;
@@ -69,6 +70,8 @@ public class C_BattleMgr : MonoBehaviour {
 
         Sound.PlayOneShot(this.audioSource, this.killMsgSound);
         uiMgr.SendEvent(new UiEvent.UiMsgs.Kill());
+        Battle.battleMgr.battleKillList.AddKillMsg(this.nickName, loser, (this.attributes.camp == Battle.localPlayerCamp));
+
         OnKill?.Invoke(attributes.camp);
         SyncData();
     }
@@ -127,11 +130,21 @@ public class C_BattleMgr : MonoBehaviour {
 
     public void SetFirendlyMark()
     {
-        if (Battle.localPlayerCamp > 0)
+        if (velocity.isLocalPlayer)
         {
             foreach (var item in friendlyMark)
             {
-                item.enabled = Battle.localPlayerCamp == attributes.camp;
+                item.enabled = false;
+            }
+        }
+        else
+        {
+            if (Battle.localPlayerCamp > 0)
+            {
+                foreach (var item in friendlyMark)
+                {
+                    item.enabled = Battle.localPlayerCamp == attributes.camp;
+                }
             }
         }
        

@@ -219,7 +219,7 @@ public class Battle : MonoBehaviour
 
     public static void UpdateFriendlyMark()
     {
-        Debug.Log(localPlayerCamp);
+
         foreach (var item in playerListCamp1.Values)
         {
             item.SetFirendlyMark();

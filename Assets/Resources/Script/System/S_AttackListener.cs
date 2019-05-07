@@ -42,15 +42,18 @@ public class S_AttackListener : ComponentSystem {
                     Sound.PlayOneShot(sourceAudio, _attackListener.hitFeedBackSounds);
 
                     _attackListener.photonView.RPC("AddAttackSource", PhotonTargets.Others, attack.source.roomID);
-                    
+
                 }
+                _attackListener.attackList.Clear();
+
                 if (_attribute.HP <= 0)
                 {
                     if (e._Velocity.isLocalPlayer)
                     {
                         var battleMgr = e._BattleMgr;
-                        e._BattleMgr.AddKillerMsg(_attackListener.lastHitPlayer.nickName);
-                        _attackListener.lastHitPlayer.photonView.RPC("AddKill", PhotonTargets.All);
+                        battleMgr.AddKillerMsg(_attackListener.lastHitPlayer.nickName);
+
+                        _attackListener.lastHitPlayer.photonView.RPC("AddKill", PhotonTargets.All, battleMgr.nickName);
 
                         foreach (var item in _attackListener.sourceList.Values)
                         {
@@ -61,14 +64,13 @@ public class S_AttackListener : ComponentSystem {
                         }
 
                         e._StateMgr.EnterState("dead");
-                        e._BattleMgr.AddDead();
+                        battleMgr.AddDead();
                     }
 
                     _attackListener.isActive = false;
 
                     break;
                 }
-                _attackListener.attackList.Clear();
             }
         }
     }
