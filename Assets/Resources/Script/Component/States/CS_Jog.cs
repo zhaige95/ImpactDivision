@@ -89,6 +89,8 @@ public class CS_Jog : AvatarState {
                     Aspect.RotateToCameraY(_camera.Carryer, transform, 0.5f);
                     _characterController.Move(transform.forward * currentSpeed * _attributes.rate * _velocity.fwd * Time.deltaTime +
                                         transform.right * currentSpeed * _attributes.rate * _velocity.right * Time.deltaTime);
+
+                    _characterController.SimpleMove(Vector3.zero);
                 }
                 
             }
@@ -102,7 +104,6 @@ public class CS_Jog : AvatarState {
                 //    SetFreeDirection();
                 //}
             }
-            _characterController.SimpleMove(Vector3.zero);
 
         }
         else

@@ -36,6 +36,7 @@ public class MatchMgr : Photon.PunBehaviour
         {
             PhotonNetwork.room.IsOpen = true;
         }
+        this.SetAllPlayersCamp();
         StartBattleCheck();
     }
 
@@ -48,12 +49,7 @@ public class MatchMgr : Photon.PunBehaviour
                 backBtn.onClick.Invoke();
             }
         }
-
-        //if (Input.GetKeyDown("l"))
-        //{
-        //    this.single = !this.single;
-        //    Debug.Log("switch match model to single = " + this.single);
-        //}
+        
     }
 
     void FixedUpdate () {
@@ -139,8 +135,7 @@ public class MatchMgr : Photon.PunBehaviour
         //{
         //    PhotonNetwork.room.IsVisible = false;
         //}
-
-
+        
     }
 
     void UpdatePlayerNumber()
@@ -169,10 +164,32 @@ public class MatchMgr : Photon.PunBehaviour
     IEnumerator StartBattleCoroutines()
     {
         yield return new WaitForSeconds(this.prepareTime);
+        
+        //for (int i = 0; i < PhotonNetwork.playerList.Length / 2; i++)
+        //{
+        //    Hashtable p = new Hashtable
+        //        {
+        //            { "team", "1" }
+        //        };
+        //    PhotonNetwork.playerList[i].SetCustomProperties(p, null, false);
+        //}
+
+        //for (int i = PhotonNetwork.playerList.Length / 2; i < PhotonNetwork.playerList.Length; i++)
+        //{
+        //    Hashtable p = new Hashtable
+        //        {
+        //            { "team", "2" }
+        //        };
+        //    PhotonNetwork.playerList[i].SetCustomProperties(p, null, false);
+        //}
 
         async = PhotonNetwork.LoadLevelAsync("Battle002");
         async.allowSceneActivation = true;
 
+    }
+
+    public void SetAllPlayersCamp()
+    {
         for (int i = 0; i < PhotonNetwork.playerList.Length / 2; i++)
         {
             Hashtable p = new Hashtable
@@ -181,21 +198,18 @@ public class MatchMgr : Photon.PunBehaviour
                 };
             PhotonNetwork.playerList[i].SetCustomProperties(p, null, false);
         }
-
-        for (int i = PhotonNetwork.playerList.Length / 2; i < PhotonNetwork.playerList.Length; i++)
+        if (PhotonNetwork.playerList.Length > 2)
         {
-            Hashtable p = new Hashtable
+            for (int i = PhotonNetwork.playerList.Length / 2; i < PhotonNetwork.playerList.Length; i++)
+            {
+                Hashtable p = new Hashtable
                 {
                     { "team", "2" }
                 };
-            PhotonNetwork.playerList[i].SetCustomProperties(p, null, false);
+                PhotonNetwork.playerList[i].SetCustomProperties(p, null, false);
+            }
         }
 
-        // test
-        //if (PhotonNetwork.isMasterClient)
-        //{
-        //    PhotonNetwork.room.IsVisible = false;
-        //}
+        Debug.Log("reflash camp");
     }
-
 }

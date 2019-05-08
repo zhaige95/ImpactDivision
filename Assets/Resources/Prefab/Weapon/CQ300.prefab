@@ -1097,7 +1097,7 @@ MonoBehaviour:
   _enterTick: 0
   _exitTick: 0
   triggerType: 2
-  spreadFroce: 4
+  spreadFroce: 3
   fireAxis: {x: -1, y: 0, z: -0.05}
   sound: {fileID: 8300000, guid: 8a937472ba7f9e043b79b4a74dd4056a, type: 3}
   bulletVisibleDistence: 5
@@ -1117,7 +1117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da921ee88b7752042887ce7fbd3e908a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 0.15
+  waitTime: 0.1
   recoverSpeed: 0.3
 --- !u!114 &114602520719390764
 MonoBehaviour:

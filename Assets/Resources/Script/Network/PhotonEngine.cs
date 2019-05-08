@@ -90,6 +90,7 @@ public class PhotonEngine : Photon.PunBehaviour {
     public override void OnConnectedToMaster()
     {
         onConnToMaster.Invoke();
+
     }
 
     public override void OnConnectionFail(DisconnectCause cause)
@@ -122,8 +123,7 @@ public class PhotonEngine : Photon.PunBehaviour {
     public override void OnJoinedLobby()
     {
         PhotonNetwork.player.NickName = Battle.playerBasicSave.playerName + "#" + DateTime.Now.GetHashCode().ToString().Substring(0,4);
-        PhotonNetwork.player.SetCustomProperties(new Hashtable() { { "battle", "0#0#0#0" } });
-
+        PhotonNetwork.player.SetCustomProperties(new Hashtable() { { "battle", "0#0#0#0" }, { "team", "0" } });
         onJoinedLobby.Invoke();
 
     }
@@ -145,12 +145,15 @@ public class PhotonEngine : Photon.PunBehaviour {
     {
         // 随机加入失败则创建以玩家名字命名的房间
         PhotonNetwork.CreateRoom(PhotonNetwork.player.NickName, new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
+
+        PhotonNetwork.player.SetCustomProperties(new Hashtable() { { "team", "1" } });
     }
 
     public override void OnJoinedRoom()
     {
         Battle.inRoom = true;
         PhotonNetwork.automaticallySyncScene = true;
+
     }
 
     public override void OnPhotonJoinRoomFailed(object[] codeAndMsg)
@@ -168,29 +171,111 @@ public class PhotonEngine : Photon.PunBehaviour {
 
     public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {
-        if (Battle.started)
-        {
-            if (PhotonNetwork.isMasterClient)
-            {
-                string tCamp = Battle.GetWeakCamp().ToString();
-                Hashtable p = new Hashtable
-                {
-                    { "team", tCamp }
-                };
-                newPlayer.SetCustomProperties(p, null, false);
+        
+        var players = PhotonNetwork.playerList;
 
-                Battle.AddPlayerNum(int.Parse(tCamp));
+        var count0 = 0;
+        var count1 = 0;
+        var count2 = 0;
+
+        foreach (var item in players)
+        {
+            var camp = int.Parse(item.CustomProperties["team"].ToString());
+
+            switch (camp)
+            {
+                case 0:
+                    count0++;
+                    break;
+                case 1:
+                    count1++;
+                    break;
+                case 2:
+                    count2++;
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+
+        var tCamp = count1 <= count2 ? 1 : 2;
+
+        newPlayer.SetCustomProperties(new Hashtable() { { "team", tCamp + "" } });
+
+        Debug.Log(count0 + "|" + count1 + "|" + count2 + "|" + tCamp);
+
+        count0 = 0;
+        count1 = 0;
+        count2 = 0;
+        foreach (var item in players)
+        {
+            var camp = int.Parse(item.CustomProperties["team"].ToString());
+
+            switch (camp)
+            {
+                case 0:
+                    count0++;
+                    break;
+                case 1:
+                    count1++;
+                    break;
+                case 2:
+                    count2++;
+                    break;
+                default:
+                    break;
             }
 
         }
+
+
+        Debug.Log("after process ：" + count0 + "|" + count1 + "|" + count2 + "|" + tCamp);
+
+        //if (PhotonNetwork.isMasterClient)
+        //{
+        //    byte count1 = byte.Parse(PhotonNetwork.room.CustomProperties["count1"].ToString());
+        //    byte count2 = byte.Parse(PhotonNetwork.room.CustomProperties["count2"].ToString());
+
+        //    int tCamp = 0;
+        //    int tNum = 0;
+        //    if (count1 <= count2)
+        //    {
+        //        tCamp = 1;
+        //        tNum = count1 + 1;
+        //    }
+        //    else
+        //    {
+        //        tCamp = 2;
+        //        tNum = count2 + 1;
+        //    }
+
+        //    newPlayer.SetCustomProperties(new Hashtable() { { "team", tCamp + "" } });
+        //    PhotonNetwork.room.SetCustomProperties(new Hashtable() { { "count" + tCamp, tNum + "" } });
+
+        //    Debug.Log("count1 = " + count1 + 
+        //              " | count2 = " + count2 + 
+        //              " | targetCamp = " + tCamp +
+        //              " | targetNum = " + tNum 
+        //              );
+
+        //}
     }
 
     public override void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
     {
-        var camp = int.Parse(otherPlayer.CustomProperties["team"].ToString());
-        Battle.playerExit(camp, otherPlayer.ID);
+        //var camp = int.Parse(otherPlayer.CustomProperties["team"].ToString());
+        //string param = "count" + camp;
+
+        //var num = int.Parse(PhotonNetwork.room.CustomProperties[param].ToString());
+        
+        //PhotonNetwork.room.SetCustomProperties(new Hashtable() { { param, num-- + "" } });
+
+        //Debug.Log("room param = " + param + " | num = " + num);
     }
     
+
+
 }
 
 [Serializable]

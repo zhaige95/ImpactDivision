@@ -8,7 +8,6 @@ using Newtonsoft.Json.Bson;
 
 public class Battle : MonoBehaviour
 {
-    public static Dictionary<int, int> campNumber = new Dictionary<int, int>();
 
     public static Dictionary<int, C_BattleMgr> playerListCamp1 = new Dictionary<int, C_BattleMgr>();
     public static Dictionary<int, C_BattleMgr> playerListCamp2 = new Dictionary<int, C_BattleMgr>();
@@ -74,17 +73,6 @@ public class Battle : MonoBehaviour
         File.WriteAllText(savePath + "/SystemSetting.cfg", str);
     }
 
-    public static void AddPlayerNum(int camp)
-    {
-        if (campNumber.ContainsKey(camp))
-        {
-            campNumber[camp] += 1;
-        }
-        else
-        {
-            campNumber.Add(camp, 1);
-        }
-    }
 
     public static void PlayerJoin(int camp, int roomID, C_BattleMgr battleMgr)
     {
@@ -110,30 +98,12 @@ public class Battle : MonoBehaviour
                 playerListCamp2.Add(roomID, battleMgr);
             }
         }
-        if (!PhotonNetwork.isMasterClient)
-        {
-            if (campNumber.ContainsKey(camp))
-            {
-                campNumber[camp] += 1;
-            }
-            else
-            {
-                campNumber.Add(camp, 1);
-            }
-        }
+
     }
 
     public static void playerExit(int camp, int roomID)
     {
-        
-        if (campNumber.ContainsKey(camp))
-        {
-            campNumber[camp] -= 1;
-        }
-        else
-        {
-            campNumber.Add(camp, 0);
-        }
+
         if (camp == 1)
         {
             if (playerListCamp1.ContainsKey(roomID))
@@ -160,12 +130,12 @@ public class Battle : MonoBehaviour
     }
 
     // 玩家中途加入时获取人数较少的一方的阵营id
-    public static int GetWeakCamp()
-    {
-        var camp1 = campNumber.ContainsKey(1) ? campNumber[1] : 0;
-        var camp2 = campNumber.ContainsKey(2) ? campNumber[2] : 0;
-        return camp1 <= camp2 ? 1 : 2;
-    }
+    //public static int GetWeakCamp()
+    //{
+    //    var camp1 = campNumber.ContainsKey(1) ? campNumber[1] : 0;
+    //    var camp2 = campNumber.ContainsKey(2) ? campNumber[2] : 0;
+    //    return camp1 <= camp2 ? 1 : 2;
+    //}
 
     public static void ReflashScoreboard()
     {

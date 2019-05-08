@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class NetworkBattleMgr : Photon.PunBehaviour {
 
@@ -228,6 +229,23 @@ public class NetworkBattleMgr : Photon.PunBehaviour {
         {
             Battle.localPlayerBattleInfo.photonView.RPC("SyncBattleMgr", PhotonTargets.Others, this.preparing ? timer.rate : gameTime, this.preparing, score[1], score[2]);
         }
+
+        //if (Battle.started)
+        //{
+        //    if (PhotonNetwork.isMasterClient)
+        //    {
+        //        string tCamp = Battle.GetWeakCamp().ToString();
+        //        Hashtable p = new Hashtable
+        //        {
+        //            { "team", tCamp }
+        //        };
+        //        newPlayer.SetCustomProperties(p, null, false);
+
+        //        Battle.localPlayerBattleInfo.photonView.RPC("SyncBattleMgr", PhotonTargets.Others, this.preparing ? timer.rate : gameTime, this.preparing, score[1], score[2]);
+                
+        //    }
+
+        //}
         //StartCoroutine(WaitUpdateFriendlyMark());
     }
 
