@@ -139,11 +139,12 @@ public class C_Camera : MonoBehaviour, IPunObservable
     {
         if (stream.isWriting)
         {
-            stream.SendNext(this.camera_x.transform.localEulerAngles.x);
+            stream.SendNext(this.camera_x.transform.localRotation);
         }
         else if (stream.isReading)
         {
-            this.syncX = Quaternion.Euler((float)stream.ReceiveNext(), 0, 0);
+            //this.syncX = Quaternion.Euler((float)stream.ReceiveNext(), 0, 0);
+            this.syncX = (Quaternion)stream.ReceiveNext();
         }
     }
 }

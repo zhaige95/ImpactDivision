@@ -63,7 +63,6 @@ public class S_AttackListener : ComponentSystem {
                             }
                         }
 
-                        e._StateMgr.EnterState("dead");
                         battleMgr.AddDead();
                     }
 

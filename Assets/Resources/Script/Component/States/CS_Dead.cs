@@ -14,6 +14,12 @@ public class CS_Dead : AvatarState {
     C_WeaponHandle weaponHandle;
     C_BornProtector bornProtector;
     C_AttackListener attackListener;
+
+    AvatarMeshRanderMgr avatarMeshRanderMgr;
+
+    MeshRenderer[] meshRenderers;
+    SkinnedMeshRenderer[] skinnedMeshRenderers;
+
     Timer timer = new Timer();
     public float recoverTime = 1f;
     public float vanishTime = 2;
@@ -30,11 +36,14 @@ public class CS_Dead : AvatarState {
         weaponHandle = GetComponent<C_WeaponHandle>();
         bornProtector = GetComponent<C_BornProtector>();
         attackListener = GetComponent<C_AttackListener>();
+        avatarMeshRanderMgr = GetComponentInChildren<AvatarMeshRanderMgr>();
 
         var stateMgr = GetComponent<CS_StateMgr>();
         //_name = "aim";
         stateMgr.RegState(_name, this);
 
+        //meshRenderers = GetComponentsInChildren<MeshRenderer>();
+        //skinnedMeshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
     }
 
     public override void Enter()
@@ -66,7 +75,11 @@ public class CS_Dead : AvatarState {
             {
                 myCamera.SetFollowPlayer(false);
                 iKManager.ragdollMgr.SetRagdollActive(false);
-                this.transform.position = Battle.bornMgr.interimPoint.position;
+                //this.transform.position = Battle.bornMgr.interimPoint.position;
+
+                avatarMeshRanderMgr.SetEnabled(false);
+                weaponHandle.handPoint.localScale = Vector3.zero;
+
                 timer.Enter(recoverTime);
                 process = 2;
             }
@@ -90,7 +103,10 @@ public class CS_Dead : AvatarState {
     public override void Exit()
     {
         base.Exit();
-        
+
+        avatarMeshRanderMgr.SetEnabled(true);
+        weaponHandle.handPoint.localScale = Vector3.one;
+
         var t = Battle.bornMgr.GetPoint(attributes.camp);
         this.transform.SetPositionAndRotation(t.position, t.rotation);
         if (!Battle.freezing)
@@ -103,8 +119,10 @@ public class CS_Dead : AvatarState {
         weaponHandle.active = true;
         myCamera.SetFollowPlayer(true);
         myCamera.Reset(t);
-
+        
         bornProtector.Enter();
 
     }
+
+
 }

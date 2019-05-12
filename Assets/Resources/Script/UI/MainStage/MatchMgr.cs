@@ -81,7 +81,7 @@ public class MatchMgr : Photon.PunBehaviour
         PhotonNetwork.JoinRandomRoom();
 
         // test 
-        //PhotonNetwork.JoinOrCreateRoom("Impact zibifang", new RoomOptions() { MaxPlayers = 4 }, null);
+        //PhotonNetwork.JoinOrCreateRoom("ImpactTest", new RoomOptions() { MaxPlayers = 4, IsVisible = false }, null);
     }
 
     public void CancleMatch()
@@ -210,6 +210,5 @@ public class MatchMgr : Photon.PunBehaviour
             }
         }
 
-        Debug.Log("reflash camp");
     }
 }

@@ -36,10 +36,10 @@ public class PhotonEngine : Photon.PunBehaviour {
         DontDestroyOnLoad(this.gameObject);
         Battle.photonEngine = this;
 
-        CheckInternet();
+        //CheckInternet();
 
         // test 
-        //StartConnect();
+        StartConnect();
     }
 
     public void CheckInternet()
@@ -62,7 +62,7 @@ public class PhotonEngine : Photon.PunBehaviour {
         WWW w = new WWW(versionAddress.value);
         while (!w.isDone) { yield return new WaitForEndOfFrame(); }
         var versionSettting = JsonConvert.DeserializeObject<VersionSetting>(w.text);
-        Debug.Log("version -  "  + versionSettting.version);
+
         if (versionSettting.version.Equals(version.value))
         {
             StartConnect();
@@ -145,8 +145,8 @@ public class PhotonEngine : Photon.PunBehaviour {
     {
         // 随机加入失败则创建以玩家名字命名的房间
         PhotonNetwork.CreateRoom(PhotonNetwork.player.NickName, new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
-
         PhotonNetwork.player.SetCustomProperties(new Hashtable() { { "team", "1" } });
+
     }
 
     public override void OnJoinedRoom()
@@ -158,8 +158,7 @@ public class PhotonEngine : Photon.PunBehaviour {
 
     public override void OnPhotonJoinRoomFailed(object[] codeAndMsg)
     {
-        // test
-        //PhotonNetwork.CreateRoom("Impact", new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
+
     }
 
     public override void OnLeftRoom()
@@ -202,35 +201,6 @@ public class PhotonEngine : Photon.PunBehaviour {
         var tCamp = count1 <= count2 ? 1 : 2;
 
         newPlayer.SetCustomProperties(new Hashtable() { { "team", tCamp + "" } });
-
-        Debug.Log(count0 + "|" + count1 + "|" + count2 + "|" + tCamp);
-
-        count0 = 0;
-        count1 = 0;
-        count2 = 0;
-        foreach (var item in players)
-        {
-            var camp = int.Parse(item.CustomProperties["team"].ToString());
-
-            switch (camp)
-            {
-                case 0:
-                    count0++;
-                    break;
-                case 1:
-                    count1++;
-                    break;
-                case 2:
-                    count2++;
-                    break;
-                default:
-                    break;
-            }
-
-        }
-
-
-        Debug.Log("after process ：" + count0 + "|" + count1 + "|" + count2 + "|" + tCamp);
 
         //if (PhotonNetwork.isMasterClient)
         //{

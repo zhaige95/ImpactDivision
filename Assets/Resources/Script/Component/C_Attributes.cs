@@ -37,7 +37,12 @@ public class C_Attributes : MonoBehaviour, IPunObservable {
         photonView = GetComponent<PhotonView>();
         attackListener = GetComponent<C_AttackListener>();
     }
-    
+
+    private void OnDestroy()
+    {
+        
+    }
+
     public void Demaged(float demage, string operation)
     {
         if (operation.Equals("-"))

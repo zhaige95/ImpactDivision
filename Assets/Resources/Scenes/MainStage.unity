@@ -6650,7 +6650,7 @@ MonoBehaviour:
   frontRing: {fileID: 1501010708}
   backBtn: {fileID: 627129932}
   ringText: {fileID: 21100862}
-  minMember: 4
+  minMember: 2
   single: 0
   prepareTime: 5
   matchTimeText: {fileID: 1169497338}
@@ -20917,7 +20917,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1585338185203690, guid: 2884e75475656e247ae180b126004630, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114423253889928686, guid: 2884e75475656e247ae180b126004630,
         type: 2}

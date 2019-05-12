@@ -106,6 +106,7 @@ public class S_Camera : ComponentSystem {
             else
             {
                 var t = _camera.camera_x.transform;
+               
                 t.localRotation = Quaternion.Lerp(t.localRotation, _camera.syncX, 10f * Time.deltaTime);
             }
         }

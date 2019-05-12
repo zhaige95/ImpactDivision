@@ -6,11 +6,16 @@ using UnityEngine;
 using Data;
 
 public class CS_StateMgr : MonoBehaviour, IPunObservable {
-
+    C_Velocity velocity;
     public Dictionary<string, AvatarState> avatarStates = new Dictionary<string, AvatarState>();
     public string defaultState = "";
     public string lastState = "";
     public string runningState = "";
+
+    private void Awake()
+    {
+        this.velocity = GetComponent<C_Velocity>();
+    }
 
     public void RegState(string name, AvatarState state)
     {
@@ -22,6 +27,7 @@ public class CS_StateMgr : MonoBehaviour, IPunObservable {
     
     public void EnterState(string sName)
     {
+        
         if (avatarStates.ContainsKey(sName))
         {
             if (avatarStates[runningState]._active)
@@ -53,7 +59,11 @@ public class CS_StateMgr : MonoBehaviour, IPunObservable {
     {
         if (stream.isWriting)
         {
-            var nextState = this.lastState.Equals(this.runningState) ? "" : this.runningState;
+            var nextState = "";
+            if (!runningState.Equals("dead"))
+            {
+                nextState = this.lastState.Equals(this.runningState) ? "" : this.runningState;
+            }
 
             stream.SendNext(nextState);
             this.lastState = this.runningState;
