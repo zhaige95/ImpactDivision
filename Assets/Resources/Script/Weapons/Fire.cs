@@ -155,7 +155,6 @@ public class Fire : WeaponState
                     {
                         source = _battleMgr,
                         demage = _weaponAttribute.damage,
-                        sourcePosition = startPoint,
                     },
                     startPoint,
                     targetPoint,
@@ -211,8 +210,7 @@ public class Fire : WeaponState
                 bullet, new Attack()
                 {
                     source = _battleMgr,
-                    demage = 0,
-                    sourcePosition = startPoint,
+                    demage = 0
                 },
                 startPoint,
                 targetPoint,
